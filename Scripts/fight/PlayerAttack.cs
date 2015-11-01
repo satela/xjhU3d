@@ -5,7 +5,8 @@ public enum PlayerFightState
 {
     ControlWalk,
     NormalAttack,
-    SkillAttack
+    SkillAttack,
+    Death
 }
 
 public enum AttackState //攻击时状态
@@ -23,6 +24,8 @@ public class PlayerAttack : MonoBehaviour {
     public string animName_Idle;
     private string animName_now;
     public string animName_Move;
+    public string animName_Death;
+    public string animName_Hited;
 
     public float time_normalattack;//普通攻击动画时间
     private float timer = 0;
@@ -80,6 +83,9 @@ public class PlayerAttack : MonoBehaviour {
                 playermove.stopFollowing();
                 return;
             }
+            if (isInBeHited)
+                return;
+
             float distance = Vector3.Distance(transform.position, target_normalattack.position);
             if (attack_state !=AttackState.Moving && distance <= min_attackDistance)
             {
@@ -134,6 +140,10 @@ public class PlayerAttack : MonoBehaviour {
 
             }
         }
+        else if(state == PlayerFightState.Death)
+        {
+            animation.CrossFade(animName_Death);
+        }
 	
 	}
 
@@ -162,13 +172,14 @@ public class PlayerAttack : MonoBehaviour {
     }
     public void takeDamage(int harm)
     {
-        float def = PlayerStatus._instance.finalDef;
+        if (state == PlayerFightState.Death) return;
+        int def = PlayerStatus._instance.finalDef;
 
-        float tempharm = harm * ((200 - def) / 200);
+        int tempharm =  (int) harm * ((200 - def) / 200);
         if (tempharm < 1)
             tempharm = 1;
 
-        float value = Random.Range(0, 1);
+        float value = Random.Range(0, 1f);
         if(value < PlayerStatus._instance.dodgeRate)
         {
             AudioSource.PlayClipAtPoint(sound_miss, transform.position);
@@ -176,7 +187,34 @@ public class PlayerAttack : MonoBehaviour {
         }
         else
         {
+            hudtext.Add("-" + tempharm, Color.red, 1);
+            PlayerStatus._instance.hp -= tempharm;
+
+            if(PlayerStatus._instance.hp <= 0)
+            {
+                state = PlayerFightState.Death;
+                Destroy(this.gameObject, 2);
+            }
+            else
+            {
+                //aniState = WolfAnimateState.Hitted;
+                StartCoroutine(showHittedAnimation());
+            }
 
         }
+    }
+
+    public bool isInBeHited = false;
+    IEnumerator showHittedAnimation()
+    {
+        isInBeHited = true;
+
+        yield return new WaitForSeconds(0.2f);
+        animation.CrossFade(animName_Hited);
+        //cur_animName = animName_Hited;
+        yield return new WaitForSeconds(0.567f);
+        animation.CrossFade(animName_Idle);
+        isInBeHited = false;
+
     }
 }

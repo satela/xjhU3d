@@ -50,9 +50,15 @@ public class PlayerStatus : MonoBehaviour {
     public string nickname = "风流少侠";
     public static PlayerStatus _instance;
 
+    public void Awake()
+    {
+        _instance = this;
+
+    }
+
+
 	void Start () {
 	
-        _instance = this;
         getExp(0);
 	}
 	

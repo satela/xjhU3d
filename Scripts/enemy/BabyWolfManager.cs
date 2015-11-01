@@ -273,6 +273,7 @@ public class BabyWolfManager : MonoBehaviour {
                     //再次攻击
                     RandomAttack();
                     attack_timer = 0;
+                    attack_timer += Time.deltaTime;
                     animation.CrossFade(animate_attack_now);
                 }
             }
@@ -304,6 +305,8 @@ public class BabyWolfManager : MonoBehaviour {
          }
          else
              animate_attack_now = animName_normalAttack;
+
+        target.GetComponent<PlayerAttack>().takeDamage(this.attack);
 
     }
 

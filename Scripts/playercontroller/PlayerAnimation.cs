@@ -16,6 +16,8 @@ public class PlayerAnimation : MonoBehaviour {
 	// Update is called once per frame
 	void LateUpdate () {
 
+        if (attack.isInBeHited)
+            return;
         if (attack.state == PlayerFightState.ControlWalk)
         {
             if (move.state == PlayerState.Moving)
@@ -25,7 +27,6 @@ public class PlayerAnimation : MonoBehaviour {
             else if (move.state == PlayerState.Idle)
             {
                 PlayAnim("Idle");
-                Debug.Log("idle");
             }
         }
         else if (attack.state == PlayerFightState.NormalAttack)
@@ -33,7 +34,6 @@ public class PlayerAnimation : MonoBehaviour {
             if(attack.attack_state == AttackState.Moving)
             {
                 PlayAnim("Run");
-                Debug.Log("follow tarhet");
             }
         }
 	}
