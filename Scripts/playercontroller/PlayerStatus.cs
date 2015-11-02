@@ -62,10 +62,6 @@ public class PlayerStatus : MonoBehaviour {
         getExp(0);
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
 
     public void GetCoin(int count)

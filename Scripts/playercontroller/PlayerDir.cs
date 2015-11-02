@@ -39,7 +39,7 @@ public class PlayerDir : MonoBehaviour {
         if(agent.remainingDistance > 0)
         {
             isMoving = true;
-            Debug.Log("is moveing");
+           // Debug.Log("is moveing");
         }
         else
         {

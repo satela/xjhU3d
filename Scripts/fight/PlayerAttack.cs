@@ -188,9 +188,10 @@ public class PlayerAttack : MonoBehaviour {
         else
         {
             hudtext.Add("-" + tempharm, Color.red, 1);
-            PlayerStatus._instance.hp -= tempharm;
+            PlayerStatus._instance.hp_remain -= tempharm;
 
-            if(PlayerStatus._instance.hp <= 0)
+            HeadStatusUI._instance.UpdateShowUI();
+            if (PlayerStatus._instance.hp_remain <= 0)
             {
                 state = PlayerFightState.Death;
                 Destroy(this.gameObject, 2);

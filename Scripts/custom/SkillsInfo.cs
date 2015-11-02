@@ -119,6 +119,9 @@ public class SkillsInfo : MonoBehaviour
 
             }
             obj.distance = float.Parse(propArray[13]);
+            obj.efx_name = propArray[14];
+            obj.animation_name = propArray[15];
+            obj.animation_time = float.Parse(propArray[16]);
             skillInfoDic.Add(obj.id, obj);
 
         }
@@ -175,5 +178,8 @@ public class SkillInfo
     public int level;
     public ReleaseType releaseType;
     public float distance;
+    public string efx_name;
+    public string animation_name;
+    public float animation_time = 0;
 
 }
