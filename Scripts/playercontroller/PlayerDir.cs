@@ -9,20 +9,21 @@ public class PlayerDir : MonoBehaviour {
 	private PlayerMove playermvoe;
 
     private NavMeshAgent agent;
-
+    private PlayerAttack playerattack;
 	// Use this for initialization
 	void Start () {
 	
 		targetPosition = transform.position;
 		playermvoe = this.GetComponent<PlayerMove> ();
         agent = this.GetComponent<NavMeshAgent>();
+        playerattack = this.GetComponent<PlayerAttack>();
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
-		if(Input.GetMouseButtonDown(0) && UICamera.hoveredObject == null)
+		if(Input.GetMouseButtonDown(0) && UICamera.hoveredObject == null && playerattack.isLockingTarget == false)
 		{
 
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);

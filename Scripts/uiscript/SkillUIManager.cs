@@ -86,6 +86,7 @@ public class SkillUIManager : MonoBehaviour {
     {
         isShow = false;
         tween.PlayReverse();
+        gameObject.SetActive(false);
     }
 
     private void OnTweenFinished()

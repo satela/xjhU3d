@@ -28,9 +28,9 @@ public class PlayerStatus : MonoBehaviour {
 
 	public int coin = 100;
 
-    public int attack = 20;
+    public float attack = 20;
     public int attack_plus = 0;
-    public int def = 20;
+    public float def = 20;
     public int def_plus = 0;
     public int speed = 20;
     public int speed_plus = 0;
@@ -225,7 +225,7 @@ public class PlayerStatus : MonoBehaviour {
     {
         get
         {
-            int attcksum = attack + attack_plus;
+            int attcksum = (int)attack + attack_plus;
             foreach(ItemInfo equip in equipinfos.Values)
             {
                 if(equip != null )
@@ -243,7 +243,7 @@ public class PlayerStatus : MonoBehaviour {
     {
         get
         {
-            int defsum = def + def_plus;
+            int defsum = (int)def + def_plus;
             foreach (ItemInfo equip in equipinfos.Values)
             {
                 if (equip != null)
@@ -254,6 +254,16 @@ public class PlayerStatus : MonoBehaviour {
             return defsum;
         }
 
+    }
+
+    public bool useMp(int count)
+    {
+        if (mp_remain >= count)
+        {
+            mp_remain -= count;
+            return true;
+        }
+        else return false;
     }
 }
 

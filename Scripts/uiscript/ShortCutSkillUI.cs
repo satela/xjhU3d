@@ -13,6 +13,8 @@ public class ShortCutSkillUI : MonoBehaviour {
     public Dictionary<GameObject,int> skillShortCuts = new Dictionary<GameObject,int>();
 
     public ArrayList skillInfos = new ArrayList();
+
+    private PlayerAttack plattack;
     public void Awake()
     {
         _instance = this;
@@ -24,6 +26,10 @@ public class ShortCutSkillUI : MonoBehaviour {
         }
     }
 
+    void Start()
+    {
+        plattack = GameObject.FindGameObjectWithTag(Tags.player).GetComponent<PlayerAttack>();
+    }
     void Update()
     {
         object useInfo;
@@ -72,7 +78,14 @@ public class ShortCutSkillUI : MonoBehaviour {
 
     private void OnUseSkill(SkillInfo info)
     {
-
+        if ((int)info.applicableRole == (int)PlayerStatus._instance.heroType)
+        {
+            if (PlayerStatus._instance.useMp(info.mp))
+            {
+                plattack.useSkill(info);
+            }
+        }
+        
     }
 
     private bool OnUseItem(ObjectInfo info)

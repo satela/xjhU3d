@@ -54,7 +54,7 @@ public class PlayerAttack : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if(Input.GetMouseButtonDown(0))
+        if(isLockingTarget == false && Input.GetMouseButtonDown(0) && state != PlayerFightState.Death)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hitinfo;
@@ -145,6 +145,10 @@ public class PlayerAttack : MonoBehaviour {
             animation.CrossFade(animName_Death);
         }
 	
+        if(isLockingTarget && Input.GetMouseButtonDown(0))
+        {
+            OnLockTarget();
+        }
 	}
 
     public GameObject hudtextFollow;//显示飘血的文字
@@ -175,7 +179,7 @@ public class PlayerAttack : MonoBehaviour {
         if (state == PlayerFightState.Death) return;
         int def = PlayerStatus._instance.finalDef;
 
-        int tempharm =  (int) harm * ((200 - def) / 200);
+        int tempharm =  (int)( harm * ((200f - def) / 200f));
         if (tempharm < 1)
             tempharm = 1;
 
@@ -194,7 +198,7 @@ public class PlayerAttack : MonoBehaviour {
             if (PlayerStatus._instance.hp_remain <= 0)
             {
                 state = PlayerFightState.Death;
-                Destroy(this.gameObject, 2);
+               // Destroy(this.gameObject, 2);
             }
             else
             {
@@ -217,5 +221,182 @@ public class PlayerAttack : MonoBehaviour {
         animation.CrossFade(animName_Idle);
         isInBeHited = false;
 
+    }
+
+    private SkillInfo cur_skill;
+    public void useSkill(SkillInfo skill)
+    {
+        playermove.stopFollowing();
+        animation.CrossFade(animName_Idle);
+        switch(skill.applyType)
+        {
+            case ApplyType.Passive:
+                StartCoroutine(OnPassiveSkillUse(skill));
+                break;
+            case ApplyType.Buff:
+                StartCoroutine(OnBuffSkillUse(skill));
+                break;
+            case ApplyType.SingleTarget:
+                OnSingleTargetSkill(skill);
+                break;
+            case ApplyType.MultiTarget:
+                onMultiTargetSkillUse(skill);
+                break;
+        }
+
+    }
+
+    IEnumerator OnPassiveSkillUse(SkillInfo skill)
+    {
+        state = PlayerFightState.SkillAttack;
+        animation.CrossFade(skill.animation_name);
+        yield return new WaitForSeconds(skill.animation_time);
+        state = PlayerFightState.ControlWalk;
+
+        int addhp = 0; int addmp = 0;
+        if (skill.applyProperty == ApplyProperty.HP)
+            addhp = skill.applyValue;
+        else if (skill.applyProperty == ApplyProperty.MP)
+            addmp = skill.applyValue;
+        PlayerStatus._instance.useDrugEff(addhp, addmp);
+
+        GameObject effectprefab = null;
+        if(SkillEffectRes._instance.skillDic.TryGetValue(skill.efx_name,out effectprefab))
+        {
+            GameObject.Instantiate(effectprefab, transform.position, Quaternion.identity);
+        }
+
+    }
+    IEnumerator OnBuffSkillUse(SkillInfo skill)
+    {
+        state = PlayerFightState.SkillAttack;
+        animation.CrossFade(skill.animation_name);
+        yield return new WaitForSeconds(skill.animation_time);
+        state = PlayerFightState.ControlWalk;
+        
+        switch(skill.applyProperty)
+        {
+            case ApplyProperty.Attack:
+                PlayerStatus._instance.attack *= (skill.applyValue / 100f);
+                break;
+            case ApplyProperty.AttackSpeed:
+                normalattack_rate *= (skill.applyValue / 100f);
+                break;
+            case ApplyProperty.Def:
+                PlayerStatus._instance.def *= (skill.applyValue / 100f);
+                break;
+            case ApplyProperty.Speed:
+                break;
+        }
+
+        GameObject effectprefab = null;
+        if (SkillEffectRes._instance.skillDic.TryGetValue(skill.efx_name, out effectprefab))
+        {
+            GameObject.Instantiate(effectprefab, transform.position, Quaternion.identity);
+        }
+
+        yield return new WaitForSeconds(skill.applyTime);
+
+        switch (skill.applyProperty)
+        {
+            case ApplyProperty.Attack:
+                PlayerStatus._instance.attack /= (skill.applyValue / 100f);
+                break;
+            case ApplyProperty.AttackSpeed:
+                normalattack_rate /= (skill.applyValue / 100f);
+                break;
+            case ApplyProperty.Def:
+                PlayerStatus._instance.def /= (skill.applyValue / 100f);
+                break;
+            case ApplyProperty.Speed:
+                break;
+        }
+    }
+
+    public bool isLockingTarget = false;//是否在选择目标
+    //准备选择目标
+    void OnSingleTargetSkill(SkillInfo skill)
+    {
+        CursorManager.instance.SetLockTarget();
+        state = PlayerFightState.SkillAttack;
+        isLockingTarget = true;
+        cur_skill = skill;
+
+    }
+
+    //选择目标完成，开始技能释放
+    void OnLockTarget()
+    {
+        isLockingTarget = false;
+        switch(cur_skill.applyType)
+        {
+            case ApplyType.SingleTarget:
+                StartCoroutine( OnLockSingleTarget());
+                break;
+            case ApplyType.MultiTarget:
+                StartCoroutine(OnLockMultiTarget());
+                break;
+        }
+
+    }
+
+    IEnumerator OnLockSingleTarget()
+    { 
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hitinfo;
+            bool isCollider = Physics.Raycast(ray, out hitinfo);
+            if(isCollider && hitinfo.collider.tag == Tags.enemy)
+            {
+                animation.CrossFade(cur_skill.animation_name);
+                yield return new WaitForSeconds(cur_skill.animation_time);
+                state = PlayerFightState.ControlWalk;
+
+                GameObject effectprefab = null;
+                if (SkillEffectRes._instance.skillDic.TryGetValue(cur_skill.efx_name, out effectprefab))
+                {
+                    GameObject.Instantiate(effectprefab, hitinfo.collider.transform.position, Quaternion.identity);
+                }
+
+               // PlayerStatus._instance.attack *= cur_skill.applyValue / 100f;
+                hitinfo.collider.GetComponent<BabyWolfManager>().TakeDamage((int)(PlayerStatus._instance.finalAttack*(cur_skill.applyValue/100f)));
+            }
+            else
+            {
+                state = PlayerFightState.NormalAttack;
+            }
+            CursorManager.instance.SetNormal();
+    }
+
+    void onMultiTargetSkillUse(SkillInfo skill)
+    {
+        CursorManager.instance.SetLockTarget();
+        state = PlayerFightState.SkillAttack;
+        isLockingTarget = true;
+        cur_skill = skill;
+    }
+
+    IEnumerator OnLockMultiTarget()
+    {
+        CursorManager.instance.SetNormal();
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hitinfo;
+            bool isCollider = Physics.Raycast(ray, out hitinfo);
+            if (isCollider && hitinfo.collider.tag == Tags.ground)
+            {
+                animation.CrossFade(cur_skill.animation_name);
+                yield return new WaitForSeconds(cur_skill.animation_time);
+                state = PlayerFightState.ControlWalk;
+
+                GameObject effectprefab = null;
+                if (SkillEffectRes._instance.skillDic.TryGetValue(cur_skill.efx_name, out effectprefab))
+                {
+                    GameObject skill_eff =  GameObject.Instantiate(effectprefab, hitinfo.point + Vector3.up, Quaternion.identity) as GameObject;
+                    BallExplosionSkill skillmanager = skill_eff.AddComponent<BallExplosionSkill>();
+                    skillmanager.attack = PlayerStatus._instance.finalAttack;
+                    skillmanager.eff_radius = 2;
+                }
+            }
+            else
+                state = PlayerFightState.ControlWalk;
     }
 }

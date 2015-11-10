@@ -147,6 +147,7 @@ public class BabyWolfManager : MonoBehaviour {
         //cur_animName = animName_Hited;
         yield return new WaitForSeconds(0.5f);
         animation.CrossFade(animName_Idle);
+        aniState = WolfAnimateState.Attack;
 
     }
     void RandomState()
@@ -176,7 +177,6 @@ public class BabyWolfManager : MonoBehaviour {
         float value = Random.Range(0f, 1);
 
         target = GameObject.FindGameObjectWithTag(Tags.player).transform;
-        aniState = WolfAnimateState.Attack;
        // transform.LookAt(target);
 
         if(value < miss_rate)
@@ -331,11 +331,13 @@ public class BabyWolfManager : MonoBehaviour {
     }  
     public void OnMouseEnter()
     {
+        if(PlayerStatus._instance.gameObject.GetComponent<PlayerAttack>().isLockingTarget == false)
         CursorManager.instance.SetAttack();
     }
 
     public void OnMouseExit()
     {
+        if (PlayerStatus._instance.gameObject.GetComponent<PlayerAttack>().isLockingTarget == false)
         CursorManager.instance.SetNormal();
 
     }
