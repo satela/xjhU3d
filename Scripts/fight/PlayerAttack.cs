@@ -48,7 +48,7 @@ public class PlayerAttack : MonoBehaviour {
         playermove = this.GetComponent<PlayerMove>();
         animName_now = animName_normalattack;
 
-        initHudText();
+       // initHudText();
 	}
 	
 	// Update is called once per frame
@@ -90,16 +90,9 @@ public class PlayerAttack : MonoBehaviour {
             if (attack_state !=AttackState.Moving && distance <= min_attackDistance)
             {
                 //转向目标 时应该播放原地踏步动画
-               // Vector3 difvec = new Vector3(target_normalattack.position.x, 0, target_normalattack.position.z) - new Vector3(transform.position.x, 0, transform.position.z);
-               // float angle = Vector3.Angle(transform.forward, difvec);
+                Quaternion rotation = Quaternion.LookRotation(target_normalattack.position - transform.position);
 
-
-               // if (Mathf.Abs(angle) > 0 && animName_now == animName_Idle)
-               //     animName_now = animName_Move;
-               // else if (animName_now != animName_normalattack)
-               //     animName_now = animName_Idle;
-
-                transform.LookAt(target_normalattack.position);
+                transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 5 * Time.deltaTime);
 
                 attack_state = AttackState.Attack;
                 timer += Time.deltaTime;
@@ -186,12 +179,12 @@ public class PlayerAttack : MonoBehaviour {
         float value = Random.Range(0, 1f);
         if(value < PlayerStatus._instance.dodgeRate)
         {
-            AudioSource.PlayClipAtPoint(sound_miss, transform.position);
-            hudtext.Add("Miss", Color.cyan, 0f);
+            //AudioSource.PlayClipAtPoint(sound_miss, transform.position);
+           // hudtext.Add("Miss", Color.cyan, 0f);
         }
         else
         {
-            hudtext.Add("-" + tempharm, Color.red, 1);
+            //hudtext.Add("-" + tempharm, Color.red, 1);
             PlayerStatus._instance.hp_remain -= tempharm;
 
             HeadStatusUI._instance.UpdateShowUI();
@@ -347,6 +340,7 @@ public class PlayerAttack : MonoBehaviour {
             bool isCollider = Physics.Raycast(ray, out hitinfo);
             if(isCollider && hitinfo.collider.tag == Tags.enemy)
             {
+                transform.LookAt(hitinfo.point);
                 animation.CrossFade(cur_skill.animation_name);
                 yield return new WaitForSeconds(cur_skill.animation_time);
                 state = PlayerFightState.ControlWalk;
@@ -383,6 +377,9 @@ public class PlayerAttack : MonoBehaviour {
             bool isCollider = Physics.Raycast(ray, out hitinfo);
             if (isCollider && hitinfo.collider.tag == Tags.ground)
             {
+               // Quaternion rotation = Quaternion.LookRotation(transform.position - hitinfo.point);
+              //  transform.rotation = rotation;
+                transform.LookAt(hitinfo.point);
                 animation.CrossFade(cur_skill.animation_name);
                 yield return new WaitForSeconds(cur_skill.animation_time);
                 state = PlayerFightState.ControlWalk;
@@ -390,7 +387,7 @@ public class PlayerAttack : MonoBehaviour {
                 GameObject effectprefab = null;
                 if (SkillEffectRes._instance.skillDic.TryGetValue(cur_skill.efx_name, out effectprefab))
                 {
-                    GameObject skill_eff =  GameObject.Instantiate(effectprefab, hitinfo.point + Vector3.up, Quaternion.identity) as GameObject;
+                    GameObject skill_eff =  GameObject.Instantiate(effectprefab, hitinfo.point + Vector3.up*0.5f, Quaternion.identity) as GameObject;
                     BallExplosionSkill skillmanager = skill_eff.AddComponent<BallExplosionSkill>();
                     skillmanager.attack = PlayerStatus._instance.finalAttack;
                     skillmanager.eff_radius = 2;

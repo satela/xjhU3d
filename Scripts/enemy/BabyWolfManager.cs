@@ -34,6 +34,9 @@ public class BabyWolfManager : MonoBehaviour {
 
     public float time_crazyattack;
 
+    public float time_hittedAnimation;
+
+
    // [HideInInspector]
     public int attac_rate = 4;//攻击速率每秒
     public float crazy_attack_rate;
@@ -70,6 +73,8 @@ public class BabyWolfManager : MonoBehaviour {
     public UIProgressBar hpbar;
     public float hpbarScale;
     public Transform hpbarpos;
+
+    private bool isInHittedAnimation = false;
 	// Use this for initialization
 	void Start () {
 
@@ -84,7 +89,7 @@ public class BabyWolfManager : MonoBehaviour {
         cur_animName = animName_Idle;
         animate_attack_now = animName_Idle;
 
-        initHpBar();
+      //  initHpBar();
         StartCoroutine(setUIcamera());
 	}
 	
@@ -111,12 +116,9 @@ public class BabyWolfManager : MonoBehaviour {
         else if(aniState == WolfAnimateState.Attack)
         {
             //TODO
-            AutoAttack();
-        }
-        /*else if (aniState == WolfAnimateState.Hitted)
-        {
-            StartCoroutine(showHittedAnimation());
-        }*/
+            if(isInHittedAnimation == false)
+             AutoAttack();
+        }        
         else
         {
             //巡逻
@@ -139,15 +141,16 @@ public class BabyWolfManager : MonoBehaviour {
            // aniState = WolfAnimateState.Attack;
             //target = GameObject.FindGameObjectWithTag(Tags.player).transform;
         }
-        updateHpBarPos();
+      //  updateHpBarPos();
 	}
     IEnumerator showHittedAnimation()
     {
+        isInHittedAnimation = true;
         animation.CrossFade(animName_Hited);
         //cur_animName = animName_Hited;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(time_hittedAnimation);
         animation.CrossFade(animName_Idle);
-        aniState = WolfAnimateState.Attack;
+        isInHittedAnimation = false;
 
     }
     void RandomState()
@@ -181,8 +184,9 @@ public class BabyWolfManager : MonoBehaviour {
 
         if(value < miss_rate)
         {
-            AudioSource.PlayClipAtPoint(sound_miss, transform.position);
+            //AudioSource.PlayClipAtPoint(sound_miss, transform.position);
             hudtext.Add("Miss", Color.cyan,0f);
+            aniState = WolfAnimateState.Attack;
         }
         else
         {
@@ -191,15 +195,15 @@ public class BabyWolfManager : MonoBehaviour {
             StartCoroutine(showBodyRed());
             if(this.hp <= 0)
             {
-               // cur_animName = animName_death;
                 aniState = WolfAnimateState.Death;
                 EnemyFactory._instance.createEnemy();
                 Destroy(this.gameObject, 2);
             }
             else
             {
-                //aniState = WolfAnimateState.Hitted;
                 StartCoroutine(showHittedAnimation());
+                aniState = WolfAnimateState.Attack;
+
             }
         }
     }
