@@ -10,6 +10,7 @@ public enum PlayerState
 public class PlayerMove : MonoBehaviour {
 
 	public float speed = 0.01f;
+    private float startSpeed = 0;
 	private PlayerDir dir;
 	private CharacterController controller;
 	public PlayerState state = PlayerState.Idle;
@@ -48,19 +49,16 @@ public class PlayerMove : MonoBehaviour {
         }*/
         if (attack.state == PlayerFightState.ControlWalk)
         {
-            float horizone = Input.GetAxis("Mouse X");
-            float vertical = Input.GetAxis("Mouse Y");
 
             if(Input.GetKey(KeyCode.A))
             {
                 Vector3 cameraleft = new Vector3(-Camera.main.transform.forward.z, 0, Camera.main.transform.forward.x);
-
-
                 Quaternion rotation = Quaternion.LookRotation(cameraleft);
 
-
                 transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 5 * Time.deltaTime);
-                agent.SetDestination(transform.position + transform.forward * speed);
+
+                startSpeed = Mathf.Lerp(startSpeed, speed, Time.deltaTime);
+                agent.SetDestination(transform.position + transform.forward * startSpeed);
             }
             else if (Input.GetKey(KeyCode.D))
             {
@@ -70,8 +68,8 @@ public class PlayerMove : MonoBehaviour {
                 Quaternion rotation = Quaternion.LookRotation(cameraright);
 
                 transform.rotation = Quaternion.Slerp(transform.rotation, rotation,5 * Time.deltaTime);
-                agent.SetDestination(transform.position + transform.forward * speed);
-
+                startSpeed = Mathf.Lerp(startSpeed, speed, Time.deltaTime);
+                agent.SetDestination(transform.position + transform.forward * startSpeed);
             }
 
             if (Input.GetKey(KeyCode.W))
@@ -82,8 +80,8 @@ public class PlayerMove : MonoBehaviour {
                 Quaternion rotation = Quaternion.LookRotation(cameraforwar);
 
                 transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 5 * Time.deltaTime);
-                agent.SetDestination(transform.position + transform.forward * speed);
-
+                startSpeed = Mathf.Lerp(startSpeed, speed, Time.deltaTime);
+                agent.SetDestination(transform.position + transform.forward * startSpeed);
             }
             else if (Input.GetKey(KeyCode.S))
             {
@@ -93,10 +91,10 @@ public class PlayerMove : MonoBehaviour {
                 Quaternion rotation = Quaternion.LookRotation(cameraback);
                 transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 5 * Time.deltaTime);
 
-                agent.SetDestination(transform.position + transform.forward * speed);
-
+                startSpeed = Mathf.Lerp(startSpeed, speed, Time.deltaTime);
+                agent.SetDestination(transform.position + transform.forward * startSpeed);
             }
-
+            Debug.Log("start spped:" + startSpeed);
             
             if (agent.remainingDistance > 0)
             {
@@ -105,6 +103,7 @@ public class PlayerMove : MonoBehaviour {
             else
             {
                 state = PlayerState.Idle;
+                startSpeed = 0;
 
             }
         }
