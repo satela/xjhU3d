@@ -31,7 +31,7 @@ public class StatusManager : MonoBehaviour {
         UIEventListener.Get(defaddbtn).onClick += onClickAddDef;
 
         UIEventListener.Get(speedaddbtn).onClick += onClickAddspeed;
-        UIManager.openCall += OnShowPanel;
+        UIManager._instance.openCall += OnShowPanel;
 	}
 
     private void OnShowPanel(EWindowName closeWindName)

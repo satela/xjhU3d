@@ -19,13 +19,14 @@ public class InventoryDescManager : MonoBehaviour
         UIEventListener.Get(gameObject).onClick = OnClickClose;
         UIEventListener.Get(equipBtn).onClick = OnClickEquip;
         UIEventListener.Get(unequipBtn).onClick = OnClickUnEquip;
-        UIManager.openCall += OnShowPanel;
 
         tween = this.GetComponent<TweenPosition>();
         this.gameObject.SetActive(false);
     }
 	// Use this for initialization
 	void Start () {
+
+        UIManager._instance.openCall += OnShowPanel;
 
 	}
 

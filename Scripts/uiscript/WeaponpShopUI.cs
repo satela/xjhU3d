@@ -31,7 +31,7 @@ public class WeaponpShopUI : MonoBehaviour {
         UIEventListener.Get(okbtn).onClick += OnClickOkBuy;     
 
         gameObject.SetActive(false);
-        UIManager.openCall += OnShowPanel;
+        UIManager._instance.openCall += OnShowPanel;
         buyPanel.SetActive(false);
         showWeaponList();
     }

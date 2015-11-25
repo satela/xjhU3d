@@ -27,9 +27,9 @@ public class Inventory : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 	
-         UIManager.openCall += OnShowPanel;
+         UIManager._instance.openCall += OnShowPanel;
 
-         UIManager.closeDescWindow += OnCloseDesc;
+         UIManager._instance.closeDescWindow += OnCloseDesc;
 
          UIEventListener.Get(closebtn).onClick += CloseWindow;
 

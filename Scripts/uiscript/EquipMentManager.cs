@@ -33,8 +33,8 @@ public class EquipMentManager : MonoBehaviour {
         tween = this.GetComponent<TweenPosition>();
 
         UIEventListener.Get(closebtn).onClick += CloseWindow;
-        UIManager.openCall += OnShowPanel;
-        UIManager.closeDescWindow += OnCloseDesc;
+        UIManager._instance.openCall += OnShowPanel;
+        UIManager._instance.closeDescWindow += OnCloseDesc;
 
         gameObject.SetActive(false);
 

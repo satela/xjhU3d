@@ -9,7 +9,7 @@ public enum PlayerState
 }
 public class PlayerMove : MonoBehaviour {
 
-	public float speed = 0.01f;
+	public float speed = 0.04f;
     private float startSpeed = 0;
 	private PlayerDir dir;
 	private CharacterController controller;
@@ -28,7 +28,84 @@ public class PlayerMove : MonoBehaviour {
         agent = this.GetComponent<NavMeshAgent>();
 
 	}
-	
+
+    void OnEnable()
+    {
+
+        EasyJoystick.On_JoystickMove += OnJoystickMove;
+
+        EasyJoystick.On_JoystickMoveEnd += OnJoystickMoveEnd;
+
+
+    }  
+
+    void OnJoystickMoveEnd(MovingJoystick move)  
+
+    {  
+
+        //停止时，角色恢复idle  
+
+        if (move.joystickName == "MoveJoyStick")  
+
+        {
+
+            state = PlayerState.Idle;
+
+        }  
+
+    }  
+
+  
+
+  
+
+    //移动摇杆中  
+
+    void OnJoystickMove(MovingJoystick move)  
+
+    {  
+
+        if (move.joystickName != "MoveJoyStick")  
+
+        {  
+
+            return;  
+
+        }  
+
+          
+
+        //获取摇杆中心偏移的坐标  
+
+        float joyPositionX = move.joystickAxis.x;  
+
+        float joyPositionY = move.joystickAxis.y;  
+
+  
+
+  
+
+        if (joyPositionY != 0 || joyPositionX != 0)  
+
+        {  
+
+            //设置角色的朝向（朝向当前坐标+摇杆偏移量）  
+
+            Vector3 mvoedist = new Vector3(joyPositionX, 0, joyPositionY).normalized;
+
+            Vector3 forward = Camera.main.transform.TransformDirection(mvoedist);
+          // mvoedist.R
+           // Quaternion.
+            agent.SetDestination(transform.position + forward * 2);
+
+            Debug.Log("move x:" + joyPositionX + "," + joyPositionY);
+           //state = PlayerState.Moving;
+
+          
+        }  
+
+    }  
+
 	// Update is called once per frame
 	void Update () {
 
@@ -94,7 +171,6 @@ public class PlayerMove : MonoBehaviour {
                 startSpeed = Mathf.Lerp(startSpeed, speed, Time.deltaTime);
                 agent.SetDestination(transform.position + transform.forward * startSpeed);
             }
-            Debug.Log("start spped:" + startSpeed);
             
             if (agent.remainingDistance > 0)
             {

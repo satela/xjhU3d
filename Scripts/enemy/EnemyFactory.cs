@@ -17,7 +17,7 @@ public class EnemyFactory : MonoBehaviour {
 	void Start () {
 
         _instance = this;
-        createEnemy();
+        createEnemy();    
 	}
 	
 	// Update is called once per frame

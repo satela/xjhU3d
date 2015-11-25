@@ -33,7 +33,7 @@ public class ShopDrug : MonoBehaviour {
             UIEventListener.Get(buyBtns[i]).onClick += OnClickbuyItem;
 
             gameObject.SetActive(false);
-            UIManager.openCall += OnShowPanel;
+            UIManager._instance.openCall += OnShowPanel;
 	}
 
     private void OnShowPanel(EWindowName closeWindName)

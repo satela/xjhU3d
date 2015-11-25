@@ -20,7 +20,7 @@ public class SkillUIManager : MonoBehaviour {
 
         _instance = this;
         tween = this.GetComponent<TweenPosition>();
-        UIManager.openCall += OnShowPanel;
+        UIManager._instance.openCall += OnShowPanel;
         UIEventListener.Get(closebtn).onClick += OnClickClose;
 	}
 
@@ -45,7 +45,7 @@ public class SkillUIManager : MonoBehaviour {
     }
     void Start()
     {
-        UIManager.openCall += OnShowPanel;
+        UIManager._instance.openCall += OnShowPanel;
         initSkills();
 
     }

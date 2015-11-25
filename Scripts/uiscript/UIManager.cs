@@ -12,21 +12,23 @@ public enum EWindowName
     ItemDesc,
     SkillUI
 }
-public class UIManager : MonoBehaviour {
+public class UIManager : MonoBehaviour{
 
-    public static UIManager _instance;
+    public static  UIManager _instance ;
 
     public delegate void OnOpenWindow(EWindowName windName);
 
-    public static event OnOpenWindow openCall;
+    public  event OnOpenWindow openCall;
 
     public delegate void OnCloseDesc();
 
-    public static event OnCloseDesc closeDescWindow;
+    public  event OnCloseDesc closeDescWindow;
 
+   
+   
     public void Awake()
     {
-        _instance = this;
+        _instance = this;        
     }
 
 	// Use this for initialization
