@@ -9,7 +9,8 @@ public enum PlayerState
 }
 public class PlayerMove : MonoBehaviour {
 
-	public float speed = 0.04f;
+    [HideInInspector]
+	private float speed = 5f;
     private float startSpeed = 0;
 	private PlayerDir dir;
 	private CharacterController controller;
@@ -50,7 +51,7 @@ public class PlayerMove : MonoBehaviour {
         {
 
             state = PlayerState.Idle;
-
+            stopFollowing();
         }  
 
     }  
@@ -94,11 +95,19 @@ public class PlayerMove : MonoBehaviour {
             Vector3 mvoedist = new Vector3(joyPositionX, 0, joyPositionY).normalized;
 
             Vector3 forward = Camera.main.transform.TransformDirection(mvoedist);
+
+            forward = new Vector3(forward.x, 0, forward.z);
           // mvoedist.R
            // Quaternion.
-            agent.SetDestination(transform.position + forward * 2);
+           // transform.LookAt(forward, Vector3.up);
 
-            Debug.Log("move x:" + joyPositionX + "," + joyPositionY);
+            startSpeed = Mathf.Lerp(startSpeed, speed, Time.deltaTime);
+
+            agent.speed = startSpeed;
+
+            agent.SetDestination(transform.position + forward);
+
+            Debug.Log("forward:" + forward.x + "," + forward.y + "," + forward.z);
            //state = PlayerState.Moving;
 
           
@@ -183,7 +192,7 @@ public class PlayerMove : MonoBehaviour {
 
             }
         }
-                
+     
 	}
 
     //跟踪到目标点 半径范围内

@@ -22,6 +22,7 @@ public class ShortCutSkillUI : MonoBehaviour {
         {
             skillShortCuts.Add(iconList[i].parent.gameObject,i);
             iconList[i].enabled = false;
+            UIEventListener.Get(iconList[i].parent.gameObject).onClick += OnClickUseSkill;
             skillInfos.Add(i);
         }
     }
@@ -29,6 +30,18 @@ public class ShortCutSkillUI : MonoBehaviour {
     void Start()
     {
         plattack = GameObject.FindGameObjectWithTag(Tags.player).GetComponent<PlayerAttack>();
+    }
+
+    void OnClickUseSkill(GameObject go)
+    {
+        int index = skillShortCuts[go];
+        if (index >= 0 && skillInfos[index] != null)
+        {
+            if (skillInfos[index] is SkillInfo)
+            {
+                OnUseSkill(skillInfos[index] as SkillInfo);
+            }
+        }       
     }
     void Update()
     {
@@ -108,6 +121,9 @@ public class ShortCutSkillUI : MonoBehaviour {
             iconList[index].spriteName = info.icon;
             skillInfos[index] = info;
             iconList[index].enabled = true;
+
+            ShortCutSkillItem skillshort = iconList[index].GetComponent<ShortCutSkillItem>();
+            skillshort.skillinfo = info;
         }
 
     }
@@ -119,6 +135,19 @@ public class ShortCutSkillUI : MonoBehaviour {
             iconList[index].spriteName = info.icon;
             skillInfos[index] = info;
             iconList[index].enabled = true;
+
+            ShortCutSkillItem skillshort = iconList[index].GetComponent<ShortCutSkillItem>();
+            skillshort.iteminfo = info;
+        }
+    }
+    public void clearSkillOrItem(GameObject skillshortcut)
+    {
+        int index = 0;
+        if (skillShortCuts.TryGetValue(skillshortcut, out index))
+        {
+            iconList[index].spriteName = null;
+            skillInfos[index] = null;
+            iconList[index].enabled = false;
         }
     }
 	

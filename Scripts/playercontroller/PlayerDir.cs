@@ -28,7 +28,7 @@ public class PlayerDir : MonoBehaviour {
 
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 			RaycastHit hitinfo;
-			bool isCollider = Physics.Raycast(ray,out hitinfo);
+			bool isCollider = Physics.Raycast(ray,out hitinfo,1<<7);
 			if(isCollider && hitinfo.collider.tag == Tags.ground)
 			{
 				//isMoving = true;

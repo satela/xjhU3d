@@ -45,6 +45,7 @@ public class BabyWolfManager : MonoBehaviour {
     private float timer = 0;
     public float speed = 1;
     private CharacterController cc;
+    private NavMeshAgent agent;
 
     public float miss_rate = 0.2f;
 
@@ -79,6 +80,7 @@ public class BabyWolfManager : MonoBehaviour {
 	void Start () {
 
         cc = this.GetComponent<CharacterController>();
+        agent = this.GetComponent<NavMeshAgent>();
         normal = bodyrender.material.color;
 
         hudtextGo = HudTextParent._instacne.createHudText();
@@ -122,11 +124,18 @@ public class BabyWolfManager : MonoBehaviour {
         else
         {
             //巡逻
-            animation.CrossFade(cur_animName);
+           /* animation.CrossFade(cur_animName);
             if(cur_animName == animName_Walk)
             {
-                cc.SimpleMove(transform.forward * speed);
-            }
+                agent.SetDestination(transform.position + transform.forward * (1 + 2 * Random.Range(0, 1)));
+                //cc.SimpleMove(transform.forward * speed);
+            }*/
+
+            if (agent.remainingDistance > 0.2)
+                animation.CrossFade(animName_Walk);
+            else
+                animation.CrossFade(animName_Idle);
+
             timer += Time.deltaTime;
             if(timer >= time)
             {
@@ -135,6 +144,8 @@ public class BabyWolfManager : MonoBehaviour {
             }
 
         }
+
+        
 
         if(Input.GetMouseButtonDown(1))
         {
@@ -162,12 +173,15 @@ public class BabyWolfManager : MonoBehaviour {
             {
                 cur_animName = animName_Walk;
                 transform.Rotate(transform.up * Random.Range(0,360));
+                agent.SetDestination(transform.position + transform.forward * (agent.speed + 2 * Random.Range(1, 3)));
             }
 
         }
         else
-        {         
+        {
+            stopMove();
             cur_animName = animName_Idle;
+            animation.CrossFade(animName_Idle);
         }
 
     }
@@ -242,7 +256,7 @@ public class BabyWolfManager : MonoBehaviour {
             {
                 Quaternion rotation = Quaternion.LookRotation(target.position - transform.position);
                 transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 5 * Time.deltaTime);
-                
+                stopMove();
                 if(attack_timer == 0)
                 {
                     RandomAttack();
@@ -286,8 +300,10 @@ public class BabyWolfManager : MonoBehaviour {
                 //transform.LookAt(target);
                 Quaternion rotation = Quaternion.LookRotation(target.position - transform.position);
                 transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 5 * Time.deltaTime);
-                
-                cc.SimpleMove(transform.forward * speed);
+
+                agent.SetDestination(transform.position + transform.forward * (2 + 2 * Random.Range(0, 1)));
+
+                //cc.SimpleMove(transform.forward * speed);
                 animation.CrossFade(animName_Walk);
                 attack_timer = 0;
             }
@@ -314,6 +330,10 @@ public class BabyWolfManager : MonoBehaviour {
 
     }
 
+    void stopMove()
+    {
+        agent.SetDestination(transform.position);
+    }
     void updateHpBarPos()
     {
 
