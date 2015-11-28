@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using System.Collections.Generic;
 public class BallExplosionSkill : MonoBehaviour {
 
     public float attack = 0;
 
     private int _eff_radius = 1;
+
+    private List<GameObject> hitwolf = new List<GameObject>();
 	// Use this for initialization
 	void Start () {
 
@@ -32,7 +34,14 @@ public class BallExplosionSkill : MonoBehaviour {
     {
         if(other.tag == Tags.enemy)
         {
-            other.gameObject.GetComponent<BabyWolfManager>().TakeDamage((int)attack);
+            if (hitwolf.IndexOf(other.gameObject) < 0)
+            {
+                other.gameObject.GetComponent<BabyWolfManager>().TakeDamage((int)attack);
+                other.gameObject.rigidbody.AddExplosionForce(1000, transform.position, 10);
+                hitwolf.Add(other.gameObject);
+            }
+
+
             Debug.Log("enemy:" + other.gameObject.name);
 
         }
