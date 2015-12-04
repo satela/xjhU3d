@@ -78,4 +78,5 @@ public class PlayerDir : MonoBehaviour {
 		targetPosition = new Vector3(targetPosition.x,transform.position.y,targetPosition.z);
 		this.transform.LookAt(targetPosition);
 	}
+
 }

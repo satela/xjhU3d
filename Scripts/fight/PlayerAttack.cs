@@ -320,7 +320,6 @@ public class PlayerAttack : MonoBehaviour {
     //选择目标完成，开始技能释放
     void OnLockTarget()
     {
-        isLockingTarget = false;
         switch(cur_skill.applyType)
         {
             case ApplyType.SingleTarget:
@@ -344,6 +343,7 @@ public class PlayerAttack : MonoBehaviour {
                 animation.CrossFade(cur_skill.animation_name);
                 yield return new WaitForSeconds(cur_skill.animation_time);
                 state = PlayerFightState.ControlWalk;
+                isLockingTarget = false;
 
                 GameObject effectprefab = null;
                 if (SkillEffectRes._instance.skillDic.TryGetValue(cur_skill.efx_name, out effectprefab))
@@ -371,10 +371,13 @@ public class PlayerAttack : MonoBehaviour {
 
     IEnumerator OnLockMultiTarget()
     {
-        CursorManager.instance.SetNormal();
+            CursorManager.instance.SetNormal();
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hitinfo;
-            bool isCollider = Physics.Raycast(ray, out hitinfo);
+
+            LayerMask mask = 1 << LayerMask.NameToLayer("GroundLayer");
+
+            bool isCollider = Physics.Raycast(ray, out hitinfo,1000, mask);
             if (isCollider && hitinfo.collider.tag == Tags.ground)
             {
                // Quaternion rotation = Quaternion.LookRotation(transform.position - hitinfo.point);
@@ -383,6 +386,7 @@ public class PlayerAttack : MonoBehaviour {
                 animation.CrossFade(cur_skill.animation_name);
                 yield return new WaitForSeconds(cur_skill.animation_time);
                 state = PlayerFightState.ControlWalk;
+                isLockingTarget = false;
 
                 GameObject effectprefab = null;
                 if (SkillEffectRes._instance.skillDic.TryGetValue(cur_skill.efx_name, out effectprefab))

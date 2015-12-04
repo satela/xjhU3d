@@ -217,6 +217,7 @@ public class PlayerStatus : MonoBehaviour {
             this.cur_exp -= total_exp;
             total_exp = 100 + grade * 30;
         }
+        if (ExpBarManager._instance != null)
         ExpBarManager._instance.SetExpValue(this.cur_exp, total_exp);
     }
 

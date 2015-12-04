@@ -37,7 +37,9 @@ public class BallExplosionSkill : MonoBehaviour {
             if (hitwolf.IndexOf(other.gameObject) < 0)
             {
                 other.gameObject.GetComponent<BabyWolfManager>().TakeDamage((int)attack);
-                other.gameObject.rigidbody.AddExplosionForce(1000, transform.position, 10);
+
+                Vector3 forcedr = (other.gameObject.transform.position + Vector3.up*3f) - transform.position;
+                other.gameObject.GetComponent<BabyWolfManager>().hitover(forcedr.normalized);
                 hitwolf.Add(other.gameObject);
             }
 

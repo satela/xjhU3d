@@ -110,7 +110,9 @@ public class BabyWolfManager : MonoBehaviour {
     }
 	// Update is called once per frame
 	void Update () {
-	
+
+        if (isInBeHitted)
+            return;
         if(aniState == WolfAnimateState.Death)
         {
             animation.CrossFade(animName_death);
@@ -131,7 +133,7 @@ public class BabyWolfManager : MonoBehaviour {
                 //cc.SimpleMove(transform.forward * speed);
             }*/
 
-            if (agent.remainingDistance > 0.2)
+            if (agent.enabled && agent.remainingDistance > 0.2)
                 animation.CrossFade(animName_Walk);
             else
                 animation.CrossFade(animName_Idle);
@@ -173,6 +175,7 @@ public class BabyWolfManager : MonoBehaviour {
             {
                 cur_animName = animName_Walk;
                 transform.Rotate(transform.up * Random.Range(0,360));
+                if (agent.enabled)
                 agent.SetDestination(transform.position + transform.forward * (agent.speed + 2 * Random.Range(1, 3)));
             }
 
@@ -300,7 +303,7 @@ public class BabyWolfManager : MonoBehaviour {
                 //transform.LookAt(target);
                 Quaternion rotation = Quaternion.LookRotation(target.position - transform.position);
                 transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 5 * Time.deltaTime);
-
+                if (agent.enabled)
                 agent.SetDestination(transform.position + transform.forward * (2 + 2 * Random.Range(0, 1)));
 
                 //cc.SimpleMove(transform.forward * speed);
@@ -332,6 +335,7 @@ public class BabyWolfManager : MonoBehaviour {
 
     void stopMove()
     {
+        if (agent.enabled)
         agent.SetDestination(transform.position);
     }
     void updateHpBarPos()
@@ -366,5 +370,58 @@ public class BabyWolfManager : MonoBehaviour {
 
     }
 
+    #region 击飞效果
 
+    bool isInBeHitted = false;
+    bool isgrounded = false;
+    public void hitover(Vector3 hitforce)
+    {
+        isInBeHitted = true;
+        agent.enabled = false;
+        isgrounded = false;
+        hitforce = new Vector3(hitforce.x * 0.2f, hitforce.y*0.6f, hitforce.z * 0.2f);
+        StartCoroutine(hitfly(hitforce));
+       // animation.CrossFade(animName_death);
+       // animation[animName_death].speed = 2;
+    }
+    IEnumerator hitfly(Vector3 hitforce)
+    {
+        Vector3 movedir = hitforce;
+        while (!isgrounded)
+        {
+            transform.position += movedir;
+            if (transform.localEulerAngles.x > -89)
+            {
+                float angles = Mathf.Lerp(transform.localEulerAngles.x, -90,Time.deltaTime);
+                transform.localEulerAngles = new Vector3(angles,transform.localEulerAngles.y, transform.localEulerAngles.z);
+            }
+            yield return null;
+
+            movedir -= Vector3.up * 0.04f;
+
+        }
+
+
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == Tags.ground)
+        {
+            isgrounded = true;
+             transform.position += Vector3.up;
+            //animation.CrossFade(animName_death);
+
+            StartCoroutine(resetpos());
+        }
+    }
+
+    IEnumerator resetpos()
+    {
+        yield return new WaitForSeconds(1);
+        agent.enabled = true;
+        isInBeHitted = false;
+        agent.SetDestination(transform.position + transform.forward * 0.1f);
+    }
+    #endregion
 }
