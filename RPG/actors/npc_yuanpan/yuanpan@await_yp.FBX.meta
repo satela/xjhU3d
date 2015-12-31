@@ -1,0 +1,289 @@
+fileFormatVersion: 2
+guid: 440632b17aa2c8647bb9d32260b79dc8
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Bip01Hub
+    100002: Bip01HubBone025
+    100004: Biped
+    100006: HubBone00
+    100008: HubBone01
+    100010: HubBone02
+    100012: HubBone03
+    100014: HubBone04
+    100016: HubBone05
+    100018: HubBone06
+    100020: HubBone07
+    100022: HubBone08
+    100024: HubBone09
+    100026: HubBone10
+    100028: HubBone11
+    100030: HubBone12
+    100032: HubBone13
+    100034: HubBone14
+    100036: HubBone15
+    100038: HubBone16
+    100040: HubBone17
+    100042: HubBone18
+    100044: HubBone19
+    100046: HubBone20
+    100048: HubBone21
+    100050: HubBone22
+    100052: HubBone23
+    100054: m_center
+    100056: //RootNode
+    400000: Bip01Hub
+    400002: Bip01HubBone025
+    400004: Biped
+    400006: HubBone00
+    400008: HubBone01
+    400010: HubBone02
+    400012: HubBone03
+    400014: HubBone04
+    400016: HubBone05
+    400018: HubBone06
+    400020: HubBone07
+    400022: HubBone08
+    400024: HubBone09
+    400026: HubBone10
+    400028: HubBone11
+    400030: HubBone12
+    400032: HubBone13
+    400034: HubBone14
+    400036: HubBone15
+    400038: HubBone16
+    400040: HubBone17
+    400042: HubBone18
+    400044: HubBone19
+    400046: HubBone20
+    400048: HubBone21
+    400050: HubBone22
+    400052: HubBone23
+    400054: m_center
+    400056: //RootNode
+    7400000: await_yp
+    7400002: die_yp
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: await_yp
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 3
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Biped
+        weight: 1
+      - path: m_center
+        weight: 1
+      - path: m_center/Bip01Hub
+        weight: 1
+      - path: m_center/Bip01Hub/Bip01HubBone025
+        weight: 1
+      - path: m_center/Bip01Hub/HubBone00
+        weight: 1
+      - path: m_center/Bip01Hub/HubBone01
+        weight: 1
+      - path: m_center/Bip01Hub/HubBone02
+        weight: 1
+      - path: m_center/Bip01Hub/HubBone03
+        weight: 1
+      - path: m_center/Bip01Hub/HubBone04
+        weight: 1
+      - path: m_center/Bip01Hub/HubBone05
+        weight: 1
+      - path: m_center/Bip01Hub/HubBone06
+        weight: 1
+      - path: m_center/Bip01Hub/HubBone07
+        weight: 1
+      - path: m_center/Bip01Hub/HubBone08
+        weight: 1
+      - path: m_center/Bip01Hub/HubBone09
+        weight: 1
+      - path: m_center/Bip01Hub/HubBone10
+        weight: 1
+      - path: m_center/Bip01Hub/HubBone11
+        weight: 1
+      - path: m_center/Bip01Hub/HubBone12
+        weight: 1
+      - path: m_center/Bip01Hub/HubBone13
+        weight: 1
+      - path: m_center/Bip01Hub/HubBone14
+        weight: 1
+      - path: m_center/Bip01Hub/HubBone15
+        weight: 1
+      - path: m_center/Bip01Hub/HubBone16
+        weight: 1
+      - path: m_center/Bip01Hub/HubBone17
+        weight: 1
+      - path: m_center/Bip01Hub/HubBone18
+        weight: 1
+      - path: m_center/Bip01Hub/HubBone19
+        weight: 1
+      - path: m_center/Bip01Hub/HubBone20
+        weight: 1
+      - path: m_center/Bip01Hub/HubBone21
+        weight: 1
+      - path: m_center/Bip01Hub/HubBone22
+        weight: 1
+      - path: m_center/Bip01Hub/HubBone23
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: die_yp
+      takeName: Take 001
+      firstFrame: 4
+      lastFrame: 75
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Biped
+        weight: 1
+      - path: m_center
+        weight: 1
+      - path: m_center/Bip01Hub
+        weight: 1
+      - path: m_center/Bip01Hub/Bip01HubBone025
+        weight: 1
+      - path: m_center/Bip01Hub/HubBone00
+        weight: 1
+      - path: m_center/Bip01Hub/HubBone01
+        weight: 1
+      - path: m_center/Bip01Hub/HubBone02
+        weight: 1
+      - path: m_center/Bip01Hub/HubBone03
+        weight: 1
+      - path: m_center/Bip01Hub/HubBone04
+        weight: 1
+      - path: m_center/Bip01Hub/HubBone05
+        weight: 1
+      - path: m_center/Bip01Hub/HubBone06
+        weight: 1
+      - path: m_center/Bip01Hub/HubBone07
+        weight: 1
+      - path: m_center/Bip01Hub/HubBone08
+        weight: 1
+      - path: m_center/Bip01Hub/HubBone09
+        weight: 1
+      - path: m_center/Bip01Hub/HubBone10
+        weight: 1
+      - path: m_center/Bip01Hub/HubBone11
+        weight: 1
+      - path: m_center/Bip01Hub/HubBone12
+        weight: 1
+      - path: m_center/Bip01Hub/HubBone13
+        weight: 1
+      - path: m_center/Bip01Hub/HubBone14
+        weight: 1
+      - path: m_center/Bip01Hub/HubBone15
+        weight: 1
+      - path: m_center/Bip01Hub/HubBone16
+        weight: 1
+      - path: m_center/Bip01Hub/HubBone17
+        weight: 1
+      - path: m_center/Bip01Hub/HubBone18
+        weight: 1
+      - path: m_center/Bip01Hub/HubBone19
+        weight: 1
+      - path: m_center/Bip01Hub/HubBone20
+        weight: 1
+      - path: m_center/Bip01Hub/HubBone21
+        weight: 1
+      - path: m_center/Bip01Hub/HubBone22
+        weight: 1
+      - path: m_center/Bip01Hub/HubBone23
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: m_center
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: dac289a2c2338dc469e5c8970b4e8cb9,
+    type: 3}
+  animationType: 2
+  additionalBone: 0
+  userData: 

@@ -1,0 +1,132 @@
+fileFormatVersion: 2
+guid: 12cb602b714364b4ab1fb116309003d2
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: back_seat
+    100002: Bip01
+    100004: Bip01HubBone01
+    100006: Bip01HubBone02
+    100008: Bip01HubBone03
+    100010: Bip01HubBone04
+    100012: Bip01HubBone05
+    100014: Bip01HubBone06
+    100016: Bip01HubBone07
+    100018: Bip01HubBone08
+    100020: Bip01HubBone09
+    100022: Bip01HubBone10
+    100024: Bip01HubBone11
+    100026: Bip01HubBone12
+    100028: Bip01HubBone13
+    100030: Bip01HubBone14
+    100032: Bip01HubBone15
+    100034: Bip01HubBone16
+    100036: Bip01HubBone17
+    100038: Bip01HubBone18
+    100040: Bip01HubBone19
+    100042: Bip01HubBone20
+    100044: Bip01HubBone21
+    100046: Bip01HubBone22
+    100048: Bip01HubBone23
+    100050: Bip01HubBone24
+    100052: Bip01HubBone25
+    100054: Bip01HubBone26
+    100056: Bip01HubBone27
+    100058: Bip01HubBone28
+    100060: Bip01HubBone29
+    100062: Bip01HubBone30
+    100064: flycarpet
+    100066: //RootNode
+    100068: m_center
+    400000: back_seat
+    400002: Bip01
+    400004: Bip01HubBone01
+    400006: Bip01HubBone02
+    400008: Bip01HubBone03
+    400010: Bip01HubBone04
+    400012: Bip01HubBone05
+    400014: Bip01HubBone06
+    400016: Bip01HubBone07
+    400018: Bip01HubBone08
+    400020: Bip01HubBone09
+    400022: Bip01HubBone10
+    400024: Bip01HubBone11
+    400026: Bip01HubBone12
+    400028: Bip01HubBone13
+    400030: Bip01HubBone14
+    400032: Bip01HubBone15
+    400034: Bip01HubBone16
+    400036: Bip01HubBone17
+    400038: Bip01HubBone18
+    400040: Bip01HubBone19
+    400042: Bip01HubBone20
+    400044: Bip01HubBone21
+    400046: Bip01HubBone22
+    400048: Bip01HubBone23
+    400050: Bip01HubBone24
+    400052: Bip01HubBone25
+    400054: Bip01HubBone26
+    400056: Bip01HubBone27
+    400058: Bip01HubBone28
+    400060: Bip01HubBone29
+    400062: Bip01HubBone30
+    400064: flycarpet
+    400066: //RootNode
+    400068: m_center
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: m_center
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 52091ec30bfd78144bc0b6a88d236c2d,
+    type: 3}
+  animationType: 2
+  additionalBone: 1
+  userData: 

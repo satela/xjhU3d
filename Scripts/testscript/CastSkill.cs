@@ -4,18 +4,64 @@ using System.Collections;
 public class CastSkill : MonoBehaviour {
 
     public GameObject effectprefab;
+
+    public DAnimatorController anicontroller;
+
+    public GameObject beatenEffectPfb;//受击特效
+
+    public GameObject hitEffectPfb;//攻击特效
+
+    public string hitprefaburl;
+    public DAnimatorController enemy;
 	// Use this for initialization
 	void Start () {
 	
 	}
-	
+
+    void OnGUI()
+    {
+
+        if (GUILayout.Button("普通攻击"))
+        {
+            //if (anicontroller.doNormalAttack())
+            {
+               // GameObject eff = GameObject.Instantiate(startEffectPfb, anicontroller.gameObject.transform.position + Vector3.up * 0.5f, anicontroller.gameObject.transform.rotation) as GameObject;
+               // eff.transform.localScale = anicontroller.gameObject.transform.localScale;
+
+                 Object gos =  Resources.LoadAssetAtPath("Assets" + "/RPG/Effect/effects/airen/airen_atk1.prefab",typeof(GameObject));
+
+                 GameObject hiteff = GameObject.Instantiate(gos, anicontroller.gameObject.transform.position + Vector3.up * 0.5f, anicontroller.gameObject.transform.rotation) as GameObject;
+
+                hiteff.transform.localScale = anicontroller.gameObject.transform.localScale;
+
+                //StartCoroutine(behitted());
+            }
+        }
+    }
+
+    IEnumerator behitted()
+    {
+        yield return new WaitForSeconds(0.5f);
+        if (enemy != null)
+        {
+            enemy.doBeHitted();
+            for (int i = 0; i < 3; i++)
+            {
+                GameObject eff = GameObject.Instantiate(beatenEffectPfb, enemy.gameObject.transform.position + Vector3.up * 0.5f, enemy.gameObject.transform.rotation) as GameObject;
+                eff.transform.localScale = enemy.gameObject.transform.localScale;
+            }
+            
+        }
+
+    }
 	// Update is called once per frame
 	void Update () {
 	
        if(Input.GetMouseButtonDown(0))
         {
-            OnLockMultiTarget();
+           // OnLockMultiTarget();
         }
+        
 	}
 
     void OnLockMultiTarget()

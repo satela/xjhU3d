@@ -1,0 +1,215 @@
+fileFormatVersion: 2
+guid: 8e3631b68d71e604f86720500bf92716
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Dummy01
+    100002: Fish010_Mesh
+    100004: FishRack2_Mesh
+    100006: m_center
+    100008: //RootNode
+    100010: Tradeskill_FishSchool_Shipwreck_Bone07
+    100012: Tradeskill_FishSchool_Shipwreck_Bone08
+    100014: Tradeskill_FishSchool_Shipwreck_Bone10
+    100016: Tradeskill_FishSchool_Shipwreck_Bone11
+    100018: Tradeskill_FishSchool_Shipwreck_Bone12
+    100020: Tradeskill_FishSchool_Shipwreck_Bone13
+    100022: Tradeskill_FishSchool_Shipwreck_Bone14
+    100024: Tradeskill_FishSchool_Shipwreck_Bone15
+    100026: Tradeskill_FishSchool_Shipwreck_Bone16
+    100028: Tradeskill_FishSchool_Shipwreck_Bone17
+    100030: Tradeskill_FishSchool_Shipwreck_Bone18
+    100032: Tradeskill_FishSchool_Shipwreck_Bone19
+    100034: Tradeskill_FishSchool_Shipwreck_Bone20
+    100036: Tradeskill_FishSchool_Shipwreck_Bone21
+    100038: Tradeskill_FishSchool_Shipwreck_Bone22
+    100040: Tradeskill_FishSchool_Shipwreck_Bone23
+    100042: Tradeskill_FishSchool_Shipwreck_Bone24
+    100044: Tradeskill_FishSchool_Shipwreck_Bone25
+    100046: Tradeskill_FishSchool_Shipwreck_Bone26
+    100048: Tradeskill_FishSchool_Shipwreck_Bone27
+    100050: Tradeskill_FishSchool_Shipwreck_Bone29
+    100052: Tradeskill_FishSchool_Shipwreck_Bone40
+    100054: Tradeskill_FishSchool_Shipwreck_Bone43
+    100056: Tradeskill_FishSchool_Shipwreck_Bone44
+    100058: Tradeskill_FishSchool_Shipwreck_Bone45_$CCH
+    100060: Tradeskill_FishSchool_Shipwreck_Bone9
+    400000: Dummy01
+    400002: Fish010_Mesh
+    400004: FishRack2_Mesh
+    400006: m_center
+    400008: //RootNode
+    400010: Tradeskill_FishSchool_Shipwreck_Bone07
+    400012: Tradeskill_FishSchool_Shipwreck_Bone08
+    400014: Tradeskill_FishSchool_Shipwreck_Bone10
+    400016: Tradeskill_FishSchool_Shipwreck_Bone11
+    400018: Tradeskill_FishSchool_Shipwreck_Bone12
+    400020: Tradeskill_FishSchool_Shipwreck_Bone13
+    400022: Tradeskill_FishSchool_Shipwreck_Bone14
+    400024: Tradeskill_FishSchool_Shipwreck_Bone15
+    400026: Tradeskill_FishSchool_Shipwreck_Bone16
+    400028: Tradeskill_FishSchool_Shipwreck_Bone17
+    400030: Tradeskill_FishSchool_Shipwreck_Bone18
+    400032: Tradeskill_FishSchool_Shipwreck_Bone19
+    400034: Tradeskill_FishSchool_Shipwreck_Bone20
+    400036: Tradeskill_FishSchool_Shipwreck_Bone21
+    400038: Tradeskill_FishSchool_Shipwreck_Bone22
+    400040: Tradeskill_FishSchool_Shipwreck_Bone23
+    400042: Tradeskill_FishSchool_Shipwreck_Bone24
+    400044: Tradeskill_FishSchool_Shipwreck_Bone25
+    400046: Tradeskill_FishSchool_Shipwreck_Bone26
+    400048: Tradeskill_FishSchool_Shipwreck_Bone27
+    400050: Tradeskill_FishSchool_Shipwreck_Bone29
+    400052: Tradeskill_FishSchool_Shipwreck_Bone40
+    400054: Tradeskill_FishSchool_Shipwreck_Bone43
+    400056: Tradeskill_FishSchool_Shipwreck_Bone44
+    400058: Tradeskill_FishSchool_Shipwreck_Bone45_$CCH
+    400060: Tradeskill_FishSchool_Shipwreck_Bone9
+    4300000: FishRack2_Mesh
+    4300002: Fish010_Mesh
+    7400000: await_yuqun2
+    9500000: //RootNode
+    13700000: Fish010_Mesh
+    13700002: FishRack2_Mesh
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: await_yuqun2
+      takeName: Take 001
+      firstFrame: 3
+      lastFrame: 303
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Fish010_Mesh
+        weight: 1
+      - path: FishRack2_Mesh
+        weight: 1
+      - path: m_center
+        weight: 1
+      - path: m_center/Dummy01
+        weight: 1
+      - path: m_center/Dummy01/Tradeskill_FishSchool_Shipwreck_Bone07
+        weight: 1
+      - path: m_center/Dummy01/Tradeskill_FishSchool_Shipwreck_Bone07/Tradeskill_FishSchool_Shipwreck_Bone11
+        weight: 1
+      - path: m_center/Dummy01/Tradeskill_FishSchool_Shipwreck_Bone07/Tradeskill_FishSchool_Shipwreck_Bone11/Tradeskill_FishSchool_Shipwreck_Bone40
+        weight: 1
+      - path: m_center/Dummy01/Tradeskill_FishSchool_Shipwreck_Bone07/Tradeskill_FishSchool_Shipwreck_Bone11/Tradeskill_FishSchool_Shipwreck_Bone43
+        weight: 1
+      - path: m_center/Dummy01/Tradeskill_FishSchool_Shipwreck_Bone07/Tradeskill_FishSchool_Shipwreck_Bone11/Tradeskill_FishSchool_Shipwreck_Bone44
+        weight: 1
+      - path: m_center/Dummy01/Tradeskill_FishSchool_Shipwreck_Bone07/Tradeskill_FishSchool_Shipwreck_Bone12
+        weight: 1
+      - path: m_center/Dummy01/Tradeskill_FishSchool_Shipwreck_Bone07/Tradeskill_FishSchool_Shipwreck_Bone12/Tradeskill_FishSchool_Shipwreck_Bone19
+        weight: 1
+      - path: m_center/Dummy01/Tradeskill_FishSchool_Shipwreck_Bone07/Tradeskill_FishSchool_Shipwreck_Bone12/Tradeskill_FishSchool_Shipwreck_Bone45_$CCH
+        weight: 1
+      - path: m_center/Dummy01/Tradeskill_FishSchool_Shipwreck_Bone08
+        weight: 1
+      - path: m_center/Dummy01/Tradeskill_FishSchool_Shipwreck_Bone08/Tradeskill_FishSchool_Shipwreck_Bone13
+        weight: 1
+      - path: m_center/Dummy01/Tradeskill_FishSchool_Shipwreck_Bone08/Tradeskill_FishSchool_Shipwreck_Bone13/Tradeskill_FishSchool_Shipwreck_Bone20
+        weight: 1
+      - path: m_center/Dummy01/Tradeskill_FishSchool_Shipwreck_Bone08/Tradeskill_FishSchool_Shipwreck_Bone14
+        weight: 1
+      - path: m_center/Dummy01/Tradeskill_FishSchool_Shipwreck_Bone08/Tradeskill_FishSchool_Shipwreck_Bone14/Tradeskill_FishSchool_Shipwreck_Bone21
+        weight: 1
+      - path: m_center/Dummy01/Tradeskill_FishSchool_Shipwreck_Bone08/Tradeskill_FishSchool_Shipwreck_Bone14/Tradeskill_FishSchool_Shipwreck_Bone22
+        weight: 1
+      - path: m_center/Dummy01/Tradeskill_FishSchool_Shipwreck_Bone9
+        weight: 1
+      - path: m_center/Dummy01/Tradeskill_FishSchool_Shipwreck_Bone9/Tradeskill_FishSchool_Shipwreck_Bone15
+        weight: 1
+      - path: m_center/Dummy01/Tradeskill_FishSchool_Shipwreck_Bone9/Tradeskill_FishSchool_Shipwreck_Bone15/Tradeskill_FishSchool_Shipwreck_Bone23
+        weight: 1
+      - path: m_center/Dummy01/Tradeskill_FishSchool_Shipwreck_Bone9/Tradeskill_FishSchool_Shipwreck_Bone16
+        weight: 1
+      - path: m_center/Dummy01/Tradeskill_FishSchool_Shipwreck_Bone9/Tradeskill_FishSchool_Shipwreck_Bone16/Tradeskill_FishSchool_Shipwreck_Bone24
+        weight: 1
+      - path: m_center/Dummy01/Tradeskill_FishSchool_Shipwreck_Bone9/Tradeskill_FishSchool_Shipwreck_Bone16/Tradeskill_FishSchool_Shipwreck_Bone25
+        weight: 1
+      - path: m_center/Dummy01/Tradeskill_FishSchool_Shipwreck_Bone9/Tradeskill_FishSchool_Shipwreck_Bone16/Tradeskill_FishSchool_Shipwreck_Bone25/Tradeskill_FishSchool_Shipwreck_Bone29
+        weight: 1
+      - path: m_center/Dummy01/Tradeskill_FishSchool_Shipwreck_Bone10
+        weight: 1
+      - path: m_center/Dummy01/Tradeskill_FishSchool_Shipwreck_Bone10/Tradeskill_FishSchool_Shipwreck_Bone17
+        weight: 1
+      - path: m_center/Dummy01/Tradeskill_FishSchool_Shipwreck_Bone10/Tradeskill_FishSchool_Shipwreck_Bone17/Tradeskill_FishSchool_Shipwreck_Bone26
+        weight: 1
+      - path: m_center/Dummy01/Tradeskill_FishSchool_Shipwreck_Bone10/Tradeskill_FishSchool_Shipwreck_Bone18
+        weight: 1
+      - path: m_center/Dummy01/Tradeskill_FishSchool_Shipwreck_Bone10/Tradeskill_FishSchool_Shipwreck_Bone18/Tradeskill_FishSchool_Shipwreck_Bone27
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: m_center
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

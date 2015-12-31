@@ -1,0 +1,311 @@
+Shader "Custom/Mobile/Transparent/VertexLit-Outline" {
+Properties {
+	_Color ("Main Color", Color) = (1,1,1,1)
+	_OutlineColor ("Outline Color", Color) = (1,0,0,1)
+	_Outline ("Outline width", Range (0.0, 0.03)) = .005
+	_MainTex ("Base (RGB)", 2D) = "white" {}
+}
+
+// ---- Dual texture cards
+SubShader {
+	Tags { "RenderType"="Transparent"  "IgnoreProjector"="True" "RenderType"="Transparent" }
+	LOD 80
+	
+	Blend SrcAlpha OneMinusSrcAlpha
+	ColorMask RGB
+
+		Tags { "Queue" = "Transparent" }
+		Pass {
+			Tags { "LightMode" = "Always" }
+			Cull Off
+			ZWrite Off
+			//ZTest Always
+			//ColorMask RGB // alpha not used
+			Blend SrcAlpha OneMinusSrcAlpha // Normal
+
+			CGPROGRAM
+			#pragma vertex vert
+			#pragma fragment frag
+			#include "UnityCG.cginc"
+			struct appdata {
+				float4 vertex : POSITION;
+				float3 normal : NORMAL;
+			};
+			struct v2f {
+				float4 pos : POSITION;
+				float4 color : COLOR;
+			};
+			uniform float _Outline;
+			uniform float4 _OutlineColor;
+			v2f vert(appdata v) {
+				v2f o;
+				o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+				float3 norm   = mul ((float3x3)UNITY_MATRIX_IT_MV, v.normal);
+				float2 offset = TransformViewToProjection(norm.xy);
+				o.pos.xy += offset * o.pos.z * _Outline;
+				o.color = _OutlineColor;
+				return o;
+			}
+
+			half4 frag(v2f i) :COLOR {
+				return i.color;
+			}
+			ENDCG
+		}
+		Pass {
+			Name "BASE"
+			ZWrite On
+			ZTest LEqual
+			Blend SrcAlpha OneMinusSrcAlpha
+			Material {
+				Diffuse [_Color]
+				Ambient [_Color]
+			}
+			Lighting On
+			SetTexture [_MainTex] {
+				ConstantColor [_Color]
+				Combine texture * constant
+			}
+			SetTexture [_MainTex] {
+				Combine previous * primary DOUBLE
+			}
+		}
+	
+	// Non-lightmapped
+	Pass {
+		Tags { "LightMode" = "Vertex" }
+		
+		Material {
+			Diffuse [_Color]
+			Ambient [_Color]
+		} 
+		Lighting On
+		SetTexture [_MainTex] {
+			Combine texture * primary DOUBLE, texture * primary
+		} 
+	}
+	
+	// Lightmapped, encoded as dLDR
+	Pass {
+		Tags { "LightMode" = "VertexLM" }
+		
+		BindChannels {
+			Bind "Vertex", vertex
+			Bind "normal", normal
+			Bind "texcoord1", texcoord0 // lightmap uses 2nd uv
+			Bind "texcoord", texcoord1 // main uses 1st uv
+		}
+		
+		SetTexture [unity_Lightmap] {
+			matrix [unity_LightmapMatrix]
+			constantColor [_Color]
+			combine texture * Constant
+		}
+		SetTexture [_MainTex] {
+			combine texture * previous DOUBLE, texture * primary
+		}
+	}
+	
+	// Lightmapped, encoded as RGBM
+	Pass {
+		Tags { "LightMode" = "VertexLMRGBM" }
+		
+		BindChannels {
+			Bind "Vertex", vertex
+			Bind "normal", normal
+			Bind "texcoord1", texcoord0 // lightmap uses 2nd uv
+			Bind "texcoord", texcoord1 // main uses 1st uv
+		}
+		
+		SetTexture [unity_Lightmap] {
+			matrix [unity_LightmapMatrix]
+			combine texture * texture alpha DOUBLE
+		}
+		SetTexture [_MainTex] {
+			combine texture * previous QUAD, texture * primary
+		}
+	}	
+}
+
+// ---- Single texture cards (requires 2 passes for lightmapped)
+SubShader {
+	Tags {"Queue"="Transparent" "IgnoreProjector"="True" "RenderType"="Transparent"}
+	LOD 100
+
+	Blend SrcAlpha OneMinusSrcAlpha 
+	ColorMask RGB
+	// Non-lightmapped
+	Pass {
+		Tags { "LightMode" = "Vertex" }
+		
+		Material {
+			Diffuse [_Color]
+			Ambient [_Color]
+		} 
+		Lighting On
+		SetTexture [_MainTex] {
+			Combine texture * primary DOUBLE, texture * primary
+		} 
+	}	
+	// Lightmapped, encoded as dLDR
+	Pass {
+		// 1st pass - sample Lightmap
+		Tags { "LightMode" = "VertexLM" }
+
+		BindChannels {
+			Bind "Vertex", vertex
+			Bind "texcoord1", texcoord0 // lightmap uses 2nd uv
+		}		
+		SetTexture [unity_Lightmap] {
+			matrix [unity_LightmapMatrix]
+			constantColor [_Color]
+			combine texture * Constant
+		}
+	}
+	
+	Pass 
+	{
+		// 2nd pass - multiply with _MainTex
+		Tags { "LightMode" = "VertexLM" }
+		ZWrite Off
+		Fog {Mode Off}
+		Blend DstColor Zero
+		SetTexture [_MainTex] {
+			combine texture
+		}
+	}
+	
+	// Pass to render object as a shadow caster
+	Pass 
+	{
+		Name "ShadowCaster"
+		Tags { "LightMode" = "ShadowCaster" }
+		
+		Fog {Mode Off}
+		ZWrite On ZTest LEqual Cull Off
+		Offset 1, 1
+
+		CGPROGRAM
+		#pragma vertex vert
+		#pragma fragment frag
+		#pragma multi_compile_shadowcaster
+		#pragma fragmentoption ARB_precision_hint_fastest
+		#include "UnityCG.cginc"
+
+		struct v2f { 
+			V2F_SHADOW_CASTER;
+		};
+
+		v2f vert( appdata_base v )
+		{
+			v2f o;
+			TRANSFER_SHADOW_CASTER(o)
+			return o;
+		}
+
+		float4 frag( v2f i ) : COLOR
+		{
+			SHADOW_CASTER_FRAGMENT(i)
+		}
+		ENDCG
+	}
+	
+	// Pass to render object as a shadow collector
+	// note: editor needs this pass as it has a collector pass.
+	Pass
+	{
+		Name "ShadowCollector"
+		Tags { "LightMode" = "ShadowCollector" }
+		
+		Fog {Mode Off}
+		ZWrite On ZTest LEqual
+
+		CGPROGRAM
+		#pragma vertex vert
+		#pragma fragment frag
+		#pragma fragmentoption ARB_precision_hint_fastest
+		#pragma multi_compile_shadowcollector
+
+		#define SHADOW_COLLECTOR_PASS
+		#include "UnityCG.cginc"
+
+		struct appdata {
+			float4 vertex : POSITION;
+		};
+
+		struct v2f {
+			V2F_SHADOW_COLLECTOR;
+		};
+
+		v2f vert (appdata v)
+		{
+			v2f o;
+			TRANSFER_SHADOW_COLLECTOR(o)
+			return o;
+		}
+
+		fixed4 frag (v2f i) : COLOR
+		{
+			SHADOW_COLLECTOR_FRAGMENT(i)
+		}
+		ENDCG
+	}
+
+	Tags { "Queue" = "Transparent" }
+		Pass {
+			Tags { "LightMode" = "Always" }
+			Cull Off
+			ZWrite Off
+			//ZTest Always
+			//ColorMask RGB // alpha not used
+			Blend SrcAlpha OneMinusSrcAlpha // Normal
+
+			CGPROGRAM
+			#pragma vertex vert
+			#pragma fragment frag
+			#include "UnityCG.cginc"
+			struct appdata {
+				float4 vertex : POSITION;
+				float3 normal : NORMAL;
+			};
+			struct v2f {
+				float4 pos : POSITION;
+				float4 color : COLOR;
+			};
+			uniform float _Outline;
+			uniform float4 _OutlineColor;
+			v2f vert(appdata v) {
+				v2f o;
+				o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+				float3 norm   = mul ((float3x3)UNITY_MATRIX_IT_MV, v.normal);
+				float2 offset = TransformViewToProjection(norm.xy);
+				o.pos.xy += offset * o.pos.z * _Outline;
+				o.color = _OutlineColor;
+				return o;
+			}
+
+			half4 frag(v2f i) :COLOR {
+				return i.color;
+			}
+			ENDCG
+		}
+		Pass {
+			Name "BASE"
+			ZWrite On
+			ZTest LEqual
+			Blend SrcAlpha OneMinusSrcAlpha
+			Material {
+				Diffuse [_Color]
+				Ambient [_Color]
+			}
+			Lighting On
+			SetTexture [_MainTex] {
+				ConstantColor [_Color]
+				Combine texture * constant
+			}
+			SetTexture [_MainTex] {
+				Combine previous * primary DOUBLE
+			}
+		}
+}
+}

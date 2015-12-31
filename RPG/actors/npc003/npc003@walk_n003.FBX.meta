@@ -1,0 +1,165 @@
+fileFormatVersion: 2
+guid: cdb3300faf491234a94b077765c46227
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Bip01
+    100002: Bip01 Head
+    100004: Bip01 L Clavicle
+    100006: Bip01 L Finger0
+    100008: Bip01 L Finger01
+    100010: Bip01 L Finger1
+    100012: Bip01 L Finger11
+    100014: Bip01 L Forearm
+    100016: Bip01 L Hand
+    100018: Bip01 LUpperarm
+    100020: Bip01 R Clavicle
+    100022: Bip01 R Finger0
+    100024: Bip01 R Finger01
+    100026: Bip01 R Finger1
+    100028: Bip01 R Finger11
+    100030: Bip01 R Forearm
+    100032: Bip01 R Hand
+    100034: Bip01 RUpperarm
+    100036: Bip01 Spine1
+    100038: Bip01 Spine2
+    100040: Bip01 Spine2 1
+    100042: Bip01LCalf
+    100044: Bip01LFoot
+    100046: Bip01LPlatform
+    100048: Bip01LThigh
+    100050: Bip01Neck
+    100052: Bip01Pelvis
+    100054: Bip01RCalf
+    100056: Bip01RFoot
+    100058: Bip01RPlatform
+    100060: Bip01RThigh
+    100062: Biped
+    100064: default
+    100066: m_rhand
+    100068: //RootNode
+    100070: Bip01 Spine3
+    100072: m_center
+    400000: Bip01
+    400002: Bip01 Head
+    400004: Bip01 L Clavicle
+    400006: Bip01 L Finger0
+    400008: Bip01 L Finger01
+    400010: Bip01 L Finger1
+    400012: Bip01 L Finger11
+    400014: Bip01 L Forearm
+    400016: Bip01 L Hand
+    400018: Bip01 LUpperarm
+    400020: Bip01 R Clavicle
+    400022: Bip01 R Finger0
+    400024: Bip01 R Finger01
+    400026: Bip01 R Finger1
+    400028: Bip01 R Finger11
+    400030: Bip01 R Forearm
+    400032: Bip01 R Hand
+    400034: Bip01 RUpperarm
+    400036: Bip01 Spine1
+    400038: Bip01 Spine2
+    400040: Bip01 Spine2 1
+    400042: Bip01LCalf
+    400044: Bip01LFoot
+    400046: Bip01LPlatform
+    400048: Bip01LThigh
+    400050: Bip01Neck
+    400052: Bip01Pelvis
+    400054: Bip01RCalf
+    400056: Bip01RFoot
+    400058: Bip01RPlatform
+    400060: Bip01RThigh
+    400062: Biped
+    400064: default
+    400066: m_rhand
+    400068: //RootNode
+    400070: Bip01 Spine3
+    400072: m_center
+    2300000: default
+    3300000: default
+    4300000: default
+    7400000: walk_n003
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: walk_n003
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: m_center
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 23bcc41fcdbd37e4dab92d09fb15bee4,
+    type: 3}
+  animationType: 2
+  additionalBone: 1
+  userData: 

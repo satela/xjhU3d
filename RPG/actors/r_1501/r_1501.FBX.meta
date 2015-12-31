@@ -1,0 +1,272 @@
+fileFormatVersion: 2
+guid: 3c323bda6b3270a4f8bb32585ee9bf68
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Bip02
+    100002: Bip02Head
+    100004: Bip02L3
+    100006: Bip02LCalf
+    100008: Bip02LFoot
+    100010: Bip02LLeg1
+    100012: Bip02LLeg2
+    100014: Bip02LLeg3
+    100016: Bip02LLegAnkle
+    100018: Bip02LLegCollarbone
+    100020: Bip02LLegPlatform
+    100022: Bip02LPlatform
+    100024: Bip02LThigh
+    100026: Bip02Neck1
+    100028: Bip02Neck2
+    100030: Bip02Neck3
+    100032: Bip02Pelvis
+    100034: Bip02R3
+    100036: Bip02RCalf
+    100038: Bip02RFoot
+    100040: Bip02RLeg1
+    100042: Bip02RLeg2
+    100044: Bip02RLeg3
+    100046: Bip02RLegAnkle
+    100048: Bip02RLegCollarbone
+    100050: Bip02RLegPlatform
+    100052: Bip02RPlatform
+    100054: Bip02RThigh
+    100056: Bip02Spine1
+    100058: Bip02Spine2
+    100060: Bip02Spine3
+    100062: Bip02Tail
+    100064: Bip02Tail00
+    100066: Bip02Tail01
+    100068: Bip02Tail02
+    100070: Bip02Tail03
+    100072: Biped2
+    100074: body
+    100076: Bone004
+    100078: m_lhand
+    100080: Object01
+    100082: //RootNode
+    100084: back_seat
+    100086: Bip01
+    100088: Bip01 Head
+    100090: Bip01 L Calf
+    100092: Bip01 L Clavicle
+    100094: Bip01 L Finger0
+    100096: Bip01 L Finger1
+    100098: Bip01 L Foot
+    100100: Bip01 L Forearm
+    100102: Bip01 L Hand
+    100104: Bip01 L Thigh
+    100106: Bip01 L Upperarm
+    100108: Bip01 LPlatform
+    100110: Bip01 Neck
+    100112: Bip01 Pelvis
+    100114: Bip01 R Calf
+    100116: Bip01 R Clavicle
+    100118: Bip01 R Finger0
+    100120: Bip01 R Finger1
+    100122: Bip01 R Foot
+    100124: Bip01 R Forearm
+    100126: Bip01 R Hand
+    100128: Bip01 R Thigh
+    100130: Bip01 R Upperarm
+    100132: Bip01 RPlatform
+    100134: Bip01 Spine
+    100136: Bip01 Spine1
+    100138: Bip02LArm1
+    100140: Bip02LArm2
+    100142: Bip02LArm3
+    100144: Bip02LArmCollarbone
+    100146: Bip02LArmIKTarget
+    100148: Bip02LArmPalm
+    100150: Bip02RArm1
+    100152: Bip02RArm2
+    100154: Bip02RArm3
+    100156: Bip02RArmCollarbone
+    100158: Bip02RArmIKTarget
+    100160: Bip02RArmPalm
+    100162: Biped
+    100164: body001
+    100166: Bone005
+    100168: m_blood
+    100170: m_center
+    100172: m_head
+    100174: m_rhand
+    100176: shilinwuq03
+    100178: silifs_xiaobaiback
+    100180: silifs_xiaobaiback01
+    100182: silifs_xiaobaiback02
+    100184: silifs_xiaobaiback03
+    100186: silifs_xiaobaifront
+    100188: silifs_xiaobaifront01
+    100190: silifs_xiaobaifront02
+    100192: silifs_xiaobaifront03
+    100194: m_sit
+    100196: Object03
+    100198: SkinData_Object03
+    400000: Bip02
+    400002: Bip02Head
+    400004: Bip02L3
+    400006: Bip02LCalf
+    400008: Bip02LFoot
+    400010: Bip02LLeg1
+    400012: Bip02LLeg2
+    400014: Bip02LLeg3
+    400016: Bip02LLegAnkle
+    400018: Bip02LLegCollarbone
+    400020: Bip02LLegPlatform
+    400022: Bip02LPlatform
+    400024: Bip02LThigh
+    400026: Bip02Neck1
+    400028: Bip02Neck2
+    400030: Bip02Neck3
+    400032: Bip02Pelvis
+    400034: Bip02R3
+    400036: Bip02RCalf
+    400038: Bip02RFoot
+    400040: Bip02RLeg1
+    400042: Bip02RLeg2
+    400044: Bip02RLeg3
+    400046: Bip02RLegAnkle
+    400048: Bip02RLegCollarbone
+    400050: Bip02RLegPlatform
+    400052: Bip02RPlatform
+    400054: Bip02RThigh
+    400056: Bip02Spine1
+    400058: Bip02Spine2
+    400060: Bip02Spine3
+    400062: Bip02Tail
+    400064: Bip02Tail00
+    400066: Bip02Tail01
+    400068: Bip02Tail02
+    400070: Bip02Tail03
+    400072: Biped2
+    400074: body
+    400076: Bone004
+    400078: m_lhand
+    400080: Object01
+    400082: //RootNode
+    400084: back_seat
+    400086: Bip01
+    400088: Bip01 Head
+    400090: Bip01 L Calf
+    400092: Bip01 L Clavicle
+    400094: Bip01 L Finger0
+    400096: Bip01 L Finger1
+    400098: Bip01 L Foot
+    400100: Bip01 L Forearm
+    400102: Bip01 L Hand
+    400104: Bip01 L Thigh
+    400106: Bip01 L Upperarm
+    400108: Bip01 LPlatform
+    400110: Bip01 Neck
+    400112: Bip01 Pelvis
+    400114: Bip01 R Calf
+    400116: Bip01 R Clavicle
+    400118: Bip01 R Finger0
+    400120: Bip01 R Finger1
+    400122: Bip01 R Foot
+    400124: Bip01 R Forearm
+    400126: Bip01 R Hand
+    400128: Bip01 R Thigh
+    400130: Bip01 R Upperarm
+    400132: Bip01 RPlatform
+    400134: Bip01 Spine
+    400136: Bip01 Spine1
+    400138: Bip02LArm1
+    400140: Bip02LArm2
+    400142: Bip02LArm3
+    400144: Bip02LArmCollarbone
+    400146: Bip02LArmIKTarget
+    400148: Bip02LArmPalm
+    400150: Bip02RArm1
+    400152: Bip02RArm2
+    400154: Bip02RArm3
+    400156: Bip02RArmCollarbone
+    400158: Bip02RArmIKTarget
+    400160: Bip02RArmPalm
+    400162: Biped
+    400164: body001
+    400166: Bone005
+    400168: m_blood
+    400170: m_center
+    400172: m_head
+    400174: m_rhand
+    400176: shilinwuq03
+    400178: silifs_xiaobaiback
+    400180: silifs_xiaobaiback01
+    400182: silifs_xiaobaiback02
+    400184: silifs_xiaobaiback03
+    400186: silifs_xiaobaifront
+    400188: silifs_xiaobaifront01
+    400190: silifs_xiaobaifront02
+    400192: silifs_xiaobaifront03
+    400194: m_sit
+    400196: Object03
+    400198: SkinData_Object03
+    2300000: shilinwuq03
+    2300002: SkinData_Object03
+    3300000: shilinwuq03
+    3300002: SkinData_Object03
+    4300000: body
+    4300002: body001
+    4300004: shilinwuq03
+    4300006: Object03
+    4300008: SkinData_Object03
+    9500000: //RootNode
+    13700000: body
+    13700002: body001
+    13700004: Object03
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: m_center
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 1
+  userData: 

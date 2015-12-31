@@ -1,0 +1,132 @@
+fileFormatVersion: 2
+guid: 23c53af1fd16ccd42864a9b9dda939b4
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: back_seat
+    100002: Bip02
+    100004: Bip02 1
+    100006: Bip02Head
+    100008: Bip02Jaw
+    100010: Bip02LCalf
+    100012: Bip02LFoot
+    100014: Bip02LLeg1
+    100016: Bip02LLeg2
+    100018: Bip02LLegAnkle
+    100020: Bip02LLegPlatform
+    100022: Bip02LPlatform
+    100024: Bip02LThigh
+    100026: Bip02Neck1
+    100028: Bip02Neck2
+    100030: Bip02Pelvis
+    100032: Bip02RCalf
+    100034: Bip02RFoot
+    100036: Bip02Ribcage
+    100038: Bip02RLeg1
+    100040: Bip02RLeg2
+    100042: Bip02RLegAnkle
+    100044: Bip02RLegPlatform
+    100046: Bip02RPlatform
+    100048: Bip02RThigh
+    100050: Bip02Spine
+    100052: LD_bjx
+    100054: //RootNode
+    100056: RD_bjx
+    100058: RD_bjx01
+    100060: RD_bjx01 1
+    100062: RD_bjx02
+    100064: RD_bjx02 1
+    100066: Biped2
+    100068: m_center
+    400000: back_seat
+    400002: Bip02
+    400004: Bip02 1
+    400006: Bip02Head
+    400008: Bip02Jaw
+    400010: Bip02LCalf
+    400012: Bip02LFoot
+    400014: Bip02LLeg1
+    400016: Bip02LLeg2
+    400018: Bip02LLegAnkle
+    400020: Bip02LLegPlatform
+    400022: Bip02LPlatform
+    400024: Bip02LThigh
+    400026: Bip02Neck1
+    400028: Bip02Neck2
+    400030: Bip02Pelvis
+    400032: Bip02RCalf
+    400034: Bip02RFoot
+    400036: Bip02Ribcage
+    400038: Bip02RLeg1
+    400040: Bip02RLeg2
+    400042: Bip02RLegAnkle
+    400044: Bip02RLegPlatform
+    400046: Bip02RPlatform
+    400048: Bip02RThigh
+    400050: Bip02Spine
+    400052: LD_bjx
+    400054: //RootNode
+    400056: RD_bjx
+    400058: RD_bjx01
+    400060: RD_bjx01 1
+    400062: RD_bjx02
+    400064: RD_bjx02 1
+    400066: Biped2
+    400068: m_center
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: m_center
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 73e5c611ff22f524889f2bab121fbccc,
+    type: 3}
+  animationType: 2
+  additionalBone: 1
+  userData: 

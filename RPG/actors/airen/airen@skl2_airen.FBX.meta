@@ -1,0 +1,162 @@
+fileFormatVersion: 2
+guid: 9dc911660deb2c042918c2d00e78ce1c
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: airenback00
+    100004: airenback01
+    100006: airenback02
+    100008: Bip01
+    100010: Bip01Head
+    100012: Bip01LCalf
+    100014: Bip01LClavicle
+    100016: Bip01LFinger0
+    100018: Bip01LFinger1
+    100020: Bip01LFoot
+    100022: Bip01LForearm
+    100024: Bip01LHand
+    100026: Bip01LPlatform
+    100028: Bip01LThigh
+    100030: Bip01LUpperarm
+    100032: Bip01Neck
+    100034: Bip01Pelvis
+    100036: Bip01RCalf
+    100038: Bip01RClavicle
+    100040: Bip01RFinger0
+    100042: Bip01RFinger1
+    100044: Bip01RFoot
+    100046: Bip01RForearm
+    100048: Bip01RHand
+    100050: Bip01RPlatform
+    100052: Bip01RThigh
+    100054: Bip01RUpperarm
+    100056: Bip01Spine
+    100058: Bip01Spine1
+    100060: Biped
+    100062: Bone003
+    100064: Bone005
+    100066: Dummy001
+    100068: m_lhand
+    100070: m_rhand
+    100072: m_center
+    400000: //RootNode
+    400002: airenback00
+    400004: airenback01
+    400006: airenback02
+    400008: Bip01
+    400010: Bip01Head
+    400012: Bip01LCalf
+    400014: Bip01LClavicle
+    400016: Bip01LFinger0
+    400018: Bip01LFinger1
+    400020: Bip01LFoot
+    400022: Bip01LForearm
+    400024: Bip01LHand
+    400026: Bip01LPlatform
+    400028: Bip01LThigh
+    400030: Bip01LUpperarm
+    400032: Bip01Neck
+    400034: Bip01Pelvis
+    400036: Bip01RCalf
+    400038: Bip01RClavicle
+    400040: Bip01RFinger0
+    400042: Bip01RFinger1
+    400044: Bip01RFoot
+    400046: Bip01RForearm
+    400048: Bip01RHand
+    400050: Bip01RPlatform
+    400052: Bip01RThigh
+    400054: Bip01RUpperarm
+    400056: Bip01Spine
+    400058: Bip01Spine1
+    400060: Biped
+    400062: Bone003
+    400064: Bone005
+    400066: Dummy001
+    400068: m_lhand
+    400070: m_rhand
+    400072: m_center
+    7400000: skl2_airen
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 3
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: skl2_airen
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 55
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: m_center
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: da7ae631681c3ab4ea7bcf06eee63d51,
+    type: 3}
+  animationType: 2
+  additionalBone: 1
+  userData: 

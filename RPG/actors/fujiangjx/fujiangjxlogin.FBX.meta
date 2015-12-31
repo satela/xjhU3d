@@ -1,0 +1,214 @@
+fileFormatVersion: 2
+guid: 2aacb7e677c25c1479c81af8f3d44d46
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Bip01
+    100002: Bip01 Head
+    100004: Bip01 L Calf
+    100006: Bip01 L Clavicle
+    100008: Bip01 L Finger0
+    100010: Bip01 L Finger01
+    100012: Bip01 L Finger1
+    100014: Bip01 L Finger11
+    100016: Bip01 L Foot
+    100018: Bip01 L Forearm
+    100020: Bip01 L Hand
+    100022: Bip01 L Thigh
+    100024: Bip01 L Upperarm
+    100026: Bip01 LPlatform
+    100028: Bip01 Neck
+    100030: Bip01 Pelvis
+    100032: Bip01 R Calf
+    100034: Bip01 R Clavicle
+    100036: Bip01 R Finger0
+    100038: Bip01 R Finger01
+    100040: Bip01 R Finger1
+    100042: Bip01 R Finger11
+    100044: Bip01 R Foot
+    100046: Bip01 R Forearm
+    100048: Bip01 R Hand
+    100050: Bip01 R Thigh
+    100052: Bip01 R Upperarm
+    100054: Bip01 RPlatform
+    100056: Bip01 Spine
+    100058: Bip01 Spine1
+    100060: Biped
+    100062: body
+    100064: effect
+    100066: effect001
+    100068: effect002
+    100070: //RootNode
+    100072: hit
+    100074: hit001
+    100076: hit002
+    100078: jianxianXBL
+    100080: jianxianXBL01
+    100082: jianxianXBL02
+    100084: jianxianXBL03
+    100086: jianxianXBR
+    100088: jianxianXBR01
+    100090: jianxianXBR02
+    100092: jianxianXBR03
+    100094: jx_Lshuixiu
+    100096: jx_Lshuixiu01
+    100098: jx_Lshuixiu02
+    100100: jx_Rshuixiu
+    100102: jx_Rshuixiu01
+    100104: jx_Rshuixiu02
+    100106: jx_xiaobaiback
+    100108: jx_xiaobaiback01
+    100110: jx_xiaobaiback02
+    100112: jx_xiaobaiback03
+    100114: jx_xiaobaiback04
+    100116: jx_xiaobaifront
+    100118: jx_xiaobaifront01
+    100120: jx_xiaobaifront02
+    100122: jx_xiaobaifront03
+    100124: jx_xiaobaifront04
+    100126: m_blood
+    100128: m_center
+    100130: m_head
+    100132: m_lhand
+    100134: m_missile
+    100136: m_missile001
+    100138: m_missile002
+    100140: m_rhand
+    100142: m_sword0
+    100144: m_sword1
+    100146: m_sword2
+    100148: tabard
+    400000: Bip01
+    400002: Bip01 Head
+    400004: Bip01 L Calf
+    400006: Bip01 L Clavicle
+    400008: Bip01 L Finger0
+    400010: Bip01 L Finger01
+    400012: Bip01 L Finger1
+    400014: Bip01 L Finger11
+    400016: Bip01 L Foot
+    400018: Bip01 L Forearm
+    400020: Bip01 L Hand
+    400022: Bip01 L Thigh
+    400024: Bip01 L Upperarm
+    400026: Bip01 LPlatform
+    400028: Bip01 Neck
+    400030: Bip01 Pelvis
+    400032: Bip01 R Calf
+    400034: Bip01 R Clavicle
+    400036: Bip01 R Finger0
+    400038: Bip01 R Finger01
+    400040: Bip01 R Finger1
+    400042: Bip01 R Finger11
+    400044: Bip01 R Foot
+    400046: Bip01 R Forearm
+    400048: Bip01 R Hand
+    400050: Bip01 R Thigh
+    400052: Bip01 R Upperarm
+    400054: Bip01 RPlatform
+    400056: Bip01 Spine
+    400058: Bip01 Spine1
+    400060: Biped
+    400062: body
+    400064: effect
+    400066: effect001
+    400068: effect002
+    400070: //RootNode
+    400072: hit
+    400074: hit001
+    400076: hit002
+    400078: jianxianXBL
+    400080: jianxianXBL01
+    400082: jianxianXBL02
+    400084: jianxianXBL03
+    400086: jianxianXBR
+    400088: jianxianXBR01
+    400090: jianxianXBR02
+    400092: jianxianXBR03
+    400094: jx_Lshuixiu
+    400096: jx_Lshuixiu01
+    400098: jx_Lshuixiu02
+    400100: jx_Rshuixiu
+    400102: jx_Rshuixiu01
+    400104: jx_Rshuixiu02
+    400106: jx_xiaobaiback
+    400108: jx_xiaobaiback01
+    400110: jx_xiaobaiback02
+    400112: jx_xiaobaiback03
+    400114: jx_xiaobaiback04
+    400116: jx_xiaobaifront
+    400118: jx_xiaobaifront01
+    400120: jx_xiaobaifront02
+    400122: jx_xiaobaifront03
+    400124: jx_xiaobaifront04
+    400126: m_blood
+    400128: m_center
+    400130: m_head
+    400132: m_lhand
+    400134: m_missile
+    400136: m_missile001
+    400138: m_missile002
+    400140: m_rhand
+    400142: m_sword0
+    400144: m_sword1
+    400146: m_sword2
+    400148: tabard
+    4300000: body
+    4300002: tabard
+    9500000: //RootNode
+    13700000: body
+    13700002: tabard
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: m_center
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

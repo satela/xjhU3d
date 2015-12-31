@@ -1,0 +1,184 @@
+fileFormatVersion: 2
+guid: e03de9245f6c66a49a5457a6b143d664
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Bip01
+    100002: Bip01Head
+    100004: Bip01LArm1
+    100006: Bip01LCollarbone
+    100008: Bip01LDigit11
+    100010: Bip01LDigit12
+    100012: Bip01LDigit21
+    100014: Bip01LDigit22
+    100016: Bip01LDigit31
+    100018: Bip01LDigit32
+    100020: Bip01LForearm
+    100022: Bip01LPalm
+    100024: Bip01LUpperarm
+    100026: Bip01Neck
+    100028: Bip01Pelvis
+    100030: Bip01RArm1
+    100032: Bip01RCollarbone
+    100034: Bip01RDigit11
+    100036: Bip01RDigit12
+    100038: Bip01RDigit21
+    100040: Bip01RDigit22
+    100042: Bip01RDigit31
+    100044: Bip01RDigit32
+    100046: Bip01RForearm
+    100048: Bip01Ribcage
+    100050: Bip01RPalm
+    100052: Bip01RUpperarm
+    100054: Bip01Spine1
+    100056: Bip01Spine2
+    100058: Bip01Tail03
+    100060: Bip01Tail04
+    100062: Bip01Tail05
+    100064: Bip01Tail06
+    100066: Bip01Tail07
+    100068: Bip01Tail1
+    100070: Bip01Tail2
+    100072: Biped
+    100074: Dummy001
+    100076: Dummy002
+    100078: //RootNode
+    100080: LTF
+    100082: LTF01
+    100084: LTF02
+    100086: m_blood
+    100088: m_center
+    100090: m_head
+    100092: m_lhand
+    100094: m_rhand
+    100096: MTF
+    100098: MTF01
+    100100: MTF02
+    100102: MTF03
+    100104: MTF04
+    100106: Object01
+    100108: Particle View 01
+    100110: Particle View 01 1
+    100112: Particle View 02
+    100114: Particle View 03
+    100116: RTF
+    100118: RTF01
+    100120: RTF02
+    400000: Bip01
+    400002: Bip01Head
+    400004: Bip01LArm1
+    400006: Bip01LCollarbone
+    400008: Bip01LDigit11
+    400010: Bip01LDigit12
+    400012: Bip01LDigit21
+    400014: Bip01LDigit22
+    400016: Bip01LDigit31
+    400018: Bip01LDigit32
+    400020: Bip01LForearm
+    400022: Bip01LPalm
+    400024: Bip01LUpperarm
+    400026: Bip01Neck
+    400028: Bip01Pelvis
+    400030: Bip01RArm1
+    400032: Bip01RCollarbone
+    400034: Bip01RDigit11
+    400036: Bip01RDigit12
+    400038: Bip01RDigit21
+    400040: Bip01RDigit22
+    400042: Bip01RDigit31
+    400044: Bip01RDigit32
+    400046: Bip01RForearm
+    400048: Bip01Ribcage
+    400050: Bip01RPalm
+    400052: Bip01RUpperarm
+    400054: Bip01Spine1
+    400056: Bip01Spine2
+    400058: Bip01Tail03
+    400060: Bip01Tail04
+    400062: Bip01Tail05
+    400064: Bip01Tail06
+    400066: Bip01Tail07
+    400068: Bip01Tail1
+    400070: Bip01Tail2
+    400072: Biped
+    400074: Dummy001
+    400076: Dummy002
+    400078: //RootNode
+    400080: LTF
+    400082: LTF01
+    400084: LTF02
+    400086: m_blood
+    400088: m_center
+    400090: m_head
+    400092: m_lhand
+    400094: m_rhand
+    400096: MTF
+    400098: MTF01
+    400100: MTF02
+    400102: MTF03
+    400104: MTF04
+    400106: Object01
+    400108: Particle View 01
+    400110: Particle View 01 1
+    400112: Particle View 02
+    400114: Particle View 03
+    400116: RTF
+    400118: RTF01
+    400120: RTF02
+    4300000: Object01
+    9500000: //RootNode
+    13700000: Object01
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: m_center
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

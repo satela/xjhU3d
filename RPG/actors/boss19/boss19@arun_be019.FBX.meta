@@ -1,0 +1,400 @@
+fileFormatVersion: 2
+guid: b46c7dbb05cc97b43b05a42a74f2fb83
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Bip01
+    100002: Bip01Head
+    100004: Bip01LArm1
+    100006: Bip01LArm2
+    100008: Bip01LArmCollarbone
+    100010: Bip01LArmDigit21
+    100012: Bip01LArmDigit22
+    100014: Bip01LArmPalm
+    100016: Bip01LCalf
+    100018: Bip01LCollarbone
+    100020: Bip01LDigit21
+    100022: Bip01LDigit22
+    100024: Bip01LFoot
+    100026: Bip01LForearm
+    100028: Bip01LPalm
+    100030: Bip01LPlatform
+    100032: Bip01LThigh
+    100034: Bip01LUpperarm
+    100036: Bip01Neck
+    100038: Bip01Pelvis
+    100040: Bip01RArm1
+    100042: Bip01RArm2
+    100044: Bip01RArmCollarbone
+    100046: Bip01RArmDigit21
+    100048: Bip01RArmDigit22
+    100050: Bip01RArmPalm
+    100052: Bip01RCalf
+    100054: Bip01RCollarbone
+    100056: Bip01RDigit21
+    100058: Bip01RDigit22
+    100060: Bip01RFoot
+    100062: Bip01RForearm
+    100064: Bip01Ribcage
+    100066: Bip01RPalm
+    100068: Bip01RPlatform
+    100070: Bip01RThigh
+    100072: Bip01RUpperarm
+    100074: Bip01Spine1
+    100076: Bip01Spine2
+    100078: Biped
+    100080: Bone011
+    100082: Bone012
+    100084: Bone013
+    100086: Bone014
+    100088: //RootNode
+    100090: m_blood
+    100092: m_center
+    100094: m_head
+    100096: m_lhand
+    100098: m_rhand
+    100100: TF
+    100102: TF01
+    100104: TF02
+    100106: wuqiL1
+    100108: wuqiL2
+    100110: wuqiR1
+    100112: wuqiR2
+    100114: XBB
+    100116: XBB01
+    100118: XBB02
+    100120: XBF
+    100122: XBF01
+    100124: XBL
+    100126: XBL01
+    100128: XBL02
+    100130: XBL03
+    100132: XBL04
+    100134: XBLFoot
+    100136: XBLFoot01
+    100138: XBLFoot02
+    100140: XBR
+    100142: XBR01
+    100144: XBR02
+    100146: XBR03
+    100148: XBR04
+    100150: XBRFoot
+    100152: XBRFoot01
+    100154: XBRFoot02
+    400000: Bip01
+    400002: Bip01Head
+    400004: Bip01LArm1
+    400006: Bip01LArm2
+    400008: Bip01LArmCollarbone
+    400010: Bip01LArmDigit21
+    400012: Bip01LArmDigit22
+    400014: Bip01LArmPalm
+    400016: Bip01LCalf
+    400018: Bip01LCollarbone
+    400020: Bip01LDigit21
+    400022: Bip01LDigit22
+    400024: Bip01LFoot
+    400026: Bip01LForearm
+    400028: Bip01LPalm
+    400030: Bip01LPlatform
+    400032: Bip01LThigh
+    400034: Bip01LUpperarm
+    400036: Bip01Neck
+    400038: Bip01Pelvis
+    400040: Bip01RArm1
+    400042: Bip01RArm2
+    400044: Bip01RArmCollarbone
+    400046: Bip01RArmDigit21
+    400048: Bip01RArmDigit22
+    400050: Bip01RArmPalm
+    400052: Bip01RCalf
+    400054: Bip01RCollarbone
+    400056: Bip01RDigit21
+    400058: Bip01RDigit22
+    400060: Bip01RFoot
+    400062: Bip01RForearm
+    400064: Bip01Ribcage
+    400066: Bip01RPalm
+    400068: Bip01RPlatform
+    400070: Bip01RThigh
+    400072: Bip01RUpperarm
+    400074: Bip01Spine1
+    400076: Bip01Spine2
+    400078: Biped
+    400080: Bone011
+    400082: Bone012
+    400084: Bone013
+    400086: Bone014
+    400088: //RootNode
+    400090: m_blood
+    400092: m_center
+    400094: m_head
+    400096: m_lhand
+    400098: m_rhand
+    400100: TF
+    400102: TF01
+    400104: TF02
+    400106: wuqiL1
+    400108: wuqiL2
+    400110: wuqiR1
+    400112: wuqiR2
+    400114: XBB
+    400116: XBB01
+    400118: XBB02
+    400120: XBF
+    400122: XBF01
+    400124: XBL
+    400126: XBL01
+    400128: XBL02
+    400130: XBL03
+    400132: XBL04
+    400134: XBLFoot
+    400136: XBLFoot01
+    400138: XBLFoot02
+    400140: XBR
+    400142: XBR01
+    400144: XBR02
+    400146: XBR03
+    400148: XBR04
+    400150: XBRFoot
+    400152: XBRFoot01
+    400154: XBRFoot02
+    7400000: arun_be019
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: arun_be019
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Biped
+        weight: 1
+      - path: m_center
+        weight: 1
+      - path: m_center/Bip01
+        weight: 1
+      - path: m_center/Bip01/Bip01LPlatform
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01LThigh
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01LThigh/Bip01LCalf
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01LThigh/Bip01LCalf/Bip01LFoot
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01LThigh/Bip01LCalf/XBLFoot
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01LThigh/Bip01LCalf/XBLFoot/XBLFoot01
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01LThigh/Bip01LCalf/XBLFoot/XBLFoot01/XBLFoot02
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01LThigh/XBL
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01LThigh/XBL/XBL01
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01LThigh/XBL/XBL01/XBL02
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01LThigh/XBL/XBL01/XBL02/XBL03
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01LThigh/XBL/XBL01/XBL02/XBL03/XBL04
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01RThigh
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01RThigh/Bip01RCalf
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01RThigh/Bip01RCalf/Bip01RFoot
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01RThigh/Bip01RCalf/XBRFoot
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01RThigh/Bip01RCalf/XBRFoot/XBRFoot01
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01RThigh/Bip01RCalf/XBRFoot/XBRFoot01/XBRFoot02
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01RThigh/XBR
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01RThigh/XBR/XBR01
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01RThigh/XBR/XBR01/XBR02
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01RThigh/XBR/XBR01/XBR02/XBR03
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01RThigh/XBR/XBR01/XBR02/XBR03/XBR04
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine1
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine1/Bip01Spine2
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine1/Bip01Spine2/Bip01Ribcage
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine1/Bip01Spine2/Bip01Ribcage/Bip01LArmCollarbone
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine1/Bip01Spine2/Bip01Ribcage/Bip01LArmCollarbone/Bip01LArm1
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine1/Bip01Spine2/Bip01Ribcage/Bip01LArmCollarbone/Bip01LArm1/Bip01LArm2
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine1/Bip01Spine2/Bip01Ribcage/Bip01LArmCollarbone/Bip01LArm1/Bip01LArm2/Bip01LArmPalm
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine1/Bip01Spine2/Bip01Ribcage/Bip01LArmCollarbone/Bip01LArm1/Bip01LArm2/Bip01LArmPalm/Bip01LArmDigit21
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine1/Bip01Spine2/Bip01Ribcage/Bip01LArmCollarbone/Bip01LArm1/Bip01LArm2/Bip01LArmPalm/Bip01LArmDigit21/Bip01LArmDigit22
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine1/Bip01Spine2/Bip01Ribcage/Bip01LArmCollarbone/Bip01LArm1/Bip01LArm2/Bip01LArmPalm/wuqiL2
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine1/Bip01Spine2/Bip01Ribcage/Bip01LCollarbone
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine1/Bip01Spine2/Bip01Ribcage/Bip01LCollarbone/Bip01LUpperarm
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine1/Bip01Spine2/Bip01Ribcage/Bip01LCollarbone/Bip01LUpperarm/Bip01LForearm
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine1/Bip01Spine2/Bip01Ribcage/Bip01LCollarbone/Bip01LUpperarm/Bip01LForearm/Bip01LPalm
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine1/Bip01Spine2/Bip01Ribcage/Bip01LCollarbone/Bip01LUpperarm/Bip01LForearm/Bip01LPalm/Bip01LDigit21
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine1/Bip01Spine2/Bip01Ribcage/Bip01LCollarbone/Bip01LUpperarm/Bip01LForearm/Bip01LPalm/Bip01LDigit21/Bip01LDigit22
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine1/Bip01Spine2/Bip01Ribcage/Bip01LCollarbone/Bip01LUpperarm/Bip01LForearm/Bip01LPalm/m_lhand
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine1/Bip01Spine2/Bip01Ribcage/Bip01LCollarbone/Bip01LUpperarm/Bip01LForearm/Bip01LPalm/m_lhand/wuqiL1
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine1/Bip01Spine2/Bip01Ribcage/Bip01Neck
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine1/Bip01Spine2/Bip01Ribcage/Bip01Neck/Bip01Head
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine1/Bip01Spine2/Bip01Ribcage/Bip01Neck/Bip01Head/m_head
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine1/Bip01Spine2/Bip01Ribcage/Bip01Neck/Bip01Head/TF
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine1/Bip01Spine2/Bip01Ribcage/Bip01Neck/Bip01Head/TF/TF01
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine1/Bip01Spine2/Bip01Ribcage/Bip01Neck/Bip01Head/TF/TF01/TF02
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine1/Bip01Spine2/Bip01Ribcage/Bip01RArmCollarbone
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine1/Bip01Spine2/Bip01Ribcage/Bip01RArmCollarbone/Bip01RArm1
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine1/Bip01Spine2/Bip01Ribcage/Bip01RArmCollarbone/Bip01RArm1/Bip01RArm2
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine1/Bip01Spine2/Bip01Ribcage/Bip01RArmCollarbone/Bip01RArm1/Bip01RArm2/Bip01RArmPalm
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine1/Bip01Spine2/Bip01Ribcage/Bip01RArmCollarbone/Bip01RArm1/Bip01RArm2/Bip01RArmPalm/Bip01RArmDigit21
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine1/Bip01Spine2/Bip01Ribcage/Bip01RArmCollarbone/Bip01RArm1/Bip01RArm2/Bip01RArmPalm/Bip01RArmDigit21/Bip01RArmDigit22
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine1/Bip01Spine2/Bip01Ribcage/Bip01RArmCollarbone/Bip01RArm1/Bip01RArm2/Bip01RArmPalm/wuqiR2
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine1/Bip01Spine2/Bip01Ribcage/Bip01RCollarbone
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine1/Bip01Spine2/Bip01Ribcage/Bip01RCollarbone/Bip01RUpperarm
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine1/Bip01Spine2/Bip01Ribcage/Bip01RCollarbone/Bip01RUpperarm/Bip01RForearm
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine1/Bip01Spine2/Bip01Ribcage/Bip01RCollarbone/Bip01RUpperarm/Bip01RForearm/Bip01RPalm
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine1/Bip01Spine2/Bip01Ribcage/Bip01RCollarbone/Bip01RUpperarm/Bip01RForearm/Bip01RPalm/Bip01RDigit21
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine1/Bip01Spine2/Bip01Ribcage/Bip01RCollarbone/Bip01RUpperarm/Bip01RForearm/Bip01RPalm/Bip01RDigit21/Bip01RDigit22
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine1/Bip01Spine2/Bip01Ribcage/Bip01RCollarbone/Bip01RUpperarm/Bip01RForearm/Bip01RPalm/m_rhand
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine1/Bip01Spine2/Bip01Ribcage/Bip01RCollarbone/Bip01RUpperarm/Bip01RForearm/Bip01RPalm/m_rhand/wuqiR1
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine1/Bip01Spine2/Bip01Ribcage/m_blood
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/XBB
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/XBB/XBB01
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/XBB/XBB01/XBB02
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/XBF
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/XBF/XBF01
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/XBF/XBF01/Bone011
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/XBF/XBF01/Bone011/Bone013
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/XBF/XBF01/Bone011/Bone013/Bone012
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/XBF/XBF01/Bone011/Bone013/Bone012/Bone014
+        weight: 1
+      - path: m_center/Bip01/Bip01RPlatform
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: m_center
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 7d88eb17f764de4469a6b03039e798c2,
+    type: 3}
+  animationType: 2
+  additionalBone: 0
+  userData: 

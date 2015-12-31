@@ -1,0 +1,241 @@
+fileFormatVersion: 2
+guid: 3e15952254732e1468254c53a784edac
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Bip01
+    100002: Bip01 Head
+    100004: Bip01 L Calf
+    100006: Bip01 L Clavicle
+    100008: Bip01 L Finger0
+    100010: Bip01 L Finger1
+    100012: Bip01 L Foot
+    100014: Bip01 L Forearm
+    100016: Bip01 L Hand
+    100018: Bip01 L Thigh
+    100020: Bip01 L Upperarm
+    100022: Bip01 LPlatform
+    100024: Bip01 Neck
+    100026: Bip01 Pelvis
+    100028: Bip01 R Calf
+    100030: Bip01 R Clavicle
+    100032: Bip01 R Finger0
+    100034: Bip01 R Finger1
+    100036: Bip01 R Foot
+    100038: Bip01 R Forearm
+    100040: Bip01 R Hand
+    100042: Bip01 R Thigh
+    100044: Bip01 R Upperarm
+    100046: Bip01 RPlatform
+    100048: Bip01 Spine
+    100050: Bip01 Spine1
+    100052: Biped
+    100054: //RootNode
+    100056: m_blood
+    100058: m_center
+    100060: m_head
+    100062: m_lhand
+    100064: m_rhand
+    100066: luoli
+    100068: wuqi001
+    100070: BZL
+    100072: BZL01
+    100074: BZL02
+    100076: BZL03
+    100078: BZR
+    100080: BZR01
+    100082: BZR02
+    100084: BZR03
+    100086: effect
+    100088: luoliwuq06
+    100090: m_missile
+    100092: XB
+    100094: XB01
+    100096: XB02
+    100098: XB03
+    100100: XBL
+    100102: XBL01
+    100104: XBL02
+    100106: XBL03
+    100108: XBR
+    100110: XBR01
+    100112: XBR02
+    100114: XBR03
+    400000: Bip01
+    400002: Bip01 Head
+    400004: Bip01 L Calf
+    400006: Bip01 L Clavicle
+    400008: Bip01 L Finger0
+    400010: Bip01 L Finger1
+    400012: Bip01 L Foot
+    400014: Bip01 L Forearm
+    400016: Bip01 L Hand
+    400018: Bip01 L Thigh
+    400020: Bip01 L Upperarm
+    400022: Bip01 LPlatform
+    400024: Bip01 Neck
+    400026: Bip01 Pelvis
+    400028: Bip01 R Calf
+    400030: Bip01 R Clavicle
+    400032: Bip01 R Finger0
+    400034: Bip01 R Finger1
+    400036: Bip01 R Foot
+    400038: Bip01 R Forearm
+    400040: Bip01 R Hand
+    400042: Bip01 R Thigh
+    400044: Bip01 R Upperarm
+    400046: Bip01 RPlatform
+    400048: Bip01 Spine
+    400050: Bip01 Spine1
+    400052: Biped
+    400054: //RootNode
+    400056: m_blood
+    400058: m_center
+    400060: m_head
+    400062: m_lhand
+    400064: m_rhand
+    400066: luoli
+    400068: wuqi001
+    400070: BZL
+    400072: BZL01
+    400074: BZL02
+    400076: BZL03
+    400078: BZR
+    400080: BZR01
+    400082: BZR02
+    400084: BZR03
+    400086: effect
+    400088: luoliwuq06
+    400090: m_missile
+    400092: XB
+    400094: XB01
+    400096: XB02
+    400098: XB03
+    400100: XBL
+    400102: XBL01
+    400104: XBL02
+    400106: XBL03
+    400108: XBR
+    400110: XBR01
+    400112: XBR02
+    400114: XBR03
+    2300000: luoli
+    2300002: wuqi001
+    2300004: luoliwuq06
+    3300000: luoli
+    3300002: wuqi001
+    3300004: luoliwuq06
+    4300000: luoli
+    4300002: wuqi001
+    4300004: luoliwuq06
+    7400000: login_luoli
+    7400002: loginswait_luoli
+    7400004: loginwait_luoli
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: login_luoli
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 180
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: loginswait_luoli
+      takeName: Take 001
+      firstFrame: 35
+      lastFrame: 121
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: m_center
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 72e71d691439ea84f9925567a9abd94f,
+    type: 3}
+  animationType: 2
+  additionalBone: 1
+  userData: 

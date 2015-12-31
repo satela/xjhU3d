@@ -1,0 +1,180 @@
+fileFormatVersion: 2
+guid: 52c7c4e6d3ecff34493490f6797fd874
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Bip01
+    100002: Bip01Head
+    100004: Bip01LCalf
+    100006: Bip01LClavicle
+    100008: Bip01LFoot
+    100010: Bip01LForearm
+    100012: Bip01LHand
+    100014: Bip01LPlatform
+    100016: Bip01LThigh
+    100018: Bip01LUpperarm
+    100020: Bip01Lwing
+    100022: Bip01Neck
+    100024: Bip01Pelvis
+    100026: Bip01RCalf
+    100028: Bip01RClavicle
+    100030: Bip01RFoot
+    100032: Bip01RForearm
+    100034: Bip01RHand
+    100036: Bip01RPlatform
+    100038: Bip01RThigh
+    100040: Bip01RUpperarm
+    100042: Bip01Rwing
+    100044: Bip01Spine1
+    100046: Bip01Spine2
+    100048: Bip01Spine3
+    100050: Biped
+    100052: Lwing01
+    100054: Lwing02
+    100056: n012_shouziL
+    100058: n012_shouziL01
+    100060: n012_shouziL02
+    100062: n012_shouziR
+    100064: n012_shouziR01
+    100066: n012_shouziR02
+    100068: //RootNode
+    100070: Rwing00
+    100072: Rwing00 1
+    100074: Rwing01
+    100076: Rwing02
+    100078: body
+    100080: m_blood
+    100082: m_center
+    100084: m_head
+    100086: m_lhand
+    100088: m_rhand
+    400000: Bip01
+    400002: Bip01Head
+    400004: Bip01LCalf
+    400006: Bip01LClavicle
+    400008: Bip01LFoot
+    400010: Bip01LForearm
+    400012: Bip01LHand
+    400014: Bip01LPlatform
+    400016: Bip01LThigh
+    400018: Bip01LUpperarm
+    400020: Bip01Lwing
+    400022: Bip01Neck
+    400024: Bip01Pelvis
+    400026: Bip01RCalf
+    400028: Bip01RClavicle
+    400030: Bip01RFoot
+    400032: Bip01RForearm
+    400034: Bip01RHand
+    400036: Bip01RPlatform
+    400038: Bip01RThigh
+    400040: Bip01RUpperarm
+    400042: Bip01Rwing
+    400044: Bip01Spine1
+    400046: Bip01Spine2
+    400048: Bip01Spine3
+    400050: Biped
+    400052: Lwing01
+    400054: Lwing02
+    400056: n012_shouziL
+    400058: n012_shouziL01
+    400060: n012_shouziL02
+    400062: n012_shouziR
+    400064: n012_shouziR01
+    400066: n012_shouziR02
+    400068: //RootNode
+    400070: Rwing00
+    400072: Rwing00 1
+    400074: Rwing01
+    400076: Rwing02
+    400078: body
+    400080: m_blood
+    400082: m_center
+    400084: m_head
+    400086: m_lhand
+    400088: m_rhand
+    4300000: body
+    7400000: await_n012
+    9500000: //RootNode
+    13700000: body
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: await_n012
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: m_center
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 207b7f49f008917448a82773e527cdb8,
+    type: 3}
+  animationType: 2
+  additionalBone: 1
+  userData: 

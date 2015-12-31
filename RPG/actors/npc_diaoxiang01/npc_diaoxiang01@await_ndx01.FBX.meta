@@ -1,0 +1,147 @@
+fileFormatVersion: 2
+guid: 3557183872ccc7846a3dfb457dfe76c4
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Dummy001
+    100002: Dummy002
+    100004: IK Chain001
+    100006: IK Chain002
+    100008: IK Chain003
+    100010: IK Chain004
+    100012: //RootNode
+    100014: Root
+    100016: shenti
+    100018: shenti01
+    100020: stst_polySurface13
+    100022: suolianLD
+    100024: suolianLD01
+    100026: suolianLD02
+    100028: suolianLD03
+    100030: suoliaoLU
+    100032: suoliaoLU04
+    100034: suoliaoLU05
+    100036: suoliaoLU06
+    100038: suoliaoRD
+    100040: suoliaoRD01
+    100042: suoliaoRD02
+    100044: suoliaoRD03
+    100046: suoliaoRU
+    100048: suoliaoRU04
+    100050: suoliaoRU05
+    100052: suoliaoRU06
+    100054: m_center
+    400000: Dummy001
+    400002: Dummy002
+    400004: IK Chain001
+    400006: IK Chain002
+    400008: IK Chain003
+    400010: IK Chain004
+    400012: //RootNode
+    400014: Root
+    400016: shenti
+    400018: shenti01
+    400020: stst_polySurface13
+    400022: suolianLD
+    400024: suolianLD01
+    400026: suolianLD02
+    400028: suolianLD03
+    400030: suoliaoLU
+    400032: suoliaoLU04
+    400034: suoliaoLU05
+    400036: suoliaoLU06
+    400038: suoliaoRD
+    400040: suoliaoRD01
+    400042: suoliaoRD02
+    400044: suoliaoRD03
+    400046: suoliaoRU
+    400048: suoliaoRU04
+    400050: suoliaoRU05
+    400052: suoliaoRU06
+    400054: m_center
+    2300000: stst_polySurface13
+    3300000: stst_polySurface13
+    4300000: stst_polySurface13
+    7400000: await_ndx01
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: await_ndx01
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: m_center
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: e5b37a349c1868a41a58dbde849ca896,
+    type: 3}
+  animationType: 2
+  additionalBone: 1
+  userData: 

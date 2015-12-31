@@ -1,0 +1,161 @@
+fileFormatVersion: 2
+guid: 1a71c84502c105c45bd6ff31eaa5852a
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Bip01Head
+    100002: Bip01LCalf
+    100004: Bip01LClavicle
+    100006: Bip01LFinger01
+    100008: Bip01LFinger02
+    100010: Bip01LFinger11
+    100012: Bip01LFinger12
+    100014: Bip01LFoot
+    100016: Bip01LForearm
+    100018: Bip01LHand
+    100020: Bip01LPlatform
+    100022: Bip01LThigh
+    100024: Bip01LUpperarm
+    100026: Bip01Neck
+    100028: Bip01Pelvis
+    100030: Bip01PelvisBone001
+    100032: Bip01RCalf
+    100034: Bip01RClavicle
+    100036: Bip01RFinger01
+    100038: Bip01RFinger02
+    100040: Bip01RFinger11
+    100042: Bip01RFinger12
+    100044: Bip01RFoot
+    100046: Bip01RForearm
+    100048: Bip01RHand
+    100050: Bip01RPlatform
+    100052: Bip01RThigh
+    100054: Bip01RUpperarm
+    100056: Bip01Spine
+    100058: Bip01Spine1
+    100060: Biped
+    100062: npc007
+    100064: //RootNode
+    100066: Bip01
+    100068: m_center
+    400000: Bip01Head
+    400002: Bip01LCalf
+    400004: Bip01LClavicle
+    400006: Bip01LFinger01
+    400008: Bip01LFinger02
+    400010: Bip01LFinger11
+    400012: Bip01LFinger12
+    400014: Bip01LFoot
+    400016: Bip01LForearm
+    400018: Bip01LHand
+    400020: Bip01LPlatform
+    400022: Bip01LThigh
+    400024: Bip01LUpperarm
+    400026: Bip01Neck
+    400028: Bip01Pelvis
+    400030: Bip01PelvisBone001
+    400032: Bip01RCalf
+    400034: Bip01RClavicle
+    400036: Bip01RFinger01
+    400038: Bip01RFinger02
+    400040: Bip01RFinger11
+    400042: Bip01RFinger12
+    400044: Bip01RFoot
+    400046: Bip01RForearm
+    400048: Bip01RHand
+    400050: Bip01RPlatform
+    400052: Bip01RThigh
+    400054: Bip01RUpperarm
+    400056: Bip01Spine
+    400058: Bip01Spine1
+    400060: Biped
+    400062: npc007
+    400064: //RootNode
+    400066: Bip01
+    400068: m_center
+    2300000: npc007
+    3300000: npc007
+    4300000: npc007
+    7400000: wait_n007
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: wait_n007
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 113
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: m_center
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: ce0c6988f95092f45b95295a0f27dbb6,
+    type: 3}
+  animationType: 2
+  additionalBone: 1
+  userData: 

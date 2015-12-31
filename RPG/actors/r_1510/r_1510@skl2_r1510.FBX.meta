@@ -1,0 +1,252 @@
+fileFormatVersion: 2
+guid: d9d518d29945d5545a7b2396a6e4f0e8
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: alliancelion
+    100002: back_seat
+    100004: Bip02
+    100006: Bip02Head
+    100008: Bip02Jaw
+    100010: Bip02L3
+    100012: Bip02LCalf
+    100014: Bip02LFoot
+    100016: Bip02LLeg1
+    100018: Bip02LLeg2
+    100020: Bip02LLegAnkle
+    100022: Bip02LLegPlatform
+    100024: Bip02LPlatform
+    100026: Bip02LThigh
+    100028: Bip02Neck
+    100030: Bip02Pelvis
+    100032: Bip02R3
+    100034: Bip02RCalf
+    100036: Bip02RFoot
+    100038: Bip02Ribcage
+    100040: Bip02RLeg1
+    100042: Bip02RLeg2
+    100044: Bip02RLegAnkle
+    100046: Bip02RLegPlatform
+    100048: Bip02RPlatform
+    100050: Bip02RThigh
+    100052: Bip02Spine
+    100054: Bip02tail01
+    100056: lampL
+    100058: lampL02
+    100060: lampL03
+    100062: lampL04
+    100064: lampR
+    100066: lampR02
+    100068: lampR03
+    100070: lampR04
+    100072: //RootNode
+    100074: tail
+    100076: tail03
+    100078: tail04
+    100080: m_center
+    400000: alliancelion
+    400002: back_seat
+    400004: Bip02
+    400006: Bip02Head
+    400008: Bip02Jaw
+    400010: Bip02L3
+    400012: Bip02LCalf
+    400014: Bip02LFoot
+    400016: Bip02LLeg1
+    400018: Bip02LLeg2
+    400020: Bip02LLegAnkle
+    400022: Bip02LLegPlatform
+    400024: Bip02LPlatform
+    400026: Bip02LThigh
+    400028: Bip02Neck
+    400030: Bip02Pelvis
+    400032: Bip02R3
+    400034: Bip02RCalf
+    400036: Bip02RFoot
+    400038: Bip02Ribcage
+    400040: Bip02RLeg1
+    400042: Bip02RLeg2
+    400044: Bip02RLegAnkle
+    400046: Bip02RLegPlatform
+    400048: Bip02RPlatform
+    400050: Bip02RThigh
+    400052: Bip02Spine
+    400054: Bip02tail01
+    400056: lampL
+    400058: lampL02
+    400060: lampL03
+    400062: lampL04
+    400064: lampR
+    400066: lampR02
+    400068: lampR03
+    400070: lampR04
+    400072: //RootNode
+    400074: tail
+    400076: tail03
+    400078: tail04
+    400080: m_center
+    7400000: skl2_r1510
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: skl2_r1510
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 42
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: alliancelion
+        weight: 1
+      - path: m_center
+        weight: 1
+      - path: m_center/Bip02
+        weight: 1
+      - path: m_center/Bip02/Bip02LLegPlatform
+        weight: 1
+      - path: m_center/Bip02/Bip02LPlatform
+        weight: 1
+      - path: m_center/Bip02/Bip02Pelvis
+        weight: 1
+      - path: m_center/Bip02/Bip02Pelvis/Bip02LThigh
+        weight: 1
+      - path: m_center/Bip02/Bip02Pelvis/Bip02LThigh/Bip02LCalf
+        weight: 1
+      - path: m_center/Bip02/Bip02Pelvis/Bip02LThigh/Bip02LCalf/Bip02L3
+        weight: 1
+      - path: m_center/Bip02/Bip02Pelvis/Bip02LThigh/Bip02LCalf/Bip02L3/Bip02LFoot
+        weight: 1
+      - path: m_center/Bip02/Bip02Pelvis/Bip02RThigh
+        weight: 1
+      - path: m_center/Bip02/Bip02Pelvis/Bip02RThigh/Bip02RCalf
+        weight: 1
+      - path: m_center/Bip02/Bip02Pelvis/Bip02RThigh/Bip02RCalf/Bip02R3
+        weight: 1
+      - path: m_center/Bip02/Bip02Pelvis/Bip02RThigh/Bip02RCalf/Bip02R3/Bip02RFoot
+        weight: 1
+      - path: m_center/Bip02/Bip02Pelvis/Bip02Spine
+        weight: 1
+      - path: m_center/Bip02/Bip02Pelvis/Bip02Spine/back_seat
+        weight: 1
+      - path: m_center/Bip02/Bip02Pelvis/Bip02Spine/Bip02Ribcage
+        weight: 1
+      - path: m_center/Bip02/Bip02Pelvis/Bip02Spine/Bip02Ribcage/Bip02LLeg1
+        weight: 1
+      - path: m_center/Bip02/Bip02Pelvis/Bip02Spine/Bip02Ribcage/Bip02LLeg1/Bip02LLeg2
+        weight: 1
+      - path: m_center/Bip02/Bip02Pelvis/Bip02Spine/Bip02Ribcage/Bip02LLeg1/Bip02LLeg2/Bip02LLegAnkle
+        weight: 1
+      - path: m_center/Bip02/Bip02Pelvis/Bip02Spine/Bip02Ribcage/Bip02Neck
+        weight: 1
+      - path: m_center/Bip02/Bip02Pelvis/Bip02Spine/Bip02Ribcage/Bip02Neck/Bip02Head
+        weight: 1
+      - path: m_center/Bip02/Bip02Pelvis/Bip02Spine/Bip02Ribcage/Bip02Neck/Bip02Head/Bip02Jaw
+        weight: 1
+      - path: m_center/Bip02/Bip02Pelvis/Bip02Spine/Bip02Ribcage/Bip02RLeg1
+        weight: 1
+      - path: m_center/Bip02/Bip02Pelvis/Bip02Spine/Bip02Ribcage/Bip02RLeg1/Bip02RLeg2
+        weight: 1
+      - path: m_center/Bip02/Bip02Pelvis/Bip02Spine/Bip02Ribcage/Bip02RLeg1/Bip02RLeg2/Bip02RLegAnkle
+        weight: 1
+      - path: m_center/Bip02/Bip02Pelvis/Bip02Spine/lampL
+        weight: 1
+      - path: m_center/Bip02/Bip02Pelvis/Bip02Spine/lampL/lampL02
+        weight: 1
+      - path: m_center/Bip02/Bip02Pelvis/Bip02Spine/lampL/lampL02/lampL03
+        weight: 1
+      - path: m_center/Bip02/Bip02Pelvis/Bip02Spine/lampL/lampL02/lampL03/lampL04
+        weight: 1
+      - path: m_center/Bip02/Bip02Pelvis/Bip02Spine/lampR
+        weight: 1
+      - path: m_center/Bip02/Bip02Pelvis/Bip02Spine/lampR/lampR02
+        weight: 1
+      - path: m_center/Bip02/Bip02Pelvis/Bip02Spine/lampR/lampR02/lampR03
+        weight: 1
+      - path: m_center/Bip02/Bip02Pelvis/Bip02Spine/lampR/lampR02/lampR03/lampR04
+        weight: 1
+      - path: m_center/Bip02/Bip02Pelvis/Bip02tail01
+        weight: 1
+      - path: m_center/Bip02/Bip02Pelvis/Bip02tail01/tail
+        weight: 1
+      - path: m_center/Bip02/Bip02Pelvis/Bip02tail01/tail/tail03
+        weight: 1
+      - path: m_center/Bip02/Bip02Pelvis/Bip02tail01/tail/tail03/tail04
+        weight: 1
+      - path: m_center/Bip02/Bip02RLegPlatform
+        weight: 1
+      - path: m_center/Bip02/Bip02RPlatform
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: m_center
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: abc3cf700211ae94cb2f738f647df6bb,
+    type: 3}
+  animationType: 2
+  additionalBone: 1
+  userData: 

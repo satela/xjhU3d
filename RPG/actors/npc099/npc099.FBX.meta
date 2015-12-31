@@ -1,0 +1,167 @@
+fileFormatVersion: 2
+guid: 0b9758670b4c42245ad62f6885edea1e
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: 01nod
+    100002: Box04
+    100004: Box05
+    100006: Box06
+    100008: Box07
+    100010: Dummy01
+    100012: e_huanrao
+    100014: e_huanrao01
+    100016: e_huanrao02
+    100018: m_blood
+    100020: //RootNode
+    100022: npc_shouhushi
+    100024: npc_shouhushi 1
+    100026: Bip01
+    100028: Bip01mainbody
+    100030: Bip01nod
+    100032: Biped
+    100034: body
+    100036: m_center
+    400000: 01nod
+    400002: Box04
+    400004: Box05
+    400006: Box06
+    400008: Box07
+    400010: Dummy01
+    400012: e_huanrao
+    400014: e_huanrao01
+    400016: e_huanrao02
+    400018: m_blood
+    400020: //RootNode
+    400022: npc_shouhushi
+    400024: npc_shouhushi 1
+    400026: Bip01
+    400028: Bip01mainbody
+    400030: Bip01nod
+    400032: Biped
+    400034: body
+    400036: m_center
+    2300000: Box04
+    2300002: Box05
+    2300004: Box06
+    2300006: Box07
+    2300008: e_huanrao
+    2300010: e_huanrao01
+    2300012: e_huanrao02
+    2300014: npc_shouhushi 1
+    3300000: Box04
+    3300002: Box05
+    3300004: Box06
+    3300006: Box07
+    3300008: e_huanrao
+    3300010: e_huanrao01
+    3300012: e_huanrao02
+    3300014: npc_shouhushi 1
+    4300000: npc_shouhushi
+    4300002: Box04
+    4300004: Box05
+    4300006: Box06
+    4300008: Box07
+    4300010: e_huanrao
+    4300012: e_huanrao01
+    4300014: e_huanrao02
+    4300016: body
+    7400000: await_npc099
+    9500000: //RootNode
+    13700000: body
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: await_npc099
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 400
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Biped
+        weight: 1
+      - path: body
+        weight: 1
+      - path: m_center
+        weight: 1
+      - path: m_center/Bip01
+        weight: 1
+      - path: m_center/Bip01/Bip01mainbody
+        weight: 1
+      - path: m_center/Bip01/Bip01nod
+        weight: 1
+      - path: m_center/Bip01/m_blood
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: m_center
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

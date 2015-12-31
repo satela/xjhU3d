@@ -31,7 +31,7 @@ public class PlayerAnimation : MonoBehaviour {
         }
         else if (attack.state == PlayerFightState.NormalAttack)
         {
-            if(attack.attack_state == AttackState.Moving)
+            if (attack.attack_state == AttackState.Tracking)
             {
                 PlayAnim("Run");
             }

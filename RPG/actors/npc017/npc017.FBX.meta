@@ -1,0 +1,150 @@
+fileFormatVersion: 2
+guid: 770bef608234c55468010614c327fead
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Bip01root
+    100002: Bip01rootBone001
+    100004: Bip01rootBone002
+    100006: Bip01rootBone003
+    100008: Bip01rootBone004
+    100010: Bip01rootBone005
+    100012: Bip01rootBone006
+    100014: Bip01rootBone007
+    100016: Bip01rootBone008
+    100018: Bip01rootBone009
+    100020: Bip01rootBone010
+    100022: Biped
+    100024: body
+    100026: m_center
+    100028: //RootNode
+    400000: Bip01root
+    400002: Bip01rootBone001
+    400004: Bip01rootBone002
+    400006: Bip01rootBone003
+    400008: Bip01rootBone004
+    400010: Bip01rootBone005
+    400012: Bip01rootBone006
+    400014: Bip01rootBone007
+    400016: Bip01rootBone008
+    400018: Bip01rootBone009
+    400020: Bip01rootBone010
+    400022: Biped
+    400024: body
+    400026: m_center
+    400028: //RootNode
+    4300000: body
+    7400000: await_n017
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: body
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: await_n017
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 50
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bip01root
+        weight: 1
+      - path: Bip01root/Bip01rootBone001
+        weight: 1
+      - path: Bip01root/Bip01rootBone002
+        weight: 1
+      - path: Bip01root/Bip01rootBone003
+        weight: 1
+      - path: Bip01root/Bip01rootBone004
+        weight: 1
+      - path: Bip01root/Bip01rootBone005
+        weight: 1
+      - path: Bip01root/Bip01rootBone006
+        weight: 1
+      - path: Bip01root/Bip01rootBone007
+        weight: 1
+      - path: Bip01root/Bip01rootBone008
+        weight: 1
+      - path: Bip01root/Bip01rootBone009
+        weight: 1
+      - path: Bip01root/Bip01rootBone010
+        weight: 1
+      - path: Biped
+        weight: 1
+      - path: body
+        weight: 1
+      - path: m_center
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 

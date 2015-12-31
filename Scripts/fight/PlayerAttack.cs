@@ -9,12 +9,7 @@ public enum PlayerFightState
     Death
 }
 
-public enum AttackState //攻击时状态
-{
-    Moving,
-    Idle,
-    Attack
-}
+
 public class PlayerAttack : MonoBehaviour {
 
     [HideInInspector]
@@ -87,7 +82,7 @@ public class PlayerAttack : MonoBehaviour {
                 return;
 
             float distance = Vector3.Distance(transform.position, target_normalattack.position);
-            if (attack_state !=AttackState.Moving && distance <= min_attackDistance)
+            if (attack_state !=AttackState.Tracking && distance <= min_attackDistance)
             {
                 //转向目标 时应该播放原地踏步动画
                 Quaternion rotation = Quaternion.LookRotation(target_normalattack.position - transform.position);
@@ -120,11 +115,11 @@ public class PlayerAttack : MonoBehaviour {
             {
 
                 playermove.MoveToTargetRadius(target_normalattack.position);
-                attack_state = AttackState.Moving;
+                attack_state = AttackState.Tracking;
                 timer = 0;
                
             }
-            else if(attack_state == AttackState.Moving && distance <= Min_followDist)
+            else if (attack_state == AttackState.Tracking && distance <= Min_followDist)
             {
                 attack_state = AttackState.Attack;
                 playermove.stopFollowing();

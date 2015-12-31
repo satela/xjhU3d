@@ -1,0 +1,150 @@
+fileFormatVersion: 2
+guid: 9898663765ef30747ac968a271ee5421
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: m_center
+    100002: //RootNode
+    100004: part_1
+    100006: trap09
+    100008: trap09LArm1
+    100010: trap09LArm2
+    100012: trap09LArmFinger11
+    100014: trap09LArmFinger12
+    100016: trap09LArmFinger13
+    100018: trap09LArmFinger21
+    100020: trap09LArmFinger22
+    100022: trap09LArmFinger31
+    100024: trap09LArmFinger32
+    100026: trap09LArmHand
+    100028: trap09root
+    100030: gudui
+    400000: m_center
+    400002: //RootNode
+    400004: part_1
+    400006: trap09
+    400008: trap09LArm1
+    400010: trap09LArm2
+    400012: trap09LArmFinger11
+    400014: trap09LArmFinger12
+    400016: trap09LArmFinger13
+    400018: trap09LArmFinger21
+    400020: trap09LArmFinger22
+    400022: trap09LArmFinger31
+    400024: trap09LArmFinger32
+    400026: trap09LArmHand
+    400028: trap09root
+    400030: gudui
+    2300000: part_1
+    3300000: part_1
+    4300000: part_1
+    7400000: await_trap09
+    7400002: atk0_trap09
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: await_trap09
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: atk0_trap09
+      takeName: Take 001
+      firstFrame: 20
+      lastFrame: 90
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: m_center
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 98381ec89039d4048b031b7f20a3bc14,
+    type: 3}
+  animationType: 2
+  additionalBone: 1
+  userData: 

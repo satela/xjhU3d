@@ -1,0 +1,243 @@
+fileFormatVersion: 2
+guid: 3a5e35ebfbf96154691863a672854680
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Bip01
+    100002: Bip01 1
+    100004: Bip01 Head
+    100006: Bip01 Head 1
+    100008: Bip01 L Calf
+    100010: Bip01 L Calf 1
+    100012: Bip01 L Clavicle
+    100014: Bip01 L Clavicle 1
+    100016: Bip01 L Finger0
+    100018: Bip01 L Finger0 1
+    100020: Bip01 L Finger1
+    100022: Bip01 L Finger1 1
+    100024: Bip01 L Foot
+    100026: Bip01 L Foot 1
+    100028: Bip01 L Forearm
+    100030: Bip01 L Forearm 1
+    100032: Bip01 L Hand
+    100034: Bip01 L Hand 1
+    100036: Bip01 L Thigh
+    100038: Bip01 L Thigh 1
+    100040: Bip01 L Upperarm
+    100042: Bip01 L Upperarm 1
+    100044: Bip01 LPlatform
+    100046: Bip01 LPlatform 1
+    100048: Bip01 Neck
+    100050: Bip01 Neck 1
+    100052: Bip01 Pelvis
+    100054: Bip01 Pelvis 1
+    100056: Bip01 R Calf
+    100058: Bip01 R Calf 1
+    100060: Bip01 R Clavicle
+    100062: Bip01 R Finger0
+    100064: Bip01 R Finger1
+    100066: Bip01 R Foot
+    100068: Bip01 R Foot 1
+    100070: Bip01 R Forearm
+    100072: Bip01 R Hand
+    100074: Bip01 R Thigh
+    100076: Bip01 R Thigh 1
+    100078: Bip01 R Upperarm
+    100080: Bip01 RPlatform
+    100082: Bip01 RPlatform 1
+    100084: Bip01 Spine
+    100086: Bip01 Spine 1
+    100088: Bip01 Spine1
+    100090: Bip01 Spine1 1
+    100092: Bip01R Clavicle
+    100094: Bip01R Finger0
+    100096: Bip01R Finger1
+    100098: Bip01R Forearm
+    100100: Bip01R Hand
+    100102: Bip01R Upperarm
+    100104: Biped
+    100106: Biped 1
+    100108: Dummy001
+    100110: Dummy002
+    100112: Dummy003
+    100114: Dummy004
+    100116: Dummy005
+    100118: Goblin_back
+    100120: Goblin_back01
+    100122: Goblin_front
+    100124: Goblin_front01
+    100126: m_blood
+    100128: m_center
+    100130: m_head
+    100132: m_rhand
+    100134: monsterp002
+    100136: //RootNode
+    100138: SkinData_monsterp002
+    100140: SkinData_monsterp005
+    100142: TF00
+    100144: TF01
+    400000: Bip01
+    400002: Bip01 1
+    400004: Bip01 Head
+    400006: Bip01 Head 1
+    400008: Bip01 L Calf
+    400010: Bip01 L Calf 1
+    400012: Bip01 L Clavicle
+    400014: Bip01 L Clavicle 1
+    400016: Bip01 L Finger0
+    400018: Bip01 L Finger0 1
+    400020: Bip01 L Finger1
+    400022: Bip01 L Finger1 1
+    400024: Bip01 L Foot
+    400026: Bip01 L Foot 1
+    400028: Bip01 L Forearm
+    400030: Bip01 L Forearm 1
+    400032: Bip01 L Hand
+    400034: Bip01 L Hand 1
+    400036: Bip01 L Thigh
+    400038: Bip01 L Thigh 1
+    400040: Bip01 L Upperarm
+    400042: Bip01 L Upperarm 1
+    400044: Bip01 LPlatform
+    400046: Bip01 LPlatform 1
+    400048: Bip01 Neck
+    400050: Bip01 Neck 1
+    400052: Bip01 Pelvis
+    400054: Bip01 Pelvis 1
+    400056: Bip01 R Calf
+    400058: Bip01 R Calf 1
+    400060: Bip01 R Clavicle
+    400062: Bip01 R Finger0
+    400064: Bip01 R Finger1
+    400066: Bip01 R Foot
+    400068: Bip01 R Foot 1
+    400070: Bip01 R Forearm
+    400072: Bip01 R Hand
+    400074: Bip01 R Thigh
+    400076: Bip01 R Thigh 1
+    400078: Bip01 R Upperarm
+    400080: Bip01 RPlatform
+    400082: Bip01 RPlatform 1
+    400084: Bip01 Spine
+    400086: Bip01 Spine 1
+    400088: Bip01 Spine1
+    400090: Bip01 Spine1 1
+    400092: Bip01R Clavicle
+    400094: Bip01R Finger0
+    400096: Bip01R Finger1
+    400098: Bip01R Forearm
+    400100: Bip01R Hand
+    400102: Bip01R Upperarm
+    400104: Biped
+    400106: Biped 1
+    400108: Dummy001
+    400110: Dummy002
+    400112: Dummy003
+    400114: Dummy004
+    400116: Dummy005
+    400118: Goblin_back
+    400120: Goblin_back01
+    400122: Goblin_front
+    400124: Goblin_front01
+    400126: m_blood
+    400128: m_center
+    400130: m_head
+    400132: m_rhand
+    400134: monsterp002
+    400136: //RootNode
+    400138: SkinData_monsterp002
+    400140: SkinData_monsterp005
+    400142: TF00
+    400144: TF01
+    2300000: monsterp002
+    2300002: SkinData_monsterp002
+    2300004: SkinData_monsterp005
+    3300000: monsterp002
+    3300002: SkinData_monsterp002
+    3300004: SkinData_monsterp005
+    4300000: monsterp002
+    4300002: SkinData_monsterp002
+    4300004: SkinData_monsterp005
+    7400000: up_fjdjfs
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: up_fjdjfs
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 57
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: m_center
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 0f7dbb0264b274645b23e108fc034961,
+    type: 3}
+  animationType: 2
+  additionalBone: 1
+  userData: 

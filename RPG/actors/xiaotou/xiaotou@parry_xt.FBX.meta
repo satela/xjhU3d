@@ -1,0 +1,180 @@
+fileFormatVersion: 2
+guid: fe19fb85057a57d48a108190cc4df4a9
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Base Human
+    100002: Base HumanHead
+    100004: Base HumanLCalf
+    100006: Base HumanLCollarbone
+    100008: Base HumanLDigit11
+    100010: Base HumanLDigit21
+    100012: Base HumanLFoot
+    100014: Base HumanLForearm
+    100016: Base HumanLPalm
+    100018: Base HumanLPlatform
+    100020: Base HumanLThigh
+    100022: Base HumanLUpperarm
+    100024: Base HumanNeck
+    100026: Base HumanPelvis
+    100028: Base HumanRCalf
+    100030: Base HumanRCollarbone
+    100032: Base HumanRDigit11
+    100034: Base HumanRDigit21
+    100036: Base HumanRFoot
+    100038: Base HumanRForearm
+    100040: Base HumanRibcage
+    100042: Base HumanRPalm
+    100044: Base HumanRPlatform
+    100046: Base HumanRThigh
+    100048: Base HumanRUpperarm
+    100050: Base HumanSpine1
+    100052: Base HumanSpine2
+    100054: Bone02
+    100056: m_blood
+    100058: m_center
+    100060: m_head
+    100062: m_rhand
+    100064: //RootNode
+    100066: xiaotou_koudai
+    100068: xiaotou_koudai01
+    100070: xiaotou_koudai_00
+    100072: xiaotou_xiabai00
+    100074: xiaotou_xiabai01
+    100076: xiatou_toufa00
+    100078: xiatou_toufa01
+    100080: xiaotou_koudai00
+    100082: xiaotou_koudai02
+    100084: xiaotou_koudai03
+    100086: xiaotou_toufa00
+    100088: xiaotou_toufa01
+    100090: root
+    400000: Base Human
+    400002: Base HumanHead
+    400004: Base HumanLCalf
+    400006: Base HumanLCollarbone
+    400008: Base HumanLDigit11
+    400010: Base HumanLDigit21
+    400012: Base HumanLFoot
+    400014: Base HumanLForearm
+    400016: Base HumanLPalm
+    400018: Base HumanLPlatform
+    400020: Base HumanLThigh
+    400022: Base HumanLUpperarm
+    400024: Base HumanNeck
+    400026: Base HumanPelvis
+    400028: Base HumanRCalf
+    400030: Base HumanRCollarbone
+    400032: Base HumanRDigit11
+    400034: Base HumanRDigit21
+    400036: Base HumanRFoot
+    400038: Base HumanRForearm
+    400040: Base HumanRibcage
+    400042: Base HumanRPalm
+    400044: Base HumanRPlatform
+    400046: Base HumanRThigh
+    400048: Base HumanRUpperarm
+    400050: Base HumanSpine1
+    400052: Base HumanSpine2
+    400054: Bone02
+    400056: m_blood
+    400058: m_center
+    400060: m_head
+    400062: m_rhand
+    400064: //RootNode
+    400066: xiaotou_koudai
+    400068: xiaotou_koudai01
+    400070: xiaotou_koudai_00
+    400072: xiaotou_xiabai00
+    400074: xiaotou_xiabai01
+    400076: xiatou_toufa00
+    400078: xiatou_toufa01
+    400080: xiaotou_koudai00
+    400082: xiaotou_koudai02
+    400084: xiaotou_koudai03
+    400086: xiaotou_toufa00
+    400088: xiaotou_toufa01
+    400090: root
+    7400000: parry_xt
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: parry_xt
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 10
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: m_center
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 37141ea36ba55014fb1cdb4544771571,
+    type: 3}
+  animationType: 2
+  additionalBone: 1
+  userData: 

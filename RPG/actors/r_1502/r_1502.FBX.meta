@@ -1,0 +1,198 @@
+fileFormatVersion: 2
+guid: ec55a0ccbbf09b44ca67a521063fcad4
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: back_seat
+    100002: Bone010
+    100004: Bone011
+    100006: Bone012
+    100008: Bone013
+    100010: Dummy001
+    100012: m_center
+    100014: m_cit
+    100016: qilin
+    100018: qilinAnkleBone001
+    100020: qilinAnkleBone001 1
+    100022: qilinHub001
+    100024: qilinHub001Bone001
+    100026: qilinHub002
+    100028: qilinHub002Bone001
+    100030: qilinHub002Bone001Bone001
+    100032: qilinHub002Bone001Bone001Bone001
+    100034: qilinHub002Bone001Bone001Bone001Bone001
+    100036: qilinLLeg1
+    100038: qilinLLeg1 1
+    100040: qilinLLeg2
+    100042: qilinLLeg2 1
+    100044: qilinLLeg3
+    100046: qilinLLegAnkle
+    100048: qilinLLegAnkle 1
+    100050: qilinLLegCollarbone
+    100052: qilinLLegPlatform
+    100054: qilinLLegPlatform 1
+    100056: qilinRLeg1
+    100058: qilinRLeg1 1
+    100060: qilinRLeg2
+    100062: qilinRLeg2 1
+    100064: qilinRLeg3
+    100066: qilinRLegAnkle
+    100068: qilinRLegAnkle 1
+    100070: qilinRLegCollarbone
+    100072: qilinRLegPlatform
+    100074: qilinRLegPlatform 1
+    100076: qilinSpine1
+    100078: qilinSpine2
+    100080: //RootNode
+    100082: sql
+    100084: m_sit
+    100086: body
+    100088: qilinLAnkleBone001
+    100090: qilinLBLeg1
+    100092: qilinLBLeg2
+    100094: qilinLBLeg3
+    100096: qilinLBLegAnkle
+    100098: qilinLBLegPlatform
+    100100: qilinLFLeg1
+    100102: qilinLFLeg2
+    100104: qilinLFLegAnkle
+    100106: qilinLFLegCollarbone
+    100108: qilinLFLegPlatform
+    100110: qilinRAnkleBone001
+    100112: qilinRBLeg1
+    100114: qilinRBLeg2
+    100116: qilinRBLeg3
+    100118: qilinRBLegAnkle
+    100120: qilinRBLegPlatform
+    100122: qilinRFLeg1
+    100124: qilinRFLeg2
+    100126: qilinRFLegAnkle
+    100128: qilinRFLegCollarbone
+    100130: qilinRFLegPlatform
+    400000: back_seat
+    400002: Bone010
+    400004: Bone011
+    400006: Bone012
+    400008: Bone013
+    400010: Dummy001
+    400012: m_center
+    400014: m_cit
+    400016: qilin
+    400018: qilinAnkleBone001
+    400020: qilinAnkleBone001 1
+    400022: qilinHub001
+    400024: qilinHub001Bone001
+    400026: qilinHub002
+    400028: qilinHub002Bone001
+    400030: qilinHub002Bone001Bone001
+    400032: qilinHub002Bone001Bone001Bone001
+    400034: qilinHub002Bone001Bone001Bone001Bone001
+    400036: qilinLLeg1
+    400038: qilinLLeg1 1
+    400040: qilinLLeg2
+    400042: qilinLLeg2 1
+    400044: qilinLLeg3
+    400046: qilinLLegAnkle
+    400048: qilinLLegAnkle 1
+    400050: qilinLLegCollarbone
+    400052: qilinLLegPlatform
+    400054: qilinLLegPlatform 1
+    400056: qilinRLeg1
+    400058: qilinRLeg1 1
+    400060: qilinRLeg2
+    400062: qilinRLeg2 1
+    400064: qilinRLeg3
+    400066: qilinRLegAnkle
+    400068: qilinRLegAnkle 1
+    400070: qilinRLegCollarbone
+    400072: qilinRLegPlatform
+    400074: qilinRLegPlatform 1
+    400076: qilinSpine1
+    400078: qilinSpine2
+    400080: //RootNode
+    400082: sql
+    400084: m_sit
+    400086: body
+    400088: qilinLAnkleBone001
+    400090: qilinLBLeg1
+    400092: qilinLBLeg2
+    400094: qilinLBLeg3
+    400096: qilinLBLegAnkle
+    400098: qilinLBLegPlatform
+    400100: qilinLFLeg1
+    400102: qilinLFLeg2
+    400104: qilinLFLegAnkle
+    400106: qilinLFLegCollarbone
+    400108: qilinLFLegPlatform
+    400110: qilinRAnkleBone001
+    400112: qilinRBLeg1
+    400114: qilinRBLeg2
+    400116: qilinRBLeg3
+    400118: qilinRBLegAnkle
+    400120: qilinRBLegPlatform
+    400122: qilinRFLeg1
+    400124: qilinRFLeg2
+    400126: qilinRFLegAnkle
+    400128: qilinRFLegCollarbone
+    400130: qilinRFLegPlatform
+    4300000: sql
+    4300002: body
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: sql
+    13700002: body
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths:
+    - m_center
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: m_center
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 1
+  userData: 

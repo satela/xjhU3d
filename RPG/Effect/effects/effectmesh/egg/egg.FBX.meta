@@ -1,0 +1,320 @@
+fileFormatVersion: 2
+guid: 6d2d895f63762ef4b9c9bcd352204e10
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Base
+    100002: Base 1
+    100004: Base001
+    100006: Base002
+    100008: Bone001
+    100010: Bone002
+    100012: Bone003
+    100014: Bone004
+    100016: Bone005
+    100018: Cocoon_01
+    100020: //RootNode
+    100022: Group001
+    100024: Group002
+    100026: Group004
+    100028: Head Region
+    100030: Head Region 1
+    100032: Head Region001
+    100034: Head Region002
+    100036: KarazahnWeb020_Mesh001
+    100038: NastySpiderEgg0_Mesh
+    100040: NastySpiderEgg1_Mesh
+    100042: NastySpiderEgg1_Mesh001
+    100044: NastySpiderEgg1_Mesh002
+    100046: NastySpiderEgg_Bone00
+    100048: NastySpiderEgg_Bone00 1
+    100050: NastySpiderEgg_Bone01
+    100052: NastySpiderEgg_Bone01 1
+    100054: NastySpiderEgg_Bone012
+    100056: NastySpiderEgg_Bone013
+    100058: NastySpiderEgg_Bone014
+    100060: NastySpiderEgg_Bone015
+    100062: NastySpiderEgg_Bone016
+    100064: NastySpiderEgg_Bone017
+    100066: NastySpiderEgg_Bone018
+    100068: NastySpiderEgg_Bone019
+    100070: NastySpiderEgg_Bone02
+    100072: NastySpiderEgg_Bone02 1
+    100074: NastySpiderEgg_Bone020
+    100076: NastySpiderEgg_Bone021
+    100078: NastySpiderEgg_Bone022
+    100080: NastySpiderEgg_Bone023
+    100082: NastySpiderEgg_Bone024
+    100084: NastySpiderEgg_Bone025
+    100086: NastySpiderEgg_Bone026
+    100088: NastySpiderEgg_Bone027
+    100090: NastySpiderEgg_Bone028
+    100092: NastySpiderEgg_Bone029
+    100094: NastySpiderEgg_Bone030
+    100096: NastySpiderEgg_Bone031
+    100098: NastySpiderEgg_Bone032
+    100100: NastySpiderEgg_Bone033
+    100102: NastySpiderEgg_Bone03__Name
+    100104: NastySpiderEgg_Bone03__Name001
+    100106: NastySpiderEgg_Bone03__Name002
+    100108: NastySpiderEgg_Bone04
+    100110: NastySpiderEgg_Bone05
+    100112: NastySpiderEgg_Bone06
+    100114: NastySpiderEgg_Bone07
+    100116: NastySpiderEgg_Bone08
+    100118: NastySpiderEgg_Bone10
+    100120: NastySpiderEgg_Bone11
+    100122: NastySpiderEgg_Bone9
+    100124: root
+    400000: Base
+    400002: Base 1
+    400004: Base001
+    400006: Base002
+    400008: Bone001
+    400010: Bone002
+    400012: Bone003
+    400014: Bone004
+    400016: Bone005
+    400018: Cocoon_01
+    400020: //RootNode
+    400022: Group001
+    400024: Group002
+    400026: Group004
+    400028: Head Region
+    400030: Head Region 1
+    400032: Head Region001
+    400034: Head Region002
+    400036: KarazahnWeb020_Mesh001
+    400038: NastySpiderEgg0_Mesh
+    400040: NastySpiderEgg1_Mesh
+    400042: NastySpiderEgg1_Mesh001
+    400044: NastySpiderEgg1_Mesh002
+    400046: NastySpiderEgg_Bone00
+    400048: NastySpiderEgg_Bone00 1
+    400050: NastySpiderEgg_Bone01
+    400052: NastySpiderEgg_Bone01 1
+    400054: NastySpiderEgg_Bone012
+    400056: NastySpiderEgg_Bone013
+    400058: NastySpiderEgg_Bone014
+    400060: NastySpiderEgg_Bone015
+    400062: NastySpiderEgg_Bone016
+    400064: NastySpiderEgg_Bone017
+    400066: NastySpiderEgg_Bone018
+    400068: NastySpiderEgg_Bone019
+    400070: NastySpiderEgg_Bone02
+    400072: NastySpiderEgg_Bone02 1
+    400074: NastySpiderEgg_Bone020
+    400076: NastySpiderEgg_Bone021
+    400078: NastySpiderEgg_Bone022
+    400080: NastySpiderEgg_Bone023
+    400082: NastySpiderEgg_Bone024
+    400084: NastySpiderEgg_Bone025
+    400086: NastySpiderEgg_Bone026
+    400088: NastySpiderEgg_Bone027
+    400090: NastySpiderEgg_Bone028
+    400092: NastySpiderEgg_Bone029
+    400094: NastySpiderEgg_Bone030
+    400096: NastySpiderEgg_Bone031
+    400098: NastySpiderEgg_Bone032
+    400100: NastySpiderEgg_Bone033
+    400102: NastySpiderEgg_Bone03__Name
+    400104: NastySpiderEgg_Bone03__Name001
+    400106: NastySpiderEgg_Bone03__Name002
+    400108: NastySpiderEgg_Bone04
+    400110: NastySpiderEgg_Bone05
+    400112: NastySpiderEgg_Bone06
+    400114: NastySpiderEgg_Bone07
+    400116: NastySpiderEgg_Bone08
+    400118: NastySpiderEgg_Bone10
+    400120: NastySpiderEgg_Bone11
+    400122: NastySpiderEgg_Bone9
+    400124: root
+    4300000: Cocoon_01
+    4300002: KarazahnWeb020_Mesh001
+    4300004: NastySpiderEgg1_Mesh
+    4300006: NastySpiderEgg1_Mesh001
+    4300008: NastySpiderEgg0_Mesh
+    4300010: NastySpiderEgg1_Mesh002
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Cocoon_01
+    13700002: KarazahnWeb020_Mesh001
+    13700004: NastySpiderEgg0_Mesh
+    13700006: NastySpiderEgg1_Mesh
+    13700008: NastySpiderEgg1_Mesh001
+    13700010: NastySpiderEgg1_Mesh002
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 34
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cocoon_01
+        weight: 1
+      - path: Group001
+        weight: 1
+      - path: Group001/NastySpiderEgg1_Mesh
+        weight: 1
+      - path: Group001/NastySpiderEgg_Bone00
+        weight: 1
+      - path: Group001/NastySpiderEgg_Bone00/NastySpiderEgg_Bone01
+        weight: 1
+      - path: Group001/NastySpiderEgg_Bone00/NastySpiderEgg_Bone01/NastySpiderEgg_Bone02
+        weight: 1
+      - path: Group001/NastySpiderEgg_Bone03__Name
+        weight: 1
+      - path: Group001/NastySpiderEgg_Bone03__Name/Head Region 1
+        weight: 1
+      - path: Group001/NastySpiderEgg_Bone04
+        weight: 1
+      - path: Group001/NastySpiderEgg_Bone04/Base 1
+        weight: 1
+      - path: Group001/NastySpiderEgg_Bone05
+        weight: 1
+      - path: Group001/NastySpiderEgg_Bone06
+        weight: 1
+      - path: Group001/NastySpiderEgg_Bone07
+        weight: 1
+      - path: Group001/NastySpiderEgg_Bone08
+        weight: 1
+      - path: Group001/NastySpiderEgg_Bone9
+        weight: 1
+      - path: Group001/NastySpiderEgg_Bone10
+        weight: 1
+      - path: Group001/NastySpiderEgg_Bone11
+        weight: 1
+      - path: Group004
+        weight: 1
+      - path: Group004/Base
+        weight: 1
+      - path: Group004/Head Region
+        weight: 1
+      - path: Group004/NastySpiderEgg0_Mesh
+        weight: 1
+      - path: Group004/NastySpiderEgg_Bone00 1
+        weight: 1
+      - path: Group004/NastySpiderEgg_Bone00 1/NastySpiderEgg_Bone01 1
+        weight: 1
+      - path: Group004/NastySpiderEgg_Bone00 1/NastySpiderEgg_Bone01 1/NastySpiderEgg_Bone02
+          1
+        weight: 1
+      - path: KarazahnWeb020_Mesh001
+        weight: 1
+      - path: NastySpiderEgg1_Mesh002
+        weight: 1
+      - path: NastySpiderEgg_Bone03__Name002
+        weight: 1
+      - path: NastySpiderEgg_Bone03__Name002/Head Region002
+        weight: 1
+      - path: NastySpiderEgg_Bone023
+        weight: 1
+      - path: NastySpiderEgg_Bone024
+        weight: 1
+      - path: NastySpiderEgg_Bone024/NastySpiderEgg_Bone025
+        weight: 1
+      - path: NastySpiderEgg_Bone024/NastySpiderEgg_Bone025/NastySpiderEgg_Bone026
+        weight: 1
+      - path: NastySpiderEgg_Bone027
+        weight: 1
+      - path: NastySpiderEgg_Bone028
+        weight: 1
+      - path: NastySpiderEgg_Bone029
+        weight: 1
+      - path: NastySpiderEgg_Bone030
+        weight: 1
+      - path: NastySpiderEgg_Bone031
+        weight: 1
+      - path: NastySpiderEgg_Bone032
+        weight: 1
+      - path: NastySpiderEgg_Bone033
+        weight: 1
+      - path: NastySpiderEgg_Bone033/Base002
+        weight: 1
+      - path: root
+        weight: 1
+      - path: root/Bone001
+        weight: 1
+      - path: root/Bone001/Bone002
+        weight: 1
+      - path: root/Bone001/Bone002/Bone003
+        weight: 1
+      - path: root/Bone001/Bone002/Bone003/Bone004
+        weight: 1
+      - path: root/Bone001/Bone002/Bone003/Bone004/Bone005
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

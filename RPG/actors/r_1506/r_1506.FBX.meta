@@ -1,0 +1,127 @@
+fileFormatVersion: 2
+guid: 904807ca6d292914982692792321f272
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: back_seat
+    100002: bip
+    100004: bip01
+    100006: Bone001
+    100008: Bone002
+    100010: m_center
+    100012: //RootNode
+    100014: saoba
+    100016: saoba_1
+    100018: m_sit
+    100020: Bip01
+    100022: Bip01Pelvis
+    100024: Biped2
+    100026: saoba_002
+    100028: Bone006
+    100030: Bone008
+    100032: Bone010
+    100034: Bone012
+    100036: Bone013
+    100038: tail
+    100040: tail01
+    100042: tail02
+    100044: tail03
+    100046: tail04
+    100048: tail05
+    100050: tail06
+    100052: tail07
+    100054: tail08
+    100056: tail09
+    100058: tail10
+    400000: back_seat
+    400002: bip
+    400004: bip01
+    400006: Bone001
+    400008: Bone002
+    400010: m_center
+    400012: //RootNode
+    400014: saoba
+    400016: saoba_1
+    400018: m_sit
+    400020: Bip01
+    400022: Bip01Pelvis
+    400024: Biped2
+    400026: saoba_002
+    400028: Bone006
+    400030: Bone008
+    400032: Bone010
+    400034: Bone012
+    400036: Bone013
+    400038: tail
+    400040: tail01
+    400042: tail02
+    400044: tail03
+    400046: tail04
+    400048: tail05
+    400050: tail06
+    400052: tail07
+    400054: tail08
+    400056: tail09
+    400058: tail10
+    4300000: saoba
+    4300002: saoba_1
+    4300004: saoba_002
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: saoba
+    13700002: saoba_1
+    13700004: saoba_002
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: m_center
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 1
+  userData: 

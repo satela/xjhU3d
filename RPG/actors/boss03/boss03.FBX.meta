@@ -1,0 +1,323 @@
+fileFormatVersion: 2
+guid: 0ce34c7ab65fd1f4b8a55dba9e5afad2
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Bip01
+    100002: Bip01Head
+    100004: Bip01Jaw
+    100006: Bip01LCalf
+    100008: Bip01LClavicle
+    100010: Bip01LFinger11
+    100012: Bip01LFoot
+    100014: Bip01LForearm
+    100016: Bip01LHand
+    100018: Bip01LPlatform
+    100020: Bip01LPlatform 1
+    100022: Bip01LThigh
+    100024: Bip01LToe11
+    100026: Bip01LUpperArm
+    100028: Bip01LWing01
+    100030: Bip01LWing02
+    100032: Bip01LWing03
+    100034: Bip01LWing04
+    100036: Bip01LWing05
+    100038: Bip01Neck1
+    100040: Bip01Neck2
+    100042: Bip01Neck3
+    100044: Bip01Neck4
+    100046: Bip01Neck5
+    100048: Bip01Neck6
+    100050: Bip01Pelvis
+    100052: Bip01RCalf
+    100054: Bip01RClavicle
+    100056: Bip01RFinger11
+    100058: Bip01RFoot
+    100060: Bip01RForearm
+    100062: Bip01RHand
+    100064: Bip01RPlatform
+    100066: Bip01RPlatform 1
+    100068: Bip01RThigh
+    100070: Bip01RToe11
+    100072: Bip01RUpperArm
+    100074: Bip01RWing01
+    100076: Bip01RWing02
+    100078: Bip01RWing03
+    100080: Bip01RWing04
+    100082: Bip01RWing05
+    100084: Bip01Spine
+    100086: Bip01Spine3
+    100088: Bip01Tail01
+    100090: Bip01Tail02
+    100092: Bip01Tail03
+    100094: Bip01Tail04
+    100096: Bip01Tail05
+    100098: Biped
+    100100: body
+    100102: Bone001
+    100104: //RootNode
+    100106: Dummy001
+    100108: Dummy002
+    100110: Dummy003
+    100112: Dummy005
+    100114: Dummy006
+    100116: Dummy007
+    100118: Bip01Spine1
+    100120: Bip01Spine2
+    100122: m_blood
+    100124: m_center
+    100126: m_head
+    100128: m_lhand
+    100130: m_rhand
+    100132: Bip01Jaw1
+    100134: Bip01L3
+    100136: Bip01LCollarbone
+    100138: Bip01LDigit11
+    100140: Bip01LPalm
+    100142: Bip01LUpperarm
+    100144: Bip01Lwing11
+    100146: Bip01Lwing11 1
+    100148: Bip01Lwing11 2
+    100150: Bip01Lwing12
+    100152: Bip01Lwing12 1
+    100154: Bip01Lwing12 2
+    100156: Bip01Lwing13
+    100158: Bip01Lwing13 1
+    100160: Bip01Lwing14
+    100162: Bip01Lwing3
+    100164: Bip01R3
+    100166: Bip01RCollarbone
+    100168: Bip01RDigit11
+    100170: Bip01Ribcage
+    100172: Bip01RPalm
+    100174: Bip01RUpperarm
+    100176: Bip01Rwing11
+    100178: Bip01Rwing11 1
+    100180: Bip01Rwing11 2
+    100182: Bip01Rwing12
+    100184: Bip01Rwing12 1
+    100186: Bip01Rwing12 2
+    100188: Bip01Rwing13
+    100190: Bip01Rwing13 1
+    100192: Bip01Rwing14
+    100194: Bip01Rwing3
+    100196: Bip01Tail1
+    100198: Bip01Tail2
+    100200: Bip01Tail3
+    100202: Bip01Tail4
+    100204: Bip01Tail5
+    100206: Bip01Tail6
+    100208: m_missile
+    100210: Bip01Lwing21
+    100212: Bip01Lwing22
+    100214: Bip01Lwing23
+    100216: Bip01Lwing31
+    100218: Bip01Lwing32
+    100220: Bip01Lwing33
+    100222: Bip01Rwing21
+    100224: Bip01Rwing22
+    100226: Bip01Rwing23
+    100228: Bip01Rwing31
+    100230: Bip01Rwing32
+    100232: Bip01Rwing33
+    400000: Bip01
+    400002: Bip01Head
+    400004: Bip01Jaw
+    400006: Bip01LCalf
+    400008: Bip01LClavicle
+    400010: Bip01LFinger11
+    400012: Bip01LFoot
+    400014: Bip01LForearm
+    400016: Bip01LHand
+    400018: Bip01LPlatform
+    400020: Bip01LPlatform 1
+    400022: Bip01LThigh
+    400024: Bip01LToe11
+    400026: Bip01LUpperArm
+    400028: Bip01LWing01
+    400030: Bip01LWing02
+    400032: Bip01LWing03
+    400034: Bip01LWing04
+    400036: Bip01LWing05
+    400038: Bip01Neck1
+    400040: Bip01Neck2
+    400042: Bip01Neck3
+    400044: Bip01Neck4
+    400046: Bip01Neck5
+    400048: Bip01Neck6
+    400050: Bip01Pelvis
+    400052: Bip01RCalf
+    400054: Bip01RClavicle
+    400056: Bip01RFinger11
+    400058: Bip01RFoot
+    400060: Bip01RForearm
+    400062: Bip01RHand
+    400064: Bip01RPlatform
+    400066: Bip01RPlatform 1
+    400068: Bip01RThigh
+    400070: Bip01RToe11
+    400072: Bip01RUpperArm
+    400074: Bip01RWing01
+    400076: Bip01RWing02
+    400078: Bip01RWing03
+    400080: Bip01RWing04
+    400082: Bip01RWing05
+    400084: Bip01Spine
+    400086: Bip01Spine3
+    400088: Bip01Tail01
+    400090: Bip01Tail02
+    400092: Bip01Tail03
+    400094: Bip01Tail04
+    400096: Bip01Tail05
+    400098: Biped
+    400100: body
+    400102: Bone001
+    400104: //RootNode
+    400106: Dummy001
+    400108: Dummy002
+    400110: Dummy003
+    400112: Dummy005
+    400114: Dummy006
+    400116: Dummy007
+    400118: Bip01Spine1
+    400120: Bip01Spine2
+    400122: m_blood
+    400124: m_center
+    400126: m_head
+    400128: m_lhand
+    400130: m_rhand
+    400132: Bip01Jaw1
+    400134: Bip01L3
+    400136: Bip01LCollarbone
+    400138: Bip01LDigit11
+    400140: Bip01LPalm
+    400142: Bip01LUpperarm
+    400144: Bip01Lwing11
+    400146: Bip01Lwing11 1
+    400148: Bip01Lwing11 2
+    400150: Bip01Lwing12
+    400152: Bip01Lwing12 1
+    400154: Bip01Lwing12 2
+    400156: Bip01Lwing13
+    400158: Bip01Lwing13 1
+    400160: Bip01Lwing14
+    400162: Bip01Lwing3
+    400164: Bip01R3
+    400166: Bip01RCollarbone
+    400168: Bip01RDigit11
+    400170: Bip01Ribcage
+    400172: Bip01RPalm
+    400174: Bip01RUpperarm
+    400176: Bip01Rwing11
+    400178: Bip01Rwing11 1
+    400180: Bip01Rwing11 2
+    400182: Bip01Rwing12
+    400184: Bip01Rwing12 1
+    400186: Bip01Rwing12 2
+    400188: Bip01Rwing13
+    400190: Bip01Rwing13 1
+    400192: Bip01Rwing14
+    400194: Bip01Rwing3
+    400196: Bip01Tail1
+    400198: Bip01Tail2
+    400200: Bip01Tail3
+    400202: Bip01Tail4
+    400204: Bip01Tail5
+    400206: Bip01Tail6
+    400208: m_missile
+    400210: Bip01Lwing21
+    400212: Bip01Lwing22
+    400214: Bip01Lwing23
+    400216: Bip01Lwing31
+    400218: Bip01Lwing32
+    400220: Bip01Lwing33
+    400222: Bip01Rwing21
+    400224: Bip01Rwing22
+    400226: Bip01Rwing23
+    400228: Bip01Rwing31
+    400230: Bip01Rwing32
+    400232: Bip01Rwing33
+    4300000: body
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: body
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 110
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: m_center
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 1
+  userData: 

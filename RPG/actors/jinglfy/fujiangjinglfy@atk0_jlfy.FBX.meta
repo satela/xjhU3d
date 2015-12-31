@@ -1,0 +1,263 @@
+fileFormatVersion: 2
+guid: 0e634cba107e6db44922362356bae51f
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Bip01
+    100002: Bip01Head
+    100004: Bip01LCalf
+    100006: Bip01LClavicle
+    100008: Bip01LFoot
+    100010: Bip01LForearm
+    100012: Bip01LHand
+    100014: Bip01LPlatform
+    100016: Bip01LThigh
+    100018: Bip01LUpperarm
+    100020: Bip01Neck
+    100022: Bip01Pelvis
+    100024: Bip01RCalf
+    100026: Bip01RClavicle
+    100028: Bip01RFoot
+    100030: Bip01RForearm
+    100032: Bip01RHand
+    100034: Bip01RPlatform
+    100036: Bip01RThigh
+    100038: Bip01RUpperarm
+    100040: Bip01Spine
+    100042: Bip01Spine3
+    100044: Biped
+    100046: Bone004
+    100048: Bone007
+    100050: Bone009
+    100052: Dummy001
+    100054: //RootNode
+    100056: jlfy_back
+    100058: jlfy_back01
+    100060: jlfy_back02
+    100062: jlfy_back03
+    100064: jlfy_front
+    100066: jlfy_front01
+    100068: jlfy_hire
+    100070: jlfy_hire01
+    100072: jlfy_hire02
+    100074: m_lhand
+    100076: m_rhand
+    100078: Object03
+    100080: Object08
+    100082: Point001
+    100084: Point002
+    100086: polySurface1
+    100088: jlfy_weapon
+    100090: m_center
+    400000: Bip01
+    400002: Bip01Head
+    400004: Bip01LCalf
+    400006: Bip01LClavicle
+    400008: Bip01LFoot
+    400010: Bip01LForearm
+    400012: Bip01LHand
+    400014: Bip01LPlatform
+    400016: Bip01LThigh
+    400018: Bip01LUpperarm
+    400020: Bip01Neck
+    400022: Bip01Pelvis
+    400024: Bip01RCalf
+    400026: Bip01RClavicle
+    400028: Bip01RFoot
+    400030: Bip01RForearm
+    400032: Bip01RHand
+    400034: Bip01RPlatform
+    400036: Bip01RThigh
+    400038: Bip01RUpperarm
+    400040: Bip01Spine
+    400042: Bip01Spine3
+    400044: Biped
+    400046: Bone004
+    400048: Bone007
+    400050: Bone009
+    400052: Dummy001
+    400054: //RootNode
+    400056: jlfy_back
+    400058: jlfy_back01
+    400060: jlfy_back02
+    400062: jlfy_back03
+    400064: jlfy_front
+    400066: jlfy_front01
+    400068: jlfy_hire
+    400070: jlfy_hire01
+    400072: jlfy_hire02
+    400074: m_lhand
+    400076: m_rhand
+    400078: Object03
+    400080: Object08
+    400082: Point001
+    400084: Point002
+    400086: polySurface1
+    400088: jlfy_weapon
+    400090: m_center
+    2300000: polySurface1
+    3300000: polySurface1
+    4300000: polySurface1
+    7400000: atk0_jlfy
+    7400002: atk0_jlfy
+    9500000: //RootNode
+    13700000: polySurface1
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: atk0_jlfy
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 15
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bip01LPlatform
+        weight: 1
+      - path: Bip01RPlatform
+        weight: 1
+      - path: Biped
+        weight: 1
+      - path: Dummy001
+        weight: 1
+      - path: m_center
+        weight: 1
+      - path: m_center/Bip01
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01LThigh
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01LThigh/Bip01LCalf
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01LThigh/Bip01LCalf/Bip01LFoot
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01RThigh
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01RThigh/Bip01RCalf
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01RThigh/Bip01RCalf/Bip01RFoot
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine/Bip01Spine3
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine/Bip01Spine3/Bip01LClavicle
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine/Bip01Spine3/Bip01LClavicle/Bip01LUpperarm
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine/Bip01Spine3/Bip01LClavicle/Bip01LUpperarm/Bip01LForearm
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine/Bip01Spine3/Bip01LClavicle/Bip01LUpperarm/Bip01LForearm/Bip01LHand
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine/Bip01Spine3/Bip01LClavicle/Bip01LUpperarm/Bip01LForearm/Bip01LHand/m_lhand
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine/Bip01Spine3/Bip01Neck
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine/Bip01Spine3/Bip01Neck/Bip01Head
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine/Bip01Spine3/Bip01Neck/Bip01Head/jlfy_hire
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine/Bip01Spine3/Bip01Neck/Bip01Head/jlfy_hire/jlfy_hire01
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine/Bip01Spine3/Bip01Neck/Bip01Head/jlfy_hire/jlfy_hire01/jlfy_hire02
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine/Bip01Spine3/Bip01RClavicle
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine/Bip01Spine3/Bip01RClavicle/Bip01RUpperarm
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine/Bip01Spine3/Bip01RClavicle/Bip01RUpperarm/Bip01RForearm
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/Bip01Spine/Bip01Spine3/Bip01RClavicle/Bip01RUpperarm/Bip01RForearm/Bip01RHand
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/jlfy_back
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/jlfy_back/jlfy_back01
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/jlfy_back/jlfy_back01/jlfy_back02
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/jlfy_back/jlfy_back01/jlfy_back02/jlfy_back03
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/jlfy_front
+        weight: 1
+      - path: m_center/Bip01/Bip01Pelvis/jlfy_front/jlfy_front01
+        weight: 1
+      - path: m_center/Bip01/jlfy_weapon
+        weight: 1
+      - path: Object03
+        weight: 1
+      - path: Object08
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: m_center
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: f077c5a6aa8317442a0bbe943350810c,
+    type: 3}
+  animationType: 2
+  additionalBone: 1
+  userData: 

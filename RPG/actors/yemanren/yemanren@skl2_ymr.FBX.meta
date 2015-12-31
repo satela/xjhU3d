@@ -1,0 +1,274 @@
+fileFormatVersion: 2
+guid: e28250bb82c7c0945a274378ee23d998
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Bip01
+    100002: Bip01 Footsteps
+    100004: Bip01 Head
+    100006: Bip01 HeadNub
+    100008: Bip01 L Calf
+    100010: Bip01 L Clavicle
+    100012: Bip01 L Finger0
+    100014: Bip01 L Finger0Nub
+    100016: Bip01 L Finger1
+    100018: Bip01 L Finger1Nub
+    100020: Bip01 L Finger2
+    100022: Bip01 L Finger2Nub
+    100024: Bip01 L Foot
+    100026: Bip01 L Forearm
+    100028: Bip01 L Hand
+    100030: Bip01 L Thigh
+    100032: Bip01 L Toe0
+    100034: Bip01 L Toe0Nub
+    100036: Bip01 L UpperArm
+    100038: Bip01 Neck
+    100040: Bip01 Pelvis
+    100042: Bip01 R Calf
+    100044: Bip01 R Clavicle
+    100046: Bip01 R Finger0
+    100048: Bip01 R Finger0Nub
+    100050: Bip01 R Finger1
+    100052: Bip01 R Finger1Nub
+    100054: Bip01 R Finger2
+    100056: Bip01 R Finger2Nub
+    100058: Bip01 R Foot
+    100060: Bip01 R Forearm
+    100062: Bip01 R Hand
+    100064: Bip01 R Thigh
+    100066: Bip01 R Toe0
+    100068: Bip01 R Toe0Nub
+    100070: Bip01 R UpperArm
+    100072: Bip01 Spine
+    100074: Bip01 Spine1
+    100076: Bone01
+    100078: Bone02
+    100080: Bone04
+    100082: Bone05
+    100084: m_blood
+    100086: m_buff
+    100088: m_cape
+    100090: m_head
+    100092: m_lhand
+    100094: m_quiver
+    100096: m_rhand
+    100098: //RootNode
+    100100: back_xiaobai00
+    100102: back_xiaobai01
+    100104: back_xiaobai02
+    100106: Bip01 LPlatform
+    100108: Bip01 RPlatform
+    100110: Biped
+    100112: front_xiaobai00
+    100114: front_xiaobai01
+    100116: front_xiaobai02
+    100118: Dummy001
+    100120: m_center
+    100122: root
+    100124: body
+    100126: Bone001
+    100128: Bone002
+    100130: weapon01
+    400000: Bip01
+    400002: Bip01 Footsteps
+    400004: Bip01 Head
+    400006: Bip01 HeadNub
+    400008: Bip01 L Calf
+    400010: Bip01 L Clavicle
+    400012: Bip01 L Finger0
+    400014: Bip01 L Finger0Nub
+    400016: Bip01 L Finger1
+    400018: Bip01 L Finger1Nub
+    400020: Bip01 L Finger2
+    400022: Bip01 L Finger2Nub
+    400024: Bip01 L Foot
+    400026: Bip01 L Forearm
+    400028: Bip01 L Hand
+    400030: Bip01 L Thigh
+    400032: Bip01 L Toe0
+    400034: Bip01 L Toe0Nub
+    400036: Bip01 L UpperArm
+    400038: Bip01 Neck
+    400040: Bip01 Pelvis
+    400042: Bip01 R Calf
+    400044: Bip01 R Clavicle
+    400046: Bip01 R Finger0
+    400048: Bip01 R Finger0Nub
+    400050: Bip01 R Finger1
+    400052: Bip01 R Finger1Nub
+    400054: Bip01 R Finger2
+    400056: Bip01 R Finger2Nub
+    400058: Bip01 R Foot
+    400060: Bip01 R Forearm
+    400062: Bip01 R Hand
+    400064: Bip01 R Thigh
+    400066: Bip01 R Toe0
+    400068: Bip01 R Toe0Nub
+    400070: Bip01 R UpperArm
+    400072: Bip01 Spine
+    400074: Bip01 Spine1
+    400076: Bone01
+    400078: Bone02
+    400080: Bone04
+    400082: Bone05
+    400084: m_blood
+    400086: m_buff
+    400088: m_cape
+    400090: m_head
+    400092: m_lhand
+    400094: m_quiver
+    400096: m_rhand
+    400098: //RootNode
+    400100: back_xiaobai00
+    400102: back_xiaobai01
+    400104: back_xiaobai02
+    400106: Bip01 LPlatform
+    400108: Bip01 RPlatform
+    400110: Biped
+    400112: front_xiaobai00
+    400114: front_xiaobai01
+    400116: front_xiaobai02
+    400118: Dummy001
+    400120: m_center
+    400122: root
+    400124: body
+    400126: Bone001
+    400128: Bone002
+    400130: weapon01
+    2300000: body
+    2300002: weapon01
+    3300000: body
+    3300002: weapon01
+    4300000: body
+    4300002: weapon01
+    7400000: skl2_ymr
+    7400002: skl2
+    7400004: skl2
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 3
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: skl2_ymr
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 12
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves:
+      - name: startBeatenAni
+        curve:
+          serializedVersion: 2
+          curve:
+          - time: 0
+            value: -.000709219719
+            inSlope: Infinity
+            outSlope: Infinity
+            tangentMode: 31
+          - time: .220141888
+            value: .0492907688
+            inSlope: Infinity
+            outSlope: Infinity
+            tangentMode: 31
+          - time: .229455024
+            value: -.000709219661
+            inSlope: Infinity
+            outSlope: Infinity
+            tangentMode: 31
+          - time: .415343493
+            value: .0492907688
+            inSlope: Infinity
+            outSlope: Infinity
+            tangentMode: 31
+          - time: .423740745
+            value: -.000709219661
+            inSlope: Infinity
+            outSlope: Infinity
+            tangentMode: 31
+          - time: .599716306
+            value: .0492907688
+            inSlope: Infinity
+            outSlope: Infinity
+            tangentMode: 31
+          - time: .615169287
+            value: -.000709219661
+            inSlope: Infinity
+            outSlope: Infinity
+            tangentMode: 31
+          - time: 1
+            value: -.000709219719
+            inSlope: Infinity
+            outSlope: Infinity
+            tangentMode: 31
+          preInfinity: 2
+          postInfinity: 2
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: m_center
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 35abd5c756eab46448259332b703a8ab,
+    type: 3}
+  animationType: 2
+  additionalBone: 1
+  userData: 

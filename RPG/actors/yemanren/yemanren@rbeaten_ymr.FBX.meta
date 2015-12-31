@@ -1,0 +1,184 @@
+fileFormatVersion: 2
+guid: afc4de5db78fe88448be7b427cc415da
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: back_xiaobai00
+    100002: back_xiaobai01
+    100004: back_xiaobai02
+    100006: Bip01
+    100008: Bip01 Head
+    100010: Bip01 L Calf
+    100012: Bip01 L Clavicle
+    100014: Bip01 L Finger0
+    100016: Bip01 L Finger1
+    100018: Bip01 L Foot
+    100020: Bip01 L Forearm
+    100022: Bip01 L Hand
+    100024: Bip01 L Thigh
+    100026: Bip01 L UpperArm
+    100028: Bip01 LIKTarget
+    100030: Bip01 LPlatform
+    100032: Bip01 Neck
+    100034: Bip01 Pelvis
+    100036: Bip01 R Calf
+    100038: Bip01 R Clavicle
+    100040: Bip01 R Finger0
+    100042: Bip01 R Finger1
+    100044: Bip01 R Foot
+    100046: Bip01 R Forearm
+    100048: Bip01 R Hand
+    100050: Bip01 R Thigh
+    100052: Bip01 R UpperArm
+    100054: Bip01 RPlatform
+    100056: Bip01 Spine
+    100058: Bip01 Spine1
+    100060: Biped
+    100062: Dummy003
+    100064: front_xiaobai00
+    100066: front_xiaobai01
+    100068: front_xiaobai02
+    100070: m_blood
+    100072: m_head
+    100074: m_lhand
+    100076: m_rhand
+    100078: //RootNode
+    100080: body
+    100082: Point001
+    100084: rbody
+    100086: m_center
+    100088: root
+    400000: back_xiaobai00
+    400002: back_xiaobai01
+    400004: back_xiaobai02
+    400006: Bip01
+    400008: Bip01 Head
+    400010: Bip01 L Calf
+    400012: Bip01 L Clavicle
+    400014: Bip01 L Finger0
+    400016: Bip01 L Finger1
+    400018: Bip01 L Foot
+    400020: Bip01 L Forearm
+    400022: Bip01 L Hand
+    400024: Bip01 L Thigh
+    400026: Bip01 L UpperArm
+    400028: Bip01 LIKTarget
+    400030: Bip01 LPlatform
+    400032: Bip01 Neck
+    400034: Bip01 Pelvis
+    400036: Bip01 R Calf
+    400038: Bip01 R Clavicle
+    400040: Bip01 R Finger0
+    400042: Bip01 R Finger1
+    400044: Bip01 R Foot
+    400046: Bip01 R Forearm
+    400048: Bip01 R Hand
+    400050: Bip01 R Thigh
+    400052: Bip01 R UpperArm
+    400054: Bip01 RPlatform
+    400056: Bip01 Spine
+    400058: Bip01 Spine1
+    400060: Biped
+    400062: Dummy003
+    400064: front_xiaobai00
+    400066: front_xiaobai01
+    400068: front_xiaobai02
+    400070: m_blood
+    400072: m_head
+    400074: m_lhand
+    400076: m_rhand
+    400078: //RootNode
+    400080: body
+    400082: Point001
+    400084: rbody
+    400086: m_center
+    400088: root
+    2300000: body
+    2300002: rbody
+    3300000: body
+    3300002: rbody
+    4300000: rbody
+    4300002: body
+    7400000: rbeaten_ymr
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 3
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: rbeaten_ymr
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: m_center
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 35abd5c756eab46448259332b703a8ab,
+    type: 3}
+  animationType: 2
+  additionalBone: 1
+  userData: 

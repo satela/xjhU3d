@@ -1,0 +1,140 @@
+fileFormatVersion: 2
+guid: 24519284cca3a3f4d80069cc428d7439
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Bip01
+    100002: Bip01Head
+    100004: Bip01LCalf
+    100006: Bip01LClavicle
+    100008: Bip01LFoot
+    100010: Bip01LForearm
+    100012: Bip01LHand
+    100014: Bip01LThigh
+    100016: Bip01LUpperarm
+    100018: Bip01Neck
+    100020: Bip01Pelvis
+    100022: Bip01RCalf
+    100024: Bip01RClavicle
+    100026: Bip01RFoot
+    100028: Bip01RForearm
+    100030: Bip01RHand
+    100032: Bip01RThigh
+    100034: Bip01RUpperarm
+    100036: Bip01Spine
+    100038: Bip01Spine3
+    100040: Biped
+    100042: Dummy004
+    100044: Dummy005
+    100046: //RootNode
+    100048: IKTarget001
+    100050: IKTarget002
+    100052: jlfy_back
+    100054: jlfy_back01
+    100056: jlfy_back02
+    100058: jlfy_back03
+    100060: jlfy_front
+    100062: jlfy_front01
+    100064: jlfy_hire
+    100066: jlfy_hire01
+    100068: jlfy_hire02
+    100070: jlfy_weapon
+    100072: m_lhand
+    100074: m_center
+    100076: Dummy001
+    400000: Bip01
+    400002: Bip01Head
+    400004: Bip01LCalf
+    400006: Bip01LClavicle
+    400008: Bip01LFoot
+    400010: Bip01LForearm
+    400012: Bip01LHand
+    400014: Bip01LThigh
+    400016: Bip01LUpperarm
+    400018: Bip01Neck
+    400020: Bip01Pelvis
+    400022: Bip01RCalf
+    400024: Bip01RClavicle
+    400026: Bip01RFoot
+    400028: Bip01RForearm
+    400030: Bip01RHand
+    400032: Bip01RThigh
+    400034: Bip01RUpperarm
+    400036: Bip01Spine
+    400038: Bip01Spine3
+    400040: Biped
+    400042: Dummy004
+    400044: Dummy005
+    400046: //RootNode
+    400048: IKTarget001
+    400050: IKTarget002
+    400052: jlfy_back
+    400054: jlfy_back01
+    400056: jlfy_back02
+    400058: jlfy_back03
+    400060: jlfy_front
+    400062: jlfy_front01
+    400064: jlfy_hire
+    400066: jlfy_hire01
+    400068: jlfy_hire02
+    400070: jlfy_weapon
+    400072: m_lhand
+    400074: m_center
+    400076: Dummy001
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: m_center
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: f077c5a6aa8317442a0bbe943350810c,
+    type: 3}
+  animationType: 2
+  additionalBone: 1
+  userData: 

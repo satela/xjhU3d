@@ -1,0 +1,251 @@
+fileFormatVersion: 2
+guid: 35abd5c756eab46448259332b703a8ab
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Bip01
+    100002: Bip01 Footsteps
+    100004: Bip01 Head
+    100006: Bip01 HeadNub
+    100008: Bip01 L Calf
+    100010: Bip01 L Clavicle
+    100012: Bip01 L Finger0
+    100014: Bip01 L Finger0Nub
+    100016: Bip01 L Finger1
+    100018: Bip01 L Finger1Nub
+    100020: Bip01 L Finger2
+    100022: Bip01 L Finger2Nub
+    100024: Bip01 L Foot
+    100026: Bip01 L Forearm
+    100028: Bip01 L Hand
+    100030: Bip01 L Thigh
+    100032: Bip01 L Toe0
+    100034: Bip01 L Toe0Nub
+    100036: Bip01 L UpperArm
+    100038: Bip01 Neck
+    100040: Bip01 Pelvis
+    100042: Bip01 Prop1
+    100044: Bip01 R Calf
+    100046: Bip01 R Clavicle
+    100048: Bip01 R Finger0
+    100050: Bip01 R Finger0Nub
+    100052: Bip01 R Finger1
+    100054: Bip01 R Finger1Nub
+    100056: Bip01 R Finger2
+    100058: Bip01 R Finger2Nub
+    100060: Bip01 R Foot
+    100062: Bip01 R Forearm
+    100064: Bip01 R Hand
+    100066: Bip01 R Thigh
+    100068: Bip01 R Toe0
+    100070: Bip01 R Toe0Nub
+    100072: Bip01 R UpperArm
+    100074: Bip01 Spine
+    100076: Bip01 Spine1
+    100078: Bone01
+    100080: Bone02
+    100082: Bone03
+    100084: Bone04
+    100086: Bone05
+    100088: Bone06
+    100090: Bone09
+    100092: Bone10
+    100094: Bone11
+    100096: Bone12
+    100098: Bone13
+    100100: Bone14
+    100102: Bone15
+    100104: Bone16
+    100106: Bone17
+    100108: Bone17(mirrored)
+    100110: Bone18
+    100112: Bone18(mirrored)
+    100114: Bone19
+    100116: Bone19(mirrored)
+    100118: boots
+    100120: head
+    100122: m_blood
+    100124: m_buff
+    100126: m_cape
+    100128: m_center
+    100130: m_head
+    100132: m_lhand
+    100134: m_quiver
+    100136: m_rhand
+    100138: tabard
+    100140: w_quiver
+    100142: w_rhand
+    100144: weapon01
+    100146: //RootNode
+    100148: body
+    100150: back_xiaobai00
+    100152: back_xiaobai01
+    100154: back_xiaobai02
+    100156: front_xiaobai00
+    100158: front_xiaobai01
+    100160: front_xiaobai02
+    100162: Bip01 LPlatform
+    100164: Bip01 RPlatform
+    100166: Biped
+    100168: SkinData_st_polySurface01
+    100170: st_polySurface01
+    100172: root
+    400000: Bip01
+    400002: Bip01 Footsteps
+    400004: Bip01 Head
+    400006: Bip01 HeadNub
+    400008: Bip01 L Calf
+    400010: Bip01 L Clavicle
+    400012: Bip01 L Finger0
+    400014: Bip01 L Finger0Nub
+    400016: Bip01 L Finger1
+    400018: Bip01 L Finger1Nub
+    400020: Bip01 L Finger2
+    400022: Bip01 L Finger2Nub
+    400024: Bip01 L Foot
+    400026: Bip01 L Forearm
+    400028: Bip01 L Hand
+    400030: Bip01 L Thigh
+    400032: Bip01 L Toe0
+    400034: Bip01 L Toe0Nub
+    400036: Bip01 L UpperArm
+    400038: Bip01 Neck
+    400040: Bip01 Pelvis
+    400042: Bip01 Prop1
+    400044: Bip01 R Calf
+    400046: Bip01 R Clavicle
+    400048: Bip01 R Finger0
+    400050: Bip01 R Finger0Nub
+    400052: Bip01 R Finger1
+    400054: Bip01 R Finger1Nub
+    400056: Bip01 R Finger2
+    400058: Bip01 R Finger2Nub
+    400060: Bip01 R Foot
+    400062: Bip01 R Forearm
+    400064: Bip01 R Hand
+    400066: Bip01 R Thigh
+    400068: Bip01 R Toe0
+    400070: Bip01 R Toe0Nub
+    400072: Bip01 R UpperArm
+    400074: Bip01 Spine
+    400076: Bip01 Spine1
+    400078: Bone01
+    400080: Bone02
+    400082: Bone03
+    400084: Bone04
+    400086: Bone05
+    400088: Bone06
+    400090: Bone09
+    400092: Bone10
+    400094: Bone11
+    400096: Bone12
+    400098: Bone13
+    400100: Bone14
+    400102: Bone15
+    400104: Bone16
+    400106: Bone17
+    400108: Bone17(mirrored)
+    400110: Bone18
+    400112: Bone18(mirrored)
+    400114: Bone19
+    400116: Bone19(mirrored)
+    400118: boots
+    400120: head
+    400122: m_blood
+    400124: m_buff
+    400126: m_cape
+    400128: m_center
+    400130: m_head
+    400132: m_lhand
+    400134: m_quiver
+    400136: m_rhand
+    400138: tabard
+    400140: w_quiver
+    400142: w_rhand
+    400144: weapon01
+    400146: //RootNode
+    400148: body
+    400150: back_xiaobai00
+    400152: back_xiaobai01
+    400154: back_xiaobai02
+    400156: front_xiaobai00
+    400158: front_xiaobai01
+    400160: front_xiaobai02
+    400162: Bip01 LPlatform
+    400164: Bip01 RPlatform
+    400166: Biped
+    400168: SkinData_st_polySurface01
+    400170: st_polySurface01
+    400172: root
+    2300000: weapon01
+    2300002: SkinData_st_polySurface01
+    3300000: weapon01
+    3300002: SkinData_st_polySurface01
+    4300000: head
+    4300002: boots
+    4300004: tabard
+    4300006: weapon01
+    4300008: body
+    4300010: st_polySurface01
+    4300012: SkinData_st_polySurface01
+    9500000: //RootNode
+    13700000: boots
+    13700002: head
+    13700004: tabard
+    13700006: body
+    13700008: st_polySurface01
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 3
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths:
+    - m_center/Bip01
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: m_center
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 1
+  userData: 

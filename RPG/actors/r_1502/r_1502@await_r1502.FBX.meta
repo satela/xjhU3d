@@ -1,0 +1,228 @@
+fileFormatVersion: 2
+guid: 4662c3937bbbc014abb8f771a7b23cda
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: back_seat
+    100002: Bone010
+    100004: Bone011
+    100006: Bone012
+    100008: Bone013
+    100010: Dummy001
+    100012: m_sit
+    100014: qilin
+    100016: qilinAnkleBone001
+    100018: qilinAnkleBone001 1
+    100020: qilinHub001
+    100022: qilinHub001Bone001
+    100024: qilinHub002
+    100026: qilinHub002Bone001
+    100028: qilinHub002Bone001Bone001
+    100030: qilinHub002Bone001Bone001Bone001
+    100032: qilinHub002Bone001Bone001Bone001Bone001
+    100034: qilinLLeg1
+    100036: qilinLLeg1 1
+    100038: qilinLLeg2
+    100040: qilinLLeg2 1
+    100042: qilinLLeg3
+    100044: qilinLLegAnkle
+    100046: qilinLLegAnkle 1
+    100048: qilinLLegCollarbone
+    100050: qilinLLegPlatform
+    100052: qilinLLegPlatform 1
+    100054: qilinRLeg1
+    100056: qilinRLeg1 1
+    100058: qilinRLeg2
+    100060: qilinRLeg2 1
+    100062: qilinRLeg3
+    100064: qilinRLegAnkle
+    100066: qilinRLegAnkle 1
+    100068: qilinRLegCollarbone
+    100070: qilinRLegPlatform
+    100072: qilinRLegPlatform 1
+    100074: qilinSpine1
+    100076: qilinSpine2
+    100078: //RootNode
+    100080: Dummy004
+    100082: Dummy005
+    100084: m_center
+    100086: qilinBLLeg1
+    100088: qilinBLLeg2
+    100090: qilinBLLeg3
+    100092: qilinBLLegAnkle
+    100094: qilinBLLegPlatform
+    100096: qilinLAnkleBone001
+    100098: qilinLFLeg1
+    100100: qilinLFLeg2
+    100102: qilinLFLegAnkle
+    100104: qilinLFLegCollarbone
+    100106: qilinLFLegPlatform
+    100108: qilinRAnkleBone001
+    100110: qilinRBLeg1
+    100112: qilinRBLeg2
+    100114: qilinRBLeg3
+    100116: qilinRBLegAnkle
+    100118: qilinRBLegPlatform
+    100120: qilinRFLeg1
+    100122: qilinRFLeg2
+    100124: qilinRFLegAnkle
+    100126: qilinRFLegCollarbone
+    100128: qilinRFLegPlatform
+    100130: qilinLBLeg1
+    100132: qilinLBLeg2
+    100134: qilinLBLeg3
+    100136: qilinLBLegAnkle
+    100138: qilinLBLegPlatform
+    400000: back_seat
+    400002: Bone010
+    400004: Bone011
+    400006: Bone012
+    400008: Bone013
+    400010: Dummy001
+    400012: m_sit
+    400014: qilin
+    400016: qilinAnkleBone001
+    400018: qilinAnkleBone001 1
+    400020: qilinHub001
+    400022: qilinHub001Bone001
+    400024: qilinHub002
+    400026: qilinHub002Bone001
+    400028: qilinHub002Bone001Bone001
+    400030: qilinHub002Bone001Bone001Bone001
+    400032: qilinHub002Bone001Bone001Bone001Bone001
+    400034: qilinLLeg1
+    400036: qilinLLeg1 1
+    400038: qilinLLeg2
+    400040: qilinLLeg2 1
+    400042: qilinLLeg3
+    400044: qilinLLegAnkle
+    400046: qilinLLegAnkle 1
+    400048: qilinLLegCollarbone
+    400050: qilinLLegPlatform
+    400052: qilinLLegPlatform 1
+    400054: qilinRLeg1
+    400056: qilinRLeg1 1
+    400058: qilinRLeg2
+    400060: qilinRLeg2 1
+    400062: qilinRLeg3
+    400064: qilinRLegAnkle
+    400066: qilinRLegAnkle 1
+    400068: qilinRLegCollarbone
+    400070: qilinRLegPlatform
+    400072: qilinRLegPlatform 1
+    400074: qilinSpine1
+    400076: qilinSpine2
+    400078: //RootNode
+    400080: Dummy004
+    400082: Dummy005
+    400084: m_center
+    400086: qilinBLLeg1
+    400088: qilinBLLeg2
+    400090: qilinBLLeg3
+    400092: qilinBLLegAnkle
+    400094: qilinBLLegPlatform
+    400096: qilinLAnkleBone001
+    400098: qilinLFLeg1
+    400100: qilinLFLeg2
+    400102: qilinLFLegAnkle
+    400104: qilinLFLegCollarbone
+    400106: qilinLFLegPlatform
+    400108: qilinRAnkleBone001
+    400110: qilinRBLeg1
+    400112: qilinRBLeg2
+    400114: qilinRBLeg3
+    400116: qilinRBLegAnkle
+    400118: qilinRBLegPlatform
+    400120: qilinRFLeg1
+    400122: qilinRFLeg2
+    400124: qilinRFLegAnkle
+    400126: qilinRFLegCollarbone
+    400128: qilinRFLegPlatform
+    400130: qilinLBLeg1
+    400132: qilinLBLeg2
+    400134: qilinLBLeg3
+    400136: qilinLBLegAnkle
+    400138: qilinLBLegPlatform
+    7400000: await_r1502
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: await_r1502
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: m_center
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: ec55a0ccbbf09b44ca67a521063fcad4,
+    type: 3}
+  animationType: 2
+  additionalBone: 1
+  userData: 
