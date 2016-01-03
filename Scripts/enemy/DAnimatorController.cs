@@ -6,6 +6,15 @@ public class DAnimatorController : MonoBehaviour {
     private Animator animator;
 
     private eAnimatorState lastAnimatorState = eAnimatorState.await;
+
+    public eAnimatorState currentState
+    {
+        get { 
+            AnimatorStateInfo stateinfo = animator.GetCurrentAnimatorStateInfo(0);
+            int tagHash = stateinfo.tagHash;
+            return (eAnimatorState)DAnimatorState.GetState(tagHash);
+        }
+    }
 	// Use this for initialization
 	void Start () {
 

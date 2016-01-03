@@ -2,6 +2,23 @@
 using System.Collections;
 using System.Collections.Generic;
 
+
+//寻找攻击对象策略，找最近的，最远的，主角，血最多的，血最少的，攻击力最强的，攻击力最弱的，怒气最多的，怒气最少的，等...
+public enum EAttackStragety
+{
+    EAttackStragety_Nearest = 0,
+    EAttackStragety_Fast,
+    EAttackStragety_MainRole,
+    EAttackStragety_MaxHp,
+    EAttackStragety_MinHp,
+    EAttackStragety_MaxAttack,
+    EAttackStragety_MinAttack,
+    EAttackStragety_MaxMp,
+    EAttackStragety_MinMp,
+
+    max
+
+}
 public class FightRoleManager : MonoBehaviour {
 
     public static FightRoleManager _instance;
@@ -127,4 +144,68 @@ public class FightRoleManager : MonoBehaviour {
         return fightroledata;
     }
 
+    public void casterSkill(DSkillBaseData baseskilldata)
+    {
+        DBaseFightRole attackrole = selfRoles[0];
+        if(attackrole != null)
+        {
+            attackrole.useSkill(baseskilldata);
+        }
+
+    }
+
+
+    //寻找技能攻击对象 priority 优先攻击对象策略
+    public GameObject findAttackEnemy(GameObject attacker,EAttackStragety priority = EAttackStragety.EAttackStragety_Nearest)
+    {
+        if(attacker != null)
+        {
+            int attackside = attacker.GetComponent<DBaseFightRole>().side;
+
+            List<DBaseFightRole> tempEnemy = new List<DBaseFightRole>();
+            foreach(DBaseFightRole fightrole in allRoles)
+            {
+                if(fightrole.side != attackside)
+                {
+                    tempEnemy.Add(fightrole);
+                }
+            }
+
+            return getEnemy(attacker, tempEnemy, priority);
+        }
+
+        return null;
+    }
+
+    public GameObject getEnemy(GameObject attacker,List<DBaseFightRole> enemyList,EAttackStragety priority = EAttackStragety.EAttackStragety_Nearest)
+    {
+        GameObject resultEnemy = null;
+        switch(priority)
+        {
+            case EAttackStragety.EAttackStragety_Nearest:
+                float distance = 100;
+                foreach(DBaseFightRole enemy in enemyList)
+                {
+                    float tempdist = Vector3.Distance(attacker.transform.position,enemy.transform.position);
+                    if(tempdist < distance)
+                    {
+                        resultEnemy = enemy.gameObject;
+                        distance = tempdist;
+                    }
+                }
+                break;
+            case EAttackStragety.EAttackStragety_MainRole:
+                foreach (DBaseFightRole enemy in enemyList)
+                {
+                    if(enemy.isMainRole)
+                    {
+                        resultEnemy = enemy.gameObject;
+                        break;
+                    }
+                }
+                break;
+        }
+
+        return resultEnemy;
+    }
 }

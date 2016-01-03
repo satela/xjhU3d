@@ -156,6 +156,36 @@ public class SkillWindow : MonoBehaviour {
 
     void OnClickLook(GameObject go)
     {
+        DSkillBaseData skilldata = new DSkillBaseData();
+        skilldata.skillName = skillNameText.value;
+        skilldata.id = int.Parse(skillIDText.value);
+        skilldata.animatorClip = animatorClip;
+        skilldata.near_farAtk = near_farAtk;
 
+        if(attackEffPrefab != null)
+            skilldata.fireEffUrl = attackEffPrefab.name;
+
+        skilldata.fireTime = float.Parse(skillAttackEffectTimeTxt.value);
+        skilldata.fireEffPos = fireEffPos;
+
+        skilldata.isUseMoveEff = isUseMoveEffTgle.value;
+        if(moveEffPrefab != null)
+            skilldata.moveEffUrl = moveEffPrefab.name;
+        skilldata.moveBeginTime = float.Parse(moveEffStartTimeInput.value);
+        skilldata.isSingleMove = isSingleMoveEffTgle.value;
+
+        skilldata.isQunGong = isAttackAllTgle.value;
+
+        skilldata.harmDist = float.Parse(harmDisTxt.value);
+
+        skilldata.isNeedAppoint = isNeedAppointTgle.value;
+        skilldata.animatorBeatonClip = animatorBeatonClip;
+
+        if (beatonEffPrefab != null)
+            skilldata.beatonEffUrl = beatonEffPrefab.name;
+        skilldata.beatonTime = float.Parse(beatonTimeInput.value);
+
+
+       // skilldata.minAttackDist
     }
 }

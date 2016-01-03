@@ -67,6 +67,8 @@ public class DBaseFightRole : MonoBehaviour
 
     public int side = 0; //战斗中处于哪一方，默认0 是自己方，1 是敌方
 
+    public bool isMainRole = false;//是否队伍中的主角
+
     public GameObject roleModel;
     public void setSide(int fside,GameObject modelprefab)
     {
@@ -92,22 +94,63 @@ public class DBaseFightRole : MonoBehaviour
         agent.SetDestination(transform.position);
 
     }
-    public bool casterSkill(SkillCasterData skillcastdata)
-    {
 
+    //使用技能发动攻击
+    public bool useSkill(DSkillBaseData baseSkilldata)
+    {
         if (isCasteringSkill)
             return false;
 
-        if (skillcastdata != null && skillcastdata.skilldata != null)
+        if (baseSkilldata != null)
         {
             isCasteringSkill = true;
-            casterdata = skillcastdata;
-            StartCoroutine(gotoEnemy());
-        }
+            casterdata = new SkillCasterData();
+            casterdata.castRole = gameObject;
+            casterdata.skilldata = baseSkilldata;
 
-        return true;
+            GameObject firstenemy = FightRoleManager._instance.findAttackEnemy(gameObject);
+
+            if(firstenemy != null)
+            {
+                float dist = Vector3.Distance(transform.position, firstenemy.transform.position);
+                if(dist > DefaultSkillParam.PathFindingDist)//当距离大于可自动寻路距离，不作攻击，只表现一下施放动作和特性
+                {
+                    StartCoroutine(showAttackMov());
+
+                    if(!string.IsNullOrEmpty(baseSkilldata.fireEffUrl))
+                    {
+                        Invoke("showFireEff", baseSkilldata.fireTime);
+                    }
+                }
+            }
+           // StartCoroutine(gotoEnemy());
+            return true;
+        }
+        return false;
+
     }
 
+    void showFireEff()
+    {
+
+
+    }
+
+    IEnumerator showAttackMov()
+    {
+        if (animatorControl != null)
+            animatorControl.changeToState(casterdata.skilldata.animatorClip);
+        yield return null;
+
+        while(animatorControl.currentState != eAnimatorState.await)
+        {
+            yield return null;
+        }
+
+        
+
+
+    }
     IEnumerator gotoEnemy()
     {
         if (casterdata.skilldata.near_farAtk == ESkillDist.NearAttack)
@@ -167,4 +210,5 @@ public class DBaseFightRole : MonoBehaviour
 	
        
 	}
+
 }
