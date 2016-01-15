@@ -43,7 +43,12 @@ public class DAnimatorController : MonoBehaviour {
 
         int tagHash = stateinfo.tagHash;
         eAnimatorState m_curAnimatorState = (eAnimatorState)DAnimatorState.GetState(tagHash);
-        if (eState != eAnimatorState.await && m_curAnimatorState == eAnimatorState.await)
+        if (m_curAnimatorState == eState && eState == eAnimatorState.arun)
+            return true;
+
+        //if (eState == m_curAnimatorState)
+
+        if (eState != eAnimatorState.await)
         {
             StartCoroutine(changeState(eState));
             return true;
@@ -71,14 +76,22 @@ public class DAnimatorController : MonoBehaviour {
             stateinfo = animator.GetCurrentAnimatorStateInfo(0);
         }
 
-        resetToIdle();
+        if (currentState != eAnimatorState.arun)
+            resetToIdle();
     }
 
-    void resetToIdle()
+    public void resetToIdle()
     {
         int statehash = DAnimatorState.GetHash(eAnimatorState.await);
        // animator.Play(statehash, 0, 0);
         animator.SetInteger(DAnimatorState.state, (int)eAnimatorState.await);
+    }
+
+    public void setAnimatorSpeed(float values)
+    {
+
+        animator.speed = values;
+        
     }
 	// Update is called once per frame
 	void Update () {

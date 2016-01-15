@@ -33,9 +33,9 @@ public class FightRoleManager : MonoBehaviour {
 
     private DBaseFightRole[] enemyRoles = new DBaseFightRole[3];
 
-    private Vector3[] positivePos = new Vector3[] { new Vector3(253.7f, 101.4f, 123.68f), new Vector3(257.45f, 101.4f, 140.0f), new Vector3(239.2442f, 101.4f, 118.5f) };
+    private Vector3[] positivePos = new Vector3[] { new Vector3(-9.035374f, 29f, -65.56f), new Vector3(-6.8f, 29f, -65.56f), new Vector3(-6.8f, 29f, -69f) };
 
-    private Vector3[] negtivePos = new Vector3[] { new Vector3(289.5f, 101.6f, 119.1f), new Vector3(299.4f, 101.6f, 128.2f), new Vector3(292.59f, 101.6f, 102.5688f) };
+    private Vector3[] negtivePos = new Vector3[] { new Vector3(-8.9f, 29f, -60f), new Vector3(-7f, 29f, -60f), new Vector3(-10f, 29f, -61.5f) };
 
    // public
     public void Awake()
@@ -98,11 +98,11 @@ public class FightRoleManager : MonoBehaviour {
                 Destroy(selfRoles[posindex].gameObject);
                 selfRoles[posindex] = null;
             }
-            DBaseFightRole fightroledata = AddRole(gname,0);
+            DBaseFightRole fightroledata = AddRole(gname, 0, positivePos[posindex], new Vector3(0, -60, 0));
 
             selfRoles[posindex] = fightroledata;
-            selfRoles[posindex].gameObject.transform.position = positivePos[posindex];
-            selfRoles[posindex].gameObject.transform.eulerAngles = new Vector3(0, 120, 0);
+           // selfRoles[posindex].gameObject.transform.position = positivePos[posindex];
+           // selfRoles[posindex].gameObject.transform.eulerAngles = new Vector3(0, -60, 0);
         }
         else if (addtype == 1)
         {
@@ -111,11 +111,11 @@ public class FightRoleManager : MonoBehaviour {
                 Destroy(enemyRoles[posindex].gameObject);
                 enemyRoles[posindex] = null;
             }
-            DBaseFightRole fightroledata = AddRole(gname,1);
+            DBaseFightRole fightroledata = AddRole(gname, 1, negtivePos[posindex], new Vector3(0, 120, 0));
 
             enemyRoles[posindex] = fightroledata;
-            enemyRoles[posindex].gameObject.transform.position = negtivePos[posindex];
-            enemyRoles[posindex].gameObject.transform.eulerAngles = new Vector3(0, -60, 0);
+           // enemyRoles[posindex].gameObject.transform.position = negtivePos[posindex];
+           // enemyRoles[posindex].gameObject.transform.eulerAngles = new Vector3(0, 120, 0);
 
         }
     }
@@ -131,14 +131,14 @@ public class FightRoleManager : MonoBehaviour {
 	
 	}
 
-    public DBaseFightRole AddRole(string gname, int side)
+    public DBaseFightRole AddRole(string gname, int side,Vector3 pos,Vector3 rotate)
     {
         GameObject fightrole = new GameObject(gname);
         DBaseFightRole fightroledata = fightrole.AddComponent<DBaseFightRole>();
         if(side == 0)
-            fightroledata.setSide(side,positiveModel);
+            fightroledata.setSide(side, positiveModel, pos, rotate);
         else
-            fightroledata.setSide(side, negtiveModel);
+            fightroledata.setSide(side, negtiveModel, pos, rotate);
         allRoles.Add(fightroledata);
 
         return fightroledata;
@@ -156,11 +156,11 @@ public class FightRoleManager : MonoBehaviour {
 
 
     //寻找技能攻击对象 priority 优先攻击对象策略
-    public GameObject findAttackEnemy(GameObject attacker,EAttackStragety priority = EAttackStragety.EAttackStragety_Nearest)
+    public GameObject findAttackEnemy(DBaseFightRole attacker, EAttackStragety priority = EAttackStragety.EAttackStragety_Nearest)
     {
         if(attacker != null)
         {
-            int attackside = attacker.GetComponent<DBaseFightRole>().side;
+            int attackside = attacker.side;
 
             List<DBaseFightRole> tempEnemy = new List<DBaseFightRole>();
             foreach(DBaseFightRole fightrole in allRoles)
@@ -177,7 +177,7 @@ public class FightRoleManager : MonoBehaviour {
         return null;
     }
 
-    public GameObject getEnemy(GameObject attacker,List<DBaseFightRole> enemyList,EAttackStragety priority = EAttackStragety.EAttackStragety_Nearest)
+    public GameObject getEnemy(DBaseFightRole attacker,List<DBaseFightRole> enemyList,EAttackStragety priority = EAttackStragety.EAttackStragety_Nearest)
     {
         GameObject resultEnemy = null;
         switch(priority)
@@ -186,7 +186,7 @@ public class FightRoleManager : MonoBehaviour {
                 float distance = 100;
                 foreach(DBaseFightRole enemy in enemyList)
                 {
-                    float tempdist = Vector3.Distance(attacker.transform.position,enemy.transform.position);
+                    float tempdist = Vector3.Distance(attacker.roleModel.transform.position,enemy.transform.position);
                     if(tempdist < distance)
                     {
                         resultEnemy = enemy.gameObject;
@@ -207,5 +207,40 @@ public class FightRoleManager : MonoBehaviour {
         }
 
         return resultEnemy;
+    }
+
+    public DBaseFightRole getTestAttacker()
+    {
+        if (selfRoles[0] != null)
+            return selfRoles[0];
+
+        return null;
+    }
+
+    public float getFightRoleDistance(DBaseFightRole role1, DBaseFightRole role2)
+    {
+        return Vector3.Distance(role1.roleModel.transform.position, role2.roleModel.transform.position);
+    }
+
+    public List<GameObject> getHarmListByDist(int side,Vector3 centerpos, float distance)
+    {
+
+        List<GameObject> harmlist = new List<GameObject>();
+        List<DBaseFightRole> tempEnemy = new List<DBaseFightRole>();
+
+        foreach (DBaseFightRole fightrole in allRoles)
+        {
+            if (fightrole.side != side)
+            {
+                tempEnemy.Add(fightrole);
+            }
+        }
+
+        foreach (DBaseFightRole fightrole in tempEnemy)
+        {
+            if (Vector3.Distance(centerpos, fightrole.roleModel.transform.position) <= distance)
+                harmlist.Add(fightrole.gameObject);
+        }
+        return harmlist;
     }
 }

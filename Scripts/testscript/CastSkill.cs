@@ -13,30 +13,44 @@ public class CastSkill : MonoBehaviour {
 
     public string hitprefaburl;
     public DAnimatorController enemy;
+
+    public NavMeshAgent cur_Role;
 	// Use this for initialization
 	void Start () {
 	
 	}
 
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hitinfo;
+
+           // LayerMask mask = 1 << LayerMask.NameToLayer("GroundLayer");
+
+            bool isCollider = Physics.Raycast(ray, out hitinfo);
+            if (isCollider && hitinfo.collider.tag == Tags.player)
+            {
+               // cur_Role.gotoPoint(hitinfo.point);
+                cur_Role = hitinfo.collider.GetComponent<NavMeshAgent>();
+            }
+            if (isCollider && hitinfo.collider.tag == Tags.ground && cur_Role != null && cur_Role.enabled)
+            {
+                NavMeshPath path = new NavMeshPath();
+                cur_Role.CalculatePath(hitinfo.point, path);
+                if (path.corners.Length >= 2)
+                {
+                    cur_Role.SetDestination(hitinfo.point);
+                }
+                cur_Role = null;
+            }
+        }
+    }
     void OnGUI()
     {
 
-        if (GUILayout.Button("普通攻击"))
-        {
-            //if (anicontroller.doNormalAttack())
-            {
-               // GameObject eff = GameObject.Instantiate(startEffectPfb, anicontroller.gameObject.transform.position + Vector3.up * 0.5f, anicontroller.gameObject.transform.rotation) as GameObject;
-               // eff.transform.localScale = anicontroller.gameObject.transform.localScale;
-
-                 Object gos =  Resources.LoadAssetAtPath("Assets" + "/RPG/Effect/effects/airen/airen_atk1.prefab",typeof(GameObject));
-
-                 GameObject hiteff = GameObject.Instantiate(gos, anicontroller.gameObject.transform.position + Vector3.up * 0.5f, anicontroller.gameObject.transform.rotation) as GameObject;
-
-                hiteff.transform.localScale = anicontroller.gameObject.transform.localScale;
-
-                //StartCoroutine(behitted());
-            }
-        }
+       
     }
 
     IEnumerator behitted()
@@ -54,15 +68,7 @@ public class CastSkill : MonoBehaviour {
         }
 
     }
-	// Update is called once per frame
-	void Update () {
 	
-       if(Input.GetMouseButtonDown(0))
-        {
-           // OnLockMultiTarget();
-        }
-        
-	}
 
     void OnLockMultiTarget()
     {

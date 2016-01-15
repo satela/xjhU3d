@@ -1,0 +1,156 @@
+fileFormatVersion: 2
+guid: ec0a1c94e1df1f74bad2893b1459874f
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Bip01
+    100002: Bip01 Head
+    100004: Bip01 L Calf
+    100006: Bip01 L Clavicle
+    100008: Bip01 L Finger0
+    100010: Bip01 L Finger1
+    100012: Bip01 L Foot
+    100014: Bip01 L Forearm
+    100016: Bip01 L Hand
+    100018: Bip01 L Thigh
+    100020: Bip01 L Upperarm
+    100022: Bip01 LPlatform
+    100024: Bip01 Neck
+    100026: Bip01 Pelvis
+    100028: Bip01 R Calf
+    100030: Bip01 R Foot
+    100032: Bip01 R Thigh
+    100034: Bip01 RPlatform
+    100036: Bip01 Spine
+    100038: Bip01 Spine1
+    100040: Bip01R Clavicle
+    100042: Bip01R Finger0
+    100044: Bip01R Finger1
+    100046: Bip01R Forearm
+    100048: Bip01R Hand
+    100050: Bip01R Upperarm
+    100052: Biped
+    100054: Goblin_back
+    100056: Goblin_back01
+    100058: Goblin_front
+    100060: Goblin_front01
+    100062: m_rhand
+    100064: //RootNode
+    100066: m_center
+    400000: Bip01
+    400002: Bip01 Head
+    400004: Bip01 L Calf
+    400006: Bip01 L Clavicle
+    400008: Bip01 L Finger0
+    400010: Bip01 L Finger1
+    400012: Bip01 L Foot
+    400014: Bip01 L Forearm
+    400016: Bip01 L Hand
+    400018: Bip01 L Thigh
+    400020: Bip01 L Upperarm
+    400022: Bip01 LPlatform
+    400024: Bip01 Neck
+    400026: Bip01 Pelvis
+    400028: Bip01 R Calf
+    400030: Bip01 R Foot
+    400032: Bip01 R Thigh
+    400034: Bip01 RPlatform
+    400036: Bip01 Spine
+    400038: Bip01 Spine1
+    400040: Bip01R Clavicle
+    400042: Bip01R Finger0
+    400044: Bip01R Finger1
+    400046: Bip01R Forearm
+    400048: Bip01R Hand
+    400050: Bip01R Upperarm
+    400052: Biped
+    400054: Goblin_back
+    400056: Goblin_back01
+    400058: Goblin_front
+    400060: Goblin_front01
+    400062: m_rhand
+    400064: //RootNode
+    400066: m_center
+    7400000: up_ma002
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: up_ma002
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 50
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: m_center
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: d5b1ffa54a519d4468006da296631aee,
+    type: 3}
+  animationType: 2
+  additionalBone: 1
+  userData: 

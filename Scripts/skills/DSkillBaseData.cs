@@ -1,13 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 //技能基本配置
 
 public enum ESkillType
 {
     None = -1,
-    NormalAttack, //普通攻击
-    SkillAttack,
+    Attack, //攻击
+    BuffEnemy,//给敌人加buff
+    BuffSelf,//给己方加buff
+    BuffAll, //都加buff
     Max
 }
 
@@ -33,18 +36,25 @@ public enum EFirePos
 
     Max
 }
+
+public enum EBeatonToBackFly
+{
+    None,
+    Back,
+    Fly
+}
 public class DSkillBaseData  {
 
     public int id = 0;
 
-    public string icon;
+  //  public string icon;
 
-    public string des;
+  //  public string des;
 
     public string skillName = "霹雳掌";
 
-    public ESkillDist near_farAtk;
-    public float minAttackDist = 2; // 最小施放距离 远攻 单体攻击时有效
+  //  public ESkillDist near_farAtk;
+    public float minAttackDist = 2; // 最小施放距离 即当有敌人和释放者 距离小于该距离时可以施放技能
 
     public ESkillType skilltype = 0;
 
@@ -55,7 +65,7 @@ public class DSkillBaseData  {
 
     public EFirePos fireEffPos;
 
-    public bool isUseMoveEff;//是否使用移动特效，比如朝着敌人 飞去
+    public bool isUseMoveEff;//是否使用移动特效，比如朝着敌人 飞去，如果需要指定施放地点，也可以朝施放地点飞去
 
     public string moveEffUrl;//移动特效
 
@@ -70,16 +80,65 @@ public class DSkillBaseData  {
 
     public bool isNeedAppoint = false;//是否需要指点施放地点 不指定则使用 施放者位置
 
-    public  eAnimatorState animatorBeatonClip;//施放受击动作
+    public string explodeEffUrl = "";//如果指定施放地点，一般在施放地点产生爆炸特效
+
+
+    public bool isShakeCamera = true;//施放震屏
+    public float shakeTime = 0.6f;
+
+    public List<BeatonData> beatonDatas = new List<BeatonData>();
+
+    public string getBeatonStr()
+    {
+        string xmlstr = "";
+        for (int i = 0; i < beatonDatas.Count; i++)
+        {
+            xmlstr += beatonDatas[i].ToString();
+            if (i != beatonDatas.Count - 1)
+                xmlstr += "|";
+        }
+
+        return xmlstr;
+    }
+
+    public void parseBeatonStr(string xmlstr)
+    {
+        if (beatonDatas != null)
+            beatonDatas.Clear();
+        string[] beatonliststr = xmlstr.Split('|');
+
+        BeatonData beatdata;
+        string[] tempstr;
+        for (int i = 0; i < beatonliststr.Length; i++)
+        {
+            tempstr = beatonliststr[i].Split(',');
+            if(tempstr.Length == 4)
+            {
+                beatdata = new BeatonData();
+                beatdata.animatorBeatonClip = (eAnimatorState)(int.Parse(tempstr[0]));
+                beatdata.beatonEffUrl = tempstr[1];
+                beatdata.beatonTime = float.Parse(tempstr[2]);
+                beatdata.eBeatonbackFly = (EBeatonToBackFly)(int.Parse(tempstr[3]));
+                beatonDatas.Add(beatdata);
+            }
+           
+        }
+    }
+}
+
+public class BeatonData
+{
+    public EBeatonToBackFly eBeatonbackFly = EBeatonToBackFly.None;
+
+    public eAnimatorState animatorBeatonClip = eAnimatorState.beaten;//施放受击动作
 
     public string beatonEffUrl;// 受击特效
 
     public float beatonTime = 0.5f;//受击时间 没有移动攻击特效 时有效，否则 当移动攻击特效 达到受击者 时发生受击事件
 
-
-
-
-
-
-
+    public override string ToString()
+    {
+        return ((int)animatorBeatonClip).ToString() + "," + beatonEffUrl + "," + beatonTime.ToString() + "," + ((int)eBeatonbackFly).ToString();
+        
+    }
 }
