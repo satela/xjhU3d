@@ -91,7 +91,7 @@ public class BabyWolfManager : MonoBehaviour {
         cur_animName = animName_Idle;
         animate_attack_now = animName_Idle;
 
-      //  initHpBar();
+        initHpBar();
         StartCoroutine(setUIcamera());
 	}
 	
@@ -154,7 +154,7 @@ public class BabyWolfManager : MonoBehaviour {
            // aniState = WolfAnimateState.Attack;
             //target = GameObject.FindGameObjectWithTag(Tags.player).transform;
         }
-      //  updateHpBarPos();
+        updateHpBarPos();
 	}
     IEnumerator showHittedAnimation()
     {

@@ -49,41 +49,41 @@ public class FightRoleManager : MonoBehaviour {
         int addtype = -1;
         int posindex = -1;
         string gname = "";
-        if(GUI.Button(new Rect(700,10,50,20), "己方1"))
+        if(GUI.Button(new Rect(800,10,50,20), "己方1"))
         {
             addtype = 0;
             posindex = 0;
             gname = "己方1";
         }
-        if (GUI.Button(new Rect(760, 10, 50, 20), "己方2"))
+        if (GUI.Button(new Rect(860, 10, 50, 20), "己方2"))
         {
             addtype = 0;
             posindex = 1;
             gname = "己方2";
 
         }
-        if (GUI.Button(new Rect(810, 10, 50, 20), "己方3"))
+        if (GUI.Button(new Rect(910, 10, 50, 20), "己方3"))
         {
             addtype = 0;
             posindex = 2;
             gname = "己方3";
 
         }
-        if (GUI.Button(new Rect(700, 40, 50, 20), "敌方1"))
+        if (GUI.Button(new Rect(800, 40, 50, 20), "敌方1"))
         {
             addtype = 1;
             posindex = 0;
             gname = "敌方1";
 
         }
-        if (GUI.Button(new Rect(760, 40, 50, 20), "敌方2"))
+        if (GUI.Button(new Rect(860, 40, 50, 20), "敌方2"))
         {
             addtype = 1;
             posindex = 1;
             gname = "敌方2";
 
         }
-        if (GUI.Button(new Rect(810, 40, 50, 20), "敌方3"))
+        if (GUI.Button(new Rect(910, 40, 50, 20), "敌方3"))
         {
             addtype = 1;
             posindex = 2;
@@ -155,8 +155,8 @@ public class FightRoleManager : MonoBehaviour {
     }
 
 
-    //寻找技能攻击对象 priority 优先攻击对象策略
-    public GameObject findAttackEnemy(DBaseFightRole attacker, EAttackStragety priority = EAttackStragety.EAttackStragety_Nearest)
+    //寻找技能攻击对象 priority 优先攻击对象策略,isAttackEnemy 是攻击敌人，还是攻击己方，比如一些 加血，加防的技能攻击对象是己方，再比如混乱状态下 会攻击己方
+    public GameObject findAttackEnemy(DBaseFightRole attacker, EAttackStragety priority = EAttackStragety.EAttackStragety_Nearest,bool isAttackEnemy = true)
     {
         if(attacker != null)
         {
@@ -165,10 +165,12 @@ public class FightRoleManager : MonoBehaviour {
             List<DBaseFightRole> tempEnemy = new List<DBaseFightRole>();
             foreach(DBaseFightRole fightrole in allRoles)
             {
-                if(fightrole.side != attackside)
+                if (isAttackEnemy && fightrole.side != attackside)
                 {
                     tempEnemy.Add(fightrole);
                 }
+                else if (!isAttackEnemy && fightrole.side == attackside && fightrole != attacker)
+                    tempEnemy.Add(fightrole);
             }
 
             return getEnemy(attacker, tempEnemy, priority);
@@ -186,7 +188,7 @@ public class FightRoleManager : MonoBehaviour {
                 float distance = 100;
                 foreach(DBaseFightRole enemy in enemyList)
                 {
-                    float tempdist = Vector3.Distance(attacker.roleModel.transform.position,enemy.transform.position);
+                    float tempdist = Vector3.Distance(attacker.rolePosition, enemy.rolePosition);
                     if(tempdist < distance)
                     {
                         resultEnemy = enemy.gameObject;
@@ -209,38 +211,61 @@ public class FightRoleManager : MonoBehaviour {
         return resultEnemy;
     }
 
+    public List<DBaseFightRole> getRolesBySide(int side)
+    {
+        List<DBaseFightRole> tempEnemy = new List<DBaseFightRole>();
+        foreach (DBaseFightRole fightrole in allRoles)
+        {
+            if (fightrole.side == side)
+            {
+                tempEnemy.Add(fightrole);
+            }
+        }
+        return tempEnemy;
+    }
     public DBaseFightRole getTestAttacker()
     {
-        if (selfRoles[0] != null)
-            return selfRoles[0];
-
+        //if (selfRoles[0] != null)
+        //    return selfRoles[0];
+        if (enemyRoles[0] != null)
+            return enemyRoles[0];
         return null;
     }
 
     public float getFightRoleDistance(DBaseFightRole role1, DBaseFightRole role2)
     {
-        return Vector3.Distance(role1.roleModel.transform.position, role2.roleModel.transform.position);
+        return Vector3.Distance(role1.rolePosition, role2.rolePosition);
     }
 
-    public List<GameObject> getHarmListByDist(int side,Vector3 centerpos, float distance)
+    public List<GameObject> getHarmListByDist(int side, Vector3 centerpos, float distance, bool isAttackEnemy = true)
     {
 
         List<GameObject> harmlist = new List<GameObject>();
         List<DBaseFightRole> tempEnemy = new List<DBaseFightRole>();
 
         foreach (DBaseFightRole fightrole in allRoles)
-        {
-            if (fightrole.side != side)
+        {           
+            if (isAttackEnemy && fightrole.side != side)
             {
                 tempEnemy.Add(fightrole);
             }
+            else if (!isAttackEnemy && fightrole.side == side)
+                tempEnemy.Add(fightrole);
         }
+
+
 
         foreach (DBaseFightRole fightrole in tempEnemy)
         {
-            if (Vector3.Distance(centerpos, fightrole.roleModel.transform.position) <= distance)
+            if (Vector3.Distance(centerpos, fightrole.rolePosition) - fightrole.roleRadius<= distance)
                 harmlist.Add(fightrole.gameObject);
         }
         return harmlist;
+    }
+
+    public void roleDead(DBaseFightRole fightrole)
+    {
+        if (allRoles.Contains(fightrole))
+            allRoles.Remove(fightrole);
     }
 }

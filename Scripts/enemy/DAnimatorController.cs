@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using System;
 public class DAnimatorController : MonoBehaviour {
 
     private Animator animator;
@@ -46,10 +46,12 @@ public class DAnimatorController : MonoBehaviour {
         if (m_curAnimatorState == eState && eState == eAnimatorState.arun)
             return true;
 
-        //if (eState == m_curAnimatorState)
+        if ((int)eState < (int)m_curAnimatorState)
+            return false;
 
         if (eState != eAnimatorState.await)
         {
+            StopAllCoroutines();
             StartCoroutine(changeState(eState));
             return true;
         }
@@ -65,19 +67,34 @@ public class DAnimatorController : MonoBehaviour {
     IEnumerator changeState(eAnimatorState state)
     {
         int statehash = DAnimatorState.GetHash(state);
-        animator.Play(statehash, 0, 0);
-        animator.SetInteger(DAnimatorState.state, (int)state);
-        yield return null;
-
-        AnimatorStateInfo stateinfo = animator.GetCurrentAnimatorStateInfo(0);
-        while (stateinfo.normalizedTime < 1)
+        try
         {
-            yield return null;
-            stateinfo = animator.GetCurrentAnimatorStateInfo(0);
+            animator.Play(statehash, 0, 0);
+            animator.SetInteger(DAnimatorState.state, (int)state);
         }
+        catch (Exception ex)
+        {
+            Debug.Log(ex.Message);
+        }
+            yield return null;
 
-        if (currentState != eAnimatorState.arun)
-            resetToIdle();
+            AnimatorStateInfo stateinfo = animator.GetCurrentAnimatorStateInfo(0);
+
+            if (state == eAnimatorState.die)
+            {
+                animator.SetInteger(DAnimatorState.state, -1);
+            }
+            else
+            {
+                while (stateinfo.normalizedTime < 1)
+                {
+                    yield return null;
+                    stateinfo = animator.GetCurrentAnimatorStateInfo(0);
+                }
+                if (currentState != eAnimatorState.arun)
+                    resetToIdle();
+            }                
+      
     }
 
     public void resetToIdle()
@@ -93,6 +110,7 @@ public class DAnimatorController : MonoBehaviour {
         animator.speed = values;
         
     }
+
 	// Update is called once per frame
 	void Update () {
 	

@@ -39,9 +39,9 @@ public class EExportExcel : MonoBehaviour {
                        // Debug.Log(nvalue);
                     }
                     contentinfo.AppendLine(rowstr);
-                }	
+                }
 
-
+                contentinfo.Remove(contentinfo.Length - 2, 2);
                 string[] pathSplit = StringExtention.SplitWithString(directoryEntries[m],Application.dataPath + "/TextInfo/excel\\");
                 string filename = pathSplit[1].Split('.')[0];
 

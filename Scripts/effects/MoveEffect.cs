@@ -23,7 +23,7 @@ public class MoveEffect : MonoBehaviour {
 
         if (startFollow && tragetfightrole != null)
         {
-            Vector3 diffvew = tragetfightrole.roleModel.transform.position - transform.position;
+            Vector3 diffvew = tragetfightrole.rolePosition + Vector3.up - transform.position;
             if (diffvew.magnitude < 0.1)
             {
                 startFollow = false;
@@ -32,7 +32,7 @@ public class MoveEffect : MonoBehaviour {
 
             else
             {
-                transform.position = transform.position + diffvew.normalized * speeds;
+                transform.position = transform.position +  diffvew.normalized * speeds;
             }
 
         }
@@ -98,7 +98,7 @@ public class MoveEffect : MonoBehaviour {
             }
             else
             {
-                List<GameObject> beatonRoles = FightRoleManager._instance.getHarmListByDist(skillcastdata.castRole.GetComponent<DBaseFightRole>().side, transform.position, skillcastdata.skilldata.harmDist);
+                List<GameObject> beatonRoles = FightRoleManager._instance.getHarmListByDist(skillcastdata.castRole.GetComponent<DBaseFightRole>().side, transform.position, skillcastdata.skilldata.harmDist,skillcastdata.skilldata.isAttackSkill());
 
                 DBaseFightRole fightole;
                 foreach (GameObject roles in beatonRoles)

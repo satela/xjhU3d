@@ -27,8 +27,9 @@ public enum RoleFightState
     ControlWalk = 0,
     Patrol,
     AutoAttack,
-    Freeze,
     Dissy,
+    Chaos,//混乱，会攻击己方
+    Freeze,
     Max
 }
 
@@ -51,19 +52,15 @@ public class DBaseFightRole : MonoBehaviour
 
     public DRoleData roledata;//人物基本攻防属性
 
-    public List<DBuffData> buffdata = new List<DBuffData>();//人物所有受到的buff；
+    public List<DBuffData> buffdataList = new List<DBuffData>();//人物所有受到的buff；
    
     private DAnimatorController animatorControl;
     private NavMeshAgent agent;
 
-    
+    private CharacterController cc;
 
-    private Color normal;
-    private float red_time = 1;//显示被击中的时间
-    private float attack_timer = 0;//攻击计时器
 
     public AudioClip sound_miss;    
-    public Renderer bodyrender;
 
     public Transform target;
 
@@ -81,6 +78,9 @@ public class DBaseFightRole : MonoBehaviour
     public GameObject roleModel;
 
     public ESkillStep skillstep = ESkillStep.None;
+
+    private bool isDead = false;
+    private HpBarControl hpbarui;
     public void setSide(int fside,GameObject modelprefab,Vector3 pos,Vector3 rotate)
     {
         side = fside;
@@ -93,7 +93,11 @@ public class DBaseFightRole : MonoBehaviour
         roleModel.transform.localEulerAngles = rotate;
        // roleModel.transform.localScale = new Vector3(8, 8, 8);
         animatorControl = roleModel.AddComponent<DAnimatorController>();
+        cc = roleModel.GetComponent<CharacterController>();
         agent = roleModel.AddComponent<NavMeshAgent>();
+
+        hpbarui = gameObject.AddComponent<HpBarControl>();
+        //roleModel.AddComponent<NavMeshObstacle>();
         StartCoroutine(resetModelPos());
         roledata = new DRoleData();
 
@@ -105,7 +109,7 @@ public class DBaseFightRole : MonoBehaviour
        // roleModel.transform.localPosition = Vector3.zero + Vector3.up * 0.26f;
        // roleModel.transform.position = transform.position;
         animatorControl.resetToIdle();
-        agent.SetDestination(roleModel.transform.position);
+        agent.SetDestination(rolePosition);
 
     }
 
@@ -114,18 +118,22 @@ public class DBaseFightRole : MonoBehaviour
     {
         if (isCasteringSkill)
             return false;
+        checkRoleState();
+
+        if (fightstate == RoleFightState.Dissy || fightstate == RoleFightState.Freeze)
+            return false;
 
         if (baseSkilldata != null)
         {
-            isCasteringSkill = true;
-            casterdata = new SkillCasterData();
-            casterdata.castRole = gameObject;
-            casterdata.skilldata = baseSkilldata;
-
-            GameObject firstenemy = FightRoleManager._instance.findAttackEnemy(this);
+            GameObject firstenemy = FightRoleManager._instance.findAttackEnemy(this, EAttackStragety.EAttackStragety_Nearest, isAttackEnemy(baseSkilldata));
 
             if(firstenemy != null)
             {
+                isCasteringSkill = true;
+                casterdata = new SkillCasterData();
+                casterdata.castRole = gameObject;
+                casterdata.skilldata = baseSkilldata;
+
                 float dist = FightRoleManager._instance.getFightRoleDistance(this, firstenemy.GetComponent<DBaseFightRole>());
                 roleModel.transform.LookAt(firstenemy.GetComponent<DBaseFightRole>().roleModel.transform, Vector3.up);
                 if(dist > DefaultSkillParam.PathFindingDist)//当距离大于可自动寻路距离，不作攻击，只表现一下施放动作和特性
@@ -156,7 +164,8 @@ public class DBaseFightRole : MonoBehaviour
                     }
                 }
             }
-            return true;
+            else
+                return true;
         }
         return false;
 
@@ -169,37 +178,37 @@ public class DBaseFightRole : MonoBehaviour
         Vector3 firepos = Vector3.zero;
         if (casterdata.skilldata.fireEffPos == EFirePos.Center)
         {
-            firepos = roleModel.transform.position;
+            firepos = rolePosition;
         }
         else if (casterdata.skilldata.fireEffPos == EFirePos.Forward)
         {
-            firepos = roleModel.transform.position + roleModel.transform.forward * agent.radius;
+            firepos = rolePosition + roleModel.transform.forward * agent.radius;
         }
         else if (casterdata.skilldata.fireEffPos == EFirePos.Back)
         {
-            firepos = roleModel.transform.position - roleModel.transform.forward * agent.radius;
+            firepos = rolePosition - roleModel.transform.forward * agent.radius;
         }
         else if (casterdata.skilldata.fireEffPos == EFirePos.Top)
         {
-            firepos = roleModel.transform.position + roleModel.transform.up * agent.height/2;
+            firepos = rolePosition + roleModel.transform.up * agent.height / 2;
         }
         else if (casterdata.skilldata.fireEffPos == EFirePos.Bottom)
         {
-            firepos = roleModel.transform.position - roleModel.transform.up * agent.height/2 + Vector3.up * 0.2f;
+            firepos = rolePosition - roleModel.transform.up * agent.height / 2 + Vector3.up * 0.2f;
         }
         else if (casterdata.skilldata.fireEffPos == EFirePos.Left)
         {
-            firepos = roleModel.transform.position - roleModel.transform.right * agent.radius;
+            firepos = rolePosition - roleModel.transform.right * agent.radius;
         }
         else if (casterdata.skilldata.fireEffPos == EFirePos.Right)
         {
-            firepos = roleModel.transform.position + roleModel.transform.right * agent.radius;
+            firepos = rolePosition + roleModel.transform.right * agent.radius;
         }
 
         GameObject attackEff = new GameObject(casterdata.skilldata.fireEffUrl);
         EffectAsset effectasset = attackEff.AddComponent<EffectAsset>();
 
-        effectasset.setEffectParam(casterdata.skilldata.fireEffUrl, firepos, roleModel.transform.rotation, EEffectType.Attack);
+        effectasset.setEffectParam(casterdata.skilldata.fireEffUrl, firepos, roleRotation, EEffectType.Attack);
     }
 
     IEnumerator showAttackMov()
@@ -223,8 +232,10 @@ public class DBaseFightRole : MonoBehaviour
             yield return null;
         }
 
+        AddBuff();
         isCasteringSkill = false;
-        //casterdata = null;
+        
+
 
     }
     IEnumerator gotoEnemy()
@@ -232,19 +243,19 @@ public class DBaseFightRole : MonoBehaviour
         while (true)
         {
             yield return null;
-            GameObject firstenemy = FightRoleManager._instance.findAttackEnemy(this);
+            GameObject firstenemy = FightRoleManager._instance.findAttackEnemy(this, EAttackStragety.EAttackStragety_Nearest, isAttackEnemy(casterdata.skilldata));
             if (firstenemy != null)
             {
-                float dist = FightRoleManager._instance.getFightRoleDistance(this, firstenemy.GetComponent<DBaseFightRole>());
+                float dist = FightRoleManager._instance.getFightRoleDistance(this, firstenemy.GetComponent<DBaseFightRole>()) - firstenemy.GetComponent<DBaseFightRole>().roleRadius;
 
                 if (dist > casterdata.skilldata.minAttackDist)
                 {
-                    agent.SetDestination(firstenemy.GetComponent<DBaseFightRole>().roleModel.transform.position);
+                    agent.SetDestination(firstenemy.GetComponent<DBaseFightRole>().rolePosition);
                     animatorControl.changeToState(eAnimatorState.arun);
                 }
                 else
                 {
-                    agent.SetDestination(roleModel.transform.position);
+                    agent.SetDestination(rolePosition);
 
                   //  roleModel.transform.LookAt(firstenemy.transform, Vector3.up);
                     animatorControl.resetToIdle();
@@ -267,7 +278,7 @@ public class DBaseFightRole : MonoBehaviour
             }
             else
             {
-                agent.SetDestination(roleModel.transform.position);
+                agent.SetDestination(rolePosition);
                 animatorControl.resetToIdle();
                 isCasteringSkill = false;
                 break;
@@ -293,10 +304,107 @@ public class DBaseFightRole : MonoBehaviour
 
     public void AddBuff()
     {
+        if (casterdata != null && casterdata.skilldata != null)
+        {
+            DSkillDefaultData skillDefdata;
 
+            if (ConfigManager.intance.skillDefaultDic.TryGetValue(casterdata.skilldata.id, out skillDefdata))
+            {
+                DBuffData buffdata;
+                List<DBaseFightRole> selfside = FightRoleManager._instance.getRolesBySide(side);
+                foreach (int buffid in skillDefdata.buffself.Keys)
+                {
+                    buffdata = ConfigManager.intance.basebuffDataDic[buffid];
+
+                    if (skillDefdata.buffself[buffid] == 0)
+                        addBuffBydata(buffdata);
+                    else
+                    {
+                        foreach (DBaseFightRole role in selfside)
+                            role.addBuffBydata(buffdata);
+                    }
+                }
+               
+            }
+
+        }
 
     }
-	// Use this for initialization
+
+    #region buff处理
+
+    //private List<DBuffData>
+    public void addBuffBydata(DBuffData buffdata)
+    {       
+        GameObject buffbody = new GameObject("buff(" + buffdata.buffname+")");
+
+        buffdataList.Add(buffdata);
+
+        foreach (EBaseAttr attrkey in buffdata.effectBaseAttr.Keys)
+        {
+            roledata.addBaseBuffAttr(attrkey, buffdata.effectBaseAttr[attrkey] * roledata.getOriginBaseAttrByType(attrkey) / 100f);
+        }
+
+        foreach (ESubAttr attrkey in buffdata.effectSubAttr.Keys)
+        {
+            roledata.addSubBuffAttr(attrkey, buffdata.effectSubAttr[attrkey] * roledata.getOriginSubAttrByType(attrkey) / 100f);
+        }
+
+        BuffInstance buffeff = buffbody.AddComponent<BuffInstance>();
+        buffeff.setBuffData(buffdata, this);
+
+    }
+
+    public void removeBuffData(DBuffData buffdata)
+    {
+        if (buffdataList.Contains(buffdata))
+        {
+            buffdataList.Remove(buffdata);
+
+            foreach (EBaseAttr attrkey in buffdata.effectBaseAttr.Keys)
+            {
+                roledata.addBaseBuffAttr(attrkey, -buffdata.effectBaseAttr[attrkey] * roledata.getOriginBaseAttrByType(attrkey) / 100f);
+            }
+
+            foreach (ESubAttr attrkey in buffdata.effectSubAttr.Keys)
+            {
+                roledata.addSubBuffAttr(attrkey, -buffdata.effectSubAttr[attrkey] * roledata.getOriginSubAttrByType(attrkey) / 100f);
+            }
+        }
+    }
+
+    //判断角色是否处于眩晕，冰冻等状态中,如果同时眩晕，冰冻，以值 较大的 作为当前状态，冰冻 比眩晕 值大，所以认为处于冰冻状态
+    public  void checkRoleState()
+    {
+       // RoleFightState rolestate = RoleFightState.Patrol;
+
+        List<int> buffsepType = new List<int>();
+        foreach(DBuffData buffdata in buffdataList)
+        {
+            buffsepType.Add((int)buffdata.specialtype);
+        }
+
+        int maxstate = -1;
+        for (int i = 0; i < buffsepType.Count; i++)
+        {
+            if (buffsepType[i] > maxstate)
+                maxstate = buffsepType[i];
+        }
+        switch ((EBuffSpecialType)maxstate)
+        {
+            case EBuffSpecialType.Freeze:
+                fightstate = RoleFightState.Freeze;
+                break;
+            case EBuffSpecialType.Dissy:
+                fightstate = RoleFightState.Dissy;
+                break;
+            case EBuffSpecialType.ForbidSkill:
+                break;
+        }
+
+    }
+    #endregion
+    // Use this for initialization
 	void Start () {
 	
 	}
@@ -356,7 +464,7 @@ public class DBaseFightRole : MonoBehaviour
         {
             GameObject moveEff = new GameObject(casterdata.skilldata.moveEffUrl);
             EffectAsset effectasset = moveEff.AddComponent<EffectAsset>();
-            Vector3 pos = roleModel.transform.position + roleModel.transform.forward * 0.5f + Vector3.up;
+            Vector3 pos = rolePosition + roleModel.transform.forward * 0.5f + Vector3.up;
             effectasset.setEffectParam(casterdata.skilldata.moveEffUrl, pos, Quaternion.identity, EEffectType.Move);
 
             MoveEffect effectmove = moveEff.AddComponent<MoveEffect>();
@@ -377,24 +485,27 @@ public class DBaseFightRole : MonoBehaviour
                 casterdata.beatonRoles.Add(firstfightEnemy);
                 GameObject moveEff = new GameObject(casterdata.skilldata.moveEffUrl);
                 EffectAsset effectasset = moveEff.AddComponent<EffectAsset>();
-                Vector3 pos = roleModel.transform.position + roleModel.transform.forward + Vector3.up;
+                Vector3 pos = rolePosition + roleModel.transform.forward + Vector3.up;
                 effectasset.setEffectParam(casterdata.skilldata.moveEffUrl, pos, Quaternion.identity, EEffectType.Move);
 
                 MoveEffect effectmove = moveEff.AddComponent<MoveEffect>();
                 effectmove.SetTargetPos(firstfightEnemy, casterdata.clone());
+                effectmove.transform.rotation = roleRotation;
             }
             else
             {
-                casterdata.beatonRoles = FightRoleManager._instance.getHarmListByDist(side,roleModel.transform.position, casterdata.skilldata.harmDist);
+                casterdata.beatonRoles = FightRoleManager._instance.getHarmListByDist(side, rolePosition, casterdata.skilldata.harmDist,isAttackEnemy(casterdata.skilldata));
                 foreach (GameObject enemy in casterdata.beatonRoles)
                 {
                     GameObject moveEff = new GameObject(casterdata.skilldata.moveEffUrl);
                     EffectAsset effectasset = moveEff.AddComponent<EffectAsset>();
-                    Vector3 pos = roleModel.transform.position + roleModel.transform.forward + Vector3.up;
+                    Vector3 pos = rolePosition + roleModel.transform.forward + Vector3.up;
                     effectasset.setEffectParam(casterdata.skilldata.moveEffUrl, pos, Quaternion.identity, EEffectType.Move);
 
                     MoveEffect effectmove = moveEff.AddComponent<MoveEffect>();
                     effectmove.SetTargetPos(enemy, casterdata.clone());
+                    effectmove.transform.rotation = roleRotation;
+
                 }
             }
         }      
@@ -419,7 +530,7 @@ public class DBaseFightRole : MonoBehaviour
         yield return null;
         if (casterdata != null)
         {
-            casterdata.beatonRoles = FightRoleManager._instance.getHarmListByDist(side,roleModel.transform.position, casterdata.skilldata.harmDist);
+            casterdata.beatonRoles = FightRoleManager._instance.getHarmListByDist(side, rolePosition, casterdata.skilldata.harmDist, isAttackEnemy(casterdata.skilldata));
             DBaseFightRole frole;
             foreach (GameObject enemy in casterdata.beatonRoles)
             {
@@ -442,7 +553,7 @@ public class DBaseFightRole : MonoBehaviour
             GameObject beatonEff = new GameObject(beatondata.beatonEffUrl);
             EffectAsset effectasset = beatonEff.AddComponent<EffectAsset>();
 
-            effectasset.setEffectParam(beatondata.beatonEffUrl, roleModel.transform.position + Vector3.up, Quaternion.identity, EEffectType.Beaton);
+            effectasset.setEffectParam(beatondata.beatonEffUrl, rolePosition + Vector3.up, Quaternion.identity, EEffectType.Beaton);
         }
 
         if (beatondata.eBeatonbackFly == EBeatonToBackFly.None)
@@ -452,7 +563,7 @@ public class DBaseFightRole : MonoBehaviour
         }
         if (beatondata.eBeatonbackFly == EBeatonToBackFly.Back)
         {
-            Vector3 backpos = roleModel.transform.position - roleModel.transform.forward * DefaultSkillParam.BeatonBackMaxDist;
+            Vector3 backpos = rolePosition - roleModel.transform.forward * DefaultSkillParam.BeatonBackMaxDist;
 
             if (agent != null && agent.enabled)
             {
@@ -478,8 +589,8 @@ public class DBaseFightRole : MonoBehaviour
             agent.enabled = false;
             animatorControl.changeToState(beatondata.animatorBeatonClip);
 
-            Vector3 originpos = roleModel.transform.position;
-            Vector3 topos = roleModel.transform.position + Vector3.up * DefaultSkillParam.BeatonUpMaxDist;
+            Vector3 originpos = rolePosition;
+            Vector3 topos = rolePosition + Vector3.up * DefaultSkillParam.BeatonUpMaxDist;
             iTween.MoveTo(roleModel, iTween.Hash("position", topos, "easeType", "easeOutCirc", "delay", 0, "time", 0.3f));
             yield return new WaitForSeconds(0.33f);
 
@@ -494,6 +605,14 @@ public class DBaseFightRole : MonoBehaviour
 
     public void showBeatonBySkill(SkillCasterData casterdata)
     {
+            DRoleData castRoledata = casterdata.castRole.GetComponent<DBaseFightRole>().roledata;
+
+            if (!FightCalculateTool.checkIsHitted(castRoledata, roledata))
+            {
+                //闪避了
+                showDogeCritEffect(EEffectType.Dodge);
+                return;
+            }
             if (casterdata != null && casterdata.skilldata != null)
             {
                 BeatonData beatdata;
@@ -501,15 +620,70 @@ public class DBaseFightRole : MonoBehaviour
                 {
                     beatdata = casterdata.skilldata.beatonDatas[i];
 
-                   
+                    StartCoroutine(beantonBlood(castRoledata, casterdata.skilldata, beatdata.beatonTime));
+                    if (isDead)
+                        break;
                     StartCoroutine(beatonToBackOrFly(beatdata));
+                    if(i==0)
+                        StartCoroutine(addBuffByBeaton(casterdata.skilldata, beatdata.beatonTime));
                 }
                 
                 //animatorControl.changeToState(casterdata.skilldata.animatorBeatonClip);
             }
     }
+    //被击buff
+    IEnumerator addBuffByBeaton(DSkillBaseData baseskilldata,float delayTime)
+    {
+        yield return new WaitForSeconds(delayTime);
+         DSkillDefaultData skillDefdata;
 
-    
+         if (ConfigManager.intance.skillDefaultDic.TryGetValue(baseskilldata.id, out skillDefdata))
+         {
+             DBuffData buffdata;
+             foreach (int buffid in skillDefdata.buffenemy)
+             {
+                 buffdata = ConfigManager.intance.basebuffDataDic[buffid];
+                 if (buffdata != null)
+                 {
+                     addBuffBydata(buffdata);
+                 }
+             }
+
+         }
+
+    }
+    //被击伤害
+
+    IEnumerator beantonBlood(DRoleData castRoleData, DSkillBaseData baseskilldata, float delayTime)
+    {
+        yield return new WaitForSeconds(delayTime);
+
+        int harm = FightCalculateTool.calculateHarm(castRoleData, roledata);
+        roledata.addBaseBuffAttr(EBaseAttr.Hp, -harm);
+
+        hpbarui.updateHp();
+        if (roledata.getBaseAttrByType(EBaseAttr.Hp) <=0 )
+        {
+            isDead = true;
+            doDead();
+        }
+    }
+
+    void doDead()
+    {
+        StopAllCoroutines();
+        animatorControl.changeToState(eAnimatorState.die);
+        FightRoleManager._instance.roleDead(this);
+
+        Invoke("destoryRole", 6);
+    }
+
+    void destoryRole()
+    {
+        Destroy(gameObject);
+        Destroy(hpbarui.gameObject);
+
+    }
     public void gotoPoint(Vector3 targetpos)
     {
         if(agent != null && agent.enabled)
@@ -522,6 +696,74 @@ public class DBaseFightRole : MonoBehaviour
             }
         }
         
-
     }
+
+    #region 显示 闪避，暴击 等特效
+
+    
+    void showDogeCritEffect(EEffectType type)
+    {
+        GameObject effect = new GameObject(type.ToString());
+        effect.AddComponent<EffectAsset>().setEffectParam("", rolePosition + Vector3.up, roleRotation, type);
+    }
+    #endregion
+    #region 角色大小 位置接口
+    public float roleRadius
+    {
+        get{
+            if (cc != null)
+                return cc.radius;
+            else
+                return 0;
+        }
+       
+    }
+
+    public float roleHeight
+    {
+        get
+        {
+            if (cc != null)
+                return cc.height;
+            else
+                return 0;
+        }
+        
+    }
+
+    public Vector3 rolePosition
+    {
+        get
+        {
+            if (roleModel != null)
+                return roleModel.transform.position;
+            else
+                return Vector3.zero;
+        }
+        
+    }
+
+    public Quaternion roleRotation
+    {
+        get
+        {
+            if (roleModel != null)
+                return roleModel.transform.rotation;
+            else
+                return Quaternion.identity;
+        }
+        
+    }
+
+    #endregion
+
+    #region 本次技能是攻击敌人还是己方
+    private bool isAttackEnemy(DSkillBaseData skilldata)
+    {
+        if (fightstate == RoleFightState.Chaos)
+            return false;
+        else return skilldata.isAttackSkill();
+    }
+
+    #endregion
 }

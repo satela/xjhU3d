@@ -6,7 +6,7 @@ public class DefaultSkillParam
 {
 
 
-    public const float PathFindingDist = 45;//技能寻路距离，当所有敌人超过这个距离时，不作自动寻路
+    public const float PathFindingDist = 10;//技能寻路距离，当所有敌人超过这个距离时，不作自动寻路
 
     public const float BeatonBackMaxDist = 2;//被击退的默认距离
 
@@ -28,6 +28,7 @@ public class DefaultSkillParam
             if (m_actionName == null)
             {
                 m_actionName = new Dictionary<eAnimatorState, string>();
+                m_actionName.Add(eAnimatorState.await, "普通待机");
                 m_actionName.Add(eAnimatorState.atk0, "普通攻击1");
                 m_actionName.Add(eAnimatorState.atk1, "普通攻击2");
                 m_actionName.Add(eAnimatorState.atk2, "普通攻击3");

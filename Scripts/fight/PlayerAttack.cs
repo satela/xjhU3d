@@ -43,7 +43,7 @@ public class PlayerAttack : MonoBehaviour {
         playermove = this.GetComponent<PlayerMove>();
         animName_now = animName_normalattack;
 
-       // initHudText();
+        initHudText();
 	}
 	
 	// Update is called once per frame

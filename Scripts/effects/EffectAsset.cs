@@ -8,8 +8,15 @@ public enum EEffectType
     Attack,//攻击特效
     Beaton,//受击特效
     Move,//移动特效
-    Explode// 指定地点爆炸特效
+    Explode,// 指定地点爆炸特效
+
+    Dodge,//闪避特性
+    Crit,//暴击特性
+
+    Buff   //buff 特效
 }
+
+
 public class EffectAsset : MonoBehaviour {
 
 	// Use this for initialization

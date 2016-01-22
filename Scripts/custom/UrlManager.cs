@@ -24,7 +24,14 @@ public class UrlManager {
         {
             return assetpath + "/RPG/Effect/effects/attackEffect/" + names + ".prefab";
         }
-
+        else if (type == EEffectType.Buff)
+        {
+            return assetpath + "/RPG/Effect/effects/Buff/" + names + ".prefab";
+        }
+        else if (type == EEffectType.Dodge)
+        {
+            return assetpath + "/RPG/Effect/effects/Buff/" + "b_shanbi.prefab";
+        }
         return "";
     }
 }

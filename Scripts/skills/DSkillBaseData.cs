@@ -101,6 +101,16 @@ public class DSkillBaseData  {
         return xmlstr;
     }
 
+    //技能 作用对象是敌人 还是己方
+    public bool isAttackSkill()
+    {
+        if (skilltype == ESkillType.Attack || skilltype == ESkillType.BuffEnemy || skilltype == ESkillType.BuffAll)
+            return true;
+        else if (skilltype == ESkillType.BuffSelf)
+            return false;
+
+        return true;
+    }
     public void parseBeatonStr(string xmlstr)
     {
         if (beatonDatas != null)

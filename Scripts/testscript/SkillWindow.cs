@@ -93,6 +93,7 @@ public class SkillWindow : MonoBehaviour {
     public void Awake()
     {
         SkillConfiguration.LoadXml();
+        ConfigManager.intance.init();
     }
 
 
@@ -148,6 +149,8 @@ public class SkillWindow : MonoBehaviour {
 
                 isShakeCameraTgle.value = skilldata.isShakeCamera;
                 shakeTimeInput.value = skilldata.shakeTime.ToString();
+
+                beatonPanelMg.initView(skilldata.beatonDatas);
               //  animatorBeatonClip = skilldata.animatorBeatonClip;
 
                 if (!string.IsNullOrEmpty(skilldata.fireEffUrl))
@@ -179,6 +182,10 @@ public class SkillWindow : MonoBehaviour {
                 //}
                 //else
                 //    beatonEffPrefab = null;
+            }
+            else
+            {
+                setSkilldata();
             }
         }
         skillTypeTxt.text = "技能类型：" + DefaultSkillParam.skill_type[(int)skilltype];
@@ -229,6 +236,7 @@ public class SkillWindow : MonoBehaviour {
         skilldata.skillName = skillNameText.value;
         skilldata.id = int.Parse(skillIDText.value);
         skilldata.animatorClip = animatorClip;
+        skilldata.skilltype = skilltype;
         // skilldata.near_farAtk = near_farAtk;
         skilldata.minAttackDist = float.Parse(skillMinDistTxt.value);
 
