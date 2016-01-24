@@ -232,6 +232,13 @@ public class FightRoleManager : MonoBehaviour {
         return null;
     }
 
+    public DBaseFightRole getEnemuAttacker()
+    {     
+        if (enemyRoles[0] != null)
+            return enemyRoles[0];
+        return null;
+    }
+
     public float getFightRoleDistance(DBaseFightRole role1, DBaseFightRole role2)
     {
         return Vector3.Distance(role1.rolePosition, role2.rolePosition);

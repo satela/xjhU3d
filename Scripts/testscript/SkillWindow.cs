@@ -156,7 +156,7 @@ public class SkillWindow : MonoBehaviour {
                 if (!string.IsNullOrEmpty(skilldata.fireEffUrl))
                 {
                     string asseturl = UrlManager.GetEffectUrl(skilldata.fireEffUrl, EEffectType.Attack);
-                    attackEffPrefab = Resources.LoadAssetAtPath(asseturl, typeof(GameObject)) as GameObject;
+                    attackEffPrefab = AssetDatabase.LoadAssetAtPath(asseturl, typeof(GameObject)) as GameObject;
 
                 }
                 else
@@ -164,14 +164,14 @@ public class SkillWindow : MonoBehaviour {
                 if (!string.IsNullOrEmpty(skilldata.moveEffUrl))
                 {
                     string asseturl = UrlManager.GetEffectUrl(skilldata.moveEffUrl, EEffectType.Move);
-                    moveEffPrefab = Resources.LoadAssetAtPath(asseturl, typeof(GameObject)) as GameObject;
+                    moveEffPrefab = AssetDatabase.LoadAssetAtPath(asseturl, typeof(GameObject)) as GameObject;
                 }
                 else
                     moveEffPrefab = null;
                 if (!string.IsNullOrEmpty(skilldata.explodeEffUrl))
                 {
                     string asseturl = UrlManager.GetEffectUrl(skilldata.explodeEffUrl, EEffectType.Explode);
-                    explodeEffPrefab = Resources.LoadAssetAtPath(asseturl, typeof(GameObject)) as GameObject;
+                    explodeEffPrefab = AssetDatabase.LoadAssetAtPath(asseturl, typeof(GameObject)) as GameObject;
                 }
                 else
                     explodeEffPrefab = null;
@@ -222,7 +222,7 @@ public class SkillWindow : MonoBehaviour {
     {
 
         setSkilldata();
-        DBaseFightRole role = FightRoleManager._instance.getTestAttacker();
+        DBaseFightRole role = FightRoleManager._instance.getEnemuAttacker();
         if (role != null)
         {
             role.useSkill(skilldata);

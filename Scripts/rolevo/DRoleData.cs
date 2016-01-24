@@ -139,7 +139,7 @@ public class DRoleData  {
             }
             else if (attrType == EBaseAttr.Mp)
                 cur_mp += value;
-            roleBufBasefAttr[(int)attrType] += value;
+            else roleBufBasefAttr[(int)attrType] += value;
         }
     }
 

@@ -342,16 +342,17 @@ public class DBaseFightRole : MonoBehaviour
 
         foreach (EBaseAttr attrkey in buffdata.effectBaseAttr.Keys)
         {
-            roledata.addBaseBuffAttr(attrkey, buffdata.effectBaseAttr[attrkey] * roledata.getOriginBaseAttrByType(attrkey) / 100f);
+            roledata.addBaseBuffAttr(attrkey, buffdata.effectBaseAttr[attrkey] * roledata.getOriginBaseAttrByType(attrkey));
         }
 
         foreach (ESubAttr attrkey in buffdata.effectSubAttr.Keys)
         {
-            roledata.addSubBuffAttr(attrkey, buffdata.effectSubAttr[attrkey] * roledata.getOriginSubAttrByType(attrkey) / 100f);
+            roledata.addSubBuffAttr(attrkey, buffdata.effectSubAttr[attrkey] * roledata.getOriginSubAttrByType(attrkey));
         }
 
         BuffInstance buffeff = buffbody.AddComponent<BuffInstance>();
         buffeff.setBuffData(buffdata, this);
+        hpbarui.updateHp();
 
     }
 
@@ -363,12 +364,14 @@ public class DBaseFightRole : MonoBehaviour
 
             foreach (EBaseAttr attrkey in buffdata.effectBaseAttr.Keys)
             {
-                roledata.addBaseBuffAttr(attrkey, -buffdata.effectBaseAttr[attrkey] * roledata.getOriginBaseAttrByType(attrkey) / 100f);
+                if (buffdata.bufftype == EBuffType.OnGoing)
+                roledata.addBaseBuffAttr(attrkey, -buffdata.effectBaseAttr[attrkey] * roledata.getOriginBaseAttrByType(attrkey));
             }
 
             foreach (ESubAttr attrkey in buffdata.effectSubAttr.Keys)
             {
-                roledata.addSubBuffAttr(attrkey, -buffdata.effectSubAttr[attrkey] * roledata.getOriginSubAttrByType(attrkey) / 100f);
+                if(buffdata.bufftype == EBuffType.OnGoing)
+                roledata.addSubBuffAttr(attrkey, -buffdata.effectSubAttr[attrkey] * roledata.getOriginSubAttrByType(attrkey));
             }
         }
     }
@@ -639,7 +642,8 @@ public class DBaseFightRole : MonoBehaviour
         yield return new WaitForSeconds(delayTime);
          DSkillDefaultData skillDefdata;
 
-         if (ConfigManager.intance.skillDefaultDic.TryGetValue(baseskilldata.id, out skillDefdata))
+         skillDefdata = ConfigManager.intance.skillDefaultDic[baseskilldata.id];
+         if (skillDefdata != null)
          {
              DBuffData buffdata;
              foreach (int buffid in skillDefdata.buffenemy)
@@ -652,7 +656,7 @@ public class DBaseFightRole : MonoBehaviour
              }
 
          }
-
+         hpbarui.updateHp();
     }
     //被击伤害
 
