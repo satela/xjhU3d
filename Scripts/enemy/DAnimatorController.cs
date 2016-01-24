@@ -46,12 +46,12 @@ public class DAnimatorController : MonoBehaviour {
         if (m_curAnimatorState == eState && eState == eAnimatorState.arun)
             return true;
 
-        if ((int)eState < (int)m_curAnimatorState)
-            return false;
+     //   if ((int)eState < (int)m_curAnimatorState)
+     //       return false;
 
         if (eState != eAnimatorState.await)
         {
-            StopAllCoroutines();
+          //  StopAllCoroutines();
             StartCoroutine(changeState(eState));
             return true;
         }

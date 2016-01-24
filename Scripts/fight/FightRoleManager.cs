@@ -225,10 +225,10 @@ public class FightRoleManager : MonoBehaviour {
     }
     public DBaseFightRole getTestAttacker()
     {
-        //if (selfRoles[0] != null)
-        //    return selfRoles[0];
-        if (enemyRoles[0] != null)
-            return enemyRoles[0];
+        if (selfRoles[0] != null)
+            return selfRoles[0];
+        //if (enemyRoles[0] != null)
+        //    return enemyRoles[0];
         return null;
     }
 

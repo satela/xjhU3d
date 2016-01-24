@@ -607,7 +607,8 @@ public class DBaseFightRole : MonoBehaviour
     {
             DRoleData castRoledata = casterdata.castRole.GetComponent<DBaseFightRole>().roledata;
 
-            if (!FightCalculateTool.checkIsHitted(castRoledata, roledata))
+        //攻击技能才能闪避，如果是 加buff 的 不能闪避
+            if (casterdata.skilldata.isAttackSkill() && !FightCalculateTool.checkIsHitted(castRoledata, roledata))
             {
                 //闪避了
                 showDogeCritEffect(EEffectType.Dodge);
@@ -620,7 +621,8 @@ public class DBaseFightRole : MonoBehaviour
                 {
                     beatdata = casterdata.skilldata.beatonDatas[i];
 
-                    StartCoroutine(beantonBlood(castRoledata, casterdata.skilldata, beatdata.beatonTime));
+                    if(casterdata.skilldata.isAttackSkill())
+                        StartCoroutine(beantonBlood(castRoledata, casterdata.skilldata, beatdata.beatonTime));
                     if (isDead)
                         break;
                     StartCoroutine(beatonToBackOrFly(beatdata));
