@@ -38,7 +38,7 @@ public class TouchLayer : MonoBehaviour {
 		
 		// Verification that the action on the object
 		if (gesture.pickObject !=null && !gesture.isHoverReservedArea){
-			gesture.pickObject.renderer.material.color = new Color( Random.Range(0.0f,1.0f),  Random.Range(0.0f,1.0f), Random.Range(0.0f,1.0f));
+			gesture.pickObject.GetComponent<Renderer>().material.color = new Color( Random.Range(0.0f,1.0f),  Random.Range(0.0f,1.0f), Random.Range(0.0f,1.0f));
 			textMesh.text = "Touch a sphere on layer :" + LayerMask.LayerToName( gesture.pickObject.layer);
 		}
 		else{

@@ -16,6 +16,9 @@ public class DSkillDefaultData  {
 
     public List<int> buffenemy = new List<int>();
 
+    public float cdTime = 1;// 冷却时间
+
+    public float needMp = 10;// 消耗怒气
 
     public void paresData(string datastr)
     {
@@ -46,5 +49,9 @@ public class DSkillDefaultData  {
                 buffenemy.Add(int.Parse(buffdata[i]));
             
         }
+        cdTime = float.Parse(propArray[6]);
+
+        needMp = float.Parse(propArray[7]);
+
     }
 }

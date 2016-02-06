@@ -40,7 +40,7 @@ public class testskill : MonoBehaviour {
             if (hitwolf.IndexOf(other.gameObject) < 0)
             {
                // other.gameObject.GetComponent<BabyWolfManager>().TakeDamage((int)attack);
-                other.gameObject.rigidbody.AddExplosionForce(1000, transform.position, 10);
+                other.gameObject.GetComponent<Rigidbody>().AddExplosionForce(1000, transform.position, 10);
                 hitwolf.Add(other.gameObject);
             }
 

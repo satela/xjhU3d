@@ -37,11 +37,11 @@ public class NcAddForce : NcEffectBehaviour
 	void AddForce()
 	{
 		// AddForce
-		if (rigidbody != null)
+		if (GetComponent<Rigidbody>() != null)
 		{
 			// Random pos
 			Vector3 addForce = new Vector3(Random.Range(-m_RandomRange.x, m_RandomRange.x)+m_AddForce.x, Random.Range(-m_RandomRange.y, m_RandomRange.y)+m_AddForce.y, Random.Range(-m_RandomRange.z, m_RandomRange.z)+m_AddForce.z);
-			rigidbody.AddForce(addForce, m_ForceMode);
+			GetComponent<Rigidbody>().AddForce(addForce, m_ForceMode);
 		}
 	}
 

@@ -1,6 +1,6 @@
 //--------------------------------------------
 //            NGUI: HUD Text
-// Copyright © 2012 Tasharen Entertainment
+// Copyright 漏 2012 Tasharen Entertainment
 //--------------------------------------------
 
 using UnityEngine;
@@ -87,7 +87,7 @@ public class UIFollowTarget : MonoBehaviour
 		Vector3 pos = gameCamera.WorldToViewportPoint(target.position);
 
 		// Determine the visibility and the target alpha
-		bool isVisible = (gameCamera.isOrthoGraphic || pos.z > 0f) && (!disableIfInvisible || (pos.x > 0f && pos.x < 1f && pos.y > 0f && pos.y < 1f));
+		bool isVisible = (gameCamera.orthographic || pos.z > 0f) && (!disableIfInvisible || (pos.x > 0f && pos.x < 1f && pos.y > 0f && pos.y < 1f));
 
 		// Update the visibility flag
 		if (mIsVisible != isVisible) SetVisible(isVisible);

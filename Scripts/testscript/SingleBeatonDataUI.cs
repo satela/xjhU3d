@@ -42,7 +42,7 @@ public class SingleBeatonDataUI : MonoBehaviour {
         if (!string.IsNullOrEmpty(datas.beatonEffUrl))
         {
             string asseturl = UrlManager.GetEffectUrl(datas.beatonEffUrl, EEffectType.Beaton);
-            beatonEff = Resources.LoadAssetAtPath(asseturl, typeof(GameObject)) as GameObject;
+            beatonEff = UnityEditor.AssetDatabase.LoadAssetAtPath(asseturl, typeof(GameObject)) as GameObject;
         }
         else
             beatonEff = null;

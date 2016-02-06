@@ -39,6 +39,6 @@ public class PlayerAnimation : MonoBehaviour {
 	}
 	void PlayAnim(string aninName)
 	{
-		animation.CrossFade (aninName);
+		GetComponent<Animation>().CrossFade (aninName);
 	}
 }

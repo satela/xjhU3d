@@ -135,7 +135,7 @@ public class NgLayout
 
 	public static float GetWorldPerScreenPixel(Vector3 worldPoint)
 	{
-		Camera cam = Camera.mainCamera;
+		Camera cam = Camera.main;
 		if (cam == null)
 			return 0;
 		Plane nearPlane = new Plane(cam.transform.forward, cam.transform.position);
@@ -146,7 +146,7 @@ public class NgLayout
 
 	public static Vector3 GetScreenToWorld(Vector3 targetWorld, Vector2 screenPos)
 	{
-		Camera cam = Camera.mainCamera;
+		Camera cam = Camera.main;
 		if (cam == null)
 			return Vector3.zero;
 		Plane nearPlane = new Plane(cam.transform.forward, cam.transform.position);
@@ -156,7 +156,7 @@ public class NgLayout
 
 	public static Vector3 GetWorldToScreen(Vector3 targetWorld)
 	{
-		Camera cam = Camera.mainCamera;
+		Camera cam = Camera.main;
 		if (cam == null)
 			return Vector3.zero;
 		return cam.WorldToScreenPoint(targetWorld);

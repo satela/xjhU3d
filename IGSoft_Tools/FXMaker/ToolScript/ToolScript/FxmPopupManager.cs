@@ -392,7 +392,7 @@ public class FxmPopupManager : MonoBehaviour
 		{
 			m_CurrentHierarchyPopup	= m_ToolPopupGameObject.GetComponent(scriptFilename) as FxmPopup;
 			if (m_CurrentHierarchyPopup == null)
-				m_CurrentHierarchyPopup	= m_ToolPopupGameObject.AddComponent(scriptFilename) as FxmPopup;
+				m_CurrentHierarchyPopup	= UnityEngineInternal.APIUpdaterRuntimeServices.AddComponent(m_ToolPopupGameObject, "Assets/IGSoft_Tools/FXMaker/ToolScript/ToolScript/FxmPopupManager.cs (395,31)", scriptFilename) as FxmPopup;
 			if (m_CurrentHierarchyPopup != null)
 				m_CurrentHierarchyPopup.ShowPopupWindow(selObj);
 		}
@@ -503,14 +503,14 @@ public class FxmPopupManager : MonoBehaviour
 	// MessageBox window -----------------------------------------------------------------
 	public bool ShowModalOkCancelMessage(string msg)	// show state return
 	{
-		// Ã³À½ µé¿À¿È
+		// Ã³ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		if (msg != m_ModalMessage)
 		{
 			m_ModalMessage			= msg;
 			m_ModalType				= FXMakerLayout.MODAL_TYPE.MODAL_OKCANCEL;
 			m_nModalMessageValue	= FXMakerLayout.MODALRETURN_TYPE.MODALRETURN_SHOW;
 			return true;
-		} else {	// ¹Ýº¹Áß
+		} else {	// ï¿½Ýºï¿½ï¿½ï¿½
 			if (m_nModalMessageValue == FXMakerLayout.MODALRETURN_TYPE.MODALRETURN_SHOW)
 				return true;
 			m_ModalMessage	= "";
@@ -519,7 +519,7 @@ public class FxmPopupManager : MonoBehaviour
 		}
 	}
 
-	// ShowModalOkCancelMessage°¡ false ÀÏ¶§¸¸ »ç¿ë
+	// ShowModalOkCancelMessageï¿½ï¿½ false ï¿½Ï¶ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	public FXMakerLayout.MODALRETURN_TYPE GetModalMessageValue()
 	{
 		return m_nModalMessageValue;

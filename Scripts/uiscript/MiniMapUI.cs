@@ -11,7 +11,7 @@ public class MiniMapUI : MonoBehaviour {
     {
         UIEventListener.Get(zoomin).onClick += OnZoomIn;
         UIEventListener.Get(zoomout).onClick += OnZoomOut;
-        minimapCamera = GameObject.FindGameObjectWithTag(Tags.MiniMapCamera).camera;
+        minimapCamera = GameObject.FindGameObjectWithTag(Tags.MiniMapCamera).GetComponent<Camera>();
 
     }
 

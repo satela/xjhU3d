@@ -9,10 +9,15 @@ public class DAnimatorController : MonoBehaviour {
 
     public eAnimatorState currentState
     {
-        get { 
-            AnimatorStateInfo stateinfo = animator.GetCurrentAnimatorStateInfo(0);
-            int tagHash = stateinfo.tagHash;
-            return (eAnimatorState)DAnimatorState.GetState(tagHash);
+        get {
+            if (animator != null)
+            {
+                AnimatorStateInfo stateinfo = animator.GetCurrentAnimatorStateInfo(0);
+                int tagHash = stateinfo.tagHash;
+                return (eAnimatorState)DAnimatorState.GetState(tagHash);
+            }
+            else
+                return eAnimatorState.await;
         }
     }
 	// Use this for initialization
@@ -39,6 +44,8 @@ public class DAnimatorController : MonoBehaviour {
 
     public bool changeToState(eAnimatorState eState)
     {
+        if (animator == null)
+            return false;
         AnimatorStateInfo stateinfo = animator.GetCurrentAnimatorStateInfo(0);
 
         int tagHash = stateinfo.tagHash;
@@ -101,6 +108,7 @@ public class DAnimatorController : MonoBehaviour {
     {
         int statehash = DAnimatorState.GetHash(eAnimatorState.await);
        // animator.Play(statehash, 0, 0);
+        if(animator != null)
         animator.SetInteger(DAnimatorState.state, (int)eAnimatorState.await);
     }
 

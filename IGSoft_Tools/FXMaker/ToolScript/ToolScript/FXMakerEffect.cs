@@ -26,7 +26,7 @@ public class FXMakerEffect : MonoBehaviour
 	public			GameObject			m_CurrentEffectRoot;
 	protected		bool				m_bChangePrefab			= false;
 
-	// ÀÚµ¿ ¼³Á¤
+	// ï¿½Úµï¿½ ï¿½ï¿½ï¿½ï¿½
 	protected		GUIContent[]		m_ProjectFolerContents;
 	protected		GUIContent[]		m_GroupFolderContents;	// = new string[gNcLayout.m_nMaxTop2RowToolbarCount];
 //	protected		string[]			m_EffectNameStrings;	// = new string[gNcLayout.m_nMaxEffectListCount];
@@ -221,7 +221,7 @@ public class FXMakerEffect : MonoBehaviour
 		int	nProjectIndex	= -1;
 		int	nGroupIndex		= 0;
 		int	nEffectIndex	= 0;
-		// ÀÌÀü ¼±ÅÃÁ¤º¸ Ã³¸®
+		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½
 		if (FXMakerLayout.m_bDevelopPrefs == false)
 		{
 			nProjectIndex	= UnityEditor.EditorPrefs.GetInt("FXMakerEffect.m_nProjectIndex"	, nProjectIndex);
@@ -300,7 +300,7 @@ public class FXMakerEffect : MonoBehaviour
 		m_bChangePrefab = true;
 	}
 
-	// group¿Í prefab path·Î group ¹× Effect prefab index¸¦ ÁöÁ¤ÇÑ´Ù.
+	// groupï¿½ï¿½ prefab pathï¿½ï¿½ group ï¿½ï¿½ Effect prefab indexï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
 	void SelectToolbar(int nProjectIndex, int nGroupIndex, int nEffectIndex)
 	{
 		if (LoadGroup(nProjectIndex, nGroupIndex, ""))
@@ -386,7 +386,7 @@ public class FXMakerEffect : MonoBehaviour
 		} else {
 			m_nEffectIndex	= -1;
 		}
-		// ¸¶Áö¸· ¼±ÅÃÁ¤º¸ ÀúÀå
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		UnityEditor.EditorPrefs.SetInt("FXMakerEffect.m_nProjectIndex"	, m_nProjectIndex);
 		UnityEditor.EditorPrefs.SetInt("FXMakerEffect.m_nGroupIndex"	, GetGroupIndex());
 		UnityEditor.EditorPrefs.SetInt("FXMakerEffect.m_nEffectIndex"	, m_nEffectIndex);
@@ -398,7 +398,7 @@ public class FXMakerEffect : MonoBehaviour
 		FXMakerMain.inst.SetCurrentEffectPrefab(setPrefab, m_CurrentEffectRoot, false);
 	}
 
-	// EffectFolder³»ÀÇ prefabÆÄÀÏ ±¸¼ºÇÏ±â, selectPrefabPath¸¦ ÁöÁ¤ÇÒ °æ¿ì EffectIndex ¸®ÅÏ
+	// EffectFolderï¿½ï¿½ï¿½ï¿½ prefabï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½, selectPrefabPathï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ EffectIndex ï¿½ï¿½ï¿½ï¿½
 	int LoadEffectFolder(string selectPrefabPath)
 	{
 		NgUtil.ClearObjects(m_EffectPrefabs);
@@ -551,7 +551,7 @@ public class FXMakerEffect : MonoBehaviour
 			if (GUI.changed)
 			{
 				FXMakerMain.inst.GetFXMakerMouse().ChangeAngle(m_nCameraAangleValues[m_nCameraAngleIndex]);
-				// ¸¶Áö¸· ¼±ÅÃÁ¤º¸ ÀúÀå
+				// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 				UnityEditor.EditorPrefs.SetInt("FXMakerEffect.m_nCameraAngleIndex", m_nCameraAngleIndex);
 		}
 		}
@@ -579,7 +579,7 @@ public class FXMakerEffect : MonoBehaviour
 			return;
 		}
 
-		// ±â´É ¹öÆ° -----------------------------------------------------------
+		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ° -----------------------------------------------------------
 		Rect	rect1Row	= new Rect(FXMakerLayout.m_rectInnerMargin.x, 20, effectRect.width-FXMakerLayout.m_rectInnerMargin.x*2, 25);
 		Rect	rect2Row	= new Rect(FXMakerLayout.m_rectInnerMargin.x, 50, effectRect.width-FXMakerLayout.m_rectInnerMargin.x*2, 20);
 		Rect	rect3Row	= new Rect(FXMakerLayout.m_rectInnerMargin.x, 75, effectRect.width-FXMakerLayout.m_rectInnerMargin.x*2, 12);
@@ -621,7 +621,7 @@ public class FXMakerEffect : MonoBehaviour
 				if (FxmPopupManager.inst.GetModalMessageValue() == FXMakerLayout.MODALRETURN_TYPE.MODALRETURN_OK)
 				{
 		 			NcSpriteAnimation spriteCom = FXMakerMain.inst.GetOriginalEffectPrefab().GetComponent<NcSpriteAnimation>();
-					if (spriteCom != null && spriteCom.m_bBuildSpriteObj && spriteCom.renderer.sharedMaterial != null)
+					if (spriteCom != null && spriteCom.m_bBuildSpriteObj && spriteCom.GetComponent<Renderer>().sharedMaterial != null)
 						m_bProcessDelSprite = true;
 					else {
 						GameObject deletePrefab = FXMakerMain.inst.ClearCurrentEffectObject(m_CurrentEffectRoot, true);
@@ -642,13 +642,13 @@ public class FXMakerEffect : MonoBehaviour
 				{
 					// delete material, texture
 		 			NcSpriteAnimation spriteCom = FXMakerMain.inst.GetOriginalEffectPrefab().GetComponent<NcSpriteAnimation>();
-					if (spriteCom.renderer.sharedMaterial.mainTexture != null)
+					if (spriteCom.GetComponent<Renderer>().sharedMaterial.mainTexture != null)
 					{
-						string path = AssetDatabase.GetAssetPath(spriteCom.renderer.sharedMaterial.mainTexture);
+						string path = AssetDatabase.GetAssetPath(spriteCom.GetComponent<Renderer>().sharedMaterial.mainTexture);
 						AssetDatabase.MoveAssetToTrash(path);
 //						AssetDatabase.DeleteAsset(path);
 					}
-					string matpath = AssetDatabase.GetAssetPath(spriteCom.renderer.sharedMaterial);
+					string matpath = AssetDatabase.GetAssetPath(spriteCom.GetComponent<Renderer>().sharedMaterial);
 					AssetDatabase.MoveAssetToTrash(matpath);
 //					AssetDatabase.DeleteAsset(matpath);
 				}

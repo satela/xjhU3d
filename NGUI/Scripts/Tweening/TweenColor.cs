@@ -1,6 +1,6 @@
 //----------------------------------------------
 //            NGUI: Next-Gen UI kit
-// Copyright © 2011-2014 Tasharen Entertainment
+// Copyright 漏 2011-2014 Tasharen Entertainment
 //----------------------------------------------
 
 using UnityEngine;
@@ -24,9 +24,9 @@ public class TweenColor : UITweener
 	{
 		mCached = true;
 		mWidget = GetComponent<UIWidget>();
-		Renderer ren = renderer;
+		Renderer ren = GetComponent<Renderer>();
 		if (ren != null) mMat = ren.material;
-		mLight = light;
+		mLight = GetComponent<Light>();
 		if (mWidget == null && mMat == null && mLight == null)
 			mWidget = GetComponentInChildren<UIWidget>();
 	}

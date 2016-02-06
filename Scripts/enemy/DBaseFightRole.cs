@@ -50,12 +50,13 @@ public class DBaseFightRole : MonoBehaviour
 
     public AttackState attackState = AttackState.Idle;
 
-    public DRoleData roledata;//人物基本攻防属性
+    public DRoleData roledata;//人物基本属性
 
     public List<DBuffData> buffdataList = new List<DBuffData>();//人物所有受到的buff；
    
     private DAnimatorController animatorControl;
-    private NavMeshAgent agent;
+    public NavMeshAgent agent;
+   // private NavMeshObstacle obstacle;
 
     private CharacterController cc;
 
@@ -81,25 +82,50 @@ public class DBaseFightRole : MonoBehaviour
 
     private bool isDead = false;
     private HpBarControl hpbarui;
-    public void setSide(int fside,GameObject modelprefab,Vector3 pos,Vector3 rotate)
+
+    private FightRoleSkill skillManager;
+
+    private float bodyRadius = 0;
+    private float bodyHeight = 0;
+
+    public Vector3 destpoint = Vector3.zero;
+    public void setSide(int fside,int roleid,Vector3 pos,Vector3 rotate)
     {
         side = fside;
-        roleModel = GameObject.Instantiate(modelprefab) as GameObject;
+
+        roledata = new DRoleData(roleid);
+
+        GameObject rolemodel = UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/RPG/actors/" + roledata.defaultRoledata.modelUrl + ".prefab",typeof(GameObject)) as GameObject;
+        roleModel = GameObject.Instantiate(rolemodel) as GameObject;
         //agent = roleModel.GetComponent<NavMeshAgent>();
         roleModel.transform.position = pos;
         roleModel.transform.parent = transform;
         roleModel.tag = Tags.player;
 
+        rolelastpos = pos;
         roleModel.transform.localEulerAngles = rotate;
        // roleModel.transform.localScale = new Vector3(8, 8, 8);
         animatorControl = roleModel.AddComponent<DAnimatorController>();
         cc = roleModel.GetComponent<CharacterController>();
+        bodyRadius = cc.radius;
+        bodyHeight = cc.height;
+        cc.enabled = false;
+
         agent = roleModel.AddComponent<NavMeshAgent>();
+       // obstacle = roleModel.AddComponent<NavMeshObstacle>();
+        agent.obstacleAvoidanceType = ObstacleAvoidanceType.NoObstacleAvoidance;
+        agent.autoRepath = true;
+        agent.radius = bodyRadius;
+        agent.height = bodyHeight;
+      //  obstacle.radius = bodyRadius;
+       // obstacle.carving = true;
+        skillManager = gameObject.AddComponent<FightRoleSkill>();
+        skillManager.initSkill(roledata.defaultRoledata.skillIdList);
 
         hpbarui = gameObject.AddComponent<HpBarControl>();
-        //roleModel.AddComponent<NavMeshObstacle>();
+
         StartCoroutine(resetModelPos());
-        roledata = new DRoleData();
+        
 
     }
 
@@ -109,12 +135,12 @@ public class DBaseFightRole : MonoBehaviour
        // roleModel.transform.localPosition = Vector3.zero + Vector3.up * 0.26f;
        // roleModel.transform.position = transform.position;
         animatorControl.resetToIdle();
-        agent.SetDestination(rolePosition);
+        //agent.enabled = true;
+       // gotoDestination(rolePosition);
 
     }
 
-    //使用技能发动攻击
-    public bool useSkill(DSkillBaseData baseSkilldata)
+    private bool canUseSkillNow()
     {
         if (isCasteringSkill)
             return false;
@@ -122,12 +148,24 @@ public class DBaseFightRole : MonoBehaviour
 
         if (fightstate == RoleFightState.Dissy || fightstate == RoleFightState.Freeze)
             return false;
+        if (animatorControl.currentState != eAnimatorState.await)
+            return false;
+        //if (agent.enabled == false)// agent.enabled = false 一般这个 时候 角色 处于被击飞 击退的 时候
+        //    return false;
+
+        return true;
+    }
+    //使用技能发动攻击
+    public bool useSkill(DSkillBaseData baseSkilldata)
+    {
+        if (!canUseSkillNow())
+            return false;
 
         if (baseSkilldata != null)
         {
             GameObject firstenemy = FightRoleManager._instance.findAttackEnemy(this, EAttackStragety.EAttackStragety_Nearest, isAttackEnemy(baseSkilldata));
 
-            if(firstenemy != null)
+            if (firstenemy != null)
             {
                 isCasteringSkill = true;
                 casterdata = new SkillCasterData();
@@ -136,10 +174,15 @@ public class DBaseFightRole : MonoBehaviour
 
                 float dist = FightRoleManager._instance.getFightRoleDistance(this, firstenemy.GetComponent<DBaseFightRole>());
                 roleModel.transform.LookAt(firstenemy.GetComponent<DBaseFightRole>().roleModel.transform, Vector3.up);
-                if(dist > DefaultSkillParam.PathFindingDist)//当距离大于可自动寻路距离，不作攻击，只表现一下施放动作和特性
+
+                if (skillManager != null)
+                {
+                    skillManager.useSkill(baseSkilldata);
+                }
+                if (dist > DefaultSkillParam.PathFindingDist)//当距离大于可自动寻路距离，不作攻击，只表现一下施放动作和特性
                 {
                     StartCoroutine(showAttackMov());
-                    
+
                 }
                 else if (dist > baseSkilldata.minAttackDist)
                 {
@@ -165,7 +208,18 @@ public class DBaseFightRole : MonoBehaviour
                 }
             }
             else
+            {
+                if (skillManager != null)
+                {
+                    skillManager.useSkill(baseSkilldata);
+                }
+                isCasteringSkill = true;
+                casterdata = new SkillCasterData();
+                casterdata.castRole = gameObject;
+                casterdata.skilldata = baseSkilldata;
+                StartCoroutine(showAttackMov());
                 return true;
+            }
         }
         return false;
 
@@ -250,15 +304,22 @@ public class DBaseFightRole : MonoBehaviour
 
                 if (dist > casterdata.skilldata.minAttackDist)
                 {
-                    agent.SetDestination(firstenemy.GetComponent<DBaseFightRole>().rolePosition);
-                    animatorControl.changeToState(eAnimatorState.arun);
+                    Vector3 destpoint = FightRoleManager._instance.getAttackPointByDist(this, firstenemy.GetComponent<DBaseFightRole>(), casterdata.skilldata.minAttackDist);
+                    gotoDestination(destpoint);
+                    if (FightRoleManager._instance.isCollisionOther(this))
+                    {
+                      //  gotoDestination(rolePosition);
+                        isCasteringSkill = false;
+                        break;
+                    }
                 }
                 else
                 {
-                    agent.SetDestination(rolePosition);
+                   // agent.enabled = true;
+                    gotoDestination(rolePosition);
 
-                  //  roleModel.transform.LookAt(firstenemy.transform, Vector3.up);
-                    animatorControl.resetToIdle();
+                    roleModel.transform.LookAt(firstenemy.GetComponent<DBaseFightRole>().roleModel.transform, Vector3.up);
+                   // animatorControl.resetToIdle();
                     if (casterdata.skilldata.isNeedAppoint)
                     {
                         skillstep = ESkillStep.Selecting;
@@ -278,7 +339,8 @@ public class DBaseFightRole : MonoBehaviour
             }
             else
             {
-                agent.SetDestination(rolePosition);
+                //agent.enabled = true;
+                gotoDestination(rolePosition);
                 animatorControl.resetToIdle();
                 isCasteringSkill = false;
                 break;
@@ -335,7 +397,11 @@ public class DBaseFightRole : MonoBehaviour
 
     //private List<DBuffData>
     public void addBuffBydata(DBuffData buffdata)
-    {       
+    {
+        //持续性buff 不能叠加
+        if (buffdata.bufftype == EBuffType.OnGoing && hasBuff(buffdata.buffid))
+            return;
+
         GameObject buffbody = new GameObject("buff(" + buffdata.buffname+")");
 
         buffdataList.Add(buffdata);
@@ -355,7 +421,16 @@ public class DBaseFightRole : MonoBehaviour
         hpbarui.updateHp();
 
     }
+    private bool hasBuff(int buffid)
+    {
+        foreach(DBuffData bdata in buffdataList)
+        {
+            if(bdata.buffid == buffid)
+                return true;
+        }
 
+        return false;
+    }
     public void removeBuffData(DBuffData buffdata)
     {
         if (buffdataList.Contains(buffdata))
@@ -395,6 +470,9 @@ public class DBaseFightRole : MonoBehaviour
         }
         switch ((EBuffSpecialType)maxstate)
         {
+            case EBuffSpecialType.None:
+                fightstate = RoleFightState.Patrol;
+                break;
             case EBuffSpecialType.Freeze:
                 fightstate = RoleFightState.Freeze;
                 break;
@@ -411,7 +489,9 @@ public class DBaseFightRole : MonoBehaviour
 	void Start () {
 	
 	}
-	
+
+
+    private Vector3 rolelastpos;
 	// Update is called once per frame
 	void Update () {
 
@@ -419,9 +499,35 @@ public class DBaseFightRole : MonoBehaviour
         {
           OnLockTarget();
         }
+        if (agent != null)
+        {
+            if (agent.enabled && agent.remainingDistance > 0.1)
+            {
+                if (FightRoleManager._instance.isCollisionOther(this))
+                {
+                    gotoDestination(rolePosition);
+                  
+                }
+                else
+                {                  
+                    animatorControl.changeToState(eAnimatorState.arun);
+                }
+                
+            }
+            else if (agent.enabled && agent.remainingDistance <= 0.1)
+            {
+               
+                if(animatorControl.currentState == eAnimatorState.arun)
+                animatorControl.resetToIdle();
+            }
+        }
+        if ((animatorControl.currentState == eAnimatorState.arun && !agent.enabled) || (animatorControl.currentState == eAnimatorState.arun && agent.enabled && agent.remainingDistance <= 0.1))
+            animatorControl.resetToIdle();
 
+        checkUseSkill();
 	}
 
+   
     void OnLockTarget()
     {
         StartCoroutine(OnLockMultiTarget());
@@ -561,15 +667,17 @@ public class DBaseFightRole : MonoBehaviour
 
         if (beatondata.eBeatonbackFly == EBeatonToBackFly.None)
         {
-            animatorControl.changeToState(beatondata.animatorBeatonClip);
+            if (animatorControl.currentState == eAnimatorState.await || animatorControl.currentState == eAnimatorState.beaten || animatorControl.currentState == eAnimatorState.fall)
+                animatorControl.changeToState(beatondata.animatorBeatonClip);
             yield return null;
         }
         if (beatondata.eBeatonbackFly == EBeatonToBackFly.Back)
         {
             Vector3 backpos = rolePosition - roleModel.transform.forward * DefaultSkillParam.BeatonBackMaxDist;
 
-            if (agent != null && agent.enabled)
+            if (agent != null )
             {
+                agent.enabled = true;
                 NavMeshPath path = new NavMeshPath();
                 agent.CalculatePath(backpos, path);
                 if (path.corners.Length == 2)
@@ -578,19 +686,23 @@ public class DBaseFightRole : MonoBehaviour
                     iTween.MoveTo(roleModel, iTween.Hash("position", backpos, "easeType", "easeOutQuart", "delay",0, "time", 0.3f, "oncomplete", "resetAgent"));
                     yield return new WaitForSeconds(0.3f);
                     agent.enabled = true;
+
+                    if (animatorControl.currentState == eAnimatorState.await || animatorControl.currentState == eAnimatorState.beaten ||animatorControl.currentState == eAnimatorState.fall)
                     animatorControl.changeToState(beatondata.animatorBeatonClip);
 
                 }
                 else
                 {
-                    animatorControl.changeToState(beatondata.animatorBeatonClip);
+                    if (animatorControl.currentState == eAnimatorState.await || animatorControl.currentState == eAnimatorState.beaten || animatorControl.currentState == eAnimatorState.fall)
+                        animatorControl.changeToState(beatondata.animatorBeatonClip);
                 }
             }
         }
         else if (beatondata.eBeatonbackFly == EBeatonToBackFly.Fly)
         {
             agent.enabled = false;
-            animatorControl.changeToState(beatondata.animatorBeatonClip);
+            if (animatorControl.currentState == eAnimatorState.await || animatorControl.currentState == eAnimatorState.beaten ||animatorControl.currentState == eAnimatorState.fall)
+                animatorControl.changeToState(beatondata.animatorBeatonClip);
 
             Vector3 originpos = rolePosition;
             Vector3 topos = rolePosition + Vector3.up * DefaultSkillParam.BeatonUpMaxDist;
@@ -640,9 +752,10 @@ public class DBaseFightRole : MonoBehaviour
     IEnumerator addBuffByBeaton(DSkillBaseData baseskilldata,float delayTime)
     {
         yield return new WaitForSeconds(delayTime);
-         DSkillDefaultData skillDefdata;
+         DSkillDefaultData skillDefdata = null;
 
-         skillDefdata = ConfigManager.intance.skillDefaultDic[baseskilldata.id];
+         if (ConfigManager.intance.skillDefaultDic.ContainsKey(baseskilldata.id))
+            skillDefdata = ConfigManager.intance.skillDefaultDic[baseskilldata.id];
          if (skillDefdata != null)
          {
              DBuffData buffdata;
@@ -679,6 +792,7 @@ public class DBaseFightRole : MonoBehaviour
     {
         StopAllCoroutines();
         animatorControl.changeToState(eAnimatorState.die);
+        gotoDestination(rolePosition);
         FightRoleManager._instance.roleDead(this);
 
         Invoke("destoryRole", 6);
@@ -698,6 +812,7 @@ public class DBaseFightRole : MonoBehaviour
             agent.CalculatePath(targetpos, path);
             if (path.corners.Length >= 2)
             {
+                agent.enabled = true;
                 agent.SetDestination(targetpos);
             }
         }
@@ -717,10 +832,7 @@ public class DBaseFightRole : MonoBehaviour
     public float roleRadius
     {
         get{
-            if (cc != null)
-                return cc.radius;
-            else
-                return 0;
+            return bodyRadius;
         }
        
     }
@@ -729,10 +841,7 @@ public class DBaseFightRole : MonoBehaviour
     {
         get
         {
-            if (cc != null)
-                return cc.height;
-            else
-                return 0;
+            return bodyHeight;
         }
         
     }
@@ -772,4 +881,57 @@ public class DBaseFightRole : MonoBehaviour
     }
 
     #endregion
+
+    #region 移动接口
+    public void gotoDestination(Vector3 despoint)
+    {
+        StartCoroutine(gotoTargetPoint(despoint));
+    }
+
+    IEnumerator gotoTargetPoint(Vector3 despoint)
+    {
+        yield return null;
+        NavMeshPath path = new NavMeshPath();
+         agent.enabled = true;
+         //agent.Stop();
+
+         agent.CalculatePath(despoint, path);
+         if (path.corners.Length >= 2)
+         {
+             rolelastpos = rolePosition;
+             agent.SetDestination(despoint);
+        }
+    }
+    #endregion
+
+    #region 自动战斗
+
+    private bool _isAutoFight = false;
+    public bool autoFight
+    {
+        get{ return _isAutoFight;}
+
+        set
+        {
+            _isAutoFight = value;
+        }
+    }
+
+    void checkUseSkill()
+    {
+        if (_isAutoFight)
+        {
+            if (skillManager != null)
+            {
+                if (skillManager.getCanUseSkill() != null)
+                {
+                    useSkill(skillManager.getCanUseSkill());
+                }
+            }
+        }
+    }
+    #endregion
+
 }
+
+

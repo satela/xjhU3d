@@ -68,7 +68,7 @@ public class BuffInstance : MonoBehaviour {
         effRole = effectrole;
 
         string asseturl = UrlManager.GetEffectUrl(buffdata.effurl,EEffectType.Buff);
-        GameObject prefab = Resources.LoadAssetAtPath(asseturl,typeof(GameObject)) as GameObject;
+        GameObject prefab = UnityEditor.AssetDatabase.LoadAssetAtPath(asseturl,typeof(GameObject)) as GameObject;
         if (prefab != null)
         {
             effectInstance = Instantiate(prefab, Vector3.zero, Quaternion.identity) as GameObject;

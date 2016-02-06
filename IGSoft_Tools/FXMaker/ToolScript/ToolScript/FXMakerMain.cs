@@ -744,8 +744,8 @@ public class FXMakerMain : MonoBehaviour
 			if (NgSerialized.IsMeshParticleEmitter(pe as ParticleEmitter) && NgSerialized.GetMesh(pe, false) == null)
 			{
 // 				Debug.Log(pe.name + " - MeshParticleEmitter : missing mesh");
-				if (pe.gameObject.renderer != null)
-					DestroyImmediate(pe.gameObject.renderer);
+				if (pe.gameObject.GetComponent<Renderer>() != null)
+					DestroyImmediate(pe.gameObject.GetComponent<Renderer>());
 				DestroyImmediate(pe);
 			}
 		}
@@ -803,9 +803,9 @@ public class FXMakerMain : MonoBehaviour
 			// Grayscale
 			GetFXMakerHierarchy().OnCreateInstanceEffect(m_InstanceEffectObject, true, null);
 
-#if (UNITY_4_0 || UNITY_4_1 || UNITY_4_2 || UNITY_4_3 || UNITY_4_4 || UNITY_4_5 || UNITY_4_6 || UNITY_4_7 || UNITY_4_8 || UNITY_4_9)
+//#if (UNITY_4_0 || UNITY_4_1 || UNITY_4_2 || UNITY_4_3 || UNITY_4_4 || UNITY_4_5 || UNITY_4_6 || UNITY_4_7 || UNITY_4_8 || UNITY_4_9)
 			NgObject.SetActiveRecursively(createObj, true);
-#endif
+//#endif
 
 			m_FXMakerControls.SetStartTime();
 

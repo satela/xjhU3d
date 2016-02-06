@@ -25,7 +25,7 @@ public class FightCalculateTool {
         float total = phyHarm + magHarm;
         if (total <= 0)
             total = 1;
-        return (int)total;      
+        return (int)(total*0.5f);      
 
     }
 }

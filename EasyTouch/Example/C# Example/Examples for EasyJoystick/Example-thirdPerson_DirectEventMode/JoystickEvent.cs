@@ -24,7 +24,7 @@ public class JoystickEvent : MonoBehaviour {
 	
 	void On_JoystickMoveEnd(MovingJoystick move){
 		if (move.joystickName == "Move_Turn_Joystick"){
-			animation.CrossFade("idle");
+			GetComponent<Animation>().CrossFade("idle");
 		}
 	}
 	void On_JoystickMove( MovingJoystick move){
@@ -34,11 +34,11 @@ public class JoystickEvent : MonoBehaviour {
 			
 			//
 			if (Mathf.Abs(move.joystickAxis.y)>0 && Mathf.Abs(move.joystickAxis.y)<0.5){
-				animation.CrossFade("walk");
+				GetComponent<Animation>().CrossFade("walk");
 				
 			}	
 			else if (Mathf.Abs(move.joystickAxis.y)>=0.5){
-				animation.CrossFade("run");	
+				GetComponent<Animation>().CrossFade("run");	
 			}
 		}
 	}

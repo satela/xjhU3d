@@ -91,7 +91,7 @@ public class PlayerAttack : MonoBehaviour {
 
                 attack_state = AttackState.Attack;
                 timer += Time.deltaTime;
-                animation.CrossFade(animName_now);
+                GetComponent<Animation>().CrossFade(animName_now);
                 if(timer >= time_normalattack)
                 {
                     animName_now = animName_Idle;
@@ -130,7 +130,7 @@ public class PlayerAttack : MonoBehaviour {
         }
         else if(state == PlayerFightState.Death)
         {
-            animation.CrossFade(animName_Death);
+            GetComponent<Animation>().CrossFade(animName_Death);
         }
 	
         if(isLockingTarget && Input.GetMouseButtonDown(0))
@@ -203,10 +203,10 @@ public class PlayerAttack : MonoBehaviour {
         isInBeHited = true;
 
         yield return new WaitForSeconds(0.2f);
-        animation.CrossFade(animName_Hited);
+        GetComponent<Animation>().CrossFade(animName_Hited);
         //cur_animName = animName_Hited;
         yield return new WaitForSeconds(0.567f);
-        animation.CrossFade(animName_Idle);
+        GetComponent<Animation>().CrossFade(animName_Idle);
         isInBeHited = false;
 
     }
@@ -215,7 +215,7 @@ public class PlayerAttack : MonoBehaviour {
     public void useSkill(SkillInfo skill)
     {
         playermove.stopFollowing();
-        animation.CrossFade(animName_Idle);
+        GetComponent<Animation>().CrossFade(animName_Idle);
         switch(skill.applyType)
         {
             case ApplyType.Passive:
@@ -237,7 +237,7 @@ public class PlayerAttack : MonoBehaviour {
     IEnumerator OnPassiveSkillUse(SkillInfo skill)
     {
         state = PlayerFightState.SkillAttack;
-        animation.CrossFade(skill.animation_name);
+        GetComponent<Animation>().CrossFade(skill.animation_name);
         yield return new WaitForSeconds(skill.animation_time);
         state = PlayerFightState.ControlWalk;
 
@@ -258,7 +258,7 @@ public class PlayerAttack : MonoBehaviour {
     IEnumerator OnBuffSkillUse(SkillInfo skill)
     {
         state = PlayerFightState.SkillAttack;
-        animation.CrossFade(skill.animation_name);
+        GetComponent<Animation>().CrossFade(skill.animation_name);
         yield return new WaitForSeconds(skill.animation_time);
         state = PlayerFightState.ControlWalk;
         
@@ -335,7 +335,7 @@ public class PlayerAttack : MonoBehaviour {
             if(isCollider && hitinfo.collider.tag == Tags.enemy)
             {
                 transform.LookAt(hitinfo.point);
-                animation.CrossFade(cur_skill.animation_name);
+                GetComponent<Animation>().CrossFade(cur_skill.animation_name);
                 yield return new WaitForSeconds(cur_skill.animation_time);
                 state = PlayerFightState.ControlWalk;
                 isLockingTarget = false;
@@ -378,7 +378,7 @@ public class PlayerAttack : MonoBehaviour {
                // Quaternion rotation = Quaternion.LookRotation(transform.position - hitinfo.point);
               //  transform.rotation = rotation;
                 transform.LookAt(hitinfo.point);
-                animation.CrossFade(cur_skill.animation_name);
+                GetComponent<Animation>().CrossFade(cur_skill.animation_name);
                 yield return new WaitForSeconds(cur_skill.animation_time);
                 state = PlayerFightState.ControlWalk;
                 isLockingTarget = false;

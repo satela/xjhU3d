@@ -115,7 +115,7 @@ public class BabyWolfManager : MonoBehaviour {
             return;
         if(aniState == WolfAnimateState.Death)
         {
-            animation.CrossFade(animName_death);
+            GetComponent<Animation>().CrossFade(animName_death);
         }
         else if(aniState == WolfAnimateState.Attack)
         {
@@ -134,9 +134,9 @@ public class BabyWolfManager : MonoBehaviour {
             }*/
 
             if (agent.enabled && agent.remainingDistance > 0.2)
-                animation.CrossFade(animName_Walk);
+                GetComponent<Animation>().CrossFade(animName_Walk);
             else
-                animation.CrossFade(animName_Idle);
+                GetComponent<Animation>().CrossFade(animName_Idle);
 
             timer += Time.deltaTime;
             if(timer >= time)
@@ -159,10 +159,10 @@ public class BabyWolfManager : MonoBehaviour {
     IEnumerator showHittedAnimation()
     {
         isInHittedAnimation = true;
-        animation.CrossFade(animName_Hited);
+        GetComponent<Animation>().CrossFade(animName_Hited);
         //cur_animName = animName_Hited;
         yield return new WaitForSeconds(time_hittedAnimation);
-        animation.CrossFade(animName_Idle);
+        GetComponent<Animation>().CrossFade(animName_Idle);
         isInHittedAnimation = false;
 
     }
@@ -184,7 +184,7 @@ public class BabyWolfManager : MonoBehaviour {
         {
             stopMove();
             cur_animName = animName_Idle;
-            animation.CrossFade(animName_Idle);
+            GetComponent<Animation>().CrossFade(animName_Idle);
         }
 
     }
@@ -264,7 +264,7 @@ public class BabyWolfManager : MonoBehaviour {
                 {
                     RandomAttack();
                     //attack_timer = 0;
-                    animation.CrossFade(animate_attack_now);
+                    GetComponent<Animation>().CrossFade(animate_attack_now);
                 }
 
                 attack_timer += Time.deltaTime;
@@ -275,7 +275,7 @@ public class BabyWolfManager : MonoBehaviour {
                     {
                         //产生伤害 TODO
                         animate_attack_now = animName_Idle;
-                        animation.CrossFade(animate_attack_now);
+                        GetComponent<Animation>().CrossFade(animate_attack_now);
 
                     }
                 }
@@ -285,7 +285,7 @@ public class BabyWolfManager : MonoBehaviour {
                     {
                         //产生伤害 TODO
                         animate_attack_now = animName_Idle;
-                        animation.CrossFade(animate_attack_now);
+                        GetComponent<Animation>().CrossFade(animate_attack_now);
 
                     }
                 }
@@ -295,7 +295,7 @@ public class BabyWolfManager : MonoBehaviour {
                     RandomAttack();
                     attack_timer = 0;
                     attack_timer += Time.deltaTime;
-                    animation.CrossFade(animate_attack_now);
+                    GetComponent<Animation>().CrossFade(animate_attack_now);
                 }
             }
             else//朝着主角移动
@@ -307,14 +307,14 @@ public class BabyWolfManager : MonoBehaviour {
                 agent.SetDestination(transform.position + transform.forward * (2 + 2 * Random.Range(0, 1)));
 
                 //cc.SimpleMove(transform.forward * speed);
-                animation.CrossFade(animName_Walk);
+                GetComponent<Animation>().CrossFade(animName_Walk);
                 attack_timer = 0;
             }
         }
         else
         {
             aniState = WolfAnimateState.Idle;
-            animation.CrossFade(animName_Idle);
+            GetComponent<Animation>().CrossFade(animName_Idle);
             attack_timer = 0;
         }
 

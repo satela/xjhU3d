@@ -36,7 +36,7 @@ public class TwoLongTap : MonoBehaviour {
 	void On_LongTapStart2Fingers( Gesture gesture){
 		// Verification that the action on the object
 		if (gesture.pickObject == gameObject){
-			gameObject.renderer.material.color = new Color( Random.Range(0.0f,1.0f),  Random.Range(0.0f,1.0f), Random.Range(0.0f,1.0f));
+			gameObject.GetComponent<Renderer>().material.color = new Color( Random.Range(0.0f,1.0f),  Random.Range(0.0f,1.0f), Random.Range(0.0f,1.0f));
 		}
 	}
 	
@@ -52,14 +52,14 @@ public class TwoLongTap : MonoBehaviour {
 	void On_LongTapEnd2Fingers( Gesture gesture){
 		// Verification that the action on the object
 		if (gesture.pickObject == gameObject){
-			gameObject.renderer.material.color = new Color(1f,1f,1f);
+			gameObject.GetComponent<Renderer>().material.color = new Color(1f,1f,1f);
 			textMesh.text="Long tap";
 		}
 	}
 	
 	// If the two finger gesture is finished
 	void On_Cancel2Fingers(Gesture gesture){
-		gameObject.renderer.material.color = new Color(1f,1f,1f);
+		gameObject.GetComponent<Renderer>().material.color = new Color(1f,1f,1f);
 		textMesh.text="Long tap";
 	}
 }

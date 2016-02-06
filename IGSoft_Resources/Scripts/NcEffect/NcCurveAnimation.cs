@@ -265,7 +265,7 @@ public class NcCurveAnimation : NcEffectAniBehaviour
 				if (GetComponent("NcUvAnimation") == null)
 					return "SCRIPT_NEED_NCUVANIMATION";
 			if (curveInfo.m_ApplyType == NcInfoCurve.APPLY_TYPE.COLOR)
-				if (curveInfo.m_bRecursively == false && (renderer == null || Ng_GetMaterialColorName(renderer.sharedMaterial) == null))
+				if (curveInfo.m_bRecursively == false && (GetComponent<Renderer>() == null || Ng_GetMaterialColorName(GetComponent<Renderer>().sharedMaterial) == null))
 					return "SCRIPT_EMPTY_COLOR";
 		}
 
@@ -318,8 +318,8 @@ public class NcCurveAnimation : NcEffectAniBehaviour
 
 		if (0 < m_fDelayTime)
 		{
-			if (renderer)
-				renderer.enabled = false;
+			if (GetComponent<Renderer>())
+				GetComponent<Renderer>().enabled = false;
 			return;
 		} else {
 			InitAnimationTimer();
@@ -339,8 +339,8 @@ public class NcCurveAnimation : NcEffectAniBehaviour
 				return;
 			m_fDelayTime = 0;
 			InitAnimationTimer();
-			if (renderer)
-				renderer.enabled = true;
+			if (GetComponent<Renderer>())
+				GetComponent<Renderer>().enabled = true;
 		}
 
 		float fElapsedTime	= m_Timer.GetTime();
@@ -402,11 +402,11 @@ public class NcCurveAnimation : NcEffectAniBehaviour
 							}
 						} else {
 							// this Only
-							if (renderer != null)
+							if (GetComponent<Renderer>() != null)
 							{
-								m_ColorName		= Ng_GetMaterialColorName(renderer.sharedMaterial);
+								m_ColorName		= Ng_GetMaterialColorName(GetComponent<Renderer>().sharedMaterial);
 								if (m_ColorName != null)
-									curveInfo.m_OriginalValue = renderer.sharedMaterial.GetColor(m_ColorName);
+									curveInfo.m_OriginalValue = GetComponent<Renderer>().sharedMaterial.GetColor(m_ColorName);
 
 								curveInfo.m_BeforeValue		= Vector4.zero;
 							}
@@ -476,10 +476,10 @@ public class NcCurveAnimation : NcEffectAniBehaviour
 								if (m_ChildColorNames[arrayIndex] != null && m_ChildRenderers[arrayIndex] != null)
 									SetChildMaterialColor(curveInfo, fValue, arrayIndex);
 						} else {
-							if (renderer != null && m_ColorName != null)
+							if (GetComponent<Renderer>() != null && m_ColorName != null)
 							{
 								if (m_MainMaterial == null)
-									m_MainMaterial = renderer.material;
+									m_MainMaterial = GetComponent<Renderer>().material;
 
 								// this Only
 								Color color = curveInfo.m_ToColor - curveInfo.m_OriginalValue;
@@ -692,7 +692,7 @@ public class NcCurveAnimation : NcEffectAniBehaviour
 		if (srcCurveInfo.m_ApplyType != NcInfoCurve.APPLY_TYPE.COLOR && srcCurveInfo.m_ApplyType != NcInfoCurve.APPLY_TYPE.SCALE && srcCurveInfo.m_ApplyType != NcInfoCurve.APPLY_TYPE.TEXTUREUV)
 			return false;
 
-		// ø…º« ¡ﬂ∫π∞ÀªÁ
+		// ÂèØËÆ∞ ÂêùÊ±óÂÖ´Ëç§
 		bool	bDup = false;
 // 		int		nChkCount = srcCurveInfo.GetValueCount();
 // 

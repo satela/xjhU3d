@@ -70,9 +70,9 @@ public class NcUvAnimationEditor : FXMakerEditor
 				FXMakerLayout.GetOffsetRect(rect, 0, 5, 0, -5);
 
 				// draw texture
-				if (m_Sel.renderer != null && m_Sel.renderer.sharedMaterial != null && m_Sel.renderer.sharedMaterial.mainTexture != null)
+				if (m_Sel.GetComponent<Renderer>() != null && m_Sel.GetComponent<Renderer>().sharedMaterial != null && m_Sel.GetComponent<Renderer>().sharedMaterial.mainTexture != null)
 				{
-					GUI.DrawTexture(subRect, m_Sel.renderer.sharedMaterial.mainTexture, ScaleMode.StretchToFill, true);
+					GUI.DrawTexture(subRect, m_Sel.GetComponent<Renderer>().sharedMaterial.mainTexture, ScaleMode.StretchToFill, true);
 				}
 			}
 			EditorGUILayout.EndHorizontal();

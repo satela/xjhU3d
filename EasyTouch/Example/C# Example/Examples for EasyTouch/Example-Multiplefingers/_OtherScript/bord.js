@@ -7,7 +7,7 @@ private var cam:Camera;
 function Start(){
 
 	// Getting the main camera
-	cam = GameObject.FindGameObjectWithTag("MainCamera").camera;
+	cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent.<Camera>();
 	
 	if (type==1)
 		transform.position = cam.ScreenToWorldPoint( Vector3( 0, 0,8));

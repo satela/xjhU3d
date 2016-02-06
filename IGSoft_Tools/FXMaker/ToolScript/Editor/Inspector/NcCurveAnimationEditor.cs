@@ -156,13 +156,13 @@ public class NcCurveAnimationEditor : FXMakerEditor
 					{
 						GUI.Box(rect, "");
 						GUILayout.Label("", GUILayout.Width(nLeftWidth));
-						bool bEnableColor	= (m_Sel.renderer != null && m_Sel.renderer.sharedMaterial != null & NgMaterial.IsMaterialColor(m_Sel.renderer.sharedMaterial));
+						bool bEnableColor	= (m_Sel.GetComponent<Renderer>() != null && m_Sel.GetComponent<Renderer>().sharedMaterial != null & NgMaterial.IsMaterialColor(m_Sel.GetComponent<Renderer>().sharedMaterial));
 						Rect colorRect		= FXMakerLayout.GetInnerVerticalRect(rect, 2, 0, 1);
 						colorRect.width		= nLeftWidth;
 						if (FXMakerLayout.GUIButton(FXMakerLayout.GetInnerHorizontalRect(colorRect, 2, 0, 1), GetHelpContent("White"), bEnableColor))
 							curveInfoList[n].m_ToColor = Color.white;
 						if (FXMakerLayout.GUIButton(FXMakerLayout.GetInnerHorizontalRect(colorRect, 2, 1, 1), GetHelpContent("Current"), bEnableColor))
-							curveInfoList[n].m_ToColor = NgMaterial.GetMaterialColor(m_Sel.renderer.sharedMaterial);
+							curveInfoList[n].m_ToColor = NgMaterial.GetMaterialColor(m_Sel.GetComponent<Renderer>().sharedMaterial);
 						colorRect.x += colorRect.width;
 						GUI.Label(colorRect, GetHelpContent("ToColor"));
 						colorRect.x += 60;

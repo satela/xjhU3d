@@ -25,9 +25,9 @@ public class FightRoleManager : MonoBehaviour {
 
     private List<DBaseFightRole> allRoles;
 
-    public GameObject positiveModel;//主动攻击方
+    public int positiveModel;//主动攻击方
 
-    public GameObject negtiveModel;//被动方
+    public int negtiveModel;//被动方
 
     private DBaseFightRole[] selfRoles = new DBaseFightRole[3];
 
@@ -239,6 +239,11 @@ public class FightRoleManager : MonoBehaviour {
         return null;
     }
 
+    public void setAutoFight()
+    {
+        foreach (DBaseFightRole role in allRoles)
+            role.autoFight = !role.autoFight;
+    }
     public float getFightRoleDistance(DBaseFightRole role1, DBaseFightRole role2)
     {
         return Vector3.Distance(role1.rolePosition, role2.rolePosition);
@@ -275,4 +280,105 @@ public class FightRoleManager : MonoBehaviour {
         if (allRoles.Contains(fightrole))
             allRoles.Remove(fightrole);
     }
+
+    #region 检测碰撞
+
+    public bool isCollisionOther(DBaseFightRole role)
+    {
+        float size1 = role.agent.radius;
+        float dist;
+        bool iscollision = false;
+        foreach (DBaseFightRole other in allRoles)
+        {
+            if (role != other)
+            {
+                dist = Vector3.Distance(role.rolePosition, other.rolePosition);
+
+                Vector3 nextpos = role.rolePosition + (role.agent.destination - role.rolePosition).normalized * 0.1f;
+                float nextdist = Vector3.Distance(nextpos, other.rolePosition);
+
+                if (dist <= 2*size1 + other.agent.radius)
+                {
+                   // iscollision = true;
+
+                    float destdit = Vector3.Distance(role.agent.destination, other.rolePosition);
+                    if (destdit < size1 + other.agent.radius + 0.2)
+                        iscollision = true;
+                               
+                }
+            }
+        }
+
+        return iscollision;
+    }
+    #endregion
+
+    #region 获取某个战斗单位一定距离范围内 可攻击的 点，防止几个 角色挤到一起
+    public Vector3 getAttackPointByDist(DBaseFightRole attacker, DBaseFightRole target,float dist)
+    {
+        Vector3 vecToAttacker =  attacker.rolePosition -target.rolePosition;
+
+        Vector3 normalDirect =  vecToAttacker.normalized * dist;
+
+        Vector3 tempDirect;
+        bool isOccupied = false;
+        for (int i = 0; i < 6; i++)
+        {
+            tempDirect = target.rolePosition + Quaternion.Euler(0, 30 * i, 0)*normalDirect;
+            isOccupied = false;
+
+            foreach (DBaseFightRole other in allRoles)
+            {
+                if (other != attacker && other != target)
+                {
+                    float tempdist = Vector3.Distance(other.rolePosition, tempDirect);
+                    if (tempdist < 3*(attacker.roleRadius + other.roleRadius))
+                    {
+                        isOccupied = true;
+                        break;
+
+                    }
+                }
+            }
+            if (!isOccupied)
+            {
+                NavMeshPath path = new NavMeshPath();
+                attacker.agent.CalculatePath(tempDirect, path);
+                if (path.corners.Length >= 2)
+                {
+                    return tempDirect;
+                }
+            }
+
+            tempDirect = target.rolePosition + Quaternion.Euler(0, -30 * i, 0) * normalDirect;
+            isOccupied = false;
+
+            foreach (DBaseFightRole other in allRoles)
+            {
+                if (other != attacker && other != target)
+                {
+                    float tempdist = Vector3.Distance(other.rolePosition, tempDirect);
+                    if (tempdist < 3 * (attacker.roleRadius + other.roleRadius))
+                    {
+                        isOccupied = true;
+                        break;
+
+                    }
+                }
+            }
+            if (!isOccupied)
+            {
+                NavMeshPath path = new NavMeshPath();
+                attacker.agent.CalculatePath(tempDirect, path);
+                if (path.corners.Length >= 2)
+                {
+                    return tempDirect;
+                }
+            }
+
+        }
+        return target.rolePosition;
+
+    }
+    #endregion
 }

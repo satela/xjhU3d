@@ -22,10 +22,39 @@ public class ConfigManager {
 
     public void init()
     {
+        initRoleConfig();
         initSkillConfig();
         initBuffConfig();
     }
 
+    #region 角色基本配置
+     public Dictionary<int, DefaultRoleData> rolelDefaultDic;
+     void initRoleConfig()
+     {
+         if (rolelDefaultDic == null)
+             rolelDefaultDic = new Dictionary<int, DefaultRoleData>();
+         rolelDefaultDic.Clear();
+
+         TextAsset txtasset = UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/TextInfo/txt/Role.txt", typeof(TextAsset)) as TextAsset;
+
+         string text = txtasset.text;
+         string[] strArray = text.Split('\n');
+
+         DefaultRoleData roledata;
+         for (int i = 1; i < strArray.Length; i++)
+         {
+             if (!string.IsNullOrEmpty(strArray[i]))
+             {
+                 roledata = new DefaultRoleData();
+                 roledata.paresData(strArray[i]);
+                 rolelDefaultDic.Add(roledata.roleId, roledata);
+             }
+
+         }
+     }
+
+
+    #endregion
     #region 技能基本配置
 
     public Dictionary<int, DSkillDefaultData> skillDefaultDic;
@@ -35,7 +64,7 @@ public class ConfigManager {
             skillDefaultDic = new Dictionary<int, DSkillDefaultData>();
         skillDefaultDic.Clear();
 
-        TextAsset txtasset = Resources.LoadAssetAtPath("Assets/TextInfo/txt/Skill.txt", typeof(TextAsset)) as TextAsset;
+        TextAsset txtasset = UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/TextInfo/txt/Skill.txt", typeof(TextAsset)) as TextAsset;
 
         string text = txtasset.text;
         string[] strArray = text.Split('\n');
@@ -64,7 +93,7 @@ public class ConfigManager {
             basebuffDataDic = new Dictionary<int, DBuffData>();
         basebuffDataDic.Clear();
 
-        TextAsset txtasset = Resources.LoadAssetAtPath("Assets/TextInfo/txt/SkillBuff.txt", typeof(TextAsset)) as TextAsset;
+        TextAsset txtasset = UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/TextInfo/txt/SkillBuff.txt", typeof(TextAsset)) as TextAsset;
 
         string text = txtasset.text;
         string[] strArray = text.Split('\n');

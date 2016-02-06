@@ -77,8 +77,8 @@ public class NcSpriteTextureEditor : FXMakerEditor
 			}
 
 			// --------------------------------------------------------------
-			if (m_Sel.m_NcSpriteFactoryPrefab != null && m_Sel.m_NcSpriteFactoryPrefab.renderer != null && m_Sel.renderer)
-				if (m_Sel.m_NcSpriteFactoryPrefab.renderer.sharedMaterial != m_Sel.renderer.sharedMaterial)
+			if (m_Sel.m_NcSpriteFactoryPrefab != null && m_Sel.m_NcSpriteFactoryPrefab.GetComponent<Renderer>() != null && m_Sel.GetComponent<Renderer>())
+				if (m_Sel.m_NcSpriteFactoryPrefab.GetComponent<Renderer>().sharedMaterial != m_Sel.GetComponent<Renderer>().sharedMaterial)
 					m_Sel.UpdateSpriteMaterial();
 
 			// --------------------------------------------------------------
@@ -97,11 +97,11 @@ public class NcSpriteTextureEditor : FXMakerEditor
 					Rect subRect = rect;
 
 					// draw texture
-					if (0 < rect.width && m_Sel.renderer != null && m_Sel.renderer.sharedMaterial != null && m_Sel.renderer.sharedMaterial.mainTexture != null)
+					if (0 < rect.width && m_Sel.GetComponent<Renderer>() != null && m_Sel.GetComponent<Renderer>().sharedMaterial != null && m_Sel.GetComponent<Renderer>().sharedMaterial.mainTexture != null)
 					{
 						int nClickFactoryIndex;
 						int nClickFrameIndex;
-						bClickButton = DrawTrimTexture(subRect, true, m_Sel.renderer.sharedMaterial, ncSpriteFactory, m_Sel.m_nSpriteFactoryIndex, m_Sel.m_nFrameIndex, true, out nClickFactoryIndex, out nClickFrameIndex);
+						bClickButton = DrawTrimTexture(subRect, true, m_Sel.GetComponent<Renderer>().sharedMaterial, ncSpriteFactory, m_Sel.m_nSpriteFactoryIndex, m_Sel.m_nFrameIndex, true, out nClickFactoryIndex, out nClickFrameIndex);
 						if (bClickButton)
 							m_Sel.SetSpriteFactoryIndex(nClickFactoryIndex, nClickFrameIndex, false);
 					}

@@ -6,7 +6,7 @@ public class DefaultSkillParam
 {
 
 
-    public const float PathFindingDist = 10;//技能寻路距离，当所有敌人超过这个距离时，不作自动寻路
+    public const float PathFindingDist = 8;//技能寻路距离，当所有敌人超过这个距离时，不作自动寻路
 
     public const float BeatonBackMaxDist = 2;//被击退的默认距离
 
@@ -20,6 +20,8 @@ public class DefaultSkillParam
     public static string[] relatePos = { "中心", "前", "后", "上", "下", "左", "右" };
 
     private static Dictionary<eAnimatorState, string> m_actionName;
+
+    public static float skillCdTime = 4;//每次攻击之后的 必须冷却时间
 
     public static Dictionary<eAnimatorState, string> ActionName
     {

@@ -64,7 +64,7 @@ public class NcSpriteAnimation : NcEffectAniBehaviour
 			return "SCRIPT_WARRING_DUPLICATE";
 		if (1 < GetEditingUvComponentCount())
 			return "SCRIPT_DUPERR_EDITINGUV";
-		if (renderer == null || renderer.sharedMaterial == null)
+		if (GetComponent<Renderer>() == null || GetComponent<Renderer>().sharedMaterial == null)
 			return "SCRIPT_EMPTY_MATERIAL";
 
 		return "";	// no error
@@ -140,7 +140,7 @@ public class NcSpriteAnimation : NcEffectAniBehaviour
 	void Start()
 	{
 		m_size			= new Vector2(1.0f / m_nTilingX, 1.0f / m_nTilingY);
-		m_Renderer		= renderer;
+		m_Renderer		= GetComponent<Renderer>();
 
 		m_fStartTime	= GetEngineTime();
 		m_nFrameCount	= (m_nFrameCount <= 0) ? m_nTilingX * m_nTilingY : m_nFrameCount;
@@ -332,9 +332,9 @@ public class NcSpriteAnimation : NcEffectAniBehaviour
 	{
 		if (m_NcSpriteFactoryPrefab == null)
 			return false;
-		if (m_NcSpriteFactoryPrefab.renderer == null || m_NcSpriteFactoryPrefab.renderer.sharedMaterial == null || m_NcSpriteFactoryPrefab.renderer.sharedMaterial.mainTexture == null)
+		if (m_NcSpriteFactoryPrefab.GetComponent<Renderer>() == null || m_NcSpriteFactoryPrefab.GetComponent<Renderer>().sharedMaterial == null || m_NcSpriteFactoryPrefab.GetComponent<Renderer>().sharedMaterial.mainTexture == null)
 			return false;
-		if (renderer == null)
+		if (GetComponent<Renderer>() == null)
 			return false;
 		
 		if (m_NcSpriteFactoryCom == null)
@@ -343,7 +343,7 @@ public class NcSpriteAnimation : NcEffectAniBehaviour
 			return false;
 		if (m_NcSpriteFactoryCom.m_SpriteType != NcSpriteFactory.SPRITE_TYPE.NcSpriteAnimation)
 			return false;
-		renderer.sharedMaterial = m_NcSpriteFactoryPrefab.renderer.sharedMaterial;
+		GetComponent<Renderer>().sharedMaterial = m_NcSpriteFactoryPrefab.GetComponent<Renderer>().sharedMaterial;
 		return true;
 	}
 

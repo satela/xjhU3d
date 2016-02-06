@@ -29,13 +29,13 @@ public class EffectAsset : MonoBehaviour {
     public void setEffectParam(string prefaburl, Vector3 position, Quaternion rotations, EEffectType type = EEffectType.Normal)
     {
         string asseturl = UrlManager.GetEffectUrl(prefaburl,type);
-        GameObject prefab = Resources.LoadAssetAtPath(asseturl,typeof(GameObject)) as GameObject;
+        GameObject prefab = UnityEditor.AssetDatabase.LoadAssetAtPath(asseturl,typeof(GameObject)) as GameObject;
         if (prefab != null)
         {
             effectInstance = Instantiate(prefab, Vector3.zero, Quaternion.identity) as GameObject;
 
             //effect.transform.localScale = new Vector3(8, 8, 8);
-            transform.rotation = rotations;
+            effectInstance.transform.rotation = rotations;
             transform.position = position;
 
             effectInstance.transform.parent = gameObject.transform;

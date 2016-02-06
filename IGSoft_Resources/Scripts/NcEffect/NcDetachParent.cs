@@ -20,7 +20,7 @@ public class NcDetachParent : NcEffectBehaviour
 	public		bool				m_bSmoothHide				= true;
 
 	protected	bool				m_bStartDetach				= false;
-	protected	float				m_fStartDestroyTime;						// parent ¶Ç´Â this°¡ deactive µÈ ½Ã°£ (m_ReadonlybIsPlayed ÂüÀÌµÈ ½Ã°£)
+	protected	float				m_fStartDestroyTime;						// parent è‚šç»° thiså•Š deactive ç­‰ çŸ«åŸƒ (m_ReadonlybIsPlayed æ›¼æç­‰ çŸ«åŸƒ)
 	protected	GameObject			m_ParentGameObject;
 	protected	NcTransformTool		m_OriginalPos				= new NcTransformTool();
 
@@ -31,7 +31,7 @@ public class NcDetachParent : NcEffectBehaviour
 		if (1 < gameObject.GetComponents(GetType()).Length)
 			return "SCRIPT_WARRING_DUPLICATE";
 
-		if (m_bFollowParentTransform && (GetComponent("NcCurveAnimation") != null || GetComponent("NcRotation") != null || GetComponent("Animation") != null) || rigidbody != null)
+		if (m_bFollowParentTransform && (GetComponent("NcCurveAnimation") != null || GetComponent("NcRotation") != null || GetComponent("Animation") != null) || GetComponent<Rigidbody>() != null)
 			return "SCRIPT_WARRING_NCDETACHPARENT";
 		return "";	// no error
 	}

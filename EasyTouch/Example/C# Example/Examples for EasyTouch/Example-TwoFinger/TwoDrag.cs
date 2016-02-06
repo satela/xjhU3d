@@ -38,7 +38,7 @@ public class TwoDrag : MonoBehaviour {
 
 		// Verification that the action on the object
 		if (gesture.pickObject == gameObject){	
-			gameObject.renderer.material.color = new Color( Random.Range(0.0f,1.0f),  Random.Range(0.0f,1.0f), Random.Range(0.0f,1.0f));
+			gameObject.GetComponent<Renderer>().material.color = new Color( Random.Range(0.0f,1.0f),  Random.Range(0.0f,1.0f), Random.Range(0.0f,1.0f));
 		
 			Vector3 position =  gesture.GetTouchToWordlPoint(  5);
 			deltaPosition = position - transform.position;
@@ -66,7 +66,7 @@ public class TwoDrag : MonoBehaviour {
 		// Verification that the action on the object
 		if (gesture.pickObject == gameObject){			
 			transform.position=new Vector3(2.5f,-0.5f,-5f);
-			gameObject.renderer.material.color = new Color(1f,1f,1f);
+			gameObject.GetComponent<Renderer>().material.color = new Color(1f,1f,1f);
 			textMesh.text="Drag me";
 		}
 	}
@@ -76,7 +76,7 @@ public class TwoDrag : MonoBehaviour {
 	void On_Cancel2Fingers(Gesture gesture){
 		
 		transform.position=new Vector3(2.5f,-0.5f,-5f);
-		gameObject.renderer.material.color = new Color(1f,1f,1f);
+		gameObject.GetComponent<Renderer>().material.color = new Color(1f,1f,1f);
 		textMesh.text="Drag me";
 		
 	}

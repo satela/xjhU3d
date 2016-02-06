@@ -173,11 +173,11 @@ public class NgSerialized
 	public static Component AddComponent(GameObject tarObject, Component srcCom)
 	{
 		if (srcCom.ToString().Contains("EllipsoidParticleEmitter"))
-			return tarObject.AddComponent("EllipsoidParticleEmitter");
+			return tarObject.AddComponent<EllipsoidParticleEmitter>();
 		if (srcCom.ToString().Contains("MeshParticleEmitter"))
-			return tarObject.AddComponent("MeshParticleEmitter");
+			return tarObject.AddComponent<MeshParticleEmitter>();
 		if (srcCom.ToString().Contains("WorldParticleCollider"))
-			return tarObject.AddComponent("WorldParticleCollider");
+			return UnityEngineInternal.APIUpdaterRuntimeServices.AddComponent(tarObject, "Assets/IGSoft_Tools/CommonLib/GlobalScript/NgSerialized.cs (180,11)", "WorldParticleCollider");
 		Component com = tarObject.AddComponent(srcCom.GetType());
 
 		return com;
@@ -313,27 +313,27 @@ public class NgSerialized
 
 	public static bool GetSimulationSpaceWorld(Transform srcTrans)
 	{
-		if (srcTrans.particleSystem != null)
+		if (srcTrans.GetComponent<ParticleSystem>() != null)
 		{
-			SerializedObject sysSo = new SerializedObject(srcTrans.particleSystem);
+			SerializedObject sysSo = new SerializedObject(srcTrans.GetComponent<ParticleSystem>());
 // 			GetPropertis(sysSo, "ShapeModule");
 			return ((bool)GetPropertyValue(sysSo, "moveWithTransform") == false);
 		}
-		if (srcTrans.particleEmitter != null)
-			return srcTrans.particleEmitter.useWorldSpace;
+		if (srcTrans.GetComponent<ParticleEmitter>() != null)
+			return srcTrans.GetComponent<ParticleEmitter>().useWorldSpace;
 
 		return false;
 	}
 
 	public static void SetSimulationSpaceWorld(Transform srcTrans, bool bWorld)
 	{
-		if (srcTrans.particleSystem != null)
+		if (srcTrans.GetComponent<ParticleSystem>() != null)
 		{
-			SerializedObject sysSo = new SerializedObject(srcTrans.particleSystem);
+			SerializedObject sysSo = new SerializedObject(srcTrans.GetComponent<ParticleSystem>());
 			SetPropertyValue(sysSo, "moveWithTransform", !bWorld, true);
 		}
-		if (srcTrans.particleEmitter != null)
-			srcTrans.particleEmitter.useWorldSpace = bWorld;
+		if (srcTrans.GetComponent<ParticleEmitter>() != null)
+			srcTrans.GetComponent<ParticleEmitter>().useWorldSpace = bWorld;
 	}
 
 	public static bool GetMeshNormalVelocity(ParticleEmitter srcCom, out float fSetMinValue, out float fSetMaxValue)

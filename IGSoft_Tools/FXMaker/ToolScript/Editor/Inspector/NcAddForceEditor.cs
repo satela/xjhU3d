@@ -51,7 +51,7 @@ public class NcAddForceEditor : FXMakerEditor
 			// check
 
 			// --------------------------------------------------------------
-			if (m_Sel.rigidbody == false)
+			if (m_Sel.GetComponent<Rigidbody>() == false)
 			{
 				EditorGUILayout.Space();
 				rect = EditorGUILayout.BeginHorizontal(GUILayout.Height(m_fButtonHeight));

@@ -43,7 +43,7 @@ public class NcUvAnimation : NcEffectAniBehaviour
 			return "SCRIPT_WARRING_DUPLICATE";
 		if (1 < GetEditingUvComponentCount())
 			return "SCRIPT_DUPERR_EDITINGUV";
-		if (renderer == null || renderer.sharedMaterial == null)
+		if (GetComponent<Renderer>() == null || GetComponent<Renderer>().sharedMaterial == null)
 			return "SCRIPT_EMPTY_MATERIAL";
 
 		return "";	// no error
@@ -74,12 +74,12 @@ public class NcUvAnimation : NcEffectAniBehaviour
 	// Loop Function --------------------------------------------------------------------
 	void Start()
 	{
-		m_Renderer = renderer;
+		m_Renderer = GetComponent<Renderer>();
 		if (m_Renderer == null || m_Renderer.sharedMaterial == null || m_Renderer.sharedMaterial.mainTexture == null)
 		{
 			enabled = false;
 		} else {
-			renderer.material.mainTextureScale	= new Vector2(m_fTilingX, m_fTilingY);
+			GetComponent<Renderer>().material.mainTextureScale	= new Vector2(m_fTilingX, m_fTilingY);
 
 			// 0~1 value
 			float offset;
@@ -109,7 +109,7 @@ public class NcUvAnimation : NcEffectAniBehaviour
 				m_fTilingX = m_OriginalTiling.x * (transform.lossyScale.x / m_OriginalScale.x);
 			if (m_fScrollSpeedY != 0 && m_OriginalScale.y != 0)
 				m_fTilingY = m_OriginalTiling.y * (transform.lossyScale.y / m_OriginalScale.y);
-			renderer.material.mainTextureScale	= new Vector2(m_fTilingX, m_fTilingY);
+			GetComponent<Renderer>().material.mainTextureScale	= new Vector2(m_fTilingX, m_fTilingY);
 		}
 		
 		if(null != m_Timer)

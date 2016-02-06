@@ -39,7 +39,7 @@ public class FXMakerHierarchy : MonoBehaviour
 	protected		bool				m_bMinimize					= false;
 	protected		bool				m_bShowOption				= true;
 
-	// ÀÚµ¿ ¼³Á¤
+	// ï¿½Úµï¿½ ï¿½ï¿½ï¿½ï¿½
 	protected		int					m_nMaxGridColumn;
 	protected		int					m_nMaxGridRow;
 	protected		Rect				m_HierarchyRect;
@@ -187,7 +187,7 @@ public class FXMakerHierarchy : MonoBehaviour
 		if (delObj is Component)
 			OnDeleteComponent(delObj as Component);
 		if (delObj is Material || delObj is AnimationClip)
-			NgMaterial.RemoveSharedMaterial(baseTrans.renderer, nSelectedIndex);
+			NgMaterial.RemoveSharedMaterial(baseTrans.GetComponent<Renderer>(), nSelectedIndex);
 		else Object.DestroyImmediate(delObj);
 		FXMakerMain.inst.CreateCurrentInstanceEffect(true);
 	}
@@ -451,10 +451,10 @@ public class FXMakerHierarchy : MonoBehaviour
 		{
 			int nDrawRow = DrawHierarchy(0, 3, m_CurrentEffectObject.transform, null, null);
 
-			if (m_bUpdateActiveComponent == false)	// °Ë»ö¿É¼Ç¿¡ ÀÇÇØ ¾ø¾îÁü
+			if (m_bUpdateActiveComponent == false)	// ï¿½Ë»ï¿½ï¿½É¼Ç¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				SetActiveComponent(m_SelectedGameObject, null, true);
 
-			// Hierarchy¿¡¼­ »èÁ¦
+			// Hierarchyï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			if (FXMakerMain.inst.GetFocusUnityWindow() != FXMakerMain.UNITYWINDOW.GameView && (0 < m_nLastDrawRow && nDrawRow != m_nLastDrawRow))
 			{
 				FXMakerMain.inst.CreateCurrentInstanceEffect(true);
@@ -515,7 +515,7 @@ public class FXMakerHierarchy : MonoBehaviour
 		GUI.color = backColor;
 
 		// sort particleSystem
-		if (drawTrans.particleSystem != null)
+		if (drawTrans.GetComponent<ParticleSystem>() != null)
 		{
 			coms = drawTrans.GetComponents<Component>();
 			for (int n = 0; n < coms.Length; n++)
@@ -615,11 +615,11 @@ public class FXMakerHierarchy : MonoBehaviour
 		}
 
 		// Material --------------------------------------------------------------------------
-		if (m_ShowComponentOptions[(int)SHOWCOMPONENT_TYPE.MATERIAL] == true && drawTrans.renderer != null && drawTrans.renderer.sharedMaterials != null)
+		if (m_ShowComponentOptions[(int)SHOWCOMPONENT_TYPE.MATERIAL] == true && drawTrans.GetComponent<Renderer>() != null && drawTrans.GetComponent<Renderer>().sharedMaterials != null)
 		{
-			for (int n = 0; n < drawTrans.renderer.sharedMaterials.Length; n++)
+			for (int n = 0; n < drawTrans.GetComponent<Renderer>().sharedMaterials.Length; n++)
 			{
-				Material	mat = drawTrans.renderer.sharedMaterials[n];
+				Material	mat = drawTrans.GetComponent<Renderer>().sharedMaterials[n];
 
 // 				gameObject.animation.clip
 
@@ -634,11 +634,11 @@ public class FXMakerHierarchy : MonoBehaviour
 		}
 
 		// Animation --------------------------------------------------------------------------
-		if (m_ShowComponentOptions[(int)SHOWCOMPONENT_TYPE.ANIMATION] == true && drawTrans.animation != null && drawTrans.animation.clip != null)
+		if (m_ShowComponentOptions[(int)SHOWCOMPONENT_TYPE.ANIMATION] == true && drawTrans.GetComponent<Animation>() != null && drawTrans.GetComponent<Animation>().clip != null)
 		{
-			for (int n = 0; n < drawTrans.animation.animation.GetClipCount(); n++)
+			for (int n = 0; n < drawTrans.GetComponent<Animation>().GetComponent<Animation>().GetClipCount(); n++)
 			{
-				AnimationState	aniState = NgAnimation.GetAnimationByIndex(drawTrans.animation, n);
+				AnimationState	aniState = NgAnimation.GetAnimationByIndex(drawTrans.GetComponent<Animation>(), n);
 				if (aniState == null)
 					continue;
 				AnimationClip	aniClip = aniState.clip;
@@ -873,12 +873,12 @@ public class FXMakerHierarchy : MonoBehaviour
 	void DropObject(Transform currentTrans, Object currentObj, int currentIndex)
 	{
 		Object tarObj;
-		if (m_DragObjectTrans == currentTrans)	// ¼ø¼­ ¹Ù²Þ
+		if (m_DragObjectTrans == currentTrans)	// ï¿½ï¿½ï¿½ï¿½ ï¿½Ù²ï¿½
 		{
 			if (currentIndex == m_nDragObjectIndex)
 				return;
-			tarObj = NgMaterial.MoveSharedMaterial(currentTrans.renderer, m_nDragObjectIndex, currentIndex);
-		} else {	// ºÙÀÌ±â
+			tarObj = NgMaterial.MoveSharedMaterial(currentTrans.GetComponent<Renderer>(), m_nDragObjectIndex, currentIndex);
+		} else {	// ï¿½ï¿½ï¿½Ì±ï¿½
 			tarObj = FXMakerClipboard.PasteObject(m_DragObject, false, currentTrans, currentObj, currentIndex, false, true, false);
 		}
 
@@ -912,7 +912,7 @@ public class FXMakerHierarchy : MonoBehaviour
 				}
 			case OBJECT_TYPE.OBJECT_TRANSFORM:
 				{
-					if (currentTrans.particleEmitter != null || currentTrans.particleSystem != null)
+					if (currentTrans.GetComponent<ParticleEmitter>() != null || currentTrans.GetComponent<ParticleSystem>() != null)
 					{
 						if (0.02f < Mathf.Abs(Vector3.Distance(currentTrans.lossyScale, Vector3.one)) && currentTrans.GetComponent<NcParticleSystem>() == null)
 							DrawWarringIcon(nColumn, nRow, FXMakerTooltip.GetHsScriptMessage("SCRIPT_NEED_SCALEPARTICLE"));
@@ -1135,7 +1135,7 @@ public class FXMakerHierarchy : MonoBehaviour
 
 	void ChangeActiveColor(Object obj, bool bMaterial, bool bdropTarget, bool bActive)
 	{
-		// Ç¥½ÃµÇ°í ÀÖ´Ù È®ÀÎ..
+		// Ç¥ï¿½ÃµÇ°ï¿½ ï¿½Ö´ï¿½ È®ï¿½ï¿½..
 		if (m_ActiveComponent == obj)
 			m_bUpdateActiveComponent = true;
 
@@ -1339,12 +1339,12 @@ public class FXMakerHierarchy : MonoBehaviour
 	{
 		if (tarCom is NcParticleSystem)
 		{
-			if (tarCom.particleEmitter != null && NgSerialized.IsMeshParticleEmitter(tarCom.particleEmitter))
+			if (tarCom.GetComponent<ParticleEmitter>() != null && NgSerialized.IsMeshParticleEmitter(tarCom.GetComponent<ParticleEmitter>()))
 			{
 				NcParticleSystem ncParticleScale = (tarCom as NcParticleSystem);
 				float			fSetMinValue;
 				float			fSetMaxValue;
-				NgSerialized.GetMeshNormalVelocity(tarCom.particleEmitter, out fSetMinValue, out fSetMaxValue);
+				NgSerialized.GetMeshNormalVelocity(tarCom.GetComponent<ParticleEmitter>(), out fSetMinValue, out fSetMaxValue);
 
 				if (bChangedEnable == true)
 				{
@@ -1352,7 +1352,7 @@ public class FXMakerHierarchy : MonoBehaviour
 					ncParticleScale.m_fLegacyMaxMeshNormalVelocity = fSetMaxValue;
 				} else {
 					if (fSetMinValue != ncParticleScale.m_fLegacyMinMeshNormalVelocity || fSetMaxValue != ncParticleScale.m_fLegacyMaxMeshNormalVelocity)
-						NgSerialized.SetMeshNormalVelocity(tarCom.particleEmitter, ncParticleScale.m_fLegacyMinMeshNormalVelocity, ncParticleScale.m_fLegacyMaxMeshNormalVelocity);
+						NgSerialized.SetMeshNormalVelocity(tarCom.GetComponent<ParticleEmitter>(), ncParticleScale.m_fLegacyMinMeshNormalVelocity, ncParticleScale.m_fLegacyMaxMeshNormalVelocity);
 				}
 			}
 		}

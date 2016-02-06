@@ -12,32 +12,32 @@ public	class NgObject
 {
 	public static void SetActive(GameObject target, bool bActive)
 	{
-#if (UNITY_4_0 || UNITY_4_1 || UNITY_4_2 || UNITY_4_3 || UNITY_4_4 || UNITY_4_5 || UNITY_4_6 || UNITY_4_7 || UNITY_4_8 || UNITY_4_9)
+//#if (UNITY_4_0 || UNITY_4_1 || UNITY_4_2 || UNITY_4_3 || UNITY_4_4 || UNITY_4_5 || UNITY_4_6 || UNITY_4_7 || UNITY_4_8 || UNITY_4_9)
 		target.SetActive(bActive);
-#else
-		target.active = bActive;
-#endif
+//#else
+//        target.active = bActive;
+//#endif
 	}
 
 	public static void SetActiveRecursively(GameObject target, bool bActive)
 	{
-#if (UNITY_4_0 || UNITY_4_1 || UNITY_4_2 || UNITY_4_3 || UNITY_4_4 || UNITY_4_5 || UNITY_4_6 || UNITY_4_7 || UNITY_4_8 || UNITY_4_9)
+//#if (UNITY_4_0 || UNITY_4_1 || UNITY_4_2 || UNITY_4_3 || UNITY_4_4 || UNITY_4_5 || UNITY_4_6 || UNITY_4_7 || UNITY_4_8 || UNITY_4_9)
 		for (int n = target.transform.GetChildCount()-1; 0 <= n; n--)
 			if (n < target.transform.GetChildCount())
 				SetActiveRecursively(target.transform.GetChild(n).gameObject, bActive);
 		target.SetActive(bActive);
-#else
-		target.SetActiveRecursively(bActive);
-#endif
+//#else
+//        target.SetActiveRecursively(bActive);
+//#endif
 	}
 
 	public static bool IsActive(GameObject target)
 	{
-#if (UNITY_4_0 || UNITY_4_1 || UNITY_4_2 || UNITY_4_3 || UNITY_4_4 || UNITY_4_5 || UNITY_4_6 || UNITY_4_7 || UNITY_4_8 || UNITY_4_9)
+//#if (UNITY_4_0 || UNITY_4_1 || UNITY_4_2 || UNITY_4_3 || UNITY_4_4 || UNITY_4_5 || UNITY_4_6 || UNITY_4_7 || UNITY_4_8 || UNITY_4_9)
 		return (target.activeInHierarchy && target.activeSelf);
-#else
-		return target.active;
-#endif
+//#else
+//        return target.active;
+//#endif
 	}
 
 	public static GameObject CreateGameObject(GameObject prefabObj)

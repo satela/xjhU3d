@@ -133,7 +133,7 @@ public class FXMakerCapture
 		FXMakerMain.inst.GetComponentInChildren<FXMakerGizmo>().SetSpriteCaptureState(true);
 		m_fOldTime = FXMakerMain.inst.GetFXMakerControls().GetTimeScale();
 		FXMakerMain.inst.GetFXMakerControls().SetTimeScale(1);
-		Camera cam = Camera.mainCamera;
+		Camera cam = Camera.main;
 		m_SpriteOldBackColor = cam.backgroundColor;
 		cam.backgroundColor	= Color.black;
 
@@ -156,7 +156,7 @@ public class FXMakerCapture
 		string path = spritePopup.EndCapture(m_SpriteTextures);
 
 		// Restore gui
-		Camera.mainCamera.backgroundColor = m_SpriteOldBackColor;
+		Camera.main.backgroundColor = m_SpriteOldBackColor;
 		FXMakerMain.inst.GetComponent<FXMakerEffect>().enabled			= true;
 		FXMakerMain.inst.GetComponentInChildren<FXMakerGizmo>().SetSpriteCaptureState(false);
 		FXMakerMain.inst.GetFXMakerControls().SetTimeScale(m_fOldTime);

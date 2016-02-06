@@ -193,28 +193,28 @@ public class FxmTestControls : MonoBehaviour
 			}
 
 			// Check ParticleSystem
-			if (trans.particleSystem != null)
+			if (trans.GetComponent<ParticleSystem>() != null)
 			{
 				bParticle = 0;
-				if (NgObject.IsActive(trans.gameObject) && ((trans.particleSystem.enableEmission && trans.particleSystem.IsAlive()) || 0 < trans.particleSystem.particleCount))
+				if (NgObject.IsActive(trans.gameObject) && ((trans.GetComponent<ParticleSystem>().enableEmission && trans.GetComponent<ParticleSystem>().IsAlive()) || 0 < trans.GetComponent<ParticleSystem>().particleCount))
 					bParticle = 1;
 			}
 
 			// Check ParticleSystem
 			if (bParticle < 1)
 			{
-				if (trans.particleEmitter != null)
+				if (trans.GetComponent<ParticleEmitter>() != null)
 				{
 					bParticle = 0;
-					if (NgObject.IsActive(trans.gameObject) && (trans.particleEmitter.emit || 0 < trans.particleEmitter.particleCount))
+					if (NgObject.IsActive(trans.gameObject) && (trans.GetComponent<ParticleEmitter>().emit || 0 < trans.GetComponent<ParticleEmitter>().particleCount))
 						bParticle = 1;
 				}
 			}
 
 			// Check Renderer
-			if (trans.renderer != null)
+			if (trans.GetComponent<Renderer>() != null)
 			{
-				if (trans.renderer.enabled && NgObject.IsActive(trans.gameObject))
+				if (trans.GetComponent<Renderer>().enabled && NgObject.IsActive(trans.gameObject))
 					bRen = true;
 			}
 
@@ -403,7 +403,7 @@ public class FxmTestControls : MonoBehaviour
 		{
 			m_fDistPerTime = (TransSpeed == 0 ? 0.1f : TransSpeed);
 			PlayerPrefs.SetFloat("FxmTestControls.m_fDistPerTime", m_fDistPerTime);
-			// Trans »óÅÂ¸é.. ¹Ù·Î Àû¿ë
+			// Trans ï¿½ï¿½ï¿½Â¸ï¿½.. ï¿½Ù·ï¿½ ï¿½ï¿½ï¿½ï¿½
 			if (0 < m_nTransIndex)
 				CreateInstanceEffect();
 		}
@@ -429,7 +429,7 @@ public class FxmTestControls : MonoBehaviour
 		{
 			m_nRotateIndex = nRotateIndex;
 			PlayerPrefs.SetInt("FxmTestControls.m_nRotateIndex", m_nRotateIndex);
-			// Trans »óÅÂ¸é.. ¹Ù·Î Àû¿ë
+			// Trans ï¿½ï¿½ï¿½Â¸ï¿½.. ï¿½Ù·ï¿½ ï¿½ï¿½ï¿½ï¿½
 			if (0 < m_nTransIndex)
 				CreateInstanceEffect();
 		}
@@ -512,7 +512,7 @@ public class FxmTestControls : MonoBehaviour
 		CancelInvoke();
 		m_bCalledDelayCreate = false;
 
-		// Á¤ÁöµÈ ½Ã°èÀÏ °æ¿ì ¿òÁ÷ÀÌµµ·Ï ÇØµÎÀÚ...
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ìµï¿½ï¿½ï¿½ ï¿½Øµï¿½ï¿½ï¿½...
 		ResumeTimeScale();
 
 		// Play ---------------------------------------
@@ -530,7 +530,7 @@ public class FxmTestControls : MonoBehaviour
 			case m_nRepeatIndex+2:
 			case m_nRepeatIndex+3:
 			case m_nRepeatIndex+4: {
-						// repeat¼±ÅÃÀÌ¸é.. ÀÌµ¿°ü·Ã ¿É¼ÇÀ» ²ö´Ù.
+						// repeatï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½.. ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½É¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
 						if (nPlayIndex != m_nPlayIndex)
 							nTransIndex = 0;
 						break;
@@ -592,12 +592,12 @@ public class FxmTestControls : MonoBehaviour
 			}
 		}
 
-		// ÀÌµ¿Ã³¸®ÁßÀÌ¸é... ÀÚµ¿¹Ýº¹µÇ¹Ç·Î ±âÁ¸repeat¿É¼ÇÀº ²ö´Ù.
+		// ï¿½Ìµï¿½Ã³ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½... ï¿½Úµï¿½ï¿½Ýºï¿½ï¿½Ç¹Ç·ï¿½ ï¿½ï¿½ï¿½ï¿½repeatï¿½É¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
 		if (0 < nTransIndex)
 			if (m_nRepeatIndex <= nPlayIndex)
 				nPlayIndex = 0;
 
-		// ÃÖÁ· °áÁ¤°ª ÀúÀå
+		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		m_nPlayIndex	= nPlayIndex;
 		m_nTransIndex	= nTransIndex;
 
@@ -656,7 +656,7 @@ public class FxmTestControls : MonoBehaviour
 			if (timeScale == 0 && m_fTimeScale != 0)
 				m_fOldTimeScale = m_fTimeScale;
 			m_fTimeScale = timeScale;
-			if (0.01f <= m_fTimeScale)	// ´Ù½Ã ½ÃÀÛÇßÀ»¶§ ¸ØÃáÇö»óÀ¸·Î Âø°¢¾ÈÇÏµµ·Ï..
+			if (0.01f <= m_fTimeScale)	// ï¿½Ù½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½..
 				PlayerPrefs.SetFloat("FxmTestControls.m_fTimeScale", m_fTimeScale);
 			Time.timeScale = m_fTimeScale;
 		}

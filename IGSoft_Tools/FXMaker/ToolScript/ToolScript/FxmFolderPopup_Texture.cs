@@ -63,14 +63,14 @@ public class FxmFolderPopup_Texture : FxmFolderPopup
 	{
 		m_SelectedTransform		= selTrans;
 		m_nSelRendererMatIndex	= nSelMatIndex;
-		return ShowPopupWindow(selTrans.renderer.sharedMaterials[nSelMatIndex], false);
+		return ShowPopupWindow(selTrans.GetComponent<Renderer>().sharedMaterials[nSelMatIndex], false);
 	}
 
 	public void ChangeMaterialColor(Transform selTrans, int nSelMatIndex, Color color)
 	{
 		m_SelectedTransform		= selTrans;
 		m_nSelRendererMatIndex	= nSelMatIndex;
-		ShowPopupWindow(selTrans.renderer.sharedMaterials[nSelMatIndex], false);
+		ShowPopupWindow(selTrans.GetComponent<Renderer>().sharedMaterials[nSelMatIndex], false);
 		SetActiveMaterialColor(color);
 		ClosePopup(true);
 	}
@@ -570,7 +570,7 @@ public class FxmFolderPopup_Texture : FxmFolderPopup
 		if (GUI.Button(buttonRect, GetHelpContent("Close")))
 			ClosePopup(true);
 
-		// ¼±ÅÃµÈ°Å, ½ºÄÉÀÏ, À§Ä¡, È¸Àü, ¼±ÅÃ, ´Ý±â, ºó°Å
+		// ï¿½ï¿½ï¿½ÃµÈ°ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Ä¡, È¸ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½, ï¿½Ý±ï¿½, ï¿½ï¿½ï¿½ï¿½
 	}
 
 	protected override void UndoObject()
@@ -613,7 +613,7 @@ public class FxmFolderPopup_Texture : FxmFolderPopup
 			m_nSelMainTextureIndex = nObjectIndex;
 		}
 
-// 		// °°Àº°Í ÀçÅ¬¸¯
+// 		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å¬ï¿½ï¿½
 // 		if (m_nObjectIndex == nObjectIndex)
 // 		{
 // 			FXMakerAsset.SetPingObject(m_SelectedMaterial);
@@ -662,7 +662,7 @@ public class FxmFolderPopup_Texture : FxmFolderPopup
 			{
 				newMat = CreateDefaultMaterial();
 			} else {
-				// ÅØ½ºÃÄ ´Þ¶óÁü
+				// ï¿½Ø½ï¿½ï¿½ï¿½ ï¿½Þ¶ï¿½ï¿½ï¿½
 				if (m_SelectedMaterial == m_OriMaterial)
 					newMat = new Material(m_SelectedMaterial);
 			}
@@ -720,11 +720,11 @@ public class FxmFolderPopup_Texture : FxmFolderPopup
 
 	void SetSelectedTransformMaterial(Material selMaterial)
 	{
-		Material[] mats = m_SelectedTransform.renderer.sharedMaterials;
+		Material[] mats = m_SelectedTransform.GetComponent<Renderer>().sharedMaterials;
 
 		m_SelectedMaterial = selMaterial;
 		mats[m_nSelRendererMatIndex] = selMaterial;
-		m_SelectedTransform.renderer.sharedMaterials = mats;
+		m_SelectedTransform.GetComponent<Renderer>().sharedMaterials = mats;
 // 		m_SelectedTransform.renderer.sharedMaterial = selMaterial;
 		FXMakerHierarchy.inst.SetActiveComponent(m_SelectedTransform.gameObject, m_SelectedMaterial, false);
 		FXMakerAsset.SetPingObject(m_SelectedMaterial);
@@ -871,7 +871,7 @@ public class FxmFolderPopup_Texture : FxmFolderPopup
 		// find
 		foreach (Material mat in materialObjects)
 		{
-			// °°Àº°Í Ç¥½Ã
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
 			if (mat.mainTexture == currentMat.mainTexture)
 			{
 				if (mat == currentMat)

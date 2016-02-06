@@ -62,14 +62,14 @@ public class NcSpriteAnimationEditor : FXMakerEditor
 			{
 				if (GUILayout.Button(GetHelpContent("ConvertTo : TrimTexture")))
 				{
-					m_Sel.m_NcSpriteFrameInfos = NgAtlas.TileToTrimTexture(m_Sel.renderer.sharedMaterial, m_Sel.m_nTilingX, m_Sel.m_nTilingY, 0, m_Sel.m_nFrameCount, 4096);
+					m_Sel.m_NcSpriteFrameInfos = NgAtlas.TileToTrimTexture(m_Sel.GetComponent<Renderer>().sharedMaterial, m_Sel.m_nTilingX, m_Sel.m_nTilingY, 0, m_Sel.m_nFrameCount, 4096);
 					if (m_Sel.m_NcSpriteFrameInfos != null)
 						m_Sel.m_TextureType = NcSpriteAnimation.TEXTURE_TYPE.TrimTexture;
 				}
 				if (GUILayout.Button(GetHelpContent("ExportTo : SplitTexture")))
 				{
 					string path = FXMakerCapture.GetExportSlitDir();
-					path = NgAtlas.ExportSplitTexture(path, m_Sel.renderer.sharedMaterial.mainTexture, m_Sel.m_nTilingX, m_Sel.m_nTilingY, 0, m_Sel.m_nFrameCount);
+					path = NgAtlas.ExportSplitTexture(path, m_Sel.GetComponent<Renderer>().sharedMaterial.mainTexture, m_Sel.m_nTilingX, m_Sel.m_nTilingY, 0, m_Sel.m_nFrameCount);
 					if (path != "")
 					{
 						Debug.Log(path);
@@ -82,7 +82,7 @@ public class NcSpriteAnimationEditor : FXMakerEditor
 				if (GUILayout.Button(GetHelpContent("ExportTo : SplitTexture")))
 				{
 					string path = FXMakerCapture.GetExportSlitDir();
-					path = NgAtlas.ExportSplitTexture(path, m_Sel.renderer.sharedMaterial.mainTexture, m_Sel.m_NcSpriteFrameInfos);
+					path = NgAtlas.ExportSplitTexture(path, m_Sel.GetComponent<Renderer>().sharedMaterial.mainTexture, m_Sel.m_NcSpriteFrameInfos);
 					if (path != "")
 					{
 						Debug.Log(path);
@@ -124,8 +124,8 @@ public class NcSpriteAnimationEditor : FXMakerEditor
 				EditorGUILayout.EndHorizontal();
 
 				// --------------------------------------------------------------
-				if (m_Sel.m_NcSpriteFactoryPrefab != null && m_Sel.m_NcSpriteFactoryPrefab.renderer != null && m_Sel.renderer)
-					if (m_Sel.m_NcSpriteFactoryPrefab.renderer.sharedMaterial != m_Sel.renderer.sharedMaterial)
+				if (m_Sel.m_NcSpriteFactoryPrefab != null && m_Sel.m_NcSpriteFactoryPrefab.GetComponent<Renderer>() != null && m_Sel.GetComponent<Renderer>())
+					if (m_Sel.m_NcSpriteFactoryPrefab.GetComponent<Renderer>().sharedMaterial != m_Sel.GetComponent<Renderer>().sharedMaterial)
 						m_Sel.UpdateFactoryMaterial();
 
 				// --------------------------------------------------------------
@@ -184,12 +184,12 @@ public class NcSpriteAnimationEditor : FXMakerEditor
 				Rect subRect = rect;
 
 				// draw texture
-				if (m_Sel.renderer != null && m_Sel.renderer.sharedMaterial != null && m_Sel.renderer.sharedMaterial.mainTexture != null)
+				if (m_Sel.GetComponent<Renderer>() != null && m_Sel.GetComponent<Renderer>().sharedMaterial != null && m_Sel.GetComponent<Renderer>().sharedMaterial.mainTexture != null)
 				{
 					int nClickFrameIndex;
 					if (m_Sel.m_TextureType == NcSpriteAnimation.TEXTURE_TYPE.TileTexture)
 					{
-						if (DrawTileTexture(subRect, (m_Sel.m_PlayMode == NcSpriteAnimation.PLAYMODE.SELECT), m_Sel.renderer.sharedMaterial, m_Sel.m_nTilingX, m_Sel.m_nTilingY, m_Sel.m_nStartFrame, m_Sel.m_nFrameCount, m_Sel.m_nSelectFrame, out nClickFrameIndex))
+						if (DrawTileTexture(subRect, (m_Sel.m_PlayMode == NcSpriteAnimation.PLAYMODE.SELECT), m_Sel.GetComponent<Renderer>().sharedMaterial, m_Sel.m_nTilingX, m_Sel.m_nTilingY, m_Sel.m_nStartFrame, m_Sel.m_nFrameCount, m_Sel.m_nSelectFrame, out nClickFrameIndex))
 						{
 							bClickButton	= true;
 							if (bClickButton && m_Sel.m_PlayMode == NcSpriteAnimation.PLAYMODE.SELECT)
@@ -199,7 +199,7 @@ public class NcSpriteAnimationEditor : FXMakerEditor
 
 					if (m_Sel.m_TextureType != NcSpriteAnimation.TEXTURE_TYPE.TileTexture)
 					{
-						if (DrawTrimTexture(subRect, (m_Sel.m_PlayMode == NcSpriteAnimation.PLAYMODE.SELECT), m_Sel.renderer.sharedMaterial, m_Sel.m_NcSpriteFrameInfos, m_Sel.m_nStartFrame, m_Sel.m_nFrameCount, m_Sel.m_nSelectFrame, out nClickFrameIndex))
+						if (DrawTrimTexture(subRect, (m_Sel.m_PlayMode == NcSpriteAnimation.PLAYMODE.SELECT), m_Sel.GetComponent<Renderer>().sharedMaterial, m_Sel.m_NcSpriteFrameInfos, m_Sel.m_nStartFrame, m_Sel.m_nFrameCount, m_Sel.m_nSelectFrame, out nClickFrameIndex))
 						{
 							bClickButton	= true;
 							if (bClickButton && m_Sel.m_PlayMode == NcSpriteAnimation.PLAYMODE.SELECT)
@@ -214,7 +214,7 @@ public class NcSpriteAnimationEditor : FXMakerEditor
 			EditorGUILayout.Space();
 			// Remove AlphaChannel
 			if (GUILayout.Button(GetHelpContent("Remove AlphaChannel")))
-				NgAtlas.ConvertAlphaTexture(m_Sel.renderer.sharedMaterial, false, m_Sel.m_curveAlphaWeight, 1, 1, 1);
+				NgAtlas.ConvertAlphaTexture(m_Sel.GetComponent<Renderer>().sharedMaterial, false, m_Sel.m_curveAlphaWeight, 1, 1, 1);
 			// AlphaWeight
 			if ((m_Sel.m_curveAlphaWeight == null || m_Sel.m_curveAlphaWeight.length <= 0) && FXMakerOption.inst != null)
 				m_Sel.m_curveAlphaWeight = FXMakerOption.inst.m_AlphaWeightCurve;
@@ -226,7 +226,7 @@ public class NcSpriteAnimationEditor : FXMakerEditor
 				if (GUILayout.Button(GetHelpContent("Adjust the alpha channel with AlphaWeight")))
 				{
 					m_Sel.m_bNeedRebuildAlphaChannel = false;
-					NgAtlas.ConvertAlphaTexture(m_Sel.renderer.sharedMaterial, true, m_Sel.m_curveAlphaWeight, 1, 1, 1);
+					NgAtlas.ConvertAlphaTexture(m_Sel.GetComponent<Renderer>().sharedMaterial, true, m_Sel.m_curveAlphaWeight, 1, 1, 1);
 //					NgAtlas.ConvertAlphaTexture(m_Sel.renderer.sharedMaterial, m_Sel.m_curveAlphaWeight, m_Sel.m_fRedAlphaWeight, m_Sel.m_fGreenAlphaWeight, m_Sel.m_fBlueAlphaWeight);
 				}
 				if (bHighLight)

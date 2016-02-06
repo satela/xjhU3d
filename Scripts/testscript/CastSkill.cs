@@ -14,7 +14,9 @@ public class CastSkill : MonoBehaviour {
     public string hitprefaburl;
     public DAnimatorController enemy;
 
-    public NavMeshAgent cur_Role;
+    public DBaseFightRole cur_Role;
+
+    public NavMeshAgent agent;
 	// Use this for initialization
 	void Start () {
 	
@@ -30,18 +32,20 @@ public class CastSkill : MonoBehaviour {
            // LayerMask mask = 1 << LayerMask.NameToLayer("GroundLayer");
 
             bool isCollider = Physics.Raycast(ray, out hitinfo);
+           
             if (isCollider && hitinfo.collider.tag == Tags.player)
             {
-               // cur_Role.gotoPoint(hitinfo.point);
-                cur_Role = hitinfo.collider.GetComponent<NavMeshAgent>();
+                cur_Role = hitinfo.collider.transform.parent.GetComponent<DBaseFightRole>();               
             }
-            if (isCollider && hitinfo.collider.tag == Tags.ground && cur_Role != null && cur_Role.enabled)
+            if (isCollider && hitinfo.collider.tag == Tags.ground && cur_Role != null)
             {
                 NavMeshPath path = new NavMeshPath();
-                cur_Role.CalculatePath(hitinfo.point, path);
+                cur_Role.agent.enabled = true;
+                cur_Role.agent.CalculatePath(hitinfo.point, path);
                 if (path.corners.Length >= 2)
                 {
-                    cur_Role.SetDestination(hitinfo.point);
+                    cur_Role.gotoDestination(hitinfo.point);
+                   
                 }
                 cur_Role = null;
             }

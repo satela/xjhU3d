@@ -60,16 +60,16 @@ public class ScreenTouch : MonoBehaviour {
 					break;
 			
 			}     
-			sphere.renderer.material.SetColor ("_TintColor", color);
-			spot.renderer.material.SetColor ("_TintColor",color);
+			sphere.GetComponent<Renderer>().material.SetColor ("_TintColor", color);
+			spot.GetComponent<Renderer>().material.SetColor ("_TintColor",color);
 			
 			// assign the layer for auto detection
 			sphere.layer=8;
 			
 			// Add a script to react with the touchs
-			sphere.AddComponent("ObjectTouch");
+			sphere.AddComponent<ObjectTouch>();
 			
-			sphere.rigidbody.mass = size;
+			sphere.GetComponent<Rigidbody>().mass = size;
 		}
 	}
 

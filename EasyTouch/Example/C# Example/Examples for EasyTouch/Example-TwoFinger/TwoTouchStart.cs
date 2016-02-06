@@ -36,7 +36,7 @@ public class TwoTouchStart : MonoBehaviour {
 	void On_TouchStart2Fingers( Gesture gesture){
 		// Verification that the action on the object
 		if (gesture.pickObject == gameObject){	
-			gameObject.renderer.material.color = new Color( Random.Range(0.0f,1.0f),  Random.Range(0.0f,1.0f), Random.Range(0.0f,1.0f));
+			gameObject.GetComponent<Renderer>().material.color = new Color( Random.Range(0.0f,1.0f),  Random.Range(0.0f,1.0f), Random.Range(0.0f,1.0f));
 		}
 	}
 	
@@ -52,7 +52,7 @@ public class TwoTouchStart : MonoBehaviour {
 		
 		// Verification that the action on the object
 		if (gesture.pickObject == gameObject){	
-			gameObject.renderer.material.color = Color.white;
+			gameObject.GetComponent<Renderer>().material.color = Color.white;
 			textMesh.text ="Touch Start/Up";
 		}
 	}
@@ -61,7 +61,7 @@ public class TwoTouchStart : MonoBehaviour {
 		
 		// Verification that the action on the object
 		if (gesture.pickObject == gameObject){	
-			gameObject.renderer.material.color = Color.white;
+			gameObject.GetComponent<Renderer>().material.color = Color.white;
 			textMesh.text ="Touch Start/Up";
 		}
 	}

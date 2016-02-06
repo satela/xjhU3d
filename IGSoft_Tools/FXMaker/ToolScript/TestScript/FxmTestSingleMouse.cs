@@ -76,8 +76,8 @@ public class FxmTestSingleMouse : MonoBehaviour
 //         m_fYRot = angles.x;
 
         // Make the rigid body not change rotation
-        if (rigidbody)
-            rigidbody.freezeRotation = true;
+        if (GetComponent<Rigidbody>())
+            GetComponent<Rigidbody>().freezeRotation = true;
     }
 
 	bool IsGUIMousePosition()

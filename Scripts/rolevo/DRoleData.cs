@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public enum EBaseAttr
 {
@@ -36,15 +37,27 @@ public class DRoleData  {
 
     public float cur_mp = 60;// 怒气
 
-    public DRoleData()
+
+    public DefaultRoleData defaultRoledata;
+
+    public DRoleData(int roleid)
     {
-        float[] temp = { 100, 40, 20, 20, 10, 2, 60 };
+        ConfigManager.intance.rolelDefaultDic.TryGetValue(roleid, out defaultRoledata);
+
+        if (defaultRoledata != null)
+        {
+            roleBaseAttr = defaultRoledata.roleBaseAttr;
+            roleSubAttr = defaultRoledata.roleSubAttr;
+            cur_hp = (int)roleBaseAttr[0];
+            cur_mp = (int)roleBaseAttr[(int)EBaseAttr.Mp];
+        }
+      /*  float[] temp = { 100, 40, 20, 20, 10, 2, 60 };
         for (int i = 0; i < temp.Length; i++)
             setBaseAttrByType((EBaseAttr)i, temp[i]);
 
         float[] tempsub = {100,5,30,20};
         for (int i = 0; i < tempsub.Length; i++)
-            setSubAttrByType((ESubAttr)i, tempsub[i]);
+            setSubAttrByType((ESubAttr)i, tempsub[i]);*/
 
     }
 

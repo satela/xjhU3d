@@ -13,6 +13,6 @@ public class AnimationSpeed : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		animation[anim.name].speed = speedAnim;
+		GetComponent<Animation>()[anim.name].speed = speedAnim;
 	}
 }

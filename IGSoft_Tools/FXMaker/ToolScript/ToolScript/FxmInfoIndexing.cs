@@ -123,15 +123,15 @@ public class FxmInfoIndexing : MonoBehaviour
 		{
 			NcParticleSystem	ncParticleScaleOri	= (m_OriginalTrans.GetComponent<NcParticleSystem>());
 			NcParticleSystem	ncParticleScaleIns	= (transform.GetComponent<NcParticleSystem>());
-			if (ncParticleScaleOri != null && ncParticleScaleOri.enabled && ncParticleScaleIns != null && ncParticleScaleOri.particleEmitter != null && ncParticleScaleOri.m_bScaleWithTransform && NgSerialized.IsMeshParticleEmitter(ncParticleScaleOri.particleEmitter))
+			if (ncParticleScaleOri != null && ncParticleScaleOri.enabled && ncParticleScaleIns != null && ncParticleScaleOri.GetComponent<ParticleEmitter>() != null && ncParticleScaleOri.m_bScaleWithTransform && NgSerialized.IsMeshParticleEmitter(ncParticleScaleOri.GetComponent<ParticleEmitter>()))
 			{
 				float	fSetMinValue;
 				float	fSetMaxValue;
-				NgSerialized.GetMeshNormalVelocity(ncParticleScaleOri.particleEmitter, out fSetMinValue, out fSetMaxValue);
+				NgSerialized.GetMeshNormalVelocity(ncParticleScaleOri.GetComponent<ParticleEmitter>(), out fSetMinValue, out fSetMaxValue);
 				if (fSetMinValue != ncParticleScaleOri.GetScaleMinMeshNormalVelocity() || fSetMaxValue != ncParticleScaleOri.GetScaleMaxMeshNormalVelocity())
 				{
-					NgSerialized.SetMeshNormalVelocity(ncParticleScaleOri.particleEmitter, ncParticleScaleOri.GetScaleMinMeshNormalVelocity(), ncParticleScaleOri.GetScaleMaxMeshNormalVelocity());
-					NgSerialized.SetMeshNormalVelocity(ncParticleScaleIns.particleEmitter, ncParticleScaleOri.GetScaleMinMeshNormalVelocity(), ncParticleScaleOri.GetScaleMaxMeshNormalVelocity());
+					NgSerialized.SetMeshNormalVelocity(ncParticleScaleOri.GetComponent<ParticleEmitter>(), ncParticleScaleOri.GetScaleMinMeshNormalVelocity(), ncParticleScaleOri.GetScaleMaxMeshNormalVelocity());
+					NgSerialized.SetMeshNormalVelocity(ncParticleScaleIns.GetComponent<ParticleEmitter>(), ncParticleScaleOri.GetScaleMinMeshNormalVelocity(), ncParticleScaleOri.GetScaleMaxMeshNormalVelocity());
 				}
 			}
 		}
@@ -153,7 +153,7 @@ public class FxmInfoIndexing : MonoBehaviour
 
 	public bool IsParticle()
 	{
-		return (particleEmitter != null || particleSystem != null);
+		return (GetComponent<ParticleEmitter>() != null || GetComponent<ParticleSystem>() != null);
 	}
 
 	public bool IsMesh()
@@ -221,10 +221,10 @@ public class FxmInfoIndexing : MonoBehaviour
 				Gizmos.matrix = Matrix4x4.identity;
 				DrawBox(allBounds, (m_bRoot ? FXMakerOption.inst.m_ColorRootBoundsBox : FXMakerOption.inst.m_ColorChildBoundsBox));
 			} else
-			if (renderer != null)
+			if (GetComponent<Renderer>() != null)
 			{
 				Gizmos.matrix = Matrix4x4.identity;
-				DrawBox(renderer.bounds, (m_bRoot ? FXMakerOption.inst.m_ColorRootBoundsBox : FXMakerOption.inst.m_ColorChildBoundsBox));
+				DrawBox(GetComponent<Renderer>().bounds, (m_bRoot ? FXMakerOption.inst.m_ColorRootBoundsBox : FXMakerOption.inst.m_ColorChildBoundsBox));
 			}
 		}
 	}
@@ -241,7 +241,7 @@ public class FxmInfoIndexing : MonoBehaviour
 	// Function ----------------------------------------------------------------------
 	bool InitPicking(bool bPicking)
 	{
-		if (renderer == null || bPicking == false)
+		if (GetComponent<Renderer>() == null || bPicking == false)
 			return false;
 
 		// particle

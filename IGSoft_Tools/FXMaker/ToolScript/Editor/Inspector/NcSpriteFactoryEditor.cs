@@ -67,7 +67,7 @@ public class NcSpriteFactoryEditor : FXMakerEditor
 				rect = EditorGUILayout.BeginHorizontal(GUILayout.Height(m_fButtonHeight));
 				{
 					if (FXMakerLayout.GUIButton(rect, GetHelpContent("Add NcSpriteAnimation Component"), true))
-						m_Sel.gameObject.AddComponent("NcSpriteAnimation");
+						m_Sel.gameObject.AddComponent<NcSpriteAnimation>();
 					GUILayout.Label("");
 				}
 				EditorGUILayout.EndHorizontal();
@@ -78,7 +78,7 @@ public class NcSpriteFactoryEditor : FXMakerEditor
 				rect = EditorGUILayout.BeginHorizontal(GUILayout.Height(m_fButtonHeight));
 				{
 					if (FXMakerLayout.GUIButton(rect, GetHelpContent("Add NcSpriteTexture Component"), true))
-						m_Sel.gameObject.AddComponent("NcSpriteTexture");
+						m_Sel.gameObject.AddComponent<NcSpriteTexture>();
 					GUILayout.Label("");
 				}
 				EditorGUILayout.EndHorizontal();
@@ -127,7 +127,7 @@ public class NcSpriteFactoryEditor : FXMakerEditor
 		Debug.Break();
 #else
 					bClickButton	= true;
-					CreateSpriteAtlas(m_Sel.renderer.sharedMaterial);
+					CreateSpriteAtlas(m_Sel.GetComponent<Renderer>().sharedMaterial);
 					m_Sel.m_bNeedRebuild = false;
 #endif
 				}
@@ -149,10 +149,10 @@ public class NcSpriteFactoryEditor : FXMakerEditor
 				}
 				if (FXMakerLayout.GUIButton(FXMakerLayout.GetInnerHorizontalRect(lineRect, 3, 1, 1), GetHelpContent("NewMaterial"), true))
 				{
-					Material	newMat		= new Material(m_Sel.renderer.sharedMaterial);
-					string		matPath		= AssetDatabase.GetAssetPath(m_Sel.renderer.sharedMaterial);
+					Material	newMat		= new Material(m_Sel.GetComponent<Renderer>().sharedMaterial);
+					string		matPath		= AssetDatabase.GetAssetPath(m_Sel.GetComponent<Renderer>().sharedMaterial);
 					NgMaterial.SaveMaterial(newMat, NgFile.TrimFilenameExt(matPath), m_Sel.name); 
-					m_Sel.renderer.sharedMaterial = newMat;
+					m_Sel.GetComponent<Renderer>().sharedMaterial = newMat;
 // 					m_Sel.renderer.sharedMaterial = (Material)AssetDatabase.LoadAssetAtPath(savePath, typeof(Material));
 				}
 
@@ -476,12 +476,12 @@ public class NcSpriteFactoryEditor : FXMakerEditor
 	// ----------------------------------------------------------------------------------
 	void CreateSpriteAtlas(Material tarMat)
 	{
-		if (m_Sel.renderer == null)
+		if (m_Sel.GetComponent<Renderer>() == null)
 		{
 			Debug.LogWarning("m_Sel.renderer is nul!!!");
 			return;
 		}
-		if (m_Sel.renderer.sharedMaterial == null)
+		if (m_Sel.GetComponent<Renderer>().sharedMaterial == null)
 		{
 			Debug.LogWarning("m_Sel.renderer.sharedMaterial is nul!!!");
 			return;
@@ -550,7 +550,7 @@ public class NcSpriteFactoryEditor : FXMakerEditor
 			{
 				int		nFrameIndex = m_Sel.m_SpriteList[n].m_FrameInfos[fc].m_nFrameIndex;
 				Rect	imageUvRect	= m_Sel.m_SpriteList[n].m_FrameInfos[fc].m_TextureUvOffset	= uvRects[m_Sel.m_SpriteList[n].m_FrameInfos[fc].m_nFrameIndex];
-				// ¾ËÆÄÁ¶Á¤ Ã³¸®
+				// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½
 				Color[]	colBuf = frameTextures[nFrameIndex].GetPixels();
 				for (int an = 0; an < colBuf.Length; an++)
 					if (m_Sel.m_SpriteList[n].m_fMaxTextureAlpha < colBuf[an].a)

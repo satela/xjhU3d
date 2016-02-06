@@ -493,7 +493,7 @@ public class FxmSpritePopup : FxmPopup
 			GameObject	newPrefab		= (GameObject)Instantiate(FXMakerMain.inst.m_FXMakerSpritePrefab);
 
 			newPrefab.transform.rotation= Quaternion.identity;
- 			newPrefab.renderer.material	= newMat;
+ 			newPrefab.GetComponent<Renderer>().material	= newMat;
  			NcSpriteAnimation spriteCom = newPrefab.GetComponent<NcSpriteAnimation>();
 			spriteCom.m_bBuildSpriteObj	= true;
 			spriteCom.m_nFrameCount		= m_nSaveFrameCount;

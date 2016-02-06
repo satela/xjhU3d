@@ -43,7 +43,7 @@ public class FXMakerPicking : MonoBehaviour
 	// -----------------------------------------------------------------------------------
 	void LateUpdate()
 	{
-		if (Camera.mainCamera == null)
+		if (Camera.main == null)
 			return;
 
 		if (FXMakerMain.inst.IsGUIMousePosition())
@@ -56,7 +56,7 @@ public class FXMakerPicking : MonoBehaviour
 		{
 			GameObject	pickObj		= null;
 			Vector3		clickPos	= Input.mousePosition;
-			Ray			ray			= Camera.mainCamera.ScreenPointToRay(clickPos);
+			Ray			ray			= Camera.main.ScreenPointToRay(clickPos);
 			bool		bFindNext	= (m_LastPickPos == clickPos);
 // 			RaycastHit	pickedObject;
 
