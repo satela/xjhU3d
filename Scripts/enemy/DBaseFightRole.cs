@@ -100,7 +100,8 @@ public class DBaseFightRole : MonoBehaviour
         //agent = roleModel.GetComponent<NavMeshAgent>();
         roleModel.transform.position = pos;
         roleModel.transform.parent = transform;
-        roleModel.tag = Tags.player;
+        //if(fside == 0)
+       // roleModel.tag = Tags.enemy;
 
         rolelastpos = pos;
         roleModel.transform.localEulerAngles = rotate;
@@ -140,6 +141,20 @@ public class DBaseFightRole : MonoBehaviour
 
     }
 
+    public bool canControled()
+    {
+        if (isCasteringSkill)
+            return false;
+        checkRoleState();
+
+        if (fightstate == RoleFightState.Freeze)
+            return false;
+        if (animatorControl.currentState != eAnimatorState.await && animatorControl.currentState != eAnimatorState.arun)
+            return false;
+      
+
+        return true;
+    }
     private bool canUseSkillNow()
     {
         if (isCasteringSkill)

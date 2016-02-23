@@ -9,21 +9,21 @@ public class PlayerDir : MonoBehaviour {
 	private PlayerMove playermvoe;
 
     private NavMeshAgent agent;
-    private PlayerAttack playerattack;
+    private DBaseFightRole playerattack;
 	// Use this for initialization
 	void Start () {
 	
 		targetPosition = transform.position;
 		playermvoe = this.GetComponent<PlayerMove> ();
         agent = this.GetComponent<NavMeshAgent>();
-        playerattack = this.GetComponent<PlayerAttack>();
+        playerattack = this.transform.parent.GetComponent<DBaseFightRole>();
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
-		if(Input.GetMouseButtonDown(0) && UICamera.hoveredObject == null && playerattack.isLockingTarget == false)
+
+        if (Input.GetMouseButtonDown(0) && UICamera.hoveredObject == null && playerattack.skillstep != ESkillStep.Selecting)
 		{
 
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -34,10 +34,10 @@ public class PlayerDir : MonoBehaviour {
 				//isMoving = true;
 				ShowClickEffect(hitinfo.point);
 				//lookAtTarget(hitinfo.point);
-                agent.SetDestination(hitinfo.point);
+                playerattack.gotoDestination(hitinfo.point);
 			}
 		}
-        if(agent.remainingDistance > 0)
+       /* if(agent.remainingDistance > 0)
         {
             isMoving = true;
            // Debug.Log("is moveing");
@@ -46,7 +46,7 @@ public class PlayerDir : MonoBehaviour {
         {
             isMoving = false;
 
-        }
+        }*/
 	/*	if (Input.GetMouseButtonUp(0)) 
 		{
 			isMoving = false;
@@ -69,7 +69,7 @@ public class PlayerDir : MonoBehaviour {
 	void ShowClickEffect(Vector3 hitPoint)
 	{
 		hitPoint = new Vector3 (hitPoint.x, hitPoint.y + 0.1f, hitPoint.z);
-		GameObject.Instantiate (effect_click_prefab, hitPoint, Quaternion.identity);
+		//GameObject.Instantiate (effect_click_prefab, hitPoint, Quaternion.identity);
 	}
 
 	void lookAtTarget(Vector3 hitPoint)

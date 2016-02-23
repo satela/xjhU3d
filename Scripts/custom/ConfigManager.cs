@@ -37,6 +37,7 @@ public class ConfigManager {
 
          TextAsset txtasset = UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/TextInfo/txt/Role.txt", typeof(TextAsset)) as TextAsset;
 
+        
          string text = txtasset.text;
          string[] strArray = text.Split('\n');
 

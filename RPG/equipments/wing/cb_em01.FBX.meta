@@ -1,0 +1,224 @@
+fileFormatVersion: 2
+guid: 28b4cadbc1277c740a55b6466081141d
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: cb_em01
+    100002: //RootNode
+    100004: em01_wing
+    100006: em01_wingL1
+    100008: em01_wingL101
+    100010: em01_wingL102
+    100012: em01_wingL103
+    100014: em01_wingL2
+    100016: em01_wingL201
+    100018: em01_wingL202
+    100020: em01_wingL203
+    100022: em01_wingL204
+    100024: em01_wingL3
+    100026: em01_wingL301
+    100028: em01_wingL302
+    100030: em01_wingL303
+    100032: em01_wingL304
+    100034: em01_wingR1
+    100036: em01_wingR101
+    100038: em01_wingR102
+    100040: em01_wingR103
+    100042: em01_wingR2
+    100044: em01_wingR201
+    100046: em01_wingR202
+    100048: em01_wingR203
+    100050: em01_wingR204
+    100052: em01_wingR3
+    100054: em01_wingR301
+    100056: em01_wingR302
+    100058: em01_wingR303
+    100060: em01_wingR304
+    100062: m_center
+    100064: root
+    100066: m_effect
+    400000: cb_em01
+    400002: //RootNode
+    400004: em01_wing
+    400006: em01_wingL1
+    400008: em01_wingL101
+    400010: em01_wingL102
+    400012: em01_wingL103
+    400014: em01_wingL2
+    400016: em01_wingL201
+    400018: em01_wingL202
+    400020: em01_wingL203
+    400022: em01_wingL204
+    400024: em01_wingL3
+    400026: em01_wingL301
+    400028: em01_wingL302
+    400030: em01_wingL303
+    400032: em01_wingL304
+    400034: em01_wingR1
+    400036: em01_wingR101
+    400038: em01_wingR102
+    400040: em01_wingR103
+    400042: em01_wingR2
+    400044: em01_wingR201
+    400046: em01_wingR202
+    400048: em01_wingR203
+    400050: em01_wingR204
+    400052: em01_wingR3
+    400054: em01_wingR301
+    400056: em01_wingR302
+    400058: em01_wingR303
+    400060: em01_wingR304
+    400062: m_center
+    400064: root
+    400066: m_effect
+    4300000: cb_em01
+    7400000: await_cbem01
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: cb_em01
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: await_cbem01
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: cb_em01
+        weight: 1
+      - path: m_center
+        weight: 1
+      - path: m_center/root
+        weight: 1
+      - path: m_center/root/em01_wing
+        weight: 1
+      - path: m_center/root/em01_wing/em01_wingL1
+        weight: 1
+      - path: m_center/root/em01_wing/em01_wingL1/em01_wingL101
+        weight: 1
+      - path: m_center/root/em01_wing/em01_wingL1/em01_wingL101/em01_wingL102
+        weight: 1
+      - path: m_center/root/em01_wing/em01_wingL1/em01_wingL101/em01_wingL102/em01_wingL103
+        weight: 1
+      - path: m_center/root/em01_wing/em01_wingL1/em01_wingL101/em01_wingL102/em01_wingL103/em01_wingL2
+        weight: 1
+      - path: m_center/root/em01_wing/em01_wingL1/em01_wingL101/em01_wingL102/em01_wingL103/em01_wingL2/em01_wingL201
+        weight: 1
+      - path: m_center/root/em01_wing/em01_wingL1/em01_wingL101/em01_wingL102/em01_wingL103/em01_wingL2/em01_wingL201/em01_wingL202
+        weight: 1
+      - path: m_center/root/em01_wing/em01_wingL1/em01_wingL101/em01_wingL102/em01_wingL103/em01_wingL2/em01_wingL201/em01_wingL202/em01_wingL203
+        weight: 1
+      - path: m_center/root/em01_wing/em01_wingL1/em01_wingL101/em01_wingL102/em01_wingL103/em01_wingL2/em01_wingL201/em01_wingL202/em01_wingL203/em01_wingL204
+        weight: 1
+      - path: m_center/root/em01_wing/em01_wingL1/em01_wingL101/em01_wingL102/em01_wingL103/em01_wingL3
+        weight: 1
+      - path: m_center/root/em01_wing/em01_wingL1/em01_wingL101/em01_wingL102/em01_wingL103/em01_wingL3/em01_wingL301
+        weight: 1
+      - path: m_center/root/em01_wing/em01_wingL1/em01_wingL101/em01_wingL102/em01_wingL103/em01_wingL3/em01_wingL301/em01_wingL302
+        weight: 1
+      - path: m_center/root/em01_wing/em01_wingL1/em01_wingL101/em01_wingL102/em01_wingL103/em01_wingL3/em01_wingL301/em01_wingL302/em01_wingL303
+        weight: 1
+      - path: m_center/root/em01_wing/em01_wingL1/em01_wingL101/em01_wingL102/em01_wingL103/em01_wingL3/em01_wingL301/em01_wingL302/em01_wingL303/em01_wingL304
+        weight: 1
+      - path: m_center/root/em01_wing/em01_wingR1
+        weight: 1
+      - path: m_center/root/em01_wing/em01_wingR1/em01_wingR101
+        weight: 1
+      - path: m_center/root/em01_wing/em01_wingR1/em01_wingR101/em01_wingR102
+        weight: 1
+      - path: m_center/root/em01_wing/em01_wingR1/em01_wingR101/em01_wingR102/em01_wingR103
+        weight: 1
+      - path: m_center/root/em01_wing/em01_wingR1/em01_wingR101/em01_wingR102/em01_wingR103/em01_wingR2
+        weight: 1
+      - path: m_center/root/em01_wing/em01_wingR1/em01_wingR101/em01_wingR102/em01_wingR103/em01_wingR2/em01_wingR201
+        weight: 1
+      - path: m_center/root/em01_wing/em01_wingR1/em01_wingR101/em01_wingR102/em01_wingR103/em01_wingR2/em01_wingR201/em01_wingR202
+        weight: 1
+      - path: m_center/root/em01_wing/em01_wingR1/em01_wingR101/em01_wingR102/em01_wingR103/em01_wingR2/em01_wingR201/em01_wingR202/em01_wingR203
+        weight: 1
+      - path: m_center/root/em01_wing/em01_wingR1/em01_wingR101/em01_wingR102/em01_wingR103/em01_wingR2/em01_wingR201/em01_wingR202/em01_wingR203/em01_wingR204
+        weight: 1
+      - path: m_center/root/em01_wing/em01_wingR1/em01_wingR101/em01_wingR102/em01_wingR103/em01_wingR3
+        weight: 1
+      - path: m_center/root/em01_wing/em01_wingR1/em01_wingR101/em01_wingR102/em01_wingR103/em01_wingR3/em01_wingR301
+        weight: 1
+      - path: m_center/root/em01_wing/em01_wingR1/em01_wingR101/em01_wingR102/em01_wingR103/em01_wingR3/em01_wingR301/em01_wingR302
+        weight: 1
+      - path: m_center/root/em01_wing/em01_wingR1/em01_wingR101/em01_wingR102/em01_wingR103/em01_wingR3/em01_wingR301/em01_wingR302/em01_wingR303
+        weight: 1
+      - path: m_center/root/em01_wing/em01_wingR1/em01_wingR101/em01_wingR102/em01_wingR103/em01_wingR3/em01_wingR301/em01_wingR302/em01_wingR303/em01_wingR304
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 

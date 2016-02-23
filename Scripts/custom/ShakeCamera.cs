@@ -9,6 +9,7 @@ public class ShakeCamera : MonoBehaviour
     private float shakeDelta = 0.005f;
     public Camera cam;
     public static bool isshakeCamera = false;
+    public bool isInShake = false;
     // Use this for initialization
     void Start()
     {
@@ -24,7 +25,9 @@ public class ShakeCamera : MonoBehaviour
     {
         if (isshakeCamera)
         {
+            isInShake = true;
             iTween.ShakePosition(gameObject, new Vector3(0, 0.3f, 0), 0.5f);
+            Invoke("resetShake", 0.5f);
             isshakeCamera = false;
         //    if (shakeTime > 0)
         //    {
@@ -53,7 +56,10 @@ public class ShakeCamera : MonoBehaviour
         }
 
     }
-
+    void resetShake()
+    {
+        isInShake = false;
+    }
     public static void shakeCamera()
     {
         isshakeCamera = true;

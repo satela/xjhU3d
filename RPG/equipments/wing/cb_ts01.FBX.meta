@@ -1,0 +1,180 @@
+fileFormatVersion: 2
+guid: 270c52ee1c23b5644b9d5dab51670487
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: cb_ts01
+    100004: cbts01_wingL
+    100006: cbts01_wingL01
+    100008: cbts01_wingL02
+    100010: cbts01_wingL03
+    100012: cbts01_wingL04
+    100014: cbts01_wingL05
+    100016: cbts01_wingL06
+    100018: cbts01_wingL07
+    100020: cbts01_wingL08
+    100022: cbts01_wingR
+    100024: cbts01_wingR01
+    100026: cbts01_wingR02
+    100028: cbts01_wingR03
+    100030: cbts01_wingR04
+    100032: cbts01_wingR05
+    100034: cbts01_wingR06
+    100036: cbts01_wingR07
+    100038: cbts01_wingR08
+    100040: m_center
+    100042: root
+    100044: m_effect
+    400000: //RootNode
+    400002: cb_ts01
+    400004: cbts01_wingL
+    400006: cbts01_wingL01
+    400008: cbts01_wingL02
+    400010: cbts01_wingL03
+    400012: cbts01_wingL04
+    400014: cbts01_wingL05
+    400016: cbts01_wingL06
+    400018: cbts01_wingL07
+    400020: cbts01_wingL08
+    400022: cbts01_wingR
+    400024: cbts01_wingR01
+    400026: cbts01_wingR02
+    400028: cbts01_wingR03
+    400030: cbts01_wingR04
+    400032: cbts01_wingR05
+    400034: cbts01_wingR06
+    400036: cbts01_wingR07
+    400038: cbts01_wingR08
+    400040: m_center
+    400042: root
+    400044: m_effect
+    4300000: cb_ts01
+    7400000: await_cbjs01
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: cb_ts01
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: await_cbjs01
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: cb_ts01
+        weight: 1
+      - path: m_center
+        weight: 1
+      - path: m_center/root
+        weight: 1
+      - path: m_center/root/cbts01_wingL
+        weight: 1
+      - path: m_center/root/cbts01_wingL/cbts01_wingL01
+        weight: 1
+      - path: m_center/root/cbts01_wingL/cbts01_wingL01/cbts01_wingL02
+        weight: 1
+      - path: m_center/root/cbts01_wingL/cbts01_wingL01/cbts01_wingL02/cbts01_wingL03
+        weight: 1
+      - path: m_center/root/cbts01_wingL/cbts01_wingL01/cbts01_wingL02/cbts01_wingL03/cbts01_wingL04
+        weight: 1
+      - path: m_center/root/cbts01_wingL/cbts01_wingL01/cbts01_wingL02/cbts01_wingL03/cbts01_wingL04/cbts01_wingL05
+        weight: 1
+      - path: m_center/root/cbts01_wingL/cbts01_wingL01/cbts01_wingL02/cbts01_wingL03/cbts01_wingL04/cbts01_wingL05/cbts01_wingL06
+        weight: 1
+      - path: m_center/root/cbts01_wingL/cbts01_wingL01/cbts01_wingL02/cbts01_wingL03/cbts01_wingL04/cbts01_wingL05/cbts01_wingL06/cbts01_wingL07
+        weight: 1
+      - path: m_center/root/cbts01_wingL/cbts01_wingL01/cbts01_wingL02/cbts01_wingL03/cbts01_wingL04/cbts01_wingL05/cbts01_wingL06/cbts01_wingL07/cbts01_wingL08
+        weight: 1
+      - path: m_center/root/cbts01_wingR
+        weight: 1
+      - path: m_center/root/cbts01_wingR/cbts01_wingR01
+        weight: 1
+      - path: m_center/root/cbts01_wingR/cbts01_wingR01/cbts01_wingR02
+        weight: 1
+      - path: m_center/root/cbts01_wingR/cbts01_wingR01/cbts01_wingR02/cbts01_wingR03
+        weight: 1
+      - path: m_center/root/cbts01_wingR/cbts01_wingR01/cbts01_wingR02/cbts01_wingR03/cbts01_wingR04
+        weight: 1
+      - path: m_center/root/cbts01_wingR/cbts01_wingR01/cbts01_wingR02/cbts01_wingR03/cbts01_wingR04/cbts01_wingR05
+        weight: 1
+      - path: m_center/root/cbts01_wingR/cbts01_wingR01/cbts01_wingR02/cbts01_wingR03/cbts01_wingR04/cbts01_wingR05/cbts01_wingR06
+        weight: 1
+      - path: m_center/root/cbts01_wingR/cbts01_wingR01/cbts01_wingR02/cbts01_wingR03/cbts01_wingR04/cbts01_wingR05/cbts01_wingR06/cbts01_wingR07
+        weight: 1
+      - path: m_center/root/cbts01_wingR/cbts01_wingR01/cbts01_wingR02/cbts01_wingR03/cbts01_wingR04/cbts01_wingR05/cbts01_wingR06/cbts01_wingR07/cbts01_wingR08
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 

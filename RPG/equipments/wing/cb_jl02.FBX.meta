@@ -1,0 +1,204 @@
+fileFormatVersion: 2
+guid: 5c63aeadbeda47c48996e3a24544d813
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: cbjl02_wingL
+    100004: cbjl02_wingL01
+    100006: cbjl02_wingL02
+    100008: cbjl02_wingL03
+    100010: cbjl02_wingL04
+    100012: cbjl02_wingL05
+    100014: cbjl02_wingL06
+    100016: cbjl02_wingL07
+    100018: cbjl02_wingL08
+    100020: cbjl02_wingL09
+    100022: cbjl02_wingL10
+    100024: cbjl02_wingL11
+    100026: cbjl02_wingR
+    100028: cbjl02_wingR01
+    100030: cbjl02_wingR02
+    100032: cbjl02_wingR03
+    100034: cbjl02_wingR04
+    100036: cbjl02_wingR05
+    100038: cbjl02_wingR06
+    100040: cbjl02_wingR07
+    100042: cbjl02_wingR08
+    100044: cbjl02_wingR09
+    100046: cbjl02_wingR10
+    100048: cbjl02_wingR11
+    100050: chibang2_4
+    100052: m_center
+    100054: root
+    100056: m_effect
+    400000: //RootNode
+    400002: cbjl02_wingL
+    400004: cbjl02_wingL01
+    400006: cbjl02_wingL02
+    400008: cbjl02_wingL03
+    400010: cbjl02_wingL04
+    400012: cbjl02_wingL05
+    400014: cbjl02_wingL06
+    400016: cbjl02_wingL07
+    400018: cbjl02_wingL08
+    400020: cbjl02_wingL09
+    400022: cbjl02_wingL10
+    400024: cbjl02_wingL11
+    400026: cbjl02_wingR
+    400028: cbjl02_wingR01
+    400030: cbjl02_wingR02
+    400032: cbjl02_wingR03
+    400034: cbjl02_wingR04
+    400036: cbjl02_wingR05
+    400038: cbjl02_wingR06
+    400040: cbjl02_wingR07
+    400042: cbjl02_wingR08
+    400044: cbjl02_wingR09
+    400046: cbjl02_wingR10
+    400048: cbjl02_wingR11
+    400050: chibang2_4
+    400052: m_center
+    400054: root
+    400056: m_effect
+    4300000: chibang2_4
+    7400000: await_cbjl02
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: chibang2_4
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: await_cbjl02
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: chibang2_4
+        weight: 1
+      - path: m_center
+        weight: 1
+      - path: m_center/root
+        weight: 1
+      - path: m_center/root/cbjl02_wingL
+        weight: 1
+      - path: m_center/root/cbjl02_wingL/cbjl02_wingL01
+        weight: 1
+      - path: m_center/root/cbjl02_wingL/cbjl02_wingL01/cbjl02_wingL02
+        weight: 1
+      - path: m_center/root/cbjl02_wingL/cbjl02_wingL01/cbjl02_wingL02/cbjl02_wingL03
+        weight: 1
+      - path: m_center/root/cbjl02_wingL/cbjl02_wingL01/cbjl02_wingL04
+        weight: 1
+      - path: m_center/root/cbjl02_wingL/cbjl02_wingL01/cbjl02_wingL04/cbjl02_wingL05
+        weight: 1
+      - path: m_center/root/cbjl02_wingL/cbjl02_wingL01/cbjl02_wingL04/cbjl02_wingL05/cbjl02_wingL06
+        weight: 1
+      - path: m_center/root/cbjl02_wingL/cbjl02_wingL01/cbjl02_wingL04/cbjl02_wingL05/cbjl02_wingL06/cbjl02_wingL07
+        weight: 1
+      - path: m_center/root/cbjl02_wingL/cbjl02_wingL01/cbjl02_wingL08
+        weight: 1
+      - path: m_center/root/cbjl02_wingL/cbjl02_wingL01/cbjl02_wingL08/cbjl02_wingL09
+        weight: 1
+      - path: m_center/root/cbjl02_wingL/cbjl02_wingL01/cbjl02_wingL08/cbjl02_wingL09/cbjl02_wingL10
+        weight: 1
+      - path: m_center/root/cbjl02_wingL/cbjl02_wingL01/cbjl02_wingL08/cbjl02_wingL09/cbjl02_wingL10/cbjl02_wingL11
+        weight: 1
+      - path: m_center/root/cbjl02_wingR
+        weight: 1
+      - path: m_center/root/cbjl02_wingR/cbjl02_wingR01
+        weight: 1
+      - path: m_center/root/cbjl02_wingR/cbjl02_wingR01/cbjl02_wingR02
+        weight: 1
+      - path: m_center/root/cbjl02_wingR/cbjl02_wingR01/cbjl02_wingR02/cbjl02_wingR03
+        weight: 1
+      - path: m_center/root/cbjl02_wingR/cbjl02_wingR01/cbjl02_wingR04
+        weight: 1
+      - path: m_center/root/cbjl02_wingR/cbjl02_wingR01/cbjl02_wingR04/cbjl02_wingR05
+        weight: 1
+      - path: m_center/root/cbjl02_wingR/cbjl02_wingR01/cbjl02_wingR04/cbjl02_wingR05/cbjl02_wingR06
+        weight: 1
+      - path: m_center/root/cbjl02_wingR/cbjl02_wingR01/cbjl02_wingR04/cbjl02_wingR05/cbjl02_wingR06/cbjl02_wingR07
+        weight: 1
+      - path: m_center/root/cbjl02_wingR/cbjl02_wingR01/cbjl02_wingR08
+        weight: 1
+      - path: m_center/root/cbjl02_wingR/cbjl02_wingR01/cbjl02_wingR08/cbjl02_wingR09
+        weight: 1
+      - path: m_center/root/cbjl02_wingR/cbjl02_wingR01/cbjl02_wingR08/cbjl02_wingR09/cbjl02_wingR10
+        weight: 1
+      - path: m_center/root/cbjl02_wingR/cbjl02_wingR01/cbjl02_wingR08/cbjl02_wingR09/cbjl02_wingR10/cbjl02_wingR11
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 

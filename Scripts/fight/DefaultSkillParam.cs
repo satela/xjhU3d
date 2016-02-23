@@ -6,7 +6,7 @@ public class DefaultSkillParam
 {
 
 
-    public const float PathFindingDist = 8;//技能寻路距离，当所有敌人超过这个距离时，不作自动寻路
+    public const float PathFindingDist = 20;//技能寻路距离，当所有敌人超过这个距离时，不作自动寻路
 
     public const float BeatonBackMaxDist = 2;//被击退的默认距离
 

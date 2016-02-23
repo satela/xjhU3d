@@ -17,16 +17,16 @@ public class PlayerMove : MonoBehaviour {
 	public PlayerState state = PlayerState.Idle;
 	public bool isMoving = false;
 
-    private PlayerAttack attack;
-    private NavMeshAgent agent;
+    private DBaseFightRole attack;
+  //  private NavMeshAgent agent;
 
 	// Use this for initialization
 	void Start () {
 	
 		dir = this.GetComponent<PlayerDir> ();
 		controller = this.GetComponent<CharacterController> ();
-        attack = this.GetComponent<PlayerAttack>();
-        agent = this.GetComponent<NavMeshAgent>();
+        attack = this.transform.parent.GetComponent<DBaseFightRole>();
+       // agent = this.GetComponent<NavMeshAgent>();
 
 	}
 
@@ -103,9 +103,9 @@ public class PlayerMove : MonoBehaviour {
 
             startSpeed = Mathf.Lerp(startSpeed, speed, Time.deltaTime);
 
-            agent.speed = startSpeed;
+            attack.agent.speed = startSpeed;
 
-            agent.SetDestination(transform.position + forward);
+            attack.gotoDestination(transform.position + forward);
 
             Debug.Log("forward:" + forward.x + "," + forward.y + "," + forward.z);
            //state = PlayerState.Moving;
@@ -133,7 +133,7 @@ public class PlayerMove : MonoBehaviour {
                 state = PlayerState.Idle;
             }
         }*/
-        if (attack.state == PlayerFightState.ControlWalk)
+        if (attack.canControled())
         {
 
             if(Input.GetKey(KeyCode.A))
@@ -144,7 +144,7 @@ public class PlayerMove : MonoBehaviour {
                 transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 5 * Time.deltaTime);
 
                 startSpeed = Mathf.Lerp(startSpeed, speed, Time.deltaTime);
-                agent.SetDestination(transform.position + transform.forward * startSpeed);
+                attack.gotoDestination(transform.position + transform.forward * startSpeed);
             }
             else if (Input.GetKey(KeyCode.D))
             {
@@ -155,7 +155,7 @@ public class PlayerMove : MonoBehaviour {
 
                 transform.rotation = Quaternion.Slerp(transform.rotation, rotation,5 * Time.deltaTime);
                 startSpeed = Mathf.Lerp(startSpeed, speed, Time.deltaTime);
-                agent.SetDestination(transform.position + transform.forward * startSpeed);
+                attack.gotoDestination(transform.position + transform.forward * startSpeed);
             }
 
             if (Input.GetKey(KeyCode.W))
@@ -167,7 +167,7 @@ public class PlayerMove : MonoBehaviour {
 
                 transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 5 * Time.deltaTime);
                 startSpeed = Mathf.Lerp(startSpeed, speed, Time.deltaTime);
-                agent.SetDestination(transform.position + transform.forward * startSpeed);
+                attack.gotoDestination(transform.position + transform.forward * startSpeed);
             }
             else if (Input.GetKey(KeyCode.S))
             {
@@ -178,10 +178,14 @@ public class PlayerMove : MonoBehaviour {
                 transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 5 * Time.deltaTime);
 
                 startSpeed = Mathf.Lerp(startSpeed, speed, Time.deltaTime);
-                agent.SetDestination(transform.position + transform.forward * startSpeed);
+                attack.gotoDestination(transform.position + transform.forward * startSpeed);
             }
-            
-            if (agent.remainingDistance > 0)
+
+            if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.D))
+            {
+                attack.gotoDestination(transform.position);
+            }
+            if (attack.agent.remainingDistance > 0)
             {
                 state = PlayerState.Moving;
             }
@@ -201,13 +205,13 @@ public class PlayerMove : MonoBehaviour {
         //transform.LookAt(destPoint);
         //controller.SimpleMove(transform.forward * speed);
 
-        agent.SetDestination(destPoint);
+       // agent.SetDestination(destPoint);
               
     }
     public void stopFollowing()
     {
         //agent.Stop();
         //agent.ResetPath();
-        agent.SetDestination(transform.position);
+       // agent.SetDestination(transform.position);
     }
 }

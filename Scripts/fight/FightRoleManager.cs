@@ -42,13 +42,20 @@ public class FightRoleManager : MonoBehaviour {
     {
         _instance = this;
         allRoles = new List<DBaseFightRole>();
+        SkillConfiguration.LoadXml();
+        ConfigManager.intance.init();
     }
 
+    bool createrole = false;
+    int addtype = -1;
+    int temptype = -1;
+    string gname = "";
+    int posindex = -1;
     public void OnGUI()
     {
-        int addtype = -1;
-        int posindex = -1;
-        string gname = "";
+         addtype = -1;
+        //int posindex = -1;
+        //string gname = "";
         if(GUI.Button(new Rect(800,10,50,20), "己方1"))
         {
             addtype = 0;
@@ -91,34 +98,50 @@ public class FightRoleManager : MonoBehaviour {
 
         }
 
+        if (GUI.Button(new Rect(910, 70, 50, 20), "战斗"))
+        {
+            FightRoleManager._instance.setAutoFight();
+        }
+
+        if (GUI.Button(new Rect(850, 70, 50, 20), "相机跟随"))
+        {
+            Camera.main.GetComponent<FollowPlayer>().setplayer(selfRoles[0]);
+        }
+
         if (addtype == 0)
         {
+            createrole = true;
+
             if (selfRoles[posindex] != null)
             {
                 Destroy(selfRoles[posindex].gameObject);
                 selfRoles[posindex] = null;
             }
-            DBaseFightRole fightroledata = AddRole(gname, 0, positivePos[posindex], new Vector3(0, -60, 0));
 
-            selfRoles[posindex] = fightroledata;
-           // selfRoles[posindex].gameObject.transform.position = positivePos[posindex];
-           // selfRoles[posindex].gameObject.transform.eulerAngles = new Vector3(0, -60, 0);
+            temptype = addtype;
+           // DBaseFightRole fightroledata = AddRole(gname, 0, positivePos[posindex], new Vector3(0, -60, 0));
+
+           // selfRoles[posindex] = fightroledata;
+           
         }
         else if (addtype == 1)
         {
+            createrole = true;
+
             if (enemyRoles[posindex] != null)
             {
                 Destroy(enemyRoles[posindex].gameObject);
                 enemyRoles[posindex] = null;
             }
-            DBaseFightRole fightroledata = AddRole(gname, 1, negtivePos[posindex], new Vector3(0, 120, 0));
+            temptype = addtype;
 
-            enemyRoles[posindex] = fightroledata;
-           // enemyRoles[posindex].gameObject.transform.position = negtivePos[posindex];
-           // enemyRoles[posindex].gameObject.transform.eulerAngles = new Vector3(0, 120, 0);
+            //DBaseFightRole fightroledata = AddRole(gname, 1, negtivePos[posindex], new Vector3(0, 120, 0));
 
+            //enemyRoles[posindex] = fightroledata;
+          
         }
     }
+
 
     
 	// Use this for initialization
@@ -128,7 +151,28 @@ public class FightRoleManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hitinfo;
+
+            // LayerMask mask = 1 << LayerMask.NameToLayer("GroundLayer");
+
+            bool isCollider = Physics.Raycast(ray, out hitinfo);
+
+
+            if (isCollider && hitinfo.collider.tag == Tags.ground && createrole)
+            {
+                DBaseFightRole fightroledata = AddRole(gname, temptype, hitinfo.point, new Vector3(0, -60, 0));
+
+                if(temptype == 0)
+                    selfRoles[posindex] = fightroledata;
+                else
+                    enemyRoles[posindex] = fightroledata;
+                 createrole = false;
+            }
+        }
 	}
 
     public DBaseFightRole AddRole(string gname, int side,Vector3 pos,Vector3 rotate)

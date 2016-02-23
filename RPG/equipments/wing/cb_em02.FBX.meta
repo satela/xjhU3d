@@ -1,0 +1,236 @@
+fileFormatVersion: 2
+guid: 52199ff77422eb9498cddeb04e139c96
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: cb_em02
+    100004: cbem02_wingL00
+    100006: cbem02_wingL01
+    100008: cbem02_wingL02
+    100010: cbem02_wingL03
+    100012: cbem02_wingL04
+    100014: cbem02_wingL05
+    100016: cbem02_wingL06
+    100018: cbem02_wingL07
+    100020: cbem02_wingL08
+    100022: cbem02_wingL09
+    100024: cbem02_wingL10
+    100026: cbem02_wingL11
+    100028: cbem02_wingL12
+    100030: cbem02_wingL13
+    100032: cbem02_wingL14
+    100034: cbem02_wingL15
+    100036: cbem02_wingR00
+    100038: cbem02_wingR01
+    100040: cbem02_wingR02
+    100042: cbem02_wingR03
+    100044: cbem02_wingR04
+    100046: cbem02_wingR05
+    100048: cbem02_wingR06
+    100050: cbem02_wingR07
+    100052: cbem02_wingR08
+    100054: cbem02_wingR09
+    100056: cbem02_wingR10
+    100058: cbem02_wingR11
+    100060: cbem02_wingR12
+    100062: cbem02_wingR13
+    100064: cbem02_wingR14
+    100066: cbem02_wingR15
+    100068: m_center
+    100070: root
+    100072: m_effect
+    400000: //RootNode
+    400002: cb_em02
+    400004: cbem02_wingL00
+    400006: cbem02_wingL01
+    400008: cbem02_wingL02
+    400010: cbem02_wingL03
+    400012: cbem02_wingL04
+    400014: cbem02_wingL05
+    400016: cbem02_wingL06
+    400018: cbem02_wingL07
+    400020: cbem02_wingL08
+    400022: cbem02_wingL09
+    400024: cbem02_wingL10
+    400026: cbem02_wingL11
+    400028: cbem02_wingL12
+    400030: cbem02_wingL13
+    400032: cbem02_wingL14
+    400034: cbem02_wingL15
+    400036: cbem02_wingR00
+    400038: cbem02_wingR01
+    400040: cbem02_wingR02
+    400042: cbem02_wingR03
+    400044: cbem02_wingR04
+    400046: cbem02_wingR05
+    400048: cbem02_wingR06
+    400050: cbem02_wingR07
+    400052: cbem02_wingR08
+    400054: cbem02_wingR09
+    400056: cbem02_wingR10
+    400058: cbem02_wingR11
+    400060: cbem02_wingR12
+    400062: cbem02_wingR13
+    400064: cbem02_wingR14
+    400066: cbem02_wingR15
+    400068: m_center
+    400070: root
+    400072: m_effect
+    4300000: cb_em02
+    7400000: await_cbem02
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: cb_em02
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: await_cbem02
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: cb_em02
+        weight: 1
+      - path: m_center
+        weight: 1
+      - path: m_center/root
+        weight: 1
+      - path: m_center/root/cbem02_wingL00
+        weight: 1
+      - path: m_center/root/cbem02_wingL00/cbem02_wingL01
+        weight: 1
+      - path: m_center/root/cbem02_wingL00/cbem02_wingL01/cbem02_wingL02
+        weight: 1
+      - path: m_center/root/cbem02_wingL00/cbem02_wingL01/cbem02_wingL02/cbem02_wingL03
+        weight: 1
+      - path: m_center/root/cbem02_wingL00/cbem02_wingL01/cbem02_wingL02/cbem02_wingL03/cbem02_wingL04
+        weight: 1
+      - path: m_center/root/cbem02_wingL00/cbem02_wingL01/cbem02_wingL02/cbem02_wingL03/cbem02_wingL04/cbem02_wingL05
+        weight: 1
+      - path: m_center/root/cbem02_wingL00/cbem02_wingL01/cbem02_wingL02/cbem02_wingL03/cbem02_wingL04/cbem02_wingL05/cbem02_wingL06
+        weight: 1
+      - path: m_center/root/cbem02_wingL00/cbem02_wingL01/cbem02_wingL07
+        weight: 1
+      - path: m_center/root/cbem02_wingL00/cbem02_wingL01/cbem02_wingL07/cbem02_wingL08
+        weight: 1
+      - path: m_center/root/cbem02_wingL00/cbem02_wingL01/cbem02_wingL07/cbem02_wingL08/cbem02_wingL09
+        weight: 1
+      - path: m_center/root/cbem02_wingL00/cbem02_wingL01/cbem02_wingL07/cbem02_wingL08/cbem02_wingL09/cbem02_wingL10
+        weight: 1
+      - path: m_center/root/cbem02_wingL00/cbem02_wingL01/cbem02_wingL07/cbem02_wingL08/cbem02_wingL09/cbem02_wingL10/cbem02_wingL11
+        weight: 1
+      - path: m_center/root/cbem02_wingL00/cbem02_wingL01/cbem02_wingL12
+        weight: 1
+      - path: m_center/root/cbem02_wingL00/cbem02_wingL01/cbem02_wingL12/cbem02_wingL13
+        weight: 1
+      - path: m_center/root/cbem02_wingL00/cbem02_wingL01/cbem02_wingL12/cbem02_wingL13/cbem02_wingL14
+        weight: 1
+      - path: m_center/root/cbem02_wingL00/cbem02_wingL01/cbem02_wingL12/cbem02_wingL13/cbem02_wingL14/cbem02_wingL15
+        weight: 1
+      - path: m_center/root/cbem02_wingR00
+        weight: 1
+      - path: m_center/root/cbem02_wingR00/cbem02_wingR01
+        weight: 1
+      - path: m_center/root/cbem02_wingR00/cbem02_wingR01/cbem02_wingR02
+        weight: 1
+      - path: m_center/root/cbem02_wingR00/cbem02_wingR01/cbem02_wingR02/cbem02_wingR03
+        weight: 1
+      - path: m_center/root/cbem02_wingR00/cbem02_wingR01/cbem02_wingR02/cbem02_wingR03/cbem02_wingR04
+        weight: 1
+      - path: m_center/root/cbem02_wingR00/cbem02_wingR01/cbem02_wingR02/cbem02_wingR03/cbem02_wingR04/cbem02_wingR05
+        weight: 1
+      - path: m_center/root/cbem02_wingR00/cbem02_wingR01/cbem02_wingR02/cbem02_wingR03/cbem02_wingR04/cbem02_wingR05/cbem02_wingR06
+        weight: 1
+      - path: m_center/root/cbem02_wingR00/cbem02_wingR01/cbem02_wingR07
+        weight: 1
+      - path: m_center/root/cbem02_wingR00/cbem02_wingR01/cbem02_wingR07/cbem02_wingR08
+        weight: 1
+      - path: m_center/root/cbem02_wingR00/cbem02_wingR01/cbem02_wingR07/cbem02_wingR08/cbem02_wingR09
+        weight: 1
+      - path: m_center/root/cbem02_wingR00/cbem02_wingR01/cbem02_wingR07/cbem02_wingR08/cbem02_wingR09/cbem02_wingR10
+        weight: 1
+      - path: m_center/root/cbem02_wingR00/cbem02_wingR01/cbem02_wingR07/cbem02_wingR08/cbem02_wingR09/cbem02_wingR10/cbem02_wingR11
+        weight: 1
+      - path: m_center/root/cbem02_wingR00/cbem02_wingR01/cbem02_wingR12
+        weight: 1
+      - path: m_center/root/cbem02_wingR00/cbem02_wingR01/cbem02_wingR12/cbem02_wingR13
+        weight: 1
+      - path: m_center/root/cbem02_wingR00/cbem02_wingR01/cbem02_wingR12/cbem02_wingR13/cbem02_wingR14
+        weight: 1
+      - path: m_center/root/cbem02_wingR00/cbem02_wingR01/cbem02_wingR12/cbem02_wingR13/cbem02_wingR14/cbem02_wingR15
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 

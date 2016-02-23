@@ -221,10 +221,10 @@ public class SkillWindow : MonoBehaviour {
     void OnClickLook(GameObject go)
     {
 
-        FightRoleManager._instance.setAutoFight();
-        return;
+       // FightRoleManager._instance.setAutoFight();
+      //  return;
         setSkilldata();
-        DBaseFightRole role = FightRoleManager._instance.getEnemuAttacker();
+        DBaseFightRole role = FightRoleManager._instance.getTestAttacker();
         if (role != null)
         {
             role.useSkill(skilldata);

@@ -1,0 +1,240 @@
+fileFormatVersion: 2
+guid: b9e3873469883694d98143c44ea9648e
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: cbem03
+    100004: cbem03L1
+    100006: cbem03L101
+    100008: cbem03L102
+    100010: cbem03L103
+    100012: cbem03L105
+    100014: cbem03L106
+    100016: cbem03L108
+    100018: cbem03L109
+    100020: cbem03L2
+    100022: cbem03L201
+    100024: cbem03L202
+    100026: cbem03L203
+    100028: cbem03L205
+    100030: cbem03L206
+    100032: cbem03L208
+    100034: cbem03L209
+    100036: cbem03R1
+    100038: cbem03R101
+    100040: cbem03R102
+    100042: cbem03R103
+    100044: cbem03R105
+    100046: cbem03R106
+    100048: cbem03R107
+    100050: cbem03R108
+    100052: cbem03R2
+    100054: cbem03R201
+    100056: cbem03R202
+    100058: cbem03R203
+    100060: cbem03R204
+    100062: cbem03R205
+    100064: cbem03R206
+    100066: cbem03R207
+    100068: cbem03R208
+    100070: m_center
+    100072: root
+    100074: m_effect
+    400000: //RootNode
+    400002: cbem03
+    400004: cbem03L1
+    400006: cbem03L101
+    400008: cbem03L102
+    400010: cbem03L103
+    400012: cbem03L105
+    400014: cbem03L106
+    400016: cbem03L108
+    400018: cbem03L109
+    400020: cbem03L2
+    400022: cbem03L201
+    400024: cbem03L202
+    400026: cbem03L203
+    400028: cbem03L205
+    400030: cbem03L206
+    400032: cbem03L208
+    400034: cbem03L209
+    400036: cbem03R1
+    400038: cbem03R101
+    400040: cbem03R102
+    400042: cbem03R103
+    400044: cbem03R105
+    400046: cbem03R106
+    400048: cbem03R107
+    400050: cbem03R108
+    400052: cbem03R2
+    400054: cbem03R201
+    400056: cbem03R202
+    400058: cbem03R203
+    400060: cbem03R204
+    400062: cbem03R205
+    400064: cbem03R206
+    400066: cbem03R207
+    400068: cbem03R208
+    400070: m_center
+    400072: root
+    400074: m_effect
+    4300000: cbem03
+    7400000: await_cbem03
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: cbem03
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: await_cbem03
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: cbem03
+        weight: 1
+      - path: m_center
+        weight: 1
+      - path: m_center/root
+        weight: 1
+      - path: m_center/root/cbem03L1
+        weight: 1
+      - path: m_center/root/cbem03L1/cbem03L108
+        weight: 1
+      - path: m_center/root/cbem03L1/cbem03L108/cbem03L101
+        weight: 1
+      - path: m_center/root/cbem03L1/cbem03L108/cbem03L101/cbem03L102
+        weight: 1
+      - path: m_center/root/cbem03L1/cbem03L108/cbem03L101/cbem03L102/cbem03L103
+        weight: 1
+      - path: m_center/root/cbem03L1/cbem03L109
+        weight: 1
+      - path: m_center/root/cbem03L1/cbem03L109/cbem03L105
+        weight: 1
+      - path: m_center/root/cbem03L1/cbem03L109/cbem03L105/cbem03L106
+        weight: 1
+      - path: m_center/root/cbem03L2
+        weight: 1
+      - path: m_center/root/cbem03L2/cbem03L208
+        weight: 1
+      - path: m_center/root/cbem03L2/cbem03L208/cbem03L201
+        weight: 1
+      - path: m_center/root/cbem03L2/cbem03L208/cbem03L201/cbem03L202
+        weight: 1
+      - path: m_center/root/cbem03L2/cbem03L208/cbem03L201/cbem03L202/cbem03L203
+        weight: 1
+      - path: m_center/root/cbem03L2/cbem03L209
+        weight: 1
+      - path: m_center/root/cbem03L2/cbem03L209/cbem03L205
+        weight: 1
+      - path: m_center/root/cbem03L2/cbem03L209/cbem03L205/cbem03L206
+        weight: 1
+      - path: m_center/root/cbem03R1
+        weight: 1
+      - path: m_center/root/cbem03R1/cbem03R101
+        weight: 1
+      - path: m_center/root/cbem03R1/cbem03R101/cbem03R102
+        weight: 1
+      - path: m_center/root/cbem03R1/cbem03R101/cbem03R102/cbem03R103
+        weight: 1
+      - path: m_center/root/cbem03R1/cbem03R105
+        weight: 1
+      - path: m_center/root/cbem03R1/cbem03R105/cbem03R106
+        weight: 1
+      - path: m_center/root/cbem03R1/cbem03R105/cbem03R106/cbem03R107
+        weight: 1
+      - path: m_center/root/cbem03R1/cbem03R105/cbem03R106/cbem03R107/cbem03R108
+        weight: 1
+      - path: m_center/root/cbem03R2
+        weight: 1
+      - path: m_center/root/cbem03R2/cbem03R201
+        weight: 1
+      - path: m_center/root/cbem03R2/cbem03R201/cbem03R202
+        weight: 1
+      - path: m_center/root/cbem03R2/cbem03R201/cbem03R202/cbem03R203
+        weight: 1
+      - path: m_center/root/cbem03R2/cbem03R201/cbem03R202/cbem03R203/cbem03R204
+        weight: 1
+      - path: m_center/root/cbem03R2/cbem03R205
+        weight: 1
+      - path: m_center/root/cbem03R2/cbem03R205/cbem03R206
+        weight: 1
+      - path: m_center/root/cbem03R2/cbem03R205/cbem03R206/cbem03R207
+        weight: 1
+      - path: m_center/root/cbem03R2/cbem03R205/cbem03R206/cbem03R207/cbem03R208
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 

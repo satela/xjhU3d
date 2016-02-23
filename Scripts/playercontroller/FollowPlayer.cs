@@ -10,20 +10,36 @@ public class FollowPlayer : MonoBehaviour {
 
 	public float rotateSpeed = 2;
 	private bool isRotating = false;
+
+    private ShakeCamera shakecamera;
 	// Use this for initialization
 	void Start () {
-	
-		player = GameObject.FindGameObjectWithTag (Tags.player).transform;
-		transform.LookAt (player.position);
-		offsetposition = transform.position - player.position;
+
+        shakecamera = this.GetComponent<ShakeCamera>();
+		//player = GameObject.FindGameObjectWithTag (Tags.player).transform;
+		//transform.LookAt (player.position);
+		//offsetposition = transform.position - player.position;
 	}
-	
+
+    public void setplayer(DBaseFightRole playrole)
+    {
+        player = playrole.roleModel.transform;
+        transform.LookAt(player.position);
+        offsetposition = transform.position - player.position;
+
+        playrole.roleModel.AddComponent<PlayerMove>();
+        playrole.roleModel.AddComponent<PlayerDir>();
+    }
 	// Update is called once per frame
 	void LateUpdate () {
-		transform.position = offsetposition + player.position;
-		RotateView ();
+        if (player != null)
+        {
+            if (!shakecamera.isInShake)
+                transform.position = offsetposition + player.position;
+            RotateView();
 
-		ScrollView ();
+            ScrollView();
+        }
 
 	
 	}

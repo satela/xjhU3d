@@ -1,0 +1,180 @@
+fileFormatVersion: 2
+guid: 7bd50ddeec457c7429c7ae2a2d192547
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: cb_ts02
+    100004: cbjs02_wingL
+    100006: cbjs02_wingL01
+    100008: cbjs02_wingL02
+    100010: cbjs02_wingL03
+    100012: cbjs02_wingL04
+    100014: cbjs02_wingL05
+    100016: cbjs02_wingL06
+    100018: cbjs02_wingL07
+    100020: cbjs02_wingR
+    100022: cbjs02_wingR01
+    100024: cbjs02_wingR02
+    100026: cbjs02_wingR03
+    100028: cbjs02_wingR04
+    100030: cbjs02_wingR05
+    100032: cbjs02_wingR06
+    100034: cbjs02_wingR07
+    100036: m_center
+    100038: root
+    100040: Bone002
+    100042: Bone002(mirrored)
+    100044: cbjs02_wingL00
+    100046: cbjs02_wingR00
+    100048: m_effect
+    400000: //RootNode
+    400002: cb_ts02
+    400004: cbjs02_wingL
+    400006: cbjs02_wingL01
+    400008: cbjs02_wingL02
+    400010: cbjs02_wingL03
+    400012: cbjs02_wingL04
+    400014: cbjs02_wingL05
+    400016: cbjs02_wingL06
+    400018: cbjs02_wingL07
+    400020: cbjs02_wingR
+    400022: cbjs02_wingR01
+    400024: cbjs02_wingR02
+    400026: cbjs02_wingR03
+    400028: cbjs02_wingR04
+    400030: cbjs02_wingR05
+    400032: cbjs02_wingR06
+    400034: cbjs02_wingR07
+    400036: m_center
+    400038: root
+    400040: Bone002
+    400042: Bone002(mirrored)
+    400044: cbjs02_wingL00
+    400046: cbjs02_wingR00
+    400048: m_effect
+    4300000: cb_ts02
+    7400000: await_cbjs02
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: cb_ts02
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: await_cbjs02
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: cb_ts02
+        weight: 1
+      - path: m_center
+        weight: 1
+      - path: m_center/root
+        weight: 1
+      - path: m_center/root/cbjs02_wingL
+        weight: 1
+      - path: m_center/root/cbjs02_wingL/cbjs02_wingL01
+        weight: 1
+      - path: m_center/root/cbjs02_wingL/cbjs02_wingL01/cbjs02_wingL02
+        weight: 1
+      - path: m_center/root/cbjs02_wingL/cbjs02_wingL01/cbjs02_wingL02/cbjs02_wingL03
+        weight: 1
+      - path: m_center/root/cbjs02_wingL/cbjs02_wingL01/cbjs02_wingL02/cbjs02_wingL03/cbjs02_wingL04
+        weight: 1
+      - path: m_center/root/cbjs02_wingL/cbjs02_wingL01/cbjs02_wingL05
+        weight: 1
+      - path: m_center/root/cbjs02_wingL/cbjs02_wingL01/cbjs02_wingL05/cbjs02_wingL06
+        weight: 1
+      - path: m_center/root/cbjs02_wingL/cbjs02_wingL01/cbjs02_wingL05/cbjs02_wingL06/cbjs02_wingL07
+        weight: 1
+      - path: m_center/root/cbjs02_wingR
+        weight: 1
+      - path: m_center/root/cbjs02_wingR/cbjs02_wingR01
+        weight: 1
+      - path: m_center/root/cbjs02_wingR/cbjs02_wingR01/cbjs02_wingR02
+        weight: 1
+      - path: m_center/root/cbjs02_wingR/cbjs02_wingR01/cbjs02_wingR02/cbjs02_wingR03
+        weight: 1
+      - path: m_center/root/cbjs02_wingR/cbjs02_wingR01/cbjs02_wingR02/cbjs02_wingR03/cbjs02_wingR04
+        weight: 1
+      - path: m_center/root/cbjs02_wingR/cbjs02_wingR01/cbjs02_wingR05
+        weight: 1
+      - path: m_center/root/cbjs02_wingR/cbjs02_wingR01/cbjs02_wingR05/cbjs02_wingR06
+        weight: 1
+      - path: m_center/root/cbjs02_wingR/cbjs02_wingR01/cbjs02_wingR05/cbjs02_wingR06/cbjs02_wingR07
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 
