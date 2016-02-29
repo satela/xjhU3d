@@ -35,8 +35,9 @@ public class ConfigManager {
              rolelDefaultDic = new Dictionary<int, DefaultRoleData>();
          rolelDefaultDic.Clear();
 
-         TextAsset txtasset = UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/TextInfo/txt/Role.txt", typeof(TextAsset)) as TextAsset;
+         //TextAsset txtasset = UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/TextInfo/txt/Role.txt", typeof(TextAsset)) as TextAsset;
 
+         TextAsset txtasset = ResourceManager.loadAsset<TextAsset>("Assets/TextInfo/txt/Role.txt");// as TextAsset;
         
          string text = txtasset.text;
          string[] strArray = text.Split('\n');
@@ -65,7 +66,7 @@ public class ConfigManager {
             skillDefaultDic = new Dictionary<int, DSkillDefaultData>();
         skillDefaultDic.Clear();
 
-        TextAsset txtasset = UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/TextInfo/txt/Skill.txt", typeof(TextAsset)) as TextAsset;
+        TextAsset txtasset = ResourceManager.loadAsset<TextAsset>("Assets/TextInfo/txt/Skill.txt");
 
         string text = txtasset.text;
         string[] strArray = text.Split('\n');
@@ -94,7 +95,7 @@ public class ConfigManager {
             basebuffDataDic = new Dictionary<int, DBuffData>();
         basebuffDataDic.Clear();
 
-        TextAsset txtasset = UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/TextInfo/txt/SkillBuff.txt", typeof(TextAsset)) as TextAsset;
+        TextAsset txtasset = ResourceManager.loadAsset<TextAsset>("Assets/TextInfo/txt/SkillBuff.txt");
 
         string text = txtasset.text;
         string[] strArray = text.Split('\n');

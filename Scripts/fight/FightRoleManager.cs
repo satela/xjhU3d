@@ -42,10 +42,10 @@ public class FightRoleManager : MonoBehaviour {
     {
         _instance = this;
         allRoles = new List<DBaseFightRole>();
-        SkillConfiguration.LoadXml();
-        ConfigManager.intance.init();
+       
     }
 
+    
     bool createrole = false;
     int addtype = -1;
     int temptype = -1;
@@ -56,41 +56,41 @@ public class FightRoleManager : MonoBehaviour {
          addtype = -1;
         //int posindex = -1;
         //string gname = "";
-        if(GUI.Button(new Rect(800,10,50,20), "己方1"))
+        if(GUI.Button(new Rect(600,50,100,40), "己方1"))
         {
             addtype = 0;
             posindex = 0;
             gname = "己方1";
         }
-        if (GUI.Button(new Rect(860, 10, 50, 20), "己方2"))
+        if (GUI.Button(new Rect(720, 50, 100, 40), "己方2"))
         {
             addtype = 0;
             posindex = 1;
             gname = "己方2";
 
         }
-        if (GUI.Button(new Rect(910, 10, 50, 20), "己方3"))
+        if (GUI.Button(new Rect(840, 50, 100, 40), "己方3"))
         {
             addtype = 0;
             posindex = 2;
             gname = "己方3";
 
         }
-        if (GUI.Button(new Rect(800, 40, 50, 20), "敌方1"))
+        if (GUI.Button(new Rect(600,100, 100, 40), "敌方1"))
         {
             addtype = 1;
             posindex = 0;
             gname = "敌方1";
 
         }
-        if (GUI.Button(new Rect(860, 40, 50, 20), "敌方2"))
+        if (GUI.Button(new Rect(720, 100, 100, 40), "敌方2"))
         {
             addtype = 1;
             posindex = 1;
             gname = "敌方2";
 
         }
-        if (GUI.Button(new Rect(910, 40, 50, 20), "敌方3"))
+        if (GUI.Button(new Rect(840, 100, 100, 40), "敌方3"))
         {
             addtype = 1;
             posindex = 2;
@@ -98,12 +98,12 @@ public class FightRoleManager : MonoBehaviour {
 
         }
 
-        if (GUI.Button(new Rect(910, 70, 50, 20), "战斗"))
+        if (GUI.Button(new Rect(710, 150, 100, 40), "战斗"))
         {
             FightRoleManager._instance.setAutoFight();
         }
 
-        if (GUI.Button(new Rect(850, 70, 50, 20), "相机跟随"))
+        if (GUI.Button(new Rect(830, 150, 100, 40), "相机跟随"))
         {
             Camera.main.GetComponent<FollowPlayer>().setplayer(selfRoles[0]);
         }
@@ -146,9 +146,15 @@ public class FightRoleManager : MonoBehaviour {
     
 	// Use this for initialization
 	void Start () {
-	
+
+        
 	}
-	
+
+    public void initConfiguretion()
+    {
+        SkillConfiguration.LoadXml();
+        ConfigManager.intance.init();
+    }
 	// Update is called once per frame
 	void Update () {
 

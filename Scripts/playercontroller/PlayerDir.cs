@@ -32,9 +32,9 @@ public class PlayerDir : MonoBehaviour {
 			if(isCollider && hitinfo.collider.tag == Tags.ground)
 			{
 				//isMoving = true;
-				ShowClickEffect(hitinfo.point);
+				//ShowClickEffect(hitinfo.point);
 				//lookAtTarget(hitinfo.point);
-                playerattack.gotoDestination(hitinfo.point);
+               // playerattack.gotoDestination(hitinfo.point);
 			}
 		}
        /* if(agent.remainingDistance > 0)

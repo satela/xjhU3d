@@ -102,6 +102,7 @@ public class FightRoleSkill:MonoBehaviour  {
             return null;
 
         DSkillBaseData tempdata = null;
+
         foreach (DSkillBaseData skilldata in skillList)
         {
             

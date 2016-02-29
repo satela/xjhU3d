@@ -12,15 +12,22 @@ public class SkillConfiguration  {
 
     public static void LoadXml()
     {
+        string xmlurl;
+#if UNITY_EDITOR
+        xmlurl = Application.dataPath + "/TextInfo/skillConfig.xml";
+#endif
+#if UNITY_ANDROID
+         xmlurl = Application.persistentDataPath + "/skillConfig.xml";
+#endif
         //创建xml文档
-        if (!File.Exists(Application.dataPath + "/TextInfo/skillConfig.xml"))
+         if (!File.Exists(xmlurl))
         {
             return;
         }
         XmlDocument xml = new XmlDocument();
         XmlReaderSettings set = new XmlReaderSettings();
         set.IgnoreComments = true;//这个设置是忽略xml注释文档的影响。有时候注释会影响到xml的读取
-        xml.Load(XmlReader.Create((Application.dataPath + "/TextInfo/skillConfig.xml"), set));
+        xml.Load(XmlReader.Create((xmlurl), set));
         //得到objects节点下的所有子节点
         XmlNodeList xmlNodeList = xml.SelectSingleNode("allskill").ChildNodes;
         DSkillBaseData skilldata;

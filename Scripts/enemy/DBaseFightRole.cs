@@ -95,7 +95,9 @@ public class DBaseFightRole : MonoBehaviour
 
         roledata = new DRoleData(roleid);
 
-        GameObject rolemodel = UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/RPG/actors/" + roledata.defaultRoledata.modelUrl + ".prefab",typeof(GameObject)) as GameObject;
+       // GameObject rolemodel = UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/RPG/actors/" + roledata.defaultRoledata.modelUrl + ".prefab",typeof(GameObject)) as GameObject;
+
+        GameObject rolemodel = ResourceManager.loadAsset<GameObject>("Assets/RPG/actors/" + roledata.defaultRoledata.modelUrl + ".prefab");
         roleModel = GameObject.Instantiate(rolemodel) as GameObject;
         //agent = roleModel.GetComponent<NavMeshAgent>();
         roleModel.transform.position = pos;

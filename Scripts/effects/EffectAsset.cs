@@ -24,12 +24,13 @@ public class EffectAsset : MonoBehaviour {
     public GameObject effectInstance;
 	void Start () {
 	
+        
 	}
 
     public void setEffectParam(string prefaburl, Vector3 position, Quaternion rotations, EEffectType type = EEffectType.Normal)
     {
         string asseturl = UrlManager.GetEffectUrl(prefaburl,type);
-        GameObject prefab = UnityEditor.AssetDatabase.LoadAssetAtPath(asseturl,typeof(GameObject)) as GameObject;
+        GameObject prefab = ResourceManager.loadAsset<GameObject>(asseturl);
         if (prefab != null)
         {
             effectInstance = Instantiate(prefab, Vector3.zero, Quaternion.identity) as GameObject;
@@ -49,6 +50,7 @@ public class EffectAsset : MonoBehaviour {
     void destroyDelay()
     {
         Destroy(gameObject);
+        Resources.UnloadUnusedAssets();
     }
 	// Update is called once per frame
 	void Update () {
