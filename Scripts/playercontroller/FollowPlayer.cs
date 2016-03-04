@@ -6,9 +6,9 @@ public class FollowPlayer : MonoBehaviour {
 	private Transform player;
 	private Vector3 offsetposition;
 	public float distance = 0;
-	public float scrollSpeed = 10;
+	public float scrollSpeed = 2;
 
-	public float rotateSpeed = 2;
+	public float rotateSpeed = 3;
 	private bool isRotating = false;
 
     private ShakeCamera shakecamera;
@@ -21,6 +21,52 @@ public class FollowPlayer : MonoBehaviour {
 		//offsetposition = transform.position - player.position;
 	}
 
+    void OnEnable()
+    {
+
+        EasyJoystick.On_JoystickMove += OnJoystickMove;
+
+        //EasyJoystick.On_JoystickMoveEnd += OnJoystickMoveEnd;
+
+
+    }
+
+    void OnJoystickMove(MovingJoystick move)
+    {
+
+        if (move.joystickName != "RotateJoyStick")
+        {
+
+            return;
+
+        }
+
+
+
+        //获取摇杆中心偏移的坐标  
+
+        float joyPositionX = move.joystickAxis.x;
+
+        float joyPositionY = move.joystickAxis.y;
+
+        transform.RotateAround(player.position, Vector3.up, rotateSpeed * joyPositionX);
+
+        Vector3 lastposition = transform.position;
+        Vector3 lastanges = transform.eulerAngles;
+        transform.RotateAround(player.position, -transform.right, rotateSpeed * joyPositionY);
+
+        float x = transform.eulerAngles.x;
+        if (x < 10 || x > 80)
+        {
+            transform.eulerAngles = lastanges;
+            transform.position = lastposition;
+
+        }
+        //x = Mathf.Clamp(x,10,80);
+        //transform.eulerAngles = new Vector3(x,transform.eulerAngles.y,transform.eulerAngles.z);
+        offsetposition = transform.position - player.position;
+
+    }
     public void setplayer(DBaseFightRole playrole)
     {
         player = playrole.roleModel.transform;
@@ -36,20 +82,25 @@ public class FollowPlayer : MonoBehaviour {
         {
             if (!shakecamera.isInShake)
                 transform.position = offsetposition + player.position;
-            RotateView();
+            //RotateView();
 
-            ScrollView();
+            //ScrollView();
         }
 
 	
 	}
 
-	void ScrollView()
+	public void ScrollView(float delta)
 	{
-		distance = offsetposition.magnitude;
-		distance += Input.GetAxis ("Mouse ScrollWheel") * scrollSpeed;
-		distance = Mathf.Clamp(distance,2,18);
-		offsetposition = offsetposition.normalized * distance;
+        if (player != null)
+        {
+           // IScrollMesaage.instance.pushMessage("滚动：" + delta.ToString());
+            distance = offsetposition.magnitude;
+            distance += delta * scrollSpeed;
+            distance = Mathf.Clamp(distance, 2, 18);
+            offsetposition = offsetposition.normalized * distance;
+        }
+       
 	}
 	void RotateView()
 	{

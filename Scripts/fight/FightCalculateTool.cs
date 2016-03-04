@@ -17,10 +17,11 @@ public class FightCalculateTool {
             return false;
     }
 
-    public static int calculateHarm(DRoleData fightrole, DRoleData beatonrole)
+    // phyplus 物理攻击加成，magplus 法术攻击加成
+    public static int calculateHarm(DRoleData fightrole, DRoleData beatonrole,int phyplus = 0,int magplus = 0)
     {
-        float phyHarm = fightrole.getBaseAttrByType(EBaseAttr.Phy_Attack) - beatonrole.getBaseAttrByType(EBaseAttr.PhyDef);
-        float magHarm = fightrole.getBaseAttrByType(EBaseAttr.Mag_Attack) - beatonrole.getBaseAttrByType(EBaseAttr.MagDef);
+        float phyHarm = phyplus + fightrole.getBaseAttrByType(EBaseAttr.Phy_Attack) - beatonrole.getBaseAttrByType(EBaseAttr.PhyDef);
+        float magHarm = magplus + fightrole.getBaseAttrByType(EBaseAttr.Mag_Attack) - beatonrole.getBaseAttrByType(EBaseAttr.MagDef);
 
         float total = phyHarm + magHarm;
         if (total <= 0)

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
+
 public class FightRoleSkill:MonoBehaviour  {
 
     private List<DSkillBaseData> skillList = new List<DSkillBaseData>();
@@ -14,6 +15,9 @@ public class FightRoleSkill:MonoBehaviour  {
 
     private float timespan = 0;
 
+    public MainSkillType useSkillPriority = MainSkillType.MainSkillType_None;
+
+   // private MainSkillType[] controlPriority = []
     void Start()
     {
        // InvokeRepeating("updatecdTime", 1, -1);
@@ -101,24 +105,91 @@ public class FightRoleSkill:MonoBehaviour  {
         if (normalCdTime > 0)
             return null;
 
-        DSkillBaseData tempdata = null;
-
+        List<DSkillBaseData> canuseSkills = new List<DSkillBaseData>();
         foreach (DSkillBaseData skilldata in skillList)
         {
             
-           if (skillCdTime[skilldata.id] <= 0 && tempdata == null)
+           if (skillCdTime[skilldata.id] <= 0)
            {
-               tempdata = skilldata;
+               canuseSkills.Add(skilldata);
            }
-           else if (skillCdTime[skilldata.id] <= 0 && tempdata != null)
+           /*else if (skillCdTime[skilldata.id] <= 0 && tempdata != null)
            {
                DSkillDefaultData skilln = ConfigManager.intance.skillDefaultDic[skilldata.id];
                DSkillDefaultData skilllast = ConfigManager.intance.skillDefaultDic[tempdata.id];
                if (skilln.needMp > skilllast.needMp)
                    tempdata = skilldata;
-           }
+           }*/
+        }
+        if (canuseSkills.Count > 0)
+            return getBestSkillByType(canuseSkills, useSkillPriority);
+        return null;
+    }
+
+    private DSkillBaseData getBestSkillByType(List<DSkillBaseData> allSkills,MainSkillType type)
+    {
+        DSkillBaseData tempdata = null;
+        if (type == MainSkillType.MainSkillType_None)
+        {
+            tempdata = allSkills[0];
+            for (int i = 1; i < allSkills.Count; i++)
+            {
+                DSkillDefaultData skilln = ConfigManager.intance.skillDefaultDic[allSkills[i].id];
+                DSkillDefaultData skilllast = ConfigManager.intance.skillDefaultDic[tempdata.id];
+                if (skilln.needMp > skilllast.needMp)
+                    tempdata = allSkills[i];
+            }
+            return tempdata;
+        }
+        else if (type == MainSkillType.MainSkillType_Attack)
+        {
+           // 寻找类型为攻击的技能，并且是攻击加成最多的，如果没有则返回需要怒气最高的技能
+            int attackplus = 0;
+            for (int i = 0; i < allSkills.Count; i++)
+            {
+                DSkillDefaultData skilln = ConfigManager.intance.skillDefaultDic[allSkills[i].id];
+                DSkillDefaultData skilllast;
+                if(tempdata != null)
+                     skilllast = ConfigManager.intance.skillDefaultDic[tempdata.id];
+                if (tempdata == null && skilln.mianskillType == type)
+                {
+                    tempdata = allSkills[i];
+                    foreach(int plus in skilln.attack_plus.Values)
+                        attackplus += plus;
+                }
+                else if (tempdata != null && skilln.mianskillType == type)
+                {
+                    int templus = 0;
+                    foreach (int plus in skilln.attack_plus.Values)
+                        templus += plus;
+                    if (templus > attackplus)
+                    {
+                        tempdata = allSkills[i];
+                        attackplus = templus;
+
+                    }
+                }
+            }
+            if (tempdata != null)
+                return tempdata;
+            else
+                return getBestSkillByType(allSkills, MainSkillType.MainSkillType_None);
         }
 
-        return tempdata;
+        else if (type == MainSkillType.MainSkillType_Control || type == MainSkillType.MainSkillType_Recovery)
+        {
+            for (int i = 0; i < allSkills.Count; i++)
+            {
+                DSkillDefaultData skilln = ConfigManager.intance.skillDefaultDic[allSkills[i].id];
+                if (skilln.mianskillType == type)
+                {
+                    return allSkills[i];
+                }
+            }
+
+            return getBestSkillByType(allSkills, MainSkillType.MainSkillType_None);
+        }
+
+        return getBestSkillByType(allSkills, MainSkillType.MainSkillType_None);
     }
 }

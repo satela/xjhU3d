@@ -106,6 +106,13 @@ public class FightRoleManager : MonoBehaviour {
         if (GUI.Button(new Rect(830, 150, 100, 40), "相机跟随"))
         {
             Camera.main.GetComponent<FollowPlayer>().setplayer(selfRoles[0]);
+            if (selfRoles[0] != null)
+            {
+                if (selfRoles[1] != null)
+                    selfRoles[1].GetComponent<FollowFighter>().setFollowTarget(selfRoles[0]);
+                if (selfRoles[2] != null)
+                    selfRoles[2].GetComponent<FollowFighter>().setFollowTarget(selfRoles[0]);
+            }
         }
 
         if (addtype == 0)
@@ -114,6 +121,7 @@ public class FightRoleManager : MonoBehaviour {
 
             if (selfRoles[posindex] != null)
             {
+                allRoles.Remove(selfRoles[posindex]);
                 Destroy(selfRoles[posindex].gameObject);
                 selfRoles[posindex] = null;
             }
@@ -130,6 +138,7 @@ public class FightRoleManager : MonoBehaviour {
 
             if (enemyRoles[posindex] != null)
             {
+                allRoles.Remove(enemyRoles[posindex]);
                 Destroy(enemyRoles[posindex].gameObject);
                 enemyRoles[posindex] = null;
             }
@@ -390,7 +399,7 @@ public class FightRoleManager : MonoBehaviour {
                     }
                 }
             }
-            if (!isOccupied)
+            if (!isOccupied && attacker.agent.enabled)
             {
                 NavMeshPath path = new NavMeshPath();
                 attacker.agent.CalculatePath(tempDirect, path);
@@ -416,7 +425,7 @@ public class FightRoleManager : MonoBehaviour {
                     }
                 }
             }
-            if (!isOccupied)
+            if (!isOccupied && attacker.agent.enabled)
             {
                 NavMeshPath path = new NavMeshPath();
                 attacker.agent.CalculatePath(tempDirect, path);

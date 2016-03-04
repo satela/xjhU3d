@@ -1,4 +1,4 @@
 roleID,roletype,job,roleName,avatar,hp,phy_attack,mag_attack,phy_def,mag_def,moveSpeed,mp,Crit,Dodge,Hit,Tough,skills,
-10001,1,1,矮人,airen/airen_base,500,50,10,20,10,3.5,60,100,5,30,20,10010|10011|10012|10020|10021|10022,
+10001,1,1,矮人,airen/airen_base,500,50,10,30,20,3.5,60,100,5,30,20,10010|10011|10012|10020|10021|10022,
 10002,1,3,哥布林,fujiangdjfs/fujiangdjfs_base,500,60,30,30,20,3.5,60,100,5,30,20,10030|10031|10040,
 10003,1,3,萝莉,luoli/luoli_base,500,60,30,30,20,3.5,60,100,5,30,20,10030|10031|10040,

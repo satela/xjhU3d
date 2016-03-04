@@ -66,7 +66,7 @@ public class DBaseFightRole : MonoBehaviour
     public Transform target;
 
 
-    private bool isCasteringSkill = false; //当前是否还处在施放技能中
+    public bool isCasteringSkill = false; //当前是否还处在施放技能中
 
     private SkillCasterData casterdata;
 
@@ -89,6 +89,8 @@ public class DBaseFightRole : MonoBehaviour
     private float bodyHeight = 0;
 
     public Vector3 destpoint = Vector3.zero;
+
+    private FollowFighter followfight;
     public void setSide(int fside,int roleid,Vector3 pos,Vector3 rotate)
     {
         side = fside;
@@ -124,6 +126,8 @@ public class DBaseFightRole : MonoBehaviour
        // obstacle.carving = true;
         skillManager = gameObject.AddComponent<FightRoleSkill>();
         skillManager.initSkill(roledata.defaultRoledata.skillIdList);
+
+        followfight = gameObject.AddComponent<FollowFighter>();
 
         hpbarui = gameObject.AddComponent<HpBarControl>();
 
@@ -794,7 +798,21 @@ public class DBaseFightRole : MonoBehaviour
     {
         yield return new WaitForSeconds(delayTime);
 
-        int harm = FightCalculateTool.calculateHarm(castRoleData, roledata);
+        int phyPlus = 0;
+        int magPlus = 0;
+        if (ConfigManager.intance.skillDefaultDic.ContainsKey(baseskilldata.id))
+        {
+            DSkillDefaultData defaultskill = ConfigManager.intance.skillDefaultDic[baseskilldata.id];
+            if (defaultskill.attack_plus.ContainsKey((int)EBaseAttr.Phy_Attack))
+            {
+                phyPlus = (int)castRoleData.getBaseAttrByType(EBaseAttr.Phy_Attack) * defaultskill.attack_plus[(int)EBaseAttr.Phy_Attack]/100;
+            }
+            if (defaultskill.attack_plus.ContainsKey((int)EBaseAttr.Mag_Attack))
+            {
+                magPlus = (int)castRoleData.getBaseAttrByType(EBaseAttr.Mag_Attack) * defaultskill.attack_plus[(int)EBaseAttr.Mag_Attack]/100;
+            }
+        }
+        int harm = FightCalculateTool.calculateHarm(castRoleData, roledata, phyPlus, magPlus);
         roledata.addBaseBuffAttr(EBaseAttr.Hp, -harm);
 
         hpbarui.updateHp();

@@ -4,6 +4,8 @@ using System.Collections.Generic;
 public class ResourceManager {
 
     public static AssetBundle manifestBundle;
+
+    public static Dictionary<string, UnityEngine.Object> tempResourceDic = new Dictionary<string, Object>();
 	// Use this for initialization
 	void Start () {
 	
@@ -18,7 +20,10 @@ public class ResourceManager {
     {
         if (CGameWorld.instance.isLoadAssetBundle)
         {
+            if (tempResourceDic.ContainsKey(path))
+                return tempResourceDic[path] as T;
 
+            string fullpath = path;
             T asset = default(T);
 
             string[] filepaht = path.Split('.')[0].Split('/');
@@ -63,6 +68,7 @@ public class ResourceManager {
                     if (dependsAssetbundle[index] != null)
                     dependsAssetbundle[index].Unload(false);
                 }
+                tempResourceDic.Add(fullpath, asset);
                 return asset;
             }
         }

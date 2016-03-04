@@ -21,7 +21,10 @@ public class DefaultSkillParam
 
     private static Dictionary<eAnimatorState, string> m_actionName;
 
-    public static float skillCdTime = 4;//每次攻击之后的 必须冷却时间
+    public static float skillCdTime = 2;//每次攻击之后的 必须冷却时间
+
+    public static float maxFollowDistance = 10;//跟随主角时，离主角最大距离，超过这个距离要马上 向主角靠拢
+    public static float minFollowDistance = 4;//朝主角走 走到这个距离之后可以停下
 
     public static Dictionary<eAnimatorState, string> ActionName
     {

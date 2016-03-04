@@ -107,7 +107,7 @@ public class PlayerMove : MonoBehaviour {
 
             attack.gotoDestination(transform.position + forward);
 
-            Debug.Log("forward:" + forward.x + "," + forward.y + "," + forward.z);
+            //Debug.Log("forward:" + forward.x + "," + forward.y + "," + forward.z);
            //state = PlayerState.Moving;
 
           
