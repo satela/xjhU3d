@@ -10,7 +10,7 @@ public enum PlayerState
 public class PlayerMove : MonoBehaviour {
 
     [HideInInspector]
-	private float speed = 5f;
+	private float speed = 8f;
     private float startSpeed = 0;
 	private PlayerDir dir;
 	private CharacterController controller;

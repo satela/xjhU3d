@@ -8,7 +8,7 @@ public class FollowPlayer : MonoBehaviour {
 	public float distance = 0;
 	public float scrollSpeed = 2;
 
-	public float rotateSpeed = 3;
+	public float rotateSpeed = 5;
 	private bool isRotating = false;
 
     private ShakeCamera shakecamera;
@@ -41,27 +41,37 @@ public class FollowPlayer : MonoBehaviour {
 
         }
 
+        float x = transform.eulerAngles.x;
 
+        float joyPositionX = move.joystickAxis.x;
+        float joyPositionY = move.joystickAxis.y;
+
+        if (x < 10 && joyPositionY > 0)
+        {
+            return;
+
+        }
+
+        if (x > 80 && joyPositionY < 0)
+        {
+            return;
+
+        }
 
         //获取摇杆中心偏移的坐标  
 
-        float joyPositionX = move.joystickAxis.x;
 
-        float joyPositionY = move.joystickAxis.y;
+        if (Mathf.Abs(joyPositionX) > Mathf.Abs(joyPositionY))
+            transform.RotateAround(player.position, Vector3.up, rotateSpeed * joyPositionX);
+        else
+            transform.RotateAround(player.position, -transform.right, rotateSpeed * joyPositionY);
 
-        transform.RotateAround(player.position, Vector3.up, rotateSpeed * joyPositionX);
 
         Vector3 lastposition = transform.position;
         Vector3 lastanges = transform.eulerAngles;
-        transform.RotateAround(player.position, -transform.right, rotateSpeed * joyPositionY);
 
-        float x = transform.eulerAngles.x;
-        if (x < 10 || x > 80)
-        {
-            transform.eulerAngles = lastanges;
-            transform.position = lastposition;
 
-        }
+        
         //x = Mathf.Clamp(x,10,80);
         //transform.eulerAngles = new Vector3(x,transform.eulerAngles.y,transform.eulerAngles.z);
         offsetposition = transform.position - player.position;
@@ -96,7 +106,7 @@ public class FollowPlayer : MonoBehaviour {
         {
            // IScrollMesaage.instance.pushMessage("滚动：" + delta.ToString());
             distance = offsetposition.magnitude;
-            distance += delta * scrollSpeed;
+            distance -= delta * scrollSpeed;
             distance = Mathf.Clamp(distance, 2, 18);
             offsetposition = offsetposition.normalized * distance;
         }

@@ -696,9 +696,9 @@ public class DBaseFightRole : MonoBehaviour
         {
             Vector3 backpos = rolePosition - roleModel.transform.forward * DefaultSkillParam.BeatonBackMaxDist;
 
-            if (agent != null )
+            if (agent != null && agent.enabled) //被击飞的时候 不能同时被击退，怕掉到 建筑物 上面
             {
-                agent.enabled = true;
+                //agent.enabled = true;
                 NavMeshPath path = new NavMeshPath();
                 agent.CalculatePath(backpos, path);
                 if (path.corners.Length == 2)
@@ -718,8 +718,13 @@ public class DBaseFightRole : MonoBehaviour
                         animatorControl.changeToState(beatondata.animatorBeatonClip);
                 }
             }
+            else
+            {
+                if (animatorControl.currentState == eAnimatorState.await || animatorControl.currentState == eAnimatorState.beaten || animatorControl.currentState == eAnimatorState.fall)
+                    animatorControl.changeToState(beatondata.animatorBeatonClip);
+            }
         }
-        else if (beatondata.eBeatonbackFly == EBeatonToBackFly.Fly)
+        else if (beatondata.eBeatonbackFly == EBeatonToBackFly.Fly && agent.enabled)
         {
             agent.enabled = false;
             if (animatorControl.currentState == eAnimatorState.await || animatorControl.currentState == eAnimatorState.beaten ||animatorControl.currentState == eAnimatorState.fall)

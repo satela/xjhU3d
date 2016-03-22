@@ -51,69 +51,78 @@ public class FightRoleManager : MonoBehaviour {
     int temptype = -1;
     string gname = "";
     int posindex = -1;
+
+    bool hideBtn = false;
     public void OnGUI()
     {
          addtype = -1;
-        //int posindex = -1;
-        //string gname = "";
-        if(GUI.Button(new Rect(600,50,100,40), "己方1"))
-        {
-            addtype = 0;
-            posindex = 0;
-            gname = "己方1";
-        }
-        if (GUI.Button(new Rect(720, 50, 100, 40), "己方2"))
-        {
-            addtype = 0;
-            posindex = 1;
-            gname = "己方2";
+         if (!hideBtn)
+         {
+             if (GUI.Button(new Rect(600, 50, 100, 40), "己方1"))
+             {
+                 addtype = 0;
+                 posindex = 0;
+                 gname = "己方1";
+             }
+             if (GUI.Button(new Rect(720, 50, 100, 40), "己方2"))
+             {
+                 addtype = 0;
+                 posindex = 1;
+                 gname = "己方2";
 
-        }
-        if (GUI.Button(new Rect(840, 50, 100, 40), "己方3"))
-        {
-            addtype = 0;
-            posindex = 2;
-            gname = "己方3";
+             }
+             if (GUI.Button(new Rect(840, 50, 100, 40), "己方3"))
+             {
+                 addtype = 0;
+                 posindex = 2;
+                 gname = "己方3";
 
-        }
-        if (GUI.Button(new Rect(600,100, 100, 40), "敌方1"))
-        {
-            addtype = 1;
-            posindex = 0;
-            gname = "敌方1";
+             }
+             if (GUI.Button(new Rect(600, 100, 100, 40), "敌方1"))
+             {
+                 addtype = 1;
+                 posindex = 0;
+                 gname = "敌方1";
 
-        }
-        if (GUI.Button(new Rect(720, 100, 100, 40), "敌方2"))
-        {
-            addtype = 1;
-            posindex = 1;
-            gname = "敌方2";
+             }
+             if (GUI.Button(new Rect(720, 100, 100, 40), "敌方2"))
+             {
+                 addtype = 1;
+                 posindex = 1;
+                 gname = "敌方2";
 
-        }
-        if (GUI.Button(new Rect(840, 100, 100, 40), "敌方3"))
-        {
-            addtype = 1;
-            posindex = 2;
-            gname = "敌方3";
+             }
+             if (GUI.Button(new Rect(840, 100, 100, 40), "敌方3"))
+             {
+                 addtype = 1;
+                 posindex = 2;
+                 gname = "敌方3";
 
+             }
+
+             if (GUI.Button(new Rect(710, 150, 100, 40), "战斗"))
+             {
+                 FightRoleManager._instance.setAutoFight();
+             }
+
+             if (GUI.Button(new Rect(830, 150, 100, 40), "相机跟随"))
+             {
+                 Camera.main.GetComponent<FollowPlayer>().setplayer(selfRoles[0]);
+                 if (selfRoles[0] != null)
+                 {
+                     if (selfRoles[1] != null)
+                         selfRoles[1].GetComponent<FollowFighter>().setFollowTarget(selfRoles[0]);
+                     if (selfRoles[2] != null)
+                         selfRoles[2].GetComponent<FollowFighter>().setFollowTarget(selfRoles[0]);
+                 }
+             }
         }
 
-        if (GUI.Button(new Rect(710, 150, 100, 40), "战斗"))
-        {
-            FightRoleManager._instance.setAutoFight();
-        }
+         if (GUI.Button(new Rect(1200, 80, 80, 40), "隐藏"))
+         {
+             hideBtn = !hideBtn;
 
-        if (GUI.Button(new Rect(830, 150, 100, 40), "相机跟随"))
-        {
-            Camera.main.GetComponent<FollowPlayer>().setplayer(selfRoles[0]);
-            if (selfRoles[0] != null)
-            {
-                if (selfRoles[1] != null)
-                    selfRoles[1].GetComponent<FollowFighter>().setFollowTarget(selfRoles[0]);
-                if (selfRoles[2] != null)
-                    selfRoles[2].GetComponent<FollowFighter>().setFollowTarget(selfRoles[0]);
-            }
-        }
+         }
 
         if (addtype == 0)
         {
